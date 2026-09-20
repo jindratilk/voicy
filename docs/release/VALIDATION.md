@@ -9,6 +9,7 @@ Voicy 0.3.0, Apple Silicon, macOS 26.6.2. These are development-machine results,
 - A/B playback retained position in macOS WebKit. Native Save exported a finite, mono 48 kHz PCM24 WAV with the same 18.965-second duration.
 - Backend import measurement: 0.400 seconds / 58.6 MiB peak RSS after lazy imports, compared with 1.592 seconds / 239.2 MiB when eagerly importing Torch and SciPy. These figures measure backend imports only, excluding WebKit, model inference and GPU memory.
 - The audio-only processor adapter was compared with upstream Qwen preprocessing: all 32,000 samples were exactly equal for the tested local WAV segment.
+- Developer ID signing with hardened runtime and nested code verification passed. A relocated signed MLX worker completed a 3-second AuK 32 sample in 48.03 seconds with 3.66 GiB peak process RSS. This measures the worker only.
 - No user recordings are included in the app bundle or source release. Application Support holds the mutable library and caches.
 
 The approved AuK settings remain 32 steps, q8/group64, seed 2026 and the existing context-overlap joining. UI and packaging changes do not establish an improvement in perceptual audio quality.
