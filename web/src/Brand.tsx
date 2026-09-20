@@ -1,0 +1,1 @@
+export function Mark({className=''}:{className?:string}){return <svg className={className} width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M5 10v6M10.3 5v16M15.7 8v10M21 11v4" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round"/></svg>}

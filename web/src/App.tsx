@@ -1,0 +1,52 @@
+import {useEffect,useRef,useState,useCallback} from 'react'
+import {PlusIcon,ArrowUpIcon,Cross2Icon,CounterClockwiseClockIcon,TrashIcon,ArrowRightIcon} from '@radix-ui/react-icons'
+import {api,busy,type Job,type Settings as Options,clock} from './api'
+import {Player} from './Player'
+import {Mark} from './Brand'
+import {native,invoke,onNativeEvent} from './native'
+import {Button} from '@/components/ui/button'
+import {Switch} from '@/components/ui/switch'
+import {Progress} from '@/components/ui/progress'
+import {Dialog,DialogContent,DialogHeader,DialogTitle,DialogDescription} from '@/components/ui/dialog'
+import {Empty,EmptyHeader,EmptyTitle,EmptyDescription,EmptyContent} from '@/components/ui/empty'
+const initial:Options={engine:'auk',mode:'natural',amount:80,level:true}
+export default function App(){
+ const [jobs,setJobs]=useState<Job[]>([]),[active,setActive]=useState<string|null>(null)
+ const [settings,setSettings]=useState<Options>(initial),[error,setError]=useState(''),[uploading,setUploading]=useState(false),[drag,setDrag]=useState(false)
+ const [history,setHistory]=useState(false),[connected,setConnected]=useState(true),[cancelRequested,setCancelRequested]=useState(false),[ready,setReady]=useState(false),[submitting,setSubmitting]=useState(false)
+ const input=useRef<HTMLInputElement>(null),dragDepth=useRef(0),request=useRef(0),operation=useRef(false)
+ const job=jobs.find(j=>j.id===active)||null,working=busy(job)||uploading||submitting
+ const anyBusy=jobs.some(busy)||uploading||submitting
+ const current=useRef({working,history,job,settings});current.current={working,history,job,settings}
+ const refresh=useCallback(async()=>{const id=++request.current;try{const next=await api<Job[]>('/jobs');if(id===request.current){setJobs(next);setConnected(true)}}catch{if(id===request.current)setConnected(false)}},[])
+ useEffect(()=>{let disposed=false;async function init(){try{const p=native?await invoke<{activeId?:string,level?:boolean}>('preferences'):JSON.parse(localStorage.getItem('voicy-preferences')||'{}');if(!disposed){setActive(p.activeId||null);setSettings({...initial,level:p.level??true})}}catch{}finally{if(!disposed)setReady(true)}}init();return()=>{disposed=true}},[])
+ useEffect(()=>{if(!ready)return;const p={activeId:active,level:settings.level};if(native){invoke('save_preferences',p).catch(console.error)}else localStorage.setItem('voicy-preferences',JSON.stringify(p))},[ready,active,settings.level])
+ useEffect(()=>{if(native)invoke('set_activity',{busy:anyBusy,exportable:!!job?.enhanced}).catch(console.error)},[anyBusy,job?.enhanced])
+ useEffect(()=>{refresh();const stream=new EventSource('/api/events');stream.onmessage=()=>refresh();stream.onerror=()=>setConnected(false);stream.onopen=()=>{setConnected(true);refresh()};const focus=()=>refresh();window.addEventListener('focus',focus);return()=>{stream.close();window.removeEventListener('focus',focus);request.current++}},[refresh])
+ useEffect(()=>{setCancelRequested(false)},[active,job?.status])
+ async function accept(j:Job){setJobs(old=>[j,...old.filter(x=>x.id!==j.id)]);setActive(j.id);await refresh()}
+ async function upload(file?:File){if(!file||current.current.working||operation.current)return;operation.current=true;setError('');setUploading(true);try{if(file.size>250*1024*1024)throw Error('Choose a file smaller than 250 MB.');const data=new FormData();data.append('file',file);await accept(await api<Job>('/jobs',{method:'POST',body:data}))}catch(e){setError((e as Error).message)}finally{operation.current=false;setUploading(false);if(input.current)input.current.value=''}}
+ async function choose(){if(current.current.working||operation.current)return;if(!native){input.current?.click();return}operation.current=true;setError('');try{const j=await invoke<Job|null>('open_audio');if(j)await accept(j)}catch(e){setError(String(e))}finally{operation.current=false}}
+ async function enhance(){const {job,settings}=current.current;if(!job||current.current.working||operation.current)return;operation.current=true;setSubmitting(true);setError('');try{await api(`/jobs/${job.id}/enhance`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(settings)});await refresh()}catch(e){setError((e as Error).message)}finally{operation.current=false;setSubmitting(false)}}
+ async function remove(j:Job){try{await api(`/jobs/${j.id}`,{method:'DELETE'});if(active===j.id)setActive(null);await refresh()}catch(e){setError((e as Error).message)}}
+ async function cancel(){if(!job)return;setCancelRequested(true);try{await api(`/jobs/${job.id}/cancel`,{method:'POST'});await refresh()}catch(e){setCancelRequested(false);setError((e as Error).message)}}
+ const commands=useRef({choose,enhance});commands.current={choose,enhance}
+ useEffect(()=>{let disposed=false;let unsub:(()=>void)[]=[];onNativeEvent<string>('voicy-menu',id=>{if(id==='open')commands.current.choose();if(id==='history')setHistory(true);if(id==='enhance')commands.current.enhance();if(['play','compare','save'].includes(id)&&!current.current.history)window.dispatchEvent(new CustomEvent('voicy-player',{detail:id}))}).then(fn=>disposed?fn():unsub.push(fn));
+ const openPending=async()=>{if(current.current.working||operation.current)return;try{const j=await invoke<Job|null>('take_open_file');if(j)await accept(j)}catch(e){setError(String(e))}};
+ if(native){onNativeEvent('voicy-open',openPending).then(fn=>disposed?fn():unsub.push(fn));openPending()}
+ const key=(e:KeyboardEvent)=>{if(!native&&(e.metaKey||e.ctrlKey)&&e.key==='o'){e.preventDefault();commands.current.choose()}if(e.key==='Escape'){setDrag(false);dragDepth.current=0}};window.addEventListener('keydown',key);return()=>{disposed=true;unsub.forEach(fn=>fn());window.removeEventListener('keydown',key)}},[])
+ const percent=Math.round((job?.progress||0)*100)
+ return <div className="app-shell"><header className="titlebar" data-tauri-drag-region onDoubleClick={e=>{if(native&&e.target===e.currentTarget)import('@tauri-apps/api/window').then(({getCurrentWindow})=>getCurrentWindow().toggleMaximize())}}><span className="titlebar-brand" aria-label="Voicy" data-tauri-drag-region><Mark/><span data-tauri-drag-region>Voicy</span></span><Button className="history-button" variant="ghost" size="icon" title="Recordings · ⇧⌘O" aria-label="Recording history" onClick={()=>setHistory(true)}><CounterClockwiseClockIcon/></Button></header>
+ <main>{(!connected||error)&&<div className="error-notice" role="alert"><span>{error||'Connection lost. Reconnecting…'}</span>{error&&<Button variant="ghost" size="icon-sm" aria-label="Dismiss error" onClick={()=>setError('')}><Cross2Icon/></Button>}</div>}
+ <section className="studio" aria-label="Speech enhancement"><div className="audio-pane" onDragEnter={e=>{e.preventDefault();if(!working){dragDepth.current++;setDrag(true)}}} onDragOver={e=>e.preventDefault()} onDragLeave={e=>{e.preventDefault();dragDepth.current=Math.max(0,dragDepth.current-1);if(!dragDepth.current)setDrag(false)}} onDrop={e=>{e.preventDefault();setDrag(false);dragDepth.current=0;if(e.dataTransfer.files.length>1){setError('Choose one recording at a time.');return}upload(e.dataTransfer.files[0])}}>
+ <div className="pane-header">{job&&<Button variant="ghost" size="sm" disabled={working} onClick={choose} title="Open audio · ⌘O"><PlusIcon/>New file</Button>}</div>
+ <input ref={input} className="sr-only" tabIndex={-1} type="file" accept="audio/*,.m4a,.flac,.mp3,.wav,.ogg,.webm" aria-label="Choose audio file" onChange={e=>upload(e.target.files?.[0])}/>
+ {working?<div className="processing-state" role="status" aria-live="polite"><Mark/><h2>{uploading?'Importing…':job?.status==='analyzing'?'Reading audio…':job?.status==='queued'?'Queued…':'Enhancing…'}</h2><div className="progress-line"><Progress value={percent}/><span>{percent}%</span></div><Button variant="ghost" size="sm" disabled={cancelRequested||uploading||submitting} onClick={cancel}>{cancelRequested?'Stopping…':'Cancel'}</Button></div>:
+ job?.original?<div className="recording-content"><Player key={`${job.id}-${job.revision||0}`} job={job} disabled={history}/>{job.warnings?.map(w=><p className="notice" key={w}>{w}</p>)}{['error','cancelled'].includes(job.status)&&<p className="notice" role="status">{job.message}</p>}</div>:
+ job?<Empty><EmptyHeader><EmptyTitle>Couldn’t read this file.</EmptyTitle><EmptyDescription>{job.message}</EmptyDescription></EmptyHeader><EmptyContent><Button onClick={choose}>Choose another file</Button></EmptyContent></Empty>:
+ <Empty className="upload-zone"><div className="sonic-mark" aria-hidden="true">{[12,18,28,42,60,78,90,72,52,68,88,74,54,38,26,18,12].map((h,i)=><i key={i} style={{height:h}}/>)}</div><EmptyHeader><EmptyTitle>Drop audio here</EmptyTitle></EmptyHeader><EmptyContent><Button size="lg" onClick={choose}><PlusIcon/>Open audio<span className="key-hint">⌘O</span></Button></EmptyContent><span className="upload-limit">20 min · 250 MB</span></Empty>}
+ {drag&&!working&&<div className="drop-overlay"><ArrowUpIcon/><span>Drop to open</span></div>}</div>
+ <aside className="control-pane"><div><div className="model-row"><Mark/><h2>AuK 32</h2></div><div className="setting-row"><label htmlFor="level">Level volume</label><Switch id="level" checked={settings.level} onCheckedChange={level=>setSettings({...settings,level})} disabled={working}/></div></div>
+ <div className="action-area"><div className="output-spec"><span>WAV · 24-bit</span></div><Button className="enhance-action" size="lg" disabled={!job?.original||working||!connected} onClick={enhance}>{working?'Enhancing…':job?.enhanced?'Enhance again':'Enhance'}<ArrowRightIcon/></Button></div></aside></section></main>
+ <Dialog open={history} onOpenChange={setHistory}><DialogContent className="history-dialog"><DialogHeader><DialogTitle>Recordings</DialogTitle><DialogDescription className="sr-only">Choose a recording to open.</DialogDescription></DialogHeader><div className="history-list">{jobs.length===0?<p className="history-empty">No recordings yet.</p>:jobs.map(j=><div className="history-row" key={j.id}><button disabled={uploading||submitting} onClick={()=>{setActive(j.id);setHistory(false)}}><Mark/><span>{j.name}<small>{j.original?clock(j.original.duration):'Reading'} · {busy(j)?'Processing':j.enhanced?'Enhanced':'Original'}</small></span></button><Button variant="ghost" size="icon" disabled={busy(j)} aria-label={`Remove ${j.name}`} title="Remove from library" onClick={()=>remove(j)}><TrashIcon/></Button></div>)}</div></DialogContent></Dialog></div>
+}

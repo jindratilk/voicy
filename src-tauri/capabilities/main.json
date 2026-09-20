@@ -1,0 +1,19 @@
+{
+  "identifier": "main",
+  "description": "Voicy window: drag region, native audio dialogs and scoped app commands",
+  "windows": [
+    "main"
+  ],
+  "remote": {
+    "urls": [
+      "http://127.0.0.1:*"
+    ]
+  },
+  "permissions": [
+    "core:default",
+    "core:window:allow-start-dragging",
+    "core:window:allow-toggle-maximize",
+    "allow-export-audio",
+    "allow-app-commands"
+  ]
+}

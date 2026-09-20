@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-app-commands"
+description = "Native audio selection, preferences and activity state"
+commands.allow = ["open_audio", "take_open_file", "preferences", "save_preferences", "set_activity", "open_diagnostics"]

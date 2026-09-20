@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-export-audio"
+description = "Save an enhanced recording selected in the local Voicy UI."
+commands.allow = ["export_audio"]
