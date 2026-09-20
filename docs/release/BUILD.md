@@ -24,8 +24,8 @@ Subsequent code builds use `./scripts/build-voicy.sh`. During development `./scr
 npm --prefix web test
 npm --prefix web run build
 uv venv --python 3.13 .test-venv
-uv pip install --python .test-venv/bin/python fastapi uvicorn python-multipart numpy scipy soundfile pytest httpx
-PATH="$PWD/build/runtime/bin:$PATH" .test-venv/bin/python -m pytest tests/test_api.py tests/test_audio.py tests/test_auk.py tests/test_chunking.py tests/test_startup.py -q
+uv pip install --python .test-venv/bin/python fastapi uvicorn python-multipart numpy scipy soundfile librosa pytest httpx
+PATH="$PWD/build/runtime/bin:$PATH" .test-venv/bin/python -m pytest tests/test_api.py tests/test_audio.py tests/test_auk.py tests/test_chunking.py tests/test_startup.py tests/test_processor_audio.py -q
 cargo check --manifest-path src-tauri/Cargo.toml
 ```
 

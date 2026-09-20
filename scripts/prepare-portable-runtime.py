@@ -17,6 +17,14 @@ for folder in ['server']:
 subprocess.run(['cp',str(root/'experiments/enhance_auk_local.py'),str(target/'experiments/enhance_auk_local.py')],check=True)
 for name in ['source','models','SOURCE-LICENSE','requirements.lock']:
     copy(root/'.auk'/name,target/'.auk'/name)
+# The app only processes local audio. Keep Qwen's librosa path without importing video codecs.
+infer=target/'.auk/source/auk_mlx/infer.py'
+code=infer.read_text()
+old='from qwen_omni_utils import process_mm_info'
+new='from server.processor_audio import process_mm_info'
+if old not in code and new not in code:raise SystemExit('AuK processor import changed; review the audio adapter.')
+infer.write_text(code.replace(old,new))
+(target/'.auk/VOICY-PATCHES.txt').write_text('auk_mlx/infer.py: replace qwen_omni_utils.process_mm_info with server.processor_audio.process_mm_info. Same local librosa audio decoding; image/video support excluded. Upstream MIT license retained.\n')
 (target/'.auk/READY.json').write_text(json.dumps({'format':1,'engine':'AuK','steps':32,'bits':8,'group_size':64}))
 (target/'bin').mkdir(exist_ok=True)
 ffmpeg=root/'build/ffmpeg-source/ffmpeg-7.1/ffmpeg'

@@ -385,6 +385,8 @@ fn start_backend(app: tauri::AppHandle) -> Result<(), Box<dyn std::error::Error>
             ),
         )
         .env("PYTHONUNBUFFERED", "1")
+        .env("PYTHONNOUSERSITE", "1")
+        .env("PYTHONPATH", &root)
         .env("PYTHONDONTWRITEBYTECODE", "1")
         .env("NUMBA_CACHE_DIR", support().join("cache/numba"))
         .env("MPLCONFIGDIR", support().join("cache/matplotlib"))
