@@ -18,7 +18,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family:
-    "Inter Variable",
+    var(--font-inter),
     Inter,
     -apple-system,
     sans-serif;

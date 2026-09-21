@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import "@fontsource-variable/inter";
+import localFont from "next/font/local";
+const inter = localFont({
+  src: "../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2",
+  variable: "--font-inter",
+  display: "swap",
+  weight: "100 900",
+});
 import "./globals.css";
 import { site } from "@/lib/site";
 export const metadata: Metadata = {
@@ -33,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body>{children}</body>
     </html>
   );
