@@ -219,7 +219,7 @@ p {
 }
 .requirements {
   font-size: 11px;
-  color: #707078;
+  color: #92929a;
 }
 .hero-wave {
   position: absolute;
@@ -254,7 +254,7 @@ p {
   align-items: center;
   gap: 12px;
   font-size: 11px;
-  color: #73737c;
+  color: #92929a;
 }
 .scroll-cue svg {
   animation: nudge 2.5s ease-in-out infinite;
@@ -287,7 +287,7 @@ p {
 }
 .demo-file,
 .demo-meta {
-  color: #73737a;
+  color: #92929a;
   font-size: 11px;
 }
 .demo-body {
@@ -375,7 +375,7 @@ p {
   border: 0;
   padding: 7px 13px;
   border-radius: 5px;
-  color: #7d7d85;
+  color: #92929a;
   font-size: 11px;
 }
 .ab button[aria-pressed="true"] {
@@ -389,7 +389,7 @@ p {
 .demo-note {
   text-align: center;
   font-size: 10px;
-  color: #74747b;
+  color: #92929a;
   margin-top: 18px;
 }
 .statement {
@@ -422,7 +422,7 @@ p {
 }
 .workflow-copy li > span {
   font-size: 11px;
-  color: #595960;
+  color: #92929a;
   padding-top: 4px;
   font-variant-numeric: tabular-nums;
 }
@@ -475,7 +475,7 @@ p {
 }
 .file-front small {
   font-size: 10px;
-  color: #686870;
+  color: #92929a;
   margin-top: -16px;
 }
 .cursor {
@@ -515,7 +515,7 @@ p {
 .chip span {
   font-size: 8px;
   letter-spacing: 2px;
-  color: #777781;
+  color: #92929a;
 }
 .orbit {
   position: absolute;
@@ -534,7 +534,7 @@ p {
   position: absolute;
   bottom: 0;
   font-size: 11px;
-  color: #75757e;
+  color: #92929a;
 }
 .open-section {
   text-align: center;
@@ -554,7 +554,7 @@ p {
 }
 .fine {
   font-size: 10px;
-  color: #64646d;
+  color: #92929a;
 }
 .open-section .fine {
   display: block;
@@ -631,7 +631,7 @@ footer {
   padding-bottom: 28px;
 }
 .footer-top > span {
-  color: #606069;
+  color: #92929a;
   font-size: 10px;
 }
 .footer-top > a:last-child {
