@@ -525,8 +525,9 @@ p {
   background: radial-gradient(transparent 69%, #24242b 69.5%, transparent 70%);
 }
 .orbit-two {
-  width: 340px;
-  height: 340px;
+  width: min(340px, 100%);
+  height: auto;
+  aspect-ratio: 1;
   opacity: 0.5;
 }
 .local-label {

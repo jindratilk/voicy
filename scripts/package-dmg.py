@@ -27,10 +27,12 @@ def main():
         icon=Path(__file__).resolve().parents[1]/'src-tauri/icons/icon.icns';run('cp',str(icon),str(stage/'.VolumeIcon.icns'))
         rw=tmp/'Voicy-rw.dmg';run('hdiutil','create','-volname','Voicy','-srcfolder',str(stage),'-fs','APFS','-format','UDRW',str(rw));run('hdiutil','attach','-nobrowse','-readwrite',str(rw))
         try:
+            alias=Alias.for_file(str(mount/'.background/background.png'))
+            alias.volume.disk_image_alias=None  # Keep the build machine's path out of the installer.
             with DSStore.open(str(mount/'.DS_Store'),'w+') as s:
                 s['.']['bwsp']={'ContainerShowSidebar':False,'ShowPathbar':False,'ShowSidebar':False,'ShowStatusBar':False,'ShowTabView':False,'ShowToolbar':False,'SidebarWidth':0,'WindowBounds':'{{160, 120}, {660, 420}}'}
-                s['.']['icvp']={'backgroundType':2,'backgroundImageAlias':Alias.for_file(str(mount/'.background/background.png')).to_bytes(),'showIconPreview':True,'showItemInfo':False,'textSize':13.,'iconSize':88.,'viewOptionsVersion':1,'gridSpacing':100.,'gridOffsetX':0.,'gridOffsetY':0.,'labelOnBottom':True,'arrangeBy':'none'}
-                s['.']['vSrn']=('long',1);s['Voicy.app']['Iloc']=(175,218);s['Applications']['Iloc']=(485,218);s['.background']['Iloc']=(1000,1000);s['.VolumeIcon.icns']['Iloc']=(1000,1100)
+                s['.']['icvp']={'backgroundType':2,'backgroundColorRed':1.0,'backgroundColorGreen':1.0,'backgroundColorBlue':1.0,'backgroundImageAlias':alias.to_bytes(),'showIconPreview':True,'showItemInfo':False,'textSize':13.,'iconSize':88.,'viewOptionsVersion':1,'gridSpacing':100.,'gridOffsetX':0.,'gridOffsetY':0.,'labelOnBottom':True,'arrangeBy':'none'}
+                s['.']['vstl']=('type',b'icnv');s['.']['vSrn']=('long',1);s['Voicy.app']['Iloc']=(175,218);s['Applications']['Iloc']=(485,218);s['.background']['Iloc']=(1000,1000);s['.VolumeIcon.icns']['Iloc']=(1000,1100)
             run('SetFile','-a','C',str(mount))
         finally:run('hdiutil','detach',str(mount))
         out.parent.mkdir(parents=True,exist_ok=True);run('hdiutil','convert',str(rw),'-format','UDZO','-o',str(out));print(out)

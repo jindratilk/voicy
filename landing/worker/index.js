@@ -1,4 +1,5 @@
 import { DurableObject } from "cloudflare:workers";
+import { parseRange } from "./range.js";
 const artifact = "Voicy-0.3.0-arm64.dmg";
 const json = (data, status = 200) =>
   Response.json(data, { status, headers: { "Cache-Control": "no-store" } });
@@ -58,9 +59,17 @@ export default {
     const metrics = () => env.METRICS.get(env.METRICS.idFromName("global"));
     if (u.pathname === "/health") return json({ ok: true, product: "Voicy" });
     if (u.pathname === "/download" && ["GET", "HEAD"].includes(req.method)) {
-      const object = await env.RELEASES.get(
-        artifact,
-        req.headers.has("Range") ? { range: req.headers } : undefined,
+      const metadata = await env.RELEASES.head(artifact);
+      if (!metadata) return json({ error: "Release not available yet" }, 503);
+      const requestedRange = req.method === "GET" &&
+        (!req.headers.has("If-Range") || req.headers.get("If-Range") === metadata.httpEtag)
+        ? parseRange(req.headers.get("Range"), metadata.size) : null;
+      if (requestedRange?.invalid)
+        return new Response(null, { status: 416, headers: {
+          "Content-Range": `bytes */${metadata.size}`, "Cache-Control": "no-store",
+        }});
+      const object = req.method === "HEAD" ? metadata : await env.RELEASES.get(
+        artifact, requestedRange ? { range: requestedRange } : undefined,
       );
       if (!object) return json({ error: "Release not available yet" }, 503);
       const headers = new Headers();

@@ -62,7 +62,7 @@ Closing the window keeps Voicy in the Dock. Your originals and previous successf
 
 ## A free Adobe Podcast alternative
 
-If you are looking for **free enhance speech** software or an **AI enhance speech** app that runs locally, Voicy is built for that workflow. It is independent software, not an Adobe product and not a claim of identical results.
+Voicy offers **free AI speech enhancement** for people who want to clean up recordings on their own Mac. It is independent software, not an Adobe product and not a claim of identical results.
 
 | Voicy workflow | What to expect |
 | --- | --- |
