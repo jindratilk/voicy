@@ -25,7 +25,7 @@ npm --prefix web test
 npm --prefix web run build
 uv venv --python 3.13 .test-venv
 uv pip install --python .test-venv/bin/python fastapi uvicorn python-multipart numpy scipy soundfile librosa pytest httpx
-PATH="$PWD/build/runtime/bin:$PATH" .test-venv/bin/python -m pytest tests/test_api.py tests/test_audio.py tests/test_auk.py tests/test_chunking.py tests/test_startup.py tests/test_processor_audio.py -q
+PATH="$PWD/build/runtime/bin:$PATH" .test-venv/bin/python -m pytest tests/test_api.py tests/test_audio.py tests/test_auk.py tests/test_chunking.py tests/test_startup.py tests/test_processor_audio.py tests/test_memory_policy.py -q
 cargo check --manifest-path src-tauri/Cargo.toml
 ```
 
@@ -38,3 +38,24 @@ Preferences, logs and recordings live under `~/Library/Application Support/Voicy
 ## Validation scope
 
 A relocated bundle and bundled-runtime inference are exercised on the development Mac. The reproducible bootstrap pins upstream revisions and verifies converted weights; a full clean-machine install should still be part of release qualification. Do not call a build notarized until Apple's submission and stapling checks pass.
+
+## Exact-output inference benchmark
+
+The small real-MLX regression test needs the pinned model source and portable Python:
+
+```sh
+PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 \
+PYTHONHOME="$PWD/build/runtime/python" \
+PYTHONPATH="$PWD/build/runtime/.auk/source:$PWD" \
+build/runtime/python/bin/python3 tests/test_auk_runtime.py
+```
+
+Save the approved pre-change runner outside the checkout, then compare it with the candidate using the same decoded WAV:
+
+```sh
+.test-venv/bin/python scripts/benchmark-auk-runtime.py /path/to/input.wav \
+  --reference-runner /path/to/reference-runner.py \
+  --output ../voicy-benchmark --repeats 3
+```
+
+The output directory must not already exist. This performs eight sequential full-file runs: one warmup per variant, followed by three measured runs per variant in alternating order. It retains private audio and logs locally, checks exact float-audio equality, records memory pressure and reports medians. Do not commit this output or compare a cold original run with a warm candidate run. Close other compute-intensive workloads; record the machine and power conditions. No input is uploaded. See the [performance audit](INFERENCE-PERFORMANCE-AUDIT.md) for the measured scope and limitations.

@@ -16,3 +16,17 @@ Voicy 0.3.0, Apple Silicon, macOS 26.6.2. These are development-machine results,
 The approved AuK settings remain 32 steps, q8/group64, seed 2026 and the existing context-overlap joining. UI and packaging changes do not establish an improvement in perceptual audio quality.
 
 Apple notarization is intentionally deferred. A clean second-Mac test and a full fresh model bootstrap remain release qualification steps. Signing is not notarization. See `RELEASE.md` for the procedure.
+
+## Runtime optimization validation — 22 September 2026
+
+- Backend regression suite: **43 passed**. Four MLX-only tests are skipped in the ordinary Python environment and were run separately with the bundled Python: **4 passed**.
+- Test discovery is now restricted to `tests/`; an initial unscoped invocation collected ignored research scripts and generated third-party package tests and failed during collection. The scoped application suite passed.
+- Three measured fresh-worker runs per variant, after one warmup each: 96.022 s reference median, 95.282 s candidate median. This 0.77% observed reduction is small, with overlapping ranges; do not advertise a significant acceleration.
+- All eight full reference outputs have identical float32 PCM hashes, including both chunks and the join. Model weights/settings/precision are unchanged.
+- Memory policy tests cover 16, 32 and 128 GiB, insufficient headroom, warning/critical pressure, unknown system information and pressure transitions. Physical hardware testing was limited to the M5/32 GiB Mac.
+- Updated Python resources were assembled into the existing native shell; no frontend or Rust binary changes were needed. Developer ID resource signing and deep/strict signature verification passed.
+- The previously signed application and approved speech checkpoint were preserved before replacement. Notarization remains deferred as requested.
+
+- Native smoke test: import via the macOS file dialog and enhancement through Voicy completed successfully in 114.68 seconds. This is a single application run, not a speedup comparison. The original saved app runtime was then run on the identical newly decoded input and mastered with the same bundled FFmpeg: all **910,336 PCM24 samples at 48 kHz matched exactly**, maximum difference 0.
+- Re-importing the M4A differed from the historical decoded WAV by at most 8.940697e-08 in float32 input; comparing those different inputs was rejected as an optimization regression test. Repeated decoding with the current unchanged FFmpeg matched the new import. The native quality comparison above therefore uses identical decoded input.
+- The final UI capture encountered ScreenCaptureKit error -3811 after enhancement was launched. Completion was verified from the app's stored job state and actual WAV. No new export-dialog or final-screen capture pass is claimed in this iteration; those controls were unchanged.

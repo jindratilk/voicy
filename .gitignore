@@ -2,6 +2,7 @@
 /*
 !/.gitignore
 !/README.md
+!/pytest.ini
 !/LICENSE
 !/CONTRIBUTING.md
 !/SECURITY.md
@@ -24,6 +25,7 @@
 !/scripts/build-ffmpeg.sh
 !/scripts/build-voicy.sh
 !/scripts/sign-macos.py
+!/scripts/benchmark-auk-runtime.py
 !/scripts/model-manifest.json
 !/scripts/licenses/
 # Private recordings, research and build products never belong in the public repo.

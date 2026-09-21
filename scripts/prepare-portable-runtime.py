@@ -24,7 +24,7 @@ old='from qwen_omni_utils import process_mm_info'
 new='from server.processor_audio import process_mm_info'
 if old not in code and new not in code:raise SystemExit('AuK processor import changed; review the audio adapter.')
 infer.write_text(code.replace(old,new))
-(target/'.auk/VOICY-PATCHES.txt').write_text('auk_mlx/infer.py: replace qwen_omni_utils.process_mm_info with server.processor_audio.process_mm_info. Same local librosa audio decoding; image/video support excluded. Upstream MIT license retained.\n')
+(target/'.auk/VOICY-PATCHES.txt').write_text('auk_mlx/infer.py: replace qwen_omni_utils.process_mm_info with server.processor_audio.process_mm_info. Same local librosa audio decoding; image/video support excluded. Upstream MIT license retained.\nVoicy installs exact target/reference embedding reuse at runtime from server/auk_runtime.py; no model weights, sampling settings or precision are changed.\n')
 (target/'.auk/READY.json').write_text(json.dumps({'format':1,'engine':'AuK','steps':32,'bits':8,'group_size':64}))
 (target/'bin').mkdir(exist_ok=True)
 ffmpeg=root/'build/ffmpeg-source/ffmpeg-7.1/ffmpeg'

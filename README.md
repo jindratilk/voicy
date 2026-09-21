@@ -5,6 +5,7 @@ Local speech enhancement for Apple Silicon Macs. Open a recording, enhance it wi
 - Native macOS window controls, menu bar, file dialogs and keyboard shortcuts.
 - Minimal monochrome interface, built with Tauri, React and shadcn/Radix.
 - AuK inference on Metal through MLX, with 32 solver steps.
+- Model memory budgets adapt to RAM, available headroom and macOS memory pressure.
 - Offline processing; no account, analytics or hosted audio service.
 - Original files and previous successful results remain available if processing fails.
 

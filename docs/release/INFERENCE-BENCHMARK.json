@@ -1,0 +1,142 @@
+{
+  "date": "2026-09-22",
+  "machine": "Apple M5 / 32 GiB / macOS 26.6.2 / AC power",
+  "mlx": "0.32.2",
+  "reference_commit": "18a9a0e",
+  "clip_seconds": 18.965333333333334,
+  "output_frames": 455168,
+  "all_pcm_sha256_equal": true,
+  "summary": {
+    "median_seconds": {
+      "reference": 96.02208012500341,
+      "candidate": 95.28242341700388
+    },
+    "speedup": 1.0077627822789772,
+    "time_reduction_percent": 0.7702985678258889,
+    "all_audio_exact": true,
+    "thermal_after": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+  },
+  "runs": [
+    {
+      "round": 0,
+      "variant": "reference",
+      "warmup": true,
+      "elapsed_seconds": 96.5018659999987,
+      "pressure_before": "1",
+      "pressure_after": "1",
+      "exact_audio_match": true,
+      "rss_bytes": 5237391360,
+      "memory_policy": null,
+      "metal_peak_bytes": null
+    },
+    {
+      "round": 0,
+      "variant": "candidate",
+      "warmup": true,
+      "elapsed_seconds": 96.42214695899747,
+      "pressure_before": "1",
+      "pressure_after": "1",
+      "exact_audio_match": true,
+      "rss_bytes": 5255315456,
+      "memory_policy": {
+        "resident": false,
+        "metal_limit": 8589934592,
+        "cache_limit": 536870912,
+        "rss_limit": 15032385536,
+        "reason": "insufficient-headroom"
+      },
+      "metal_peak_bytes": 5592068704
+    },
+    {
+      "round": 1,
+      "variant": "candidate",
+      "warmup": false,
+      "elapsed_seconds": 95.10706641599972,
+      "pressure_before": "1",
+      "pressure_after": "1",
+      "exact_audio_match": true,
+      "rss_bytes": 5251399680,
+      "memory_policy": {
+        "resident": false,
+        "metal_limit": 8589934592,
+        "cache_limit": 536870912,
+        "rss_limit": 15032385536,
+        "reason": "insufficient-headroom"
+      },
+      "metal_peak_bytes": 5442302560
+    },
+    {
+      "round": 1,
+      "variant": "reference",
+      "warmup": false,
+      "elapsed_seconds": 96.02208012500341,
+      "pressure_before": "1",
+      "pressure_after": "1",
+      "exact_audio_match": true,
+      "rss_bytes": 5251989504,
+      "memory_policy": null,
+      "metal_peak_bytes": null
+    },
+    {
+      "round": 2,
+      "variant": "reference",
+      "warmup": false,
+      "elapsed_seconds": 96.30508308299613,
+      "pressure_before": "1",
+      "pressure_after": "1",
+      "exact_audio_match": true,
+      "rss_bytes": 5238472704,
+      "memory_policy": null,
+      "metal_peak_bytes": null
+    },
+    {
+      "round": 2,
+      "variant": "candidate",
+      "warmup": false,
+      "elapsed_seconds": 95.28242341700388,
+      "pressure_before": "1",
+      "pressure_after": "1",
+      "exact_audio_match": true,
+      "rss_bytes": 5254955008,
+      "memory_policy": {
+        "resident": false,
+        "metal_limit": 8589934592,
+        "cache_limit": 536870912,
+        "rss_limit": 15032385536,
+        "reason": "insufficient-headroom"
+      },
+      "metal_peak_bytes": 5498729056
+    },
+    {
+      "round": 3,
+      "variant": "candidate",
+      "warmup": false,
+      "elapsed_seconds": 95.55834099999629,
+      "pressure_before": "1",
+      "pressure_after": "1",
+      "exact_audio_match": true,
+      "rss_bytes": 5242372096,
+      "memory_policy": {
+        "resident": false,
+        "metal_limit": 8589934592,
+        "cache_limit": 536870912,
+        "rss_limit": 15032385536,
+        "reason": "insufficient-headroom"
+      },
+      "metal_peak_bytes": 5566607968
+    },
+    {
+      "round": 3,
+      "variant": "reference",
+      "warmup": false,
+      "elapsed_seconds": 95.40347437500168,
+      "pressure_before": "1",
+      "pressure_after": "1",
+      "exact_audio_match": true,
+      "rss_bytes": 5239406592,
+      "memory_policy": null,
+      "metal_peak_bytes": null
+    }
+  ],
+  "limitation": "One recording and one development Mac. Fresh workers with warm OS caches; no app import/export timing. Small overlapping timing ranges do not establish a meaningful universal speedup."
+}
