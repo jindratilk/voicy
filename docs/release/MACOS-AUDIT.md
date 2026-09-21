@@ -21,3 +21,9 @@ The release bundle owns Python, FFmpeg, model source and weights. User recording
 ## Scope
 
 Voicy remains a Tauri application with a system WebKit view; it is not a SwiftUI rewrite. The integration uses native macOS windows, menus and dialogs. The generative AuK model can alter vocal identity or words; interface polish and software tests do not prove perfect speech restoration. The full offline build is large because it includes model weights. Intel Macs are not supported by the MLX engine.
+
+## Release readiness and enhancement latency — 21 September 2026
+
+The follow-up check passed 35 backend tests and 7 player tests. Code-signature verification passed, but `spctl` rejected the distribution as `Unnotarized Developer ID` and no stapled ticket was found. Finish notarization before a normal public binary release. The approximately 7.4 GiB offline bundle also needs a distribution strategy: [GitHub limits each release asset to under 2 GiB](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases); compressed installer size has not been measured. A second clean-Mac test and a fresh source bootstrap remain outstanding.
+
+The user's main remaining objection is enhancement latency. Treat this as the next engineering priority. The [inference performance audit](INFERENCE-PERFORMANCE-AUDIT.md) documents the measured baseline, repeated model loading, conservative memory policy, worker startup, chunk overhead, MLX optimization experiments and the official four-step AuK-Flash option. **10× acceleration is a research target, not an achieved result or a promise of unchanged sound.** Preserve approved AuK 32 while evaluating faster candidates.
