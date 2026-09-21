@@ -25,3 +25,15 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg libsndfile1
       - run: python -m pip install fastapi uvicorn python-multipart numpy scipy soundfile librosa pytest httpx
       - run: python -m pytest tests/test_api.py tests/test_audio.py tests/test_auk.py tests/test_chunking.py tests/test_startup.py tests/test_processor_audio.py -q
+  website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: landing/package-lock.json
+      - run: npm --prefix landing ci
+      - run: npm --prefix landing test
+      - run: npm --prefix landing run build

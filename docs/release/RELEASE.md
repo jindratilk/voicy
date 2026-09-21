@@ -10,3 +10,7 @@
 8. Publish only the reviewed source allowlist and intended release artifacts. Never publish `.data`, `.auk`, local recordings, research artifacts, runtime logs, signing keys, or local build directories.
 
 The full offline bundle includes several GB of model assets. Do not try to put those into Git history. GitHub release assets have their own size limits; host large model payloads separately or design an explicit verified model-download flow before publishing a smaller online installer. This release uses the full offline bundle and does not silently download models.
+
+## Styled disk image
+
+After notarizing and stapling the app, install the build-only `ds_store`, `mac_alias` and Pillow dependencies and run `python scripts/package-dmg.py --app /path/to/Voicy.app --output /path/to/Voicy-VERSION-arm64.dmg`. Sign the resulting DMG with your Developer ID, submit it with `notarytool`, staple the accepted ticket, then validate Gatekeeper and refresh checksums. The script preserves the source app and refuses to overwrite existing output.

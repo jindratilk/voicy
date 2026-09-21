@@ -19,3 +19,5 @@ The app bundle retains AuK and Qwen license files beside their weights. A docume
 The development tree contains optional older enhancement engines with their upstream notices under `vendor/`. They are not selected by the Voicy interface and are not included in the standalone AuK runtime.
 
 No Adobe code, artwork, model weights or branding is included. The Voicy wave icon is an original SVG drawing.
+
+The website uses Inter under SIL OFL1.1 (see `landing/public/fonts/INTER-LICENSE.txt`), Next.js under MIT, and original Voicy website artwork. The before/after demo contains an ElevenLabs-generated voice mixed with simulated noise and enhanced locally; see `landing/public/audio/README.md`. No Superwhisper source, artwork, testimonials or brand assets are distributed; the site's layout and motion were design references.

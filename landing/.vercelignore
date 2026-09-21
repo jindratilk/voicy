@@ -1,0 +1,5 @@
+.env*
+worker/
+tests/
+node_modules/
+.next/

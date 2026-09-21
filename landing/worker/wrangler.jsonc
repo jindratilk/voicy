@@ -1,0 +1,8 @@
+{
+ "$schema":"node_modules/wrangler/config-schema.json",
+ "name":"voicy-downloads","main":"index.js","compatibility_date":"2026-09-21",
+ "account_id":"3bf057cebb5d135aa761ca7ce05bcba5","workers_dev":true,
+ "r2_buckets":[{"binding":"RELEASES","bucket_name":"voicy-releases"}],
+ "durable_objects":{"bindings":[{"name":"METRICS","class_name":"Metrics"}]},
+ "migrations":[{"tag":"v1","new_sqlite_classes":["Metrics"]}]
+}

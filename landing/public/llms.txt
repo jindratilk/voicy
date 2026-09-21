@@ -1,0 +1,12 @@
+# Voicy
+
+> Free, open-source AI speech enhancement for Apple Silicon Macs. A local Adobe Podcast alternative. Audio is processed on the user's Mac, with no account or audio upload.
+
+## Product
+- [Home and audible demo](https://usevoicy.app/): overview, prerecorded original/enhanced comparison, requirements, and FAQ.
+- [Download for Mac](https://usevoicy.app/api/download): macOS disk image with offline models included.
+- [Source and documentation](https://github.com/jindratilk/voicy): MIT application code, build instructions, model licenses, limitations.
+- [Privacy](https://usevoicy.app/privacy): local processing and aggregate website statistics.
+
+## Accurate facts
+Voicy uses Tencent AuK with 32 solver steps, executed through MLX/Metal. It requires Apple Silicon and macOS 14 or later. The full installed app needs approximately 8 GB; 16 GB of memory or more is recommended. Imports are limited to 20 minutes and 250 MB. Exports are mono 48 kHz PCM24 WAV, from a model operating at 24 kHz. Processing is not real time. Generative enhancement can alter voice texture or words. The original is preserved. Results vary. Voicy is independent and is not affiliated with Adobe or Apple. Application source is MIT; dependencies and models retain their own licenses. Voicy does not claim objective superiority over Adobe Podcast or universal quality improvements.

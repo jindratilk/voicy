@@ -17,13 +17,13 @@
 !/script/
 !/docs/
 !/.github/
-!/.codex/
 /scripts/*
 !/scripts/bootstrap-auk.py
 !/scripts/stage-python.py
 !/scripts/prepare-portable-runtime.py
 !/scripts/build-ffmpeg.sh
 !/scripts/build-voicy.sh
+!/scripts/package-dmg.py
 !/scripts/sign-macos.py
 !/scripts/benchmark-auk-runtime.py
 !/scripts/model-manifest.json
@@ -66,3 +66,13 @@ __pycache__/
 /Clearvoice.app/
 
 .test-venv/
+
+!/landing/
+landing/node_modules/
+landing/.next/
+landing/.vercel/
+landing/.wrangler/
+landing/worker/.wrangler/
+landing/*.tsbuildinfo
+!landing/public/audio/before.wav
+!landing/public/audio/after.wav
