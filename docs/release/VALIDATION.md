@@ -43,3 +43,5 @@ Apple app notarization has since completed; see the publication checks below. A 
 - Google Search Console domain ownership was verified, and the sitemap was successfully processed with two URLs discovered. Indexing and rankings are separate outcomes.
 
 - The published R2 artifact passed byte comparisons at the beginning, middle and end. The public download endpoint returns 200 for full downloads and HEAD, 206 for valid ranges, and 416 for an out-of-bounds range. Temporary authenticated upload routes were removed after publication.
+
+- A complete download through `https://usevoicy.app/api/download` returned HTTP 200 and all **6,527,846,904 bytes**. Its SHA-256 matched the signed original: `b1763ccf03a3c89316fca0ffa0d7a5fc1b66f4499b1a9b668af3abaec45e5a10`. Ticket validation and Gatekeeper both passed on this downloaded copy (`Notarized Developer ID`).
