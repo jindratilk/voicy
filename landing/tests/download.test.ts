@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { site } from "../lib/site";
 import { GET, HEAD } from "../app/api/download/route";
 test("download redirects only when the artifact is available", async (t) => {
   const previous = process.env.DOWNLOAD_URL;
@@ -17,7 +18,7 @@ test("download redirects only when the artifact is available", async (t) => {
   assert.equal(response.status, 302);
   assert.equal(
     response.headers.get("Location"),
-    "https://example.com/download",
+    `https://example.com/download?v=${site.version}`,
   );
 });
 test("unavailable artifact produces a human-readable retry page and bodyless HEAD", async (t) => {
