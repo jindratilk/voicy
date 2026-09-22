@@ -31,3 +31,7 @@ Use Node's `crypto.randomBytes(16).toString('hex')` for a fresh salt and `crypto
 ## Search and AI readability
 
 The website includes canonical URLs, Open Graph and social images, SoftwareApplication and FAQ JSON-LD, robots.txt, sitemap.xml and llms.txt. These help discovery and interpretation; they do not guarantee rankings, rich results or citation by AI systems. Admin and API routes are excluded from indexing. FAQ claims match visible content.
+
+## Release artifact
+
+Upload the signed, notarized and stapled DMG to the release bucket using [R2 multipart upload](https://developers.cloudflare.com/r2/objects/upload-objects/#multipart-upload). Keep the object filename in `worker/index.js` consistent with the release version. The public Worker exposes downloads and authenticated metrics, not upload endpoints. Verify the artifact size, transport checksums and resumed downloads before publishing a GitHub release. Attach the final SHA-256 checksum to the release.

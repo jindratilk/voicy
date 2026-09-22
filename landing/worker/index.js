@@ -1,5 +1,5 @@
 import { DurableObject } from "cloudflare:workers";
-import { parseRange } from "./range.js";
+import { download } from "./download.js";
 const artifact = "Voicy-0.3.0-arm64.dmg";
 const json = (data, status = 200) =>
   Response.json(data, { status, headers: { "Cache-Control": "no-store" } });
@@ -59,51 +59,7 @@ export default {
     const metrics = () => env.METRICS.get(env.METRICS.idFromName("global"));
     if (u.pathname === "/health") return json({ ok: true, product: "Voicy" });
     if (u.pathname === "/download" && ["GET", "HEAD"].includes(req.method)) {
-      const metadata = await env.RELEASES.head(artifact);
-      if (!metadata) return json({ error: "Release not available yet" }, 503);
-      const requestedRange =
-        req.method === "GET" &&
-        (!req.headers.has("If-Range") ||
-          req.headers.get("If-Range") === metadata.httpEtag)
-          ? parseRange(req.headers.get("Range"), metadata.size)
-          : null;
-      if (requestedRange?.invalid)
-        return new Response(null, {
-          status: 416,
-          headers: {
-            "Content-Range": `bytes */${metadata.size}`,
-            "Cache-Control": "no-store",
-          },
-        });
-      const object =
-        req.method === "HEAD"
-          ? metadata
-          : await env.RELEASES.get(
-              artifact,
-              requestedRange ? { range: requestedRange } : undefined,
-            );
-      if (!object) return json({ error: "Release not available yet" }, 503);
-      const headers = new Headers();
-      object.writeHttpMetadata(headers);
-      headers.set("Content-Type", "application/x-apple-diskimage");
-      headers.set("Content-Disposition", `attachment; filename="${artifact}"`);
-      headers.set("ETag", object.httpEtag);
-      headers.set("Accept-Ranges", "bytes");
-      headers.set("Cache-Control", "public, max-age=3600");
-      headers.set("X-Content-Type-Options", "nosniff");
-      let status = 200;
-      if (object.range) {
-        const start =
-          object.range.offset ?? Math.max(0, object.size - object.range.suffix);
-        const length = object.range.length ?? object.size - start;
-        headers.set(
-          "Content-Range",
-          `bytes ${start}-${start + length - 1}/${object.size}`,
-        );
-        headers.set("Content-Length", String(length));
-        status = 206;
-      } else headers.set("Content-Length", String(object.size));
-      if (req.method === "GET" && !req.headers.has("Range"))
+      return download(req, env.RELEASES, artifact, () => {
         ctx.waitUntil(
           metrics()
             .fetch(
@@ -114,9 +70,6 @@ export default {
             )
             .catch(() => {}),
         );
-      return new Response(req.method === "HEAD" ? null : object.body, {
-        status,
-        headers,
       });
     }
     if (
@@ -143,28 +96,6 @@ export default {
           body: await req.text(),
         }),
       );
-    // Upload routes are removed from the public release worker after publication.
-    if (u.pathname === "/upload/start" && req.method === "POST") {
-      const upload = await env.RELEASES.createMultipartUpload(artifact, {
-        httpMetadata: { contentType: "application/x-apple-diskimage" },
-      });
-      return json({ key: upload.key, uploadId: upload.uploadId });
-    }
-    if (u.pathname === "/upload/part" && req.method === "PUT") {
-      const n = Number(u.searchParams.get("part"));
-      if (!Number.isInteger(n) || n < 1 || n > 10000) return json({}, 400);
-      const upload = env.RELEASES.resumeMultipartUpload(
-        artifact,
-        u.searchParams.get("id"),
-      );
-      return json(await upload.uploadPart(n, req.body));
-    }
-    if (u.pathname === "/upload/complete" && req.method === "POST") {
-      const { uploadId, parts } = await req.json();
-      const upload = env.RELEASES.resumeMultipartUpload(artifact, uploadId);
-      const obj = await upload.complete(parts);
-      return json({ size: obj.size, etag: obj.etag });
-    }
     return json({ error: "Not found" }, 404);
   },
 };
