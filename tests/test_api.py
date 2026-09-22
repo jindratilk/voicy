@@ -108,18 +108,14 @@ def test_library_removal_preserves_recoverable_audio(api):
     assert (m.DATA/'.trash'/j['id']/'original.wav').exists()
     assert c.get('/api/jobs/'+j['id']).status_code==404
 
-def test_upload_accepts_more_than_250_mb(api,monkeypatch):
-    import asyncio
+def test_upload_accepts_more_than_250_mb(api,monkeypatch,tmp_path):
     client,module=api
     monkeypatch.setattr(module.executor,'submit',lambda *args:None)
-    class LargeUpload:
-        filename='long.wav'
-        remaining=251
-        async def read(self,size):
-            if not self.remaining:return b''
-            self.remaining-=1
-            return b'\0'*(1024*1024)
-        async def close(self):pass
-    job=asyncio.run(module.upload(LargeUpload()))
+    source=tmp_path/'large.wav'
+    with source.open('wb') as f:f.truncate(251*1024*1024)
+    with source.open('rb') as f:
+        response=client.post('/api/jobs',files={'file':('large.wav',f,'audio/wav')})
+    assert response.status_code==201
+    job=response.json()
     assert job['bytes']==251*1024*1024
     assert (module.DATA/job['id']/'upload').stat().st_size==job['bytes']

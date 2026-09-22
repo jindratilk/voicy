@@ -1,7 +1,7 @@
 export const site = {
   url: "https://usevoicy.app",
   github: "https://github.com/jindratilk/voicy",
-  version: "0.3.0",
+  version: "0.3.1",
 };
 export const faqs = [
   [
@@ -22,7 +22,7 @@ export const faqs = [
   ],
   [
     "What can I enhance?",
-    "Import WAV, MP3, M4A, FLAC, AIFF, or OGG recordings up to 20 minutes and 250 MB. Voicy exports mono, 48 kHz, 24-bit WAV. The enhancement model operates at 24 kHz.",
+    "Import WAV, MP3, M4A, FLAC, AIFF, or OGG recordings without a fixed duration or file-size cap. Available memory and disk space still apply. Voicy exports mono, 48 kHz, 24-bit WAV. The enhancement model operates at 24 kHz.",
   ],
   [
     "How long does enhancement take?",

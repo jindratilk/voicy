@@ -1,6 +1,6 @@
 import { DurableObject } from "cloudflare:workers";
 import { download } from "./download.js";
-const artifact = "Voicy-0.3.0-arm64.dmg";
+const artifact = "Voicy-0.3.1-arm64.dmg";
 const json = (data, status = 200) =>
   Response.json(data, { status, headers: { "Cache-Control": "no-store" } });
 export class Metrics extends DurableObject {

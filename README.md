@@ -71,7 +71,7 @@ Voicy offers **free AI speech enhancement** for people who want to clean up reco
 | Installation | Large download with offline models included |
 | Output | Mono, 48 kHz, 24-bit WAV |
 | Model bandwidth | AuK operates at 24 kHz; resampling does not restore higher frequencies |
-| Input limit | 20 minutes / 250 MB per recording |
+| Recording length and file size | No fixed application cap; available memory and disk space still apply |
 | Speed | Not real time; depends on hardware and duration |
 
 The 8.7-second website demo took about 60 seconds of model processing on an M5 with 32 GB RAM. This is one measurement, not a guarantee for other Macs. Our runtime optimization audit found no meaningful speed improvement beyond measurement variability; we do not claim 10× acceleration. [Performance evidence](docs/release/INFERENCE-PERFORMANCE-AUDIT.md).
