@@ -11,6 +11,7 @@ import numpy as np,soundfile as sf
 from scipy.signal import resample_poly
 from math import gcd
 sys.path.insert(0,str(Path(__file__).absolute().parents[1]))
+from server.audio import write_wav
 from server.chunking import plan_chunks,assemble_chunks
 
 def main():
@@ -73,7 +74,7 @@ def main():
         sf.write(a.output/f'chunk-{index:04}.wav',y,ysr,subtype='FLOAT');chunks.append(y);timings.append(time.perf_counter()-t)
         print(f'Completed chunk {index+1}/{len(plan)} in {timings[-1]:.2f}s',flush=True)
     y,joins=assemble_chunks(x,chunks,plan,24000)
-    sf.write(a.output/'output.wav',y,24000,subtype='FLOAT')
+    write_wav(a.output/'output.wav',y,24000)
     report={'frames':len(y),'sample_rate':24000,'duration':len(y)/24000,'joins':joins,'chunk_seconds_elapsed':timings,'memory_policy':asdict(memory_plan),'memory_downgrades':memory_downgrades,'metal_peak_bytes':mx.get_peak_memory(),'resident_high_water_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'limitations':'Automatic low-energy joins are not guaranteed speech pauses. Timing drift and voice identity require validation. All chunks are retained in memory; this experimental runner is not yet suitable for unbounded recordings.'}
     (a.output/'result.json').write_text(json.dumps(report,indent=2));print(report,flush=True)
 

@@ -29,11 +29,10 @@ from .auk import available as auk_available
 ROOT = Path(__file__).resolve().parents[1]
 DATA = Path(os.getenv('CLEARVOICE_DATA', ROOT / '.data'))
 DATA.mkdir(parents=True, exist_ok=True)
-MAX_BYTES = 250 * 1024 * 1024
 ACTIVE = {'queued', 'analyzing', 'enhancing'}
 logger = logging.getLogger('clearvoice')
 SESSION_TOKEN = os.getenv('VOICY_SESSION_TOKEN', '')
-VERSION = '0.3.0'
+VERSION = '0.3.1'
 app = FastAPI(title='Voicy', docs_url=None, redoc_url=None, openapi_url=None)
 subscribers = set()
 
@@ -221,8 +220,6 @@ async def upload(file: UploadFile = File(...)):
         with (path/'upload').open('wb') as out:
             while chunk := await file.read(1024*1024):
                 total += len(chunk)
-                if total > MAX_BYTES:
-                    raise HTTPException(413, 'Choose a file smaller than 250 MB.')
                 out.write(chunk)
         if total == 0:
             raise HTTPException(400, 'The selected file is empty.')

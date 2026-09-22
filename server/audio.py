@@ -6,10 +6,9 @@ import numpy as np
 import soundfile as sf
 
 SAMPLE_RATE = 48000
-MAX_SECONDS = 20 * 60
 
 
-def command(args, timeout=120):
+def command(args, timeout=None):
     try:
         return subprocess.run(args, capture_output=True, check=True, timeout=timeout)
     except FileNotFoundError as e:
@@ -21,15 +20,13 @@ def command(args, timeout=120):
 
 
 def decode(source: Path, target: Path):
-    # Decode with a hard duration bound even when container metadata is false.
+    # Read the complete recording; RF64 supports WAV payloads above 4 GiB.
     command(['ffmpeg', '-nostdin', '-v', 'error', '-y', '-protocol_whitelist', 'file,pipe',
-             '-i', str(source), '-map', '0:a:0', '-vn', '-t', str(MAX_SECONDS + 1),
-             '-ac', '1', '-ar', str(SAMPLE_RATE), '-c:a', 'pcm_f32le', str(target)])
+             '-i', str(source), '-map', '0:a:0', '-vn',
+             '-ac', '1', '-ar', str(SAMPLE_RATE), '-c:a', 'pcm_f32le', '-rf64', 'auto', str(target)])
     x, sr = sf.read(target, dtype='float32')
     if len(x) < sr // 4:
         raise ValueError('Choose a recording at least a quarter of a second long.')
-    if len(x) > sr * MAX_SECONDS:
-        raise ValueError('This recording exceeds the 20-minute limit.')
     if not np.isfinite(x).all():
         raise ValueError('The recording contains invalid audio samples.')
     return x, sr
@@ -46,14 +43,21 @@ def describe(x, sr=SAMPLE_RATE):
                 peaks=[round(float(np.max(np.abs(b))), 5) for b in bins])
 
 
+def write_wav(path, audio, sr, subtype='FLOAT'):
+    # RIFF uses 32-bit chunk sizes. Keep ordinary WAV for smaller recordings.
+    bytes_per_sample = 3 if subtype == 'PCM_24' else 4
+    fmt = 'RF64' if audio.size * bytes_per_sample >= 2**32 - 1024 else 'WAV'
+    sf.write(path, audio, sr, subtype=subtype, format=fmt)
+
+
 def master(x, sr, target: Path, level: bool):
     """Two-pass BS.1770 loudness normalization; avoid boosting digital silence."""
     raw = target.with_name('premaster.wav')
-    sf.write(raw, x, sr, subtype='FLOAT')
+    write_wav(raw, x, sr)
     if not level or np.max(np.abs(x)) < 1e-6:
         # Constant peak protection avoids clipping without squeezing quiet passages.
         peak = max(float(np.max(np.abs(x))), 1e-9)
-        sf.write(target, x * min(1., .89125 / peak), sr, subtype='PCM_24')
+        write_wav(target, x * min(1., .89125 / peak), sr, subtype='PCM_24')
         raw.unlink(missing_ok=True)
         return
     result = command(['ffmpeg','-nostdin','-hide_banner','-i',str(raw),'-af',
@@ -61,11 +65,11 @@ def master(x, sr, target: Path, level: bool):
     log = result.stderr.decode(errors='replace')
     m = json.loads(log[log.rfind('{'):log.rfind('}')+1])
     if not all(np.isfinite(float(m[k])) for k in ('input_i','input_tp','input_lra','input_thresh','target_offset')):
-        sf.write(target, x * min(1., .89125 / max(float(np.max(np.abs(x))), 1e-9)), sr, subtype='PCM_24')
+        write_wav(target, x * min(1., .89125 / max(float(np.max(np.abs(x))), 1e-9)), sr, subtype='PCM_24')
     else:
         filt = (f"loudnorm=I=-16:TP=-1.5:LRA=11:measured_I={m['input_i']}:"
                 f"measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}:"
                 f"measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
         command(['ffmpeg','-nostdin','-v','error','-y','-i',str(raw),'-af',filt,
-                 '-ar',str(sr),'-c:a','pcm_s24le',str(target)])
+                 '-ar',str(sr),'-c:a','pcm_s24le','-rf64','auto',str(target)])
     raw.unlink(missing_ok=True)

@@ -45,3 +45,13 @@ Apple app notarization has since completed; see the publication checks below. A 
 - The published R2 artifact passed byte comparisons at the beginning, middle and end. The public download endpoint returns 200 for full downloads and HEAD, 206 for valid ranges, and 416 for an out-of-bounds range. Temporary authenticated upload routes were removed after publication.
 
 - A complete download through `https://usevoicy.app/api/download` returned HTTP 200 and all **6,527,846,904 bytes**. Its SHA-256 matched the signed original: `b1763ccf03a3c89316fca0ffa0d7a5fc1b66f4499b1a9b668af3abaec45e5a10`. Ticket validation and Gatekeeper both passed on this downloaded copy (`Notarized Developer ID`).
+
+## Recording limits removed — 0.3.1
+
+- Removed the 20-minute duration and 250 MB import caps from decoding, HTTP upload, native file selection and the desktop interface. Decoding no longer truncates the source with FFmpeg `-t`.
+- Removed fixed two-minute processing/transfer deadlines. Native requests retain a connection-establishment timeout, which does not limit recording duration or transfer duration.
+- RF64 is selected for large WAV outputs; ordinary files retain the previous PCM subtype. Actual RF64 input decoding passed with the bundled audio-only FFmpeg.
+- Regression tests accept an upload larger than 250 MB and preserve audio after the former 20-minute boundary. The backend suite passed 46 tests with four MLX-only skips; an additional RF64 regression passed afterward. Desktop player tests: 7 passed. Desktop production build, Rust release build, website production build and 14 website tests passed.
+- A two-hour recording of 691,200,044 input bytes passed decoding, analysis and PCM24 export with all 345,600,000 frames retained, including its final tone. This verifies long-file handling, not two hours of AI inference or a guarantee of arbitrary-length processing on every machine.
+- On a fixed short input, decoding and both mastering modes returned PCM identical to 0.3.0. Model settings, weights and sampling arithmetic were not changed. Available RAM and disk space still bound practical capacity; the model runner retains audio and chunks in memory.
+- The signed 0.3.0 and 0.3.1 application runtimes processed the same three-second speech sample through AuK and mastering. All 144,000 PCM samples matched exactly (maximum difference 0). The harness uses the application's isolated Python environment and private cache directories; an initial harness invocation incorrectly included user-site packages and was corrected before this comparison.

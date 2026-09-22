@@ -47,7 +47,7 @@ fn prefs() -> Preferences {
 }
 fn client() -> Result<reqwest::blocking::Client, reqwest::Error> {
     reqwest::blocking::Client::builder()
-        .timeout(Duration::from_secs(120))
+        .connect_timeout(Duration::from_secs(10))
         .build()
 }
 fn show(app: &tauri::AppHandle) {
@@ -116,8 +116,8 @@ fn set_activity(busy: bool, exportable: bool, app: tauri::AppHandle) {
 }
 fn upload_path(app: &tauri::AppHandle, path: PathBuf) -> Result<serde_json::Value, String> {
     let size = fs::metadata(&path).map_err(|e| e.to_string())?.len();
-    if size == 0 || size > 250 * 1024 * 1024 {
-        return Err("Choose an audio file between 1 byte and 250 MB.".into());
+    if size == 0 {
+        return Err("The selected file is empty.".into());
     }
     let state = app.state::<Backend>();
     let url = state.url.lock().unwrap().clone();

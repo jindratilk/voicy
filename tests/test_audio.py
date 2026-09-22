@@ -38,3 +38,33 @@ def test_corrupt_and_too_short_input(tmp_path):
 def test_cancel_before_model_load():
     e=threading.Event();e.set()
     with pytest.raises(Cancelled):Engines().run(np.zeros(48000,dtype=np.float32),'denoise',80,'natural',lambda *_:None,e)
+
+def test_decode_preserves_recording_beyond_twenty_minutes(tmp_path):
+    source=tmp_path/'long.wav'
+    sr=8000
+    block=np.zeros(sr,dtype=np.float32)
+    with sf.SoundFile(source,'w',samplerate=sr,channels=1,subtype='PCM_16') as f:
+        for _ in range(20*60+1):f.write(block)
+        f.write(.2*np.sin(np.arange(sr)*2*np.pi*440/sr))
+    x,rate=decode(source,tmp_path/'decoded.wav')
+    assert rate==48000 and len(x)==(20*60+2)*rate
+    assert np.max(np.abs(x[-rate:]))>.1
+
+
+def test_large_wav_selects_rf64_without_changing_pcm(monkeypatch,tmp_path):
+    from server.audio import write_wav
+    calls=[]
+    monkeypatch.setattr(sf,'write',lambda *a,**kw:calls.append((a,kw)))
+    class LargeAudio:
+        size=2**30
+    audio=LargeAudio()
+    write_wav(tmp_path/'large.wav',audio,48000)
+    assert calls[0][0][1] is audio
+    assert calls[0][1]=={'subtype':'FLOAT','format':'RF64'}
+
+def test_rf64_recording_decodes_with_bundled_ffmpeg(tmp_path):
+    x=.2*np.sin(np.arange(48000)*2*np.pi*440/48000)
+    source=tmp_path/'rf64.wav'
+    sf.write(source,x,48000,subtype='FLOAT',format='RF64')
+    y,sr=decode(source,tmp_path/'decoded.wav')
+    assert sr==48000 and np.array_equal(y,x.astype(np.float32))

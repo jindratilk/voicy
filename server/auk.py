@@ -7,6 +7,7 @@ import tempfile
 import time
 import numpy as np
 import soundfile as sf
+from .audio import write_wav
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE = ROOT.parents[1]
@@ -37,7 +38,7 @@ def enhance(audio, progress, cancel, cancelled):
     python, source, models = configuration()
     with tempfile.TemporaryDirectory(prefix='clearvoice-auk-') as directory:
         temp=Path(directory);inp=temp/'input.wav';out=temp/'result'
-        sf.write(inp,audio,48000,subtype='FLOAT')
+        write_wav(inp,audio,48000)
         env={**os.environ,'PYTHONPATH':str(source),'HF_HUB_OFFLINE':'1','TRANSFORMERS_OFFLINE':'1'}
         command=[str(python),'-u',str(ROOT/'experiments/enhance_auk_local.py'),str(inp),'--output',str(out),'--models',str(models)]
         progress(.03,'Loading AuK locally…')
