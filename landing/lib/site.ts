@@ -18,7 +18,7 @@ export const faqs = [
   ],
   [
     "Which Macs can run Voicy?",
-    "An Apple Silicon Mac with macOS 14 or newer. Intel Macs, Windows, and mobile devices are not supported in this release. Allow about 8 GB for the installed app, plus space for recordings. 16 GB of memory or more is recommended; memory use adapts to available headroom.",
+    "An Apple Silicon Mac with macOS 14 or newer. Intel Macs, Windows, and mobile devices are not supported in this release. The download is about 6.5 GB with models included. Allow about 8 GB for the installed app, plus space for recordings. 16 GB of memory or more is recommended; memory use adapts to available headroom.",
   ],
   [
     "What can I enhance?",

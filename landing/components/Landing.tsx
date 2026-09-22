@@ -295,7 +295,7 @@ export default function Landing() {
               </a>
             </div>
             <span className="requirements">
-              Apple Silicon · macOS 14+ · No account
+              Apple Silicon · macOS 14+ · 6.5 GB download
             </span>
           </div>
           <a href="#demo" className="scroll-cue">

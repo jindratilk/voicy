@@ -46,7 +46,7 @@ The demo uses an ElevenLabs-generated voice with simulated laptop-fan noise and 
 2. Open the disk image and drag **Voicy** into **Applications**.
 3. Open a recording, enhance it, compare both versions, and export.
 
-**Requirements:** Apple Silicon, macOS 14 or newer. Approximately 8 GB for the installed offline app, plus space for your recordings. 16 GB of unified memory or more is recommended. Intel Macs, Windows and mobile devices are not supported in this release.
+**Requirements:** Apple Silicon, macOS 14 or newer. Approximately 6.5 GB to download and 8 GB for the installed offline app, plus space for your recordings. 16 GB of unified memory or more is recommended. Intel Macs, Windows and mobile devices are not supported in this release.
 
 | Action | Shortcut |
 | --- | --- |
