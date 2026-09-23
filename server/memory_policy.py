@@ -70,3 +70,22 @@ def should_release_resident(snapshot: MemorySnapshot) -> bool:
     """
     reserve = max(3 * GIB, snapshot.total // 8)
     return snapshot.pressure != "normal" or snapshot.available < reserve
+
+
+def can_retain_vae(snapshot: MemorySnapshot, active_bytes: int = 0) -> bool:
+    """Six GiB projected Metal peak includes the retained VAE and two chunks.
+
+    Reserve scales with physical RAM; unavailable pressure data disables reuse.
+    The observed Base32 peak was below this bound on the qualification Mac.
+    """
+    projected_peak = 6 * GIB
+    if snapshot.total <= 0 or not 0 <= active_bytes <= projected_peak:
+        return False
+    reserve = max(3 * GIB, snapshot.total // 8)
+    return (snapshot.pressure == 'normal'
+            and snapshot.available >= reserve + projected_peak - active_bytes)
+
+
+def grouped_window_size(snapshot: MemorySnapshot) -> int:
+    """Use two independent chunks only when current headroom permits it."""
+    return 2 if can_retain_vae(snapshot) else 1

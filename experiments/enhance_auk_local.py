@@ -40,6 +40,20 @@ def main():
     if resident and not memory_plan.resident:
         p.error('Resident mode requires normal pressure and sufficient free memory; use auto or sequential.')
     mx.set_memory_limit(memory_plan.metal_limit);mx.set_cache_limit(memory_plan.cache_limit)
+    # The exact kernels are qualified against this pinned MLX version. Older
+    # developer runtimes retain the original execution path.
+    import importlib.metadata
+    optimized = importlib.metadata.version('mlx') == '0.32.2'
+    optimized = optimized and os.environ.get('VOICY_DISABLE_EXACT') != '1'
+    if optimized:
+        from server.auk_exact import install
+        install()
+        from server.auk_exact.native_frontend import install as install_frontend
+        native = Path(__file__).resolve().parents[1]/'server/auk_exact/native_frontend.dylib'
+        if native.is_file():
+            install_frontend()
+        # Staged execution owns model lifetime instead of keeping all stacks.
+        resident = False
     print('Memory policy:',json.dumps({'snapshot':asdict(snapshot),'plan':asdict(memory_plan),'resident':resident}),flush=True)
     install_embedding_reuse()
     def watch():
@@ -51,28 +65,32 @@ def main():
     engine=AukMLX(str(a.models/'mlx'),str(a.models/'original/config.yaml'),str(a.models/'qwen'),bits=8,group_size=64,sequential=not resident)
     a.output.mkdir(parents=True)
     prompt='Preserve all speakers, remove noise and reverberation, and output clean speech of the same length.'
-    config={'input':str(a.input.absolute()),'input_sample_rate':sr,'output_sample_rate':24000,'plan':[c.__dict__ for c in plan],'nfe':a.nfe,'seed':2026,'instruction':prompt,'bits':8,'group_size':64,'cfg_strength':2.,'memory_policy':asdict(memory_plan),'initial_resident':resident}
+    config={'input':str(a.input.absolute()),'input_sample_rate':sr,'output_sample_rate':24000,'plan':[c.__dict__ for c in plan],'nfe':a.nfe,'seed':2026,'instruction':prompt,'bits':8,'group_size':64,'cfg_strength':2.,'memory_policy':asdict(memory_plan),'initial_resident':resident,'exact_execution':optimized}
     (a.output/'config.json').write_text(json.dumps(config,indent=2))
     chunks=[];timings=[];memory_downgrades=0
-    for index,c in enumerate(plan):
-        if not engine.sequential:
-            current=read_snapshot()
-            if should_release_resident(current):
-                # Switch only between complete chunks; weights/seed/arithmetic stay unchanged.
-                engine.vae=engine.dit=engine.thinker=None
-                engine._release()
-                engine.sequential=True
-                mx.set_cache_limit(256*1024**2)
-                memory_downgrades+=1
-                print('Memory pressure: switching to sequential execution.',flush=True)
-        chunk=np.pad(x[c.start:c.start+c.valid_frames],(0,c.frames-c.valid_frames))
-        path=a.output/f'input-{index:04}.wav';sf.write(path,chunk,24000,subtype='FLOAT')
-        print(f'Starting chunk {index+1}/{len(plan)}',flush=True)
-        t=time.perf_counter()
-        y,ysr=engine.generate(prompt,audio_path=str(path),opts=GenerateOptions(gen_seconds=c.frames/24000,nfe=a.nfe,cfg_strength=2.,sway_sampling_coef=-1.,seed=2026))
-        if ysr!=24000 or len(y)!=c.frames or not np.isfinite(y).all():raise ValueError('Invalid model output')
-        sf.write(a.output/f'chunk-{index:04}.wav',y,ysr,subtype='FLOAT');chunks.append(y);timings.append(time.perf_counter()-t)
-        print(f'Completed chunk {index+1}/{len(plan)} in {timings[-1]:.2f}s',flush=True)
+    if optimized:
+        from server.auk_exact.scheduling import generate_chunks
+        chunks,timings=generate_chunks(engine,x,plan,a.output,prompt,a.nfe)
+    else:
+        for index,c in enumerate(plan):
+            if not engine.sequential:
+                current=read_snapshot()
+                if should_release_resident(current):
+                    # Switch only between complete chunks; weights/seed/arithmetic stay unchanged.
+                    engine.vae=engine.dit=engine.thinker=None
+                    engine._release()
+                    engine.sequential=True
+                    mx.set_cache_limit(256*1024**2)
+                    memory_downgrades+=1
+                    print('Memory pressure: switching to sequential execution.',flush=True)
+            chunk=np.pad(x[c.start:c.start+c.valid_frames],(0,c.frames-c.valid_frames))
+            path=a.output/f'input-{index:04}.wav';sf.write(path,chunk,24000,subtype='FLOAT')
+            print(f'Starting chunk {index+1}/{len(plan)}',flush=True)
+            t=time.perf_counter()
+            y,ysr=engine.generate(prompt,audio_path=str(path),opts=GenerateOptions(gen_seconds=c.frames/24000,nfe=a.nfe,cfg_strength=2.,sway_sampling_coef=-1.,seed=2026))
+            if ysr!=24000 or len(y)!=c.frames or not np.isfinite(y).all():raise ValueError('Invalid model output')
+            sf.write(a.output/f'chunk-{index:04}.wav',y,ysr,subtype='FLOAT');chunks.append(y);timings.append(time.perf_counter()-t)
+            print(f'Completed chunk {index+1}/{len(plan)} in {timings[-1]:.2f}s',flush=True)
     y,joins=assemble_chunks(x,chunks,plan,24000)
     write_wav(a.output/'output.wav',y,24000)
     report={'frames':len(y),'sample_rate':24000,'duration':len(y)/24000,'joins':joins,'chunk_seconds_elapsed':timings,'memory_policy':asdict(memory_plan),'memory_downgrades':memory_downgrades,'metal_peak_bytes':mx.get_peak_memory(),'resident_high_water_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'limitations':'Automatic low-energy joins are not guaranteed speech pauses. Timing drift and voice identity require validation. All chunks are retained in memory; this experimental runner is not yet suitable for unbounded recordings.'}

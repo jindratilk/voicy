@@ -1,0 +1,35 @@
+{
+  "version": "0.3.2",
+  "recording_seconds": 18.965333333333334,
+  "sample_rate": 24000,
+  "frames": 455168,
+  "exact_native_float_bits_all_runs": true,
+  "median_seconds": {
+    "reference": 119.32293660449795,
+    "candidate": 71.81777231249725
+  },
+  "speedup": 1.661468084602983,
+  "runs": [
+    {
+      "variant": "reference",
+      "seconds": 132.53722649998963,
+      "peak_metal_bytes": 4690424416
+    },
+    {
+      "variant": "candidate",
+      "seconds": 77.67906683299225,
+      "peak_metal_bytes": 5298156512
+    },
+    {
+      "variant": "candidate",
+      "seconds": 65.95647779200226,
+      "peak_metal_bytes": 5354264710
+    },
+    {
+      "variant": "reference",
+      "seconds": 106.10864670900628,
+      "peak_metal_bytes": 4810011220
+    }
+  ],
+  "scope": "Two interleaved runs per variant on the same M5 32GB Mac with other user workloads active. Complete worker lifetime including output writing; excludes app import/master/export. Not an isolated performance benchmark or cross-device guarantee."
+}

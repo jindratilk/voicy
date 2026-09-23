@@ -1,11 +1,14 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "Voicy",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "identifier": "com.voicy.desktop",
   "build": {
     "frontendDist": "../web/dist",
-    "beforeBuildCommand": "npm run build"
+    "beforeBuildCommand": {
+      "script": "npm run build",
+      "cwd": "../web"
+    }
   },
   "app": {
     "windows": [],

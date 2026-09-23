@@ -22,6 +22,7 @@
 !/scripts/stage-python.py
 !/scripts/prepare-portable-runtime.py
 !/scripts/build-ffmpeg.sh
+!/scripts/build-native-frontend.py
 !/scripts/build-voicy.sh
 !/scripts/package-dmg.py
 !/scripts/sign-macos.py

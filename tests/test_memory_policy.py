@@ -52,3 +52,17 @@ def test_snapshot_failure_falls_back(monkeypatch):
         raise OSError('unavailable')
     monkeypatch.setattr('server.memory_policy.subprocess.check_output', missing)
     assert read_snapshot() == MemorySnapshot(0, 0, 'unknown')
+
+
+def test_grouped_stage_memory_budgets():
+    from server.memory_policy import can_retain_vae, grouped_window_size
+    for total in (16, 32, 128):
+        reserve = max(3*GIB, total*GIB//8)
+        enough = MemorySnapshot(total*GIB, reserve+6*GIB, 'normal')
+        assert grouped_window_size(enough) == 2
+        assert not can_retain_vae(MemorySnapshot(total*GIB, reserve+6*GIB-1, 'normal'))
+        for pressure in ('warning', 'critical', 'unknown'):
+            assert grouped_window_size(MemorySnapshot(total*GIB, total*GIB, pressure)) == 1
+    assert can_retain_vae(MemorySnapshot(32*GIB, 5*GIB, 'normal'), 5*GIB)
+    assert not can_retain_vae(MemorySnapshot(32*GIB, 4*GIB-1, 'normal'), 6*GIB)
+    assert not can_retain_vae(MemorySnapshot(0, 0, 'unknown'))

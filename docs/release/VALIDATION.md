@@ -59,3 +59,34 @@ Apple app notarization has since completed; see the publication checks below. A 
 - The 0.3.1 app and DMG were accepted by Apple; stapled-ticket validation and Gatekeeper checks passed for both. Apple returned the same eleven warnings concerning bundled vendor test-data archives noted for 0.3.0, with no error-severity issues. Final DMG SHA-256: `6152bcf9b856fc714c7ad3f2427331eb364713b4aac84f5011cb11fcd87021d8`.
 - Website redirects now include the release version to avoid reusing a previously cached installer. All 14 website tests and the production build passed after this change.
 - The final R2 upload verified all 98 part MD5 values and the completed multipart ETag against local data. Public download checks passed after deployment propagated: HTTP 200 with the 0.3.1 filename and all 6,512,579,193 bytes declared, exact beginning/middle/end byte ranges, and HTTP 416 for an out-of-bounds range. This release used complete upload integrity checks plus public range checks, rather than a second full download. The temporary authenticated uploader Worker was deleted after verification.
+
+## Exact AuK execution — 0.3.2
+
+The model, weights, 32 sampling steps, q8/group64 precision, CFG 2, seed 2026,
+12-second context, four-second overlap and audio joins are unchanged.
+
+- Exact-order Metal operations preserve individual float operations; final-block
+  feed-forward work for discarded context tokens is omitted. Text projections
+  are reused only within the same sampling call.
+- Two independent chunks share loaded model stages when current headroom allows.
+  Under pressure the worker uses one chunk and releases retained VAE weights.
+  Synthetic budget tests cover 16, 32 and 128 GiB, normal/unknown/critical pressure
+  and boundary conditions. These are policy tests, not physical-device benchmarks.
+- The native ATen frontend is built against bundled Torch 2.14.0 with a relative
+  loader path. It checks Qwen configuration, tokenizer and processor hashes before
+  using fixed input-independent constants. Recording features are always fresh.
+- The integrated worker matched all 455,168 native float32 samples of the approved
+  18.965-second recording, including the overlap join. Four interleaved packaged
+  runtime runs also matched bit for bit. See `EXACT-EXECUTION-0.3.2.json` for times,
+  memory and limitations. Float WAV verification compares `uint32` views of the
+  native float32 samples; it never rounds those samples to integer PCM.
+- 23 targeted worker/chunking/memory tests, seven UI tests, real Metal operation
+  equivalence and existing real-MLX embedding reuse tests passed. Vite and the
+  native Tauri release build passed.
+
+The earlier isolated research benchmark measured 1.292× (84.387 → 65.301 s).
+Release qualification under concurrent user load measured 1.661× using two
+runs per variant; that more variable result is not a stronger general speed claim.
+All hardware results above are from one M5 Mac with 32 GB RAM. No 10× or
+cross-hardware quality/performance claim is made. AuK-Flash and distillation
+experiments are not included in the release.

@@ -1,0 +1,14 @@
+{
+  "instruction": "Preserve all speakers, remove noise and reverberation, and output clean speech of the same length.",
+  "chunk_samples_24k": 288000,
+  "audio_samples_16k": 192000,
+  "n_fft": 400,
+  "hop_length": 160,
+  "n_samples": 4800000,
+  "dither": 0.0,
+  "source_hashes": {
+    "config.json": "20790f362c37a1718a3e764f597ae33dfc20177399762018dffaabf8321d4dd1",
+    "tokenizer.json": "8441917e39ae0244e06d704b95b3124795cec478e297f9afac39ba670d7e9d99",
+    "preprocessor_config.json": "b47055ce61463ce143e9aab741d55c0aa520801a0a5d63be73c5b17cecb6bc69"
+  }
+}

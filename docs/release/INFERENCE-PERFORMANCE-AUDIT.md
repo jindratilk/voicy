@@ -103,3 +103,10 @@ Under the updated constraint, the practical route is to identify the bottleneck,
 - [MLX compilation documentation](https://ml-explore.github.io/mlx/build/html/usage/compile.html): compilation, tracing and optimization behavior. No source benchmark is assumed to transfer directly to Voicy.
 
 See also [release validation](VALIDATION.md) and [macOS audit](MACOS-AUDIT.md).
+
+## 0.3.2 exact execution update
+
+The approved Base32 optimization is integrated; see [qualification evidence](VALIDATION.md#exact-auk-execution--032)
+and [packaged run measurements](EXACT-EXECUTION-0.3.2.json). The previous 10×
+research target was not achieved without quality loss. This release uses only
+Base32 execution changes and retains the original numerical settings.

@@ -473,7 +473,7 @@ dependencies = [
 
 [[package]]
 name = "clearvoice-desktop"
-version = "0.3.1"
+version = "0.3.2"
 dependencies = [
  "libc",
  "reqwest 0.12.28",

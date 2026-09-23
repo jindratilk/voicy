@@ -13,6 +13,7 @@ if not (target/'python/bin/python3').exists():
 for folder in ['server']:
     (target/folder).mkdir(parents=True,exist_ok=True)
     subprocess.run(['rsync','-a','--exclude=__pycache__',str(root/folder)+'/',str(target/folder)+'/'],check=True)
+subprocess.run([str(target/'python/bin/python3'), '-s', str(root/'scripts/build-native-frontend.py'), '--target', str(target/'server/auk_exact')], check=True)
 (target/'experiments').mkdir(exist_ok=True)
 subprocess.run(['cp',str(root/'experiments/enhance_auk_local.py'),str(target/'experiments/enhance_auk_local.py')],check=True)
 for name in ['source','models','SOURCE-LICENSE','requirements.lock']:

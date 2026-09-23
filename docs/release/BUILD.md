@@ -59,3 +59,19 @@ Save the approved pre-change runner outside the checkout, then compare it with t
 ```
 
 The output directory must not already exist. This performs eight sequential full-file runs: one warmup per variant, followed by three measured runs per variant in alternating order. It retains private audio and logs locally, checks exact float-audio equality, records memory pressure and reports medians. Do not commit this output or compare a cold original run with a warm candidate run. Close other compute-intensive workloads; record the machine and power conditions. No input is uploaded. See the [performance audit](INFERENCE-PERFORMANCE-AUDIT.md) for the measured scope and limitations.
+
+## AuK native frontend (0.3.2)
+
+`prepare-portable-runtime.py` builds `server/auk_exact/native_frontend.dylib`
+against the bundled Torch 2.14.0 headers and libraries. Xcode Command Line Tools
+are required. Library lookup is relative to the dylib inside the bundle, never
+an absolute development path. The source and fixed input-independent token/mel
+constants are included; no recording features or research audio are shipped.
+
+For development, build it with `.auk/venv/bin/python scripts/build-native-frontend.py`.
+Without this library the worker keeps the original Python feature extractor.
+Exact GPU optimizations require MLX 0.32.2; other versions keep the original
+execution path. `VOICY_DISABLE_EXACT=1` is a diagnostic fallback for comparison.
+Sampling remains Base32, q8/group64, CFG 2 and seed 2026. Two independent chunks
+share model loading when memory allows; low headroom selects one chunk and
+releases the VAE between stages. There is no tensor batching or reduced step count.
