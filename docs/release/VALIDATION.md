@@ -90,3 +90,22 @@ runs per variant; that more variable result is not a stronger general speed clai
 All hardware results above are from one M5 Mac with 32 GB RAM. No 10× or
 cross-hardware quality/performance claim is made. AuK-Flash and distillation
 experiments are not included in the release.
+
+Release qualification additionally exercised enhancement and final 48 kHz PCM24
+mastering directly from the signed, relocated application: all 144,000 exported
+samples matched 0.3.1. The app and final DMG were accepted by Apple, stapled and
+accepted by Gatekeeper. The mounted DMG passed its filesystem checksum, app
+signature and ticket checks; all 27 relevant runtime code files matched the
+qualified app. It contains no Voicy recording library.
+
+Apple reported the previous eleven vendor test-data archive warnings and one
+additional warning for `constants.npz`. The added archive passed ZIP CRC checks
+and contains only two numeric NumPy arrays (token IDs and mel filters), with no
+executables or object/pickle arrays. There were no error-severity issues.
+
+The final installer is 6,513,528,823 bytes. SHA-256:
+`7e23011e3169adff45be0126d1af9bed2e25338e15b69beb5550ec31d8fa3081`.
+R2 upload verified all 98 part MD5 values and the completed multipart ETag against
+the local final artifact. Public verification checks the declared filename/size,
+exact beginning/middle/end byte ranges and rejection of an invalid range; it does
+not claim a second complete download.
