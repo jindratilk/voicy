@@ -86,3 +86,11 @@ The user authorizes normal implementation/deployment decisions for Voicy. Preser
 | E03 | Reproducible diverse samples provide value and a reason for editorial citations      | Pending licensed sample set and methodology                             | Artifacts/checksums, negative cases, external citations independently verified                                                    |
 
 Keep STATE.json current with shipped head, deployment, GSC state, scheduler state, blockers and next concrete action. Keep metric exports immutable and dated. Do not overwrite missing outcomes with optimistic prose.
+
+## Initial execution outcome — 15 October 2026
+
+PR [#1](https://github.com/jindratilk/voicy/pull/1) merged after all CI jobs passed. Production source `41ec8e24d7bb82efbfd0acde9bf93bf6c53dcfd6`, deployment `dpl_DZhmKrdCLuDDyr58dmX5MW54guu3`, is READY and served by usevoicy.app. The page, atmospheric background, internal links and three-URL sitemap are live. Autoreview clean, 14 landing tests and production build pass, dependency audit zero known vulnerabilities. Public pages/audio and canonical/JSON-LD checked; production download returns 302 and artifact HEAD 200 at the declared size. Preview download is unconfigured (503); this is distinct from verified production behavior.
+
+Sitemap resubmission succeeded. New comparison URL was discovered but not indexed at first inspection; Google accepted the indexing request into its priority crawl queue. Performance reports were still processing, so no ranking/click/impression outcome is claimed.
+
+Native heartbeat `voicy-seo-growth` is now ACTIVE, confirmed in both TOML definition and live automation index after delayed reconciliation. Intended daily times are 09:15 and 17:15 Europe/Prague; next nominal run 16 October 09:15, indexed actual run 09:16:35 with scheduler jitter. Thursday owner reports; unchanged checks quiet. This requires Mac/Codex availability. Earlier registration uncertainty is resolved. Follow STATE.json for current checkpoint and pending work.
