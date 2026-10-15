@@ -77,3 +77,9 @@ landing/worker/.wrangler/
 landing/*.tsbuildinfo
 !landing/public/audio/before.wav
 !landing/public/audio/after.wav
+
+# Public growth strategy and sanitized checkpoint only.
+!/docs/growth/
+/docs/growth/*
+!/docs/growth/STRATEGY.md
+!/docs/growth/STATE.json

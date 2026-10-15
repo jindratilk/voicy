@@ -1,0 +1,58 @@
+{
+  "updated": "2026-10-15",
+  "goal_status": "active",
+  "deadline": "2026-12-31",
+  "target_query": "Adobe podcast alternative",
+  "primary_market_assumption": "US English, desktop and mobile reported separately",
+  "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
+  "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
+  "shipped_commit": null,
+  "deployment": null,
+  "gsc": {
+    "property": "https://usevoicy.app/",
+    "verified": true,
+    "verification_method": "Domain name provider; automatic ownership verification observed in Chrome",
+    "home_indexed": true,
+    "sitemap_status": "Success; existing submission 2026-09-22, last read 2026-10-06, 2 discovered pages",
+    "performance": "Processing; UI asks to check again in approximately one day",
+    "baseline_rank": null,
+    "baseline_clicks": null,
+    "baseline_impressions": null,
+    "comparison_indexed": null
+  },
+  "scheduler": {
+    "intended_cadence": "Daily 09:15 and 17:15 Europe/Prague",
+    "id": "voicy-seo-growth",
+    "status": "NOT REGISTERED; native TOML prepared PAUSED",
+    "blocker": "automation_update not exposed; local TOML did not reconcile into live automation index; Codex app UI control denied by Computer Use policy. No active scheduled execution claimed."
+  },
+  "experiments": [
+    {
+      "id": "E01",
+      "status": "locally validated; release pending"
+    },
+    {
+      "id": "E02",
+      "status": "locally validated; release pending"
+    },
+    {
+      "id": "E03",
+      "status": "planned"
+    }
+  ],
+  "next_actions": [
+    "Review/test and deploy comparison plus subtle background; verify production",
+    "Submit refreshed sitemap and request new comparison URL indexing once",
+    "Register native scheduling through an available supported automation interface and verify future next run",
+    "Read GSC baseline after processing; preserve unknown values as null",
+    "Inspect full competitor comparison content; develop licensed diverse original evidence"
+  ],
+  "validation": {
+    "landing_tests": "14 passed",
+    "build": "Next 16.3.8 production build passed",
+    "dependency_audit": "0 vulnerabilities after patch and transitive updates",
+    "browser": "Chrome desktop and 390x844 mobile; homepage play/Voicy toggle and comparison native play verified; no console errors",
+    "http": "home, comparison, privacy 200; one correct canonical and H1 each; JSON-LD parses; robots excludes admin/API; sitemap has three URLs",
+    "review": "final frozen review pending"
+  }
+}

@@ -254,7 +254,7 @@ export default function Landing() {
         </a>
         <nav aria-label="Main navigation">
           <a href="#demo">Demo</a>
-          <a href="#how-it-works">How it works</a>
+          <a href="/adobe-podcast-alternative">Compare</a>
           <a href={site.github}>GitHub</a>
         </nav>
         <Download small />
@@ -428,6 +428,11 @@ export default function Landing() {
           <a href={site.github} className="button secondary">
             Explore on GitHub {arrow}
           </a>
+          <p>
+            <a className="text-link" href="/adobe-podcast-alternative">
+              Compare Voicy and Adobe Podcast {arrow}
+            </a>
+          </p>
           <span className="fine">
             MIT application code · Open-source models
           </span>
@@ -484,6 +489,7 @@ export default function Landing() {
         <div className="footer-links">
           <a href="#demo">Speech enhancement demo</a>
           <a href={`${site.github}#getting-started`}>Documentation</a>
+          <a href="/adobe-podcast-alternative">Adobe Podcast alternative</a>
           <a href="/privacy">Privacy</a>
           <a href={`${site.github}/blob/main/LICENSE`}>License</a>
           <a href="/llms.txt">For AI readers</a>
