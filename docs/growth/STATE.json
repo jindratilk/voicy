@@ -21,13 +21,14 @@
     "verified": true,
     "verification_method": "Domain name provider; automatic ownership verification observed in Chrome",
     "home_indexed": true,
-    "sitemap_status": "Resubmitted successfully 2026-10-15 after production deployment; sitemap serves three URLs. GSC last-read/discovery counts may lag.",
-    "performance": "Processing; UI asks to check again in approximately one day",
+    "sitemap_status": "2026-10-15 recheck: submitted/read 15 October, Successful, three discovered pages. URL inspection separately shows a temporary sitemap-processing error; sitemap report success and indexed page retained as separate observations. No repeated submission made.",
+    "performance": "Rechecked 2026-10-15: still processing, UI asks to retry in approximately one day; export/filter disabled. No baseline inferred.",
     "baseline_rank": null,
     "baseline_clicks": null,
     "baseline_impressions": null,
-    "comparison_indexed": false,
-    "comparison_status": "Discovered, currently not indexed; no crawl recorded at inspection. Indexing request accepted into priority crawl queue on 2026-10-15 after live URL test."
+    "comparison_indexed": true,
+    "comparison_status": "2026-10-15 recheck: URL is on Google; page indexed; smartphone Googlebot, fetch successful, crawl/indexing allowed. Declared canonical is comparison URL and Google selected inspected URL. Crawl displayed 15. 10. 2026 18:58:19; UI timezone not independently established.",
+    "rechecked_utc": "2026-10-15T18:44:55.344779+00:00"
   },
   "scheduler": {
     "intended_cadence": "Daily 09:15 and 17:15 Europe/Prague; scheduler jitter applies",
@@ -173,5 +174,15 @@
       "Explicit named-destination external communication authorization",
       "Fresh rules/identity/duplicate/form checks; no spend or new terms accepted"
     ]
+  },
+  "execution_dependency": {
+    "rechecked_utc": "2026-10-15T18:44:55.344779+00:00",
+    "current_wait": "No valid local signing identity; repository signing-secret names empty; Wrangler unauthenticated. GSC performance processing. Public release recovery requires authorized signing/notarization and distribution environment.",
+    "completed_independent_work": "Startup source fix/native flow and containment validated; distribution drafts finished; comparison indexing newly confirmed.",
+    "resume_conditions": [
+      "Authorized existing signing/notarization and Cloudflare environment becomes available",
+      "GSC performance data becomes available for an evidence-led measurement/action cycle"
+    ],
+    "monitor": "Daily native automation remains ACTIVE; the year-end campaign is not completed."
   }
 }
