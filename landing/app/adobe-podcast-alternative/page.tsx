@@ -227,7 +227,7 @@ export default function ComparisonPage() {
                 <figcaption>01 / Original recording</figcaption>
                 <audio
                   controls
-                  preload="metadata"
+                  preload="none"
                   aria-label="Original recording with simulated fan noise"
                   src="/audio/before.wav"
                 />
@@ -237,7 +237,7 @@ export default function ComparisonPage() {
                 <figcaption>02 / Enhanced with Voicy</figcaption>
                 <audio
                   controls
-                  preload="metadata"
+                  preload="none"
                   aria-label="Recording enhanced with Voicy"
                   src="/audio/after.wav"
                 />

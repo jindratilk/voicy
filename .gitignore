@@ -90,3 +90,5 @@ landing/*.tsbuildinfo
 !/scripts/growth/prepare_audio_cases.py
 !/docs/growth/E03-PROTOCOL.md
 !/docs/growth/E03-MANIFEST.json
+!/docs/growth/E03-RESULTS.json
+!/docs/growth/E03-RESULTS.md
