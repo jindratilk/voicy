@@ -83,3 +83,10 @@ landing/*.tsbuildinfo
 /docs/growth/*
 !/docs/growth/STRATEGY.md
 !/docs/growth/STATE.json
+
+# Reproducible public-audio demonstration protocol and preparation code.
+!/scripts/growth/
+/scripts/growth/*
+!/scripts/growth/prepare_audio_cases.py
+!/docs/growth/E03-PROTOCOL.md
+!/docs/growth/E03-MANIFEST.json
