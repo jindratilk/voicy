@@ -50,15 +50,21 @@
     },
     {
       "id": "E03",
-      "status": "planned"
+      "status": "Five deterministic human-speech inputs prepared and independently replayed; no Voicy inference or quality verdict yet",
+      "protocol": "docs/growth/E03-PROTOCOL.md",
+      "manifest": "docs/growth/E03-MANIFEST.json",
+      "source": "LibriSpeech test-clean, CC BY 4.0; official archive MD5 verified",
+      "validation": "48kHz mono float32, finite, <= -3dBFS peak, no clipping; all input/reference hashes match a second preparation; case 3 independently measures 5.99999999786 dB using the frozen combined-signal mask",
+      "asr": "small.en checked all five references and inputs locally; one noisy-input recognition mismatch; ASR is not a perceptual quality result",
+      "runtime_acquisition": "Published Voicy 0.3.2 installer download in progress; exact live handles and recovery instructions in external e03-v1/RUNNING.json. Verify terminal/live state, full size/SHA and signing before execution."
     }
   ],
   "next_actions": [
-    "Read GSC baseline after report processing; preserve unknown metrics as null",
-    "Check new comparison URL indexation and Google-selected canonical after crawl; avoid repeat requests",
-    "Develop licensed diverse original audio cases with exact methodology and negative controls",
-    "Assess real field/lab performance and query intent before additional page/content changes",
-    "Prepare qualified editorial discovery opportunities; do not send third-party outreach without explicit message authorization"
+    "Continue the existing installer download using its verified live handle; do not restart based on a stale observation. Full size/SHA/signature checks before running.",
+    "Run the packaged 0.3.2 runtime on all five prepared-corrected inputs with the fixed protocol; retain every failure and output.",
+    "Check enhanced output structure/transcript fidelity and arrange listening review where possible before publishing audio examples.",
+    "Read GSC baseline after processing and inspect comparison indexation after crawl; avoid repeated indexing requests.",
+    "Measure page performance after competing downloads/inference end; PageSpeed API unauthenticated quota returned 429, local Lighthouse quality categories passed."
   ],
   "validation": {
     "landing_tests": "14 passed",
@@ -69,6 +75,21 @@
     "review": "Final frozen autoreview clean (0.93); no accepted/actionable findings",
     "ci": "All frontend, website and backend jobs passed for PR head 6f8a5e78299f3476d6209893b957888de54c692c; rebased production source has identical tree",
     "production_http": "Home, comparison, privacy, audio, robots, sitemap, llms HTTP 200; correct canonicals/H1 and parseable JSON-LD; production download 302 to worker, worker HEAD 200 for Voicy 0.3.2 with size 6513528823",
-    "preview_download": "Preview HEAD 503 due to missing preview download configuration; production redirect and artifact HEAD verified separately"
-  }
+    "preview_download": "Preview HEAD 503 due to missing preview download configuration; production redirect and artifact HEAD verified separately",
+    "comparison_quality_audit": {
+      "tool": "Lighthouse 13.5.0",
+      "date": "2026-10-15",
+      "target": "https://usevoicy.app/adobe-podcast-alternative",
+      "accessibility": 100,
+      "best_practices": 100,
+      "seo": 100,
+      "failed_scored_audits": 0,
+      "performance": "Not run in this audit; concurrent downloads would confound a local baseline",
+      "limits": "Automated lab categories, not complete accessibility compliance or ranking proof"
+    }
+  },
+  "metric_caveats": [
+    "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
+    "Automated page fetches and audits are non-customer traffic."
+  ]
 }
