@@ -1,0 +1,459 @@
+{
+  "recorded_utc": "2026-10-15T17:41:29.700242+00:00",
+  "status": "Technical execution complete; subjective listening and perceptual quality unverified; audio not published",
+  "scope": "Five fixed short human-read speech inputs with controlled synthetic degradations. Direct signed packaged runtime and packaged mastering, not desktop UI/import/export or a quality/speed benchmark.",
+  "source": {
+    "resource": "https://www.openslr.org/12",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "copyright": "LibriSpeech (c) 2014 Vassil Panayotov",
+    "changes": "Full utterances resampled and normalized; controlled degradations added to four; Voicy processing and separately mastered listening copies. No reader endorsement."
+  },
+  "protocol": "E03-PROTOCOL.md",
+  "input_manifest": "E03-MANIFEST.json",
+  "runtime": {
+    "version": "0.3.2",
+    "installer_bytes": 6513528823,
+    "installer_sha256": "7e23011e3169adff45be0126d1af9bed2e25338e15b69beb5550ec31d8fa3081",
+    "codesign": "valid on disk, designated requirement satisfied",
+    "gatekeeper": "accepted, Notarized Developer ID",
+    "mounted_read_only": true,
+    "model_manifest_files_matched": 18,
+    "runner_sha256": "82970522e890207d1a7c112a8437f213fba1555af6677017fcc14a1d6e8ab193",
+    "versions": {
+      "python": "3.13.14 (main, Jun 11 2026, 03:58:32) [Clang 22.1.3 ]",
+      "packages": {
+        "mlx": "0.32.2",
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "soundfile": "0.14.0",
+        "torch": "2.14.0",
+        "transformers": "4.57.6"
+      }
+    },
+    "hardware": {
+      "chip": "Apple M4",
+      "ram_bytes": 25769803776,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+    },
+    "settings": {
+      "nfe": 32,
+      "memory_mode": "auto",
+      "seed": 2026,
+      "bits": 8,
+      "group_size": 64,
+      "cfg_strength": 2
+    }
+  },
+  "asr": {
+    "versions": {
+      "python": "3.14.3 (main, Feb  3 2026, 15:32:20) [Clang 17.0.0 (clang-1700.6.3.2)]",
+      "packages": {
+        "openai-whisper": "20250625",
+        "torch": "2.10.0",
+        "numpy": "2.3.5"
+      }
+    },
+    "model": "small.en",
+    "model_sha256": "f953ad0fd29cacd07d5a9eda5624af0f6bcf2258be67c92b79389873d91e0872",
+    "parameters": {
+      "temperature": 0,
+      "fallback": false,
+      "language": "en",
+      "condition_on_previous_text": false,
+      "device": "cpu",
+      "threads": 4,
+      "fp16": false
+    },
+    "interpretation": "Recognizer output only, not word-preservation proof, human intelligibility, listening preference or perceptual quality. Full spelling/number/compounding differences are retained."
+  },
+  "validation": {
+    "all_five_inference_return_codes": 0,
+    "raw_outputs": "Five mono 24kHz float32 files, exact expected frame counts, finite samples, no clipped samples",
+    "listening_outputs": "15 separately mastered mono 48kHz PCM24 files, independently checked with ffprobe and hashes",
+    "mastering": "Packaged server.audio.master, level=True; targets -16 LUFS/-1.5 dBTP. Achieved values below, not assumed exact.",
+    "sampled_pressure_and_storage": "No critical pressure observed in the 2-second sampled checks; free storage stayed above 12 GiB; no monitoring abort"
+  },
+  "limits": [
+    "No subjective listening review, independent listener panel, Adobe processing, MOS, PESQ, STOI or quality-superiority claim.",
+    "Short English audiobook examples and simulated conditions do not establish representative performance; training overlap is unknown.",
+    "Wall times are direct runner observations on one occupied M4 Mac, including startup and preprocessing; exclude desktop UI and export. They are not a controlled performance comparison.",
+    "No public audio assets yet. All five raw outputs, all transcripts, logs and 15 listening copies are retained in the external evidence directory."
+  ],
+  "cases": [
+    {
+      "case": 1,
+      "condition": "simulated-fan",
+      "utterance_id": "61-70968-0000",
+      "expected_transcript": "HE BEGAN A CONFUSED COMPLAINT AGAINST THE WIZARD WHO HAD VANISHED BEHIND THE CURTAIN ON THE LEFT",
+      "raw_output": {
+        "sha256": "997a0a3383bef28925c3179cd6376e9c0e5fe77e9d8a6cd1ab41f141dc57dd20",
+        "rate": 24000,
+        "frames": 117720,
+        "shape": [
+          117720
+        ],
+        "finite": true,
+        "peak": 0.6304588317871094,
+        "clipped_samples": 0
+      },
+      "direct_runner_elapsed_seconds": 102.56435212492943,
+      "memory_policy": {
+        "resident": false,
+        "metal_limit": 8589934592,
+        "cache_limit": 536870912,
+        "rss_limit": 15032385536,
+        "reason": "memory-pressure"
+      },
+      "metal_peak_bytes": 4638192216,
+      "rss_high_water_bytes": 1871691776,
+      "pressure_levels_observed": [
+        1,
+        2
+      ],
+      "minimum_free_storage_bytes": 23086202880,
+      "asr": {
+        "reference": " He began a confused complaint against the wizard, who had vanished behind the curtain on the left.",
+        "input": " He began a confused complaint against the wizard, who had vanished behind the curtain on the left.",
+        "enhanced": " He began a confused complaint against the wizard, who had vanished behind the curtain on the left."
+      },
+      "listening_versions": [
+        {
+          "variant": "reference",
+          "source_sha256": "8982384b25caf9518d297a9716888bad2a7e2ce64922cdadc80a55175571c77a",
+          "sha256": "c445e71361d2bd04e020c45ef564e293659f51f61b195872a6ba3abc98b51ffc",
+          "frames": 235440,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8415200710296631,
+          "clipped_samples": 0,
+          "achieved_lufs": -16.73,
+          "achieved_true_peak_dbtp": -1.5
+        },
+        {
+          "variant": "input",
+          "source_sha256": "75e626fae7dbd8ece6b057881bc0584c798cc79eae97ca517bbca3e000458d02",
+          "sha256": "4987c01ea27abfede0a85b476f81f9cf8d66b0a10aed07b8fd42cb4437524e38",
+          "frames": 235440,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8414757251739502,
+          "clipped_samples": 0,
+          "achieved_lufs": -16.57,
+          "achieved_true_peak_dbtp": -1.5
+        },
+        {
+          "variant": "enhanced",
+          "source_sha256": "997a0a3383bef28925c3179cd6376e9c0e5fe77e9d8a6cd1ab41f141dc57dd20",
+          "sha256": "74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994",
+          "frames": 235440,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.84149169921875,
+          "clipped_samples": 0,
+          "achieved_lufs": -16.66,
+          "achieved_true_peak_dbtp": -1.49
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "condition": "simulated-reflections",
+      "utterance_id": "121-121726-0000",
+      "expected_transcript": "ALSO A POPULAR CONTRIVANCE WHEREBY LOVE MAKING MAY BE SUSPENDED BUT NOT STOPPED DURING THE PICNIC SEASON",
+      "raw_output": {
+        "sha256": "fc7358cee3176acd42996c699b147e1503d527e32b39d1a84c59f9c75ac74be0",
+        "rate": 24000,
+        "frames": 212640,
+        "shape": [
+          212640
+        ],
+        "finite": true,
+        "peak": 0.707192599773407,
+        "clipped_samples": 0
+      },
+      "direct_runner_elapsed_seconds": 98.48889279086143,
+      "memory_policy": {
+        "resident": false,
+        "metal_limit": 8589934592,
+        "cache_limit": 536870912,
+        "rss_limit": 15032385536,
+        "reason": "insufficient-headroom"
+      },
+      "metal_peak_bytes": 4687622744,
+      "rss_high_water_bytes": 2150940672,
+      "pressure_levels_observed": [
+        1,
+        2
+      ],
+      "minimum_free_storage_bytes": 23080718336,
+      "asr": {
+        "reference": " Also, a popular contrivance whereby love-making may be suspended but not stopped during the picnic season.",
+        "input": " Also, a popular contrivance whereby lovemaking may be suspended but not stopped during the picnic season.",
+        "enhanced": " Also, a popular contrivance whereby lovemaking may be suspended but not stopped during the picnic season."
+      },
+      "listening_versions": [
+        {
+          "variant": "reference",
+          "source_sha256": "8a7986480db5b8d0e44969d0e230421a0ffc29671f4fbe6b8d3a102a349ab87c",
+          "sha256": "3e0d6578d5c96ee2b3058c00abc6aff2ee80e5a87bb8c8e4896b656f87161154",
+          "frames": 425280,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8419663906097412,
+          "clipped_samples": 0,
+          "achieved_lufs": -17.24,
+          "achieved_true_peak_dbtp": -1.49
+        },
+        {
+          "variant": "input",
+          "source_sha256": "dc00a36cf0fe0dee058954e7c5969c72f24b3e3e5ef532663a7fe613f673ddcf",
+          "sha256": "609618f21459aacddfc8cb25db5c310cab00ba7413cf15bd6fd1178bf5af7f1a",
+          "frames": 425280,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8417962789535522,
+          "clipped_samples": 0,
+          "achieved_lufs": -17.14,
+          "achieved_true_peak_dbtp": -1.49
+        },
+        {
+          "variant": "enhanced",
+          "source_sha256": "fc7358cee3176acd42996c699b147e1503d527e32b39d1a84c59f9c75ac74be0",
+          "sha256": "897dc5bb9167899658a567e258b0ad4f6a390b63ce43e73af6a608728c1a1236",
+          "frames": 425280,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8417506217956543,
+          "clipped_samples": 0,
+          "achieved_lufs": -17.26,
+          "achieved_true_peak_dbtp": -1.5
+        }
+      ]
+    },
+    {
+      "case": 3,
+      "condition": "intermittent-noise",
+      "utterance_id": "237-126133-0002",
+      "expected_transcript": "THEN DEAR SAID MISSUS WHITNEY YOU MUST BE KINDER TO HER THAN EVER THINK WHAT IT WOULD BE FOR ONE OF YOU TO BE AWAY FROM HOME EVEN AMONG FRIENDS",
+      "raw_output": {
+        "sha256": "94306cc86fd5f9d19f725fecf006cd134c7ac081d4aad46d3537a779d6a0f284",
+        "rate": 24000,
+        "frames": 214080,
+        "shape": [
+          214080
+        ],
+        "finite": true,
+        "peak": 0.8450378775596619,
+        "clipped_samples": 0
+      },
+      "direct_runner_elapsed_seconds": 100.41047554207034,
+      "memory_policy": {
+        "resident": false,
+        "metal_limit": 8589934592,
+        "cache_limit": 536870912,
+        "rss_limit": 15032385536,
+        "reason": "insufficient-headroom"
+      },
+      "metal_peak_bytes": 4687622744,
+      "rss_high_water_bytes": 2348449792,
+      "pressure_levels_observed": [
+        1,
+        2
+      ],
+      "minimum_free_storage_bytes": 22939291648,
+      "asr": {
+        "reference": " Then, dear, said Mrs. Whitney, you must be kinder to her than ever. Think what it would be for one of you to be away from home, even among friends.",
+        "input": " Then, dear, said Mrs. Kitten, you must be kinder to her than ever. Think what it would be for one of you to be away from home, even among friends.",
+        "enhanced": " Then, dear, said Mrs. Whitney, you must be kinder to her than ever. Think what it would be for one of you to be away from home, even among friends."
+      },
+      "listening_versions": [
+        {
+          "variant": "reference",
+          "source_sha256": "5d7d30fb2d2c86bbeaef39f94306506d535160270658e79d0c03f3de5e54df1b",
+          "sha256": "9b8c877a687526d5dd1394b2dfead37401f43003686068869c6c1db10dff22e9",
+          "frames": 428160,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8414750099182129,
+          "clipped_samples": 0,
+          "achieved_lufs": -16.61,
+          "achieved_true_peak_dbtp": -1.49
+        },
+        {
+          "variant": "input",
+          "source_sha256": "17306fed708cb8701d885644e4256500611630d6a90c29d585c37f302891091f",
+          "sha256": "f2c3f5b3d131396a17f70c3782280d07bb14c85359af5f1a228df664e69edbbb",
+          "frames": 428160,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8414750099182129,
+          "clipped_samples": 0,
+          "achieved_lufs": -16.37,
+          "achieved_true_peak_dbtp": -1.41
+        },
+        {
+          "variant": "enhanced",
+          "source_sha256": "94306cc86fd5f9d19f725fecf006cd134c7ac081d4aad46d3537a779d6a0f284",
+          "sha256": "17da4789278dcf79f8323f27639fc82d37e81059f0f23c4abfa095680b7aba31",
+          "frames": 428160,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8415461778640747,
+          "clipped_samples": 0,
+          "achieved_lufs": -16.53,
+          "achieved_true_peak_dbtp": -1.5
+        }
+      ]
+    },
+    {
+      "case": 4,
+      "condition": "quiet-speech",
+      "utterance_id": "260-123286-0000",
+      "expected_transcript": "SATURDAY AUGUST FIFTEENTH THE SEA UNBROKEN ALL ROUND NO LAND IN SIGHT",
+      "raw_output": {
+        "sha256": "c4b6487ca0860437f80145e3b7e5ac1cda2540075066cd49b99d568d7f0652aa",
+        "rate": 24000,
+        "frames": 168960,
+        "shape": [
+          168960
+        ],
+        "finite": true,
+        "peak": 0.037682559341192245,
+        "clipped_samples": 0
+      },
+      "direct_runner_elapsed_seconds": 100.46094458410516,
+      "memory_policy": {
+        "resident": false,
+        "metal_limit": 8589934592,
+        "cache_limit": 536870912,
+        "rss_limit": 15032385536,
+        "reason": "insufficient-headroom"
+      },
+      "metal_peak_bytes": 4687622744,
+      "rss_high_water_bytes": 2491252736,
+      "pressure_levels_observed": [
+        1,
+        2
+      ],
+      "minimum_free_storage_bytes": 22922264576,
+      "asr": {
+        "reference": " Saturday August 15th. The sea unbroken all round. No land in sight.",
+        "input": " Saturday, August 15, the sea unbroken all round, no land in sight.",
+        "enhanced": " Saturday August 15. The sea unbroken all-round. No land in sight."
+      },
+      "listening_versions": [
+        {
+          "variant": "reference",
+          "source_sha256": "567add10165b2e4214b5d3b0d8d6f2d92008f117dafff0ff54150e22b4b6debb",
+          "sha256": "63aacb7ea89ced08d71d596f1d3767875399b5f54afc1e15faaa3b2c078067c7",
+          "frames": 337920,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8434666395187378,
+          "clipped_samples": 0,
+          "achieved_lufs": -16.08,
+          "achieved_true_peak_dbtp": -1.48
+        },
+        {
+          "variant": "input",
+          "source_sha256": "c2b9537cf634c04256afb49558941f6bbee05fd802387261596928bf7ff4ac2a",
+          "sha256": "94a8e57df98979c4e0458aa7f0141bc89feaff809a4e753cde9e6141cd09acb6",
+          "frames": 337920,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.870903730392456,
+          "clipped_samples": 0,
+          "achieved_lufs": -16.07,
+          "achieved_true_peak_dbtp": -1.2
+        },
+        {
+          "variant": "enhanced",
+          "source_sha256": "c4b6487ca0860437f80145e3b7e5ac1cda2540075066cd49b99d568d7f0652aa",
+          "sha256": "62d4aaca9d14ff7a5b91b8b49e2a5bd1bf59e07dee68d03d52f9d6a6042930f2",
+          "frames": 337920,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8425403833389282,
+          "clipped_samples": 0,
+          "achieved_lufs": -16.05,
+          "achieved_true_peak_dbtp": -1.49
+        }
+      ]
+    },
+    {
+      "case": 5,
+      "condition": "clean-control",
+      "utterance_id": "672-122797-0000",
+      "expected_transcript": "OUT IN THE WOODS STOOD A NICE LITTLE FIR TREE",
+      "raw_output": {
+        "sha256": "19211d4005a54751e60625077ab848dab5ec363df7aeda8344cdbfdedb36e7b2",
+        "rate": 24000,
+        "frames": 97680,
+        "shape": [
+          97680
+        ],
+        "finite": true,
+        "peak": 0.6404145956039429,
+        "clipped_samples": 0
+      },
+      "direct_runner_elapsed_seconds": 98.50221412512474,
+      "memory_policy": {
+        "resident": false,
+        "metal_limit": 8589934592,
+        "cache_limit": 536870912,
+        "rss_limit": 15032385536,
+        "reason": "insufficient-headroom"
+      },
+      "metal_peak_bytes": 4817014312,
+      "rss_high_water_bytes": 2241544192,
+      "pressure_levels_observed": [
+        1,
+        2
+      ],
+      "minimum_free_storage_bytes": 22916648960,
+      "asr": {
+        "reference": " Out in the woods stood a nice little fir tree.",
+        "input": " Out in the woods stood a nice little fir tree.",
+        "enhanced": " Out in the woods stood a nice little fir tree."
+      },
+      "listening_versions": [
+        {
+          "variant": "reference",
+          "source_sha256": "590c16b7c68721897a69aa0bb1e9937428e49982c145d6244fd24222dd74d609",
+          "sha256": "ab47b46d83f99d07791f9f35746803e97aa6887f55f7e6365093e86bde47d436",
+          "frames": 195360,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8414103984832764,
+          "clipped_samples": 0,
+          "achieved_lufs": -16.19,
+          "achieved_true_peak_dbtp": -1.5
+        },
+        {
+          "variant": "input",
+          "source_sha256": "590c16b7c68721897a69aa0bb1e9937428e49982c145d6244fd24222dd74d609",
+          "sha256": "ab47b46d83f99d07791f9f35746803e97aa6887f55f7e6365093e86bde47d436",
+          "frames": 195360,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8414103984832764,
+          "clipped_samples": 0,
+          "achieved_lufs": -16.19,
+          "achieved_true_peak_dbtp": -1.5
+        },
+        {
+          "variant": "enhanced",
+          "source_sha256": "19211d4005a54751e60625077ab848dab5ec363df7aeda8344cdbfdedb36e7b2",
+          "sha256": "ce2a821236e2a0d87ae9c519df186c9726387b9f5aa3487dade7f58c524b40a1",
+          "frames": 195360,
+          "rate": 48000,
+          "subtype": "PCM_24",
+          "peak": 0.8413957357406616,
+          "clipped_samples": 0,
+          "achieved_lufs": -16.27,
+          "achieved_true_peak_dbtp": -1.5
+        }
+      ]
+    }
+  ]
+}
