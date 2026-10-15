@@ -2,10 +2,13 @@
 
 > Free, open-source AI speech enhancement for Apple Silicon Macs. A local Adobe Podcast alternative. Audio is processed on the user's Mac, with no account or audio upload.
 
+## Current availability
+Downloads are temporarily paused as of 15 October 2026: the published 0.3.2 native launcher times out because it expects an older backend version. A source fix is being tested; a signed replacement has not been published. The prerecorded website demo remains available.
+
 ## Product
 - [Adobe Podcast alternative comparison](https://usevoicy.app/adobe-podcast-alternative): sourced feature comparison, audio samples, requirements, limitations, and alternatives by workflow. Written by the Voicy project, not an independent review.
 - [Home and audible demo](https://usevoicy.app/): overview, prerecorded original/enhanced comparison, requirements, and FAQ.
-- [Download for Mac](https://usevoicy.app/api/download): macOS disk image with offline models included.
+- [Download status](https://usevoicy.app/api/download): current availability; downloads paused pending a verified startup fix.
 - [Source and documentation](https://github.com/jindratilk/voicy): MIT application code, build instructions, model licenses, limitations.
 - [Privacy](https://usevoicy.app/privacy): local processing and aggregate website statistics.
 

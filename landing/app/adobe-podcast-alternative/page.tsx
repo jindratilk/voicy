@@ -106,7 +106,7 @@ export default function ComparisonPage() {
           <a href={site.github}>Source</a>
         </nav>
         <a className="button primary small" href="/api/download">
-          Download
+          {site.downloadPaused ? "Status" : "Download"}
         </a>
       </header>
       <main className="comparison-page">
@@ -125,7 +125,7 @@ export default function ComparisonPage() {
           </p>
           <div className="hero-actions">
             <a className="button primary" href="/api/download">
-              Download for Mac
+              {site.downloadPaused ? "Download status" : "Download for Mac"}
             </a>
             <a className="text-link" href="/#demo">
               Hear the original and Voicy output ↗
@@ -135,6 +135,11 @@ export default function ComparisonPage() {
             macOS 14+ · Apple Silicon · 6.5 GB download · 16 GB memory
             recommended
           </p>
+          {site.downloadPaused && (
+            <p className="download-notice">
+              Downloads paused while we verify a startup fix.
+            </p>
+          )}
         </section>
         <article className="comparison-content shell">
           <div className="editorial-note">
@@ -362,7 +367,7 @@ export default function ComparisonPage() {
               recording.
             </p>
             <a className="button primary" href="/api/download">
-              Download Voicy for free
+              {site.downloadPaused ? "Download status" : "Download Voicy for free"}
             </a>
           </section>
         </article>

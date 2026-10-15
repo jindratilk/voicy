@@ -19,6 +19,8 @@
 
 ![Voicy — your voice in the clear](landing/public/og.png)
 
+**Download status — 15 October 2026:** Downloads are temporarily paused because the published 0.3.2 installer times out during startup. The source includes a locally tested startup fix; a signed replacement installer is pending. [Incident, validation and release requirements](docs/release/STARTUP-INCIDENT-2026-10-15.md). The prerecorded website demo remains available.
+
 ## Your voice. In the clear.
 
 Voicy is a **free speech enhancer** for macOS. Drop in a recording, run AI speech enhancement locally, compare the original and enhanced versions at the same position, and export a 24-bit WAV.

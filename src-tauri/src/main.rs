@@ -27,6 +27,41 @@ struct Backend {
     quit_pending: AtomicBool,
     pending: Mutex<Vec<PathBuf>>,
 }
+
+fn backend_is_ready(health: &serde_json::Value) -> bool {
+    // Release versions can change independently of the startup contract.
+    // The authenticated child must identify itself as a healthy local Voicy engine.
+    health["status"] == "ok" && health["app"] == "voicy" && health["local"] == true
+}
+
+#[cfg(test)]
+mod startup_tests {
+    use super::backend_is_ready;
+    use serde_json::json;
+
+    #[test]
+    fn accepts_the_released_backend_without_pinning_its_marketing_version() {
+        for version in ["0.3.0", "0.3.1", "0.3.2"] {
+            assert!(backend_is_ready(&json!({
+                "status": "ok", "app": "voicy", "local": true, "version": version
+            })));
+        }
+    }
+
+    #[test]
+    fn rejects_unhealthy_foreign_or_nonlocal_responses() {
+        for response in [
+            json!({"status": "error", "app": "voicy", "local": true}),
+            json!({"status": "ok", "app": "another-app", "local": true}),
+            json!({"status": "ok", "app": "voicy", "local": false}),
+            json!({"status": "ok", "app": "voicy"}),
+            json!({"detail": "Unauthorized"}),
+            json!(null),
+        ] {
+            assert!(!backend_is_ready(&response));
+        }
+    }
+}
 #[derive(Default, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 struct Preferences {
@@ -429,8 +464,9 @@ fn start_backend(app: tauri::AppHandle) -> Result<(), Box<dyn std::error::Error>
             .header("X-Voicy-Token", &state.token)
             .send()
             .ok()
+            .filter(|r| r.status().is_success())
             .and_then(|r| r.json::<serde_json::Value>().ok())
-            .is_some_and(|v| v["version"] == "0.3.0")
+            .is_some_and(|v| backend_is_ready(&v))
         {
             break;
         }
