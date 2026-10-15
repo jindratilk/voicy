@@ -221,6 +221,14 @@ p {
   font-size: 11px;
   color: #92929a;
 }
+.download-notice {
+  display: block;
+  max-width: 360px;
+  margin: 12px auto 0;
+  color: #b6acbb;
+  font-size: 12px;
+  line-height: 1.6;
+}
 .hero-wave {
   position: absolute;
   display: flex;

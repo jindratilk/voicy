@@ -1,3 +1,7 @@
+# Current release warning — 15 October 2026
+
+The published 0.3.2 artifact was found to time out in native startup on the current M4 Mac: the launcher expects backend version 0.3.0, while the packaged backend reports 0.3.1. Earlier worker/signature checks below do not prove this native path works. The [startup incident report](STARTUP-INCIDENT-2026-10-15.md) records the reproduced failure, locally verified source fix and outstanding signed-release requirements. Website downloads are paused by the incident change; the original artifact is preserved.
+
 # Validation evidence
 
 Voicy 0.3.0, Apple Silicon, macOS 26.6.2. These are development-machine results, not a claim of universal compatibility or best-in-world speech quality.

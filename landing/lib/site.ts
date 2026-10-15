@@ -2,6 +2,7 @@ export const site = {
   url: "https://usevoicy.app",
   github: "https://github.com/jindratilk/voicy",
   version: "0.3.2",
+  downloadPaused: true,
 };
 export const faqs = [
   [

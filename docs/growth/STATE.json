@@ -86,13 +86,25 @@
       ],
       "initial_audio_bytes_after": 0,
       "limits": "Three sequential simulated mobile lab samples per phase, occupied Mac; no field CWV, controlled causal lift or ranking claim. One concurrent-QA run excluded before inspecting its metrics."
+    },
+    {
+      "id": "E05",
+      "status": "Critical published-installer startup failure reproduced; source fix and native development candidate validated; website download pause validated locally, pending deployment",
+      "incident": "docs/release/STARTUP-INCIDENT-2026-10-15.md",
+      "cause": "Native launcher pins backend version 0.3.0, packaged server reports 0.3.1",
+      "native_proof": "Fixed shell opens/restarts, native import/enhance/A-B/playback/export succeeds on first E03 case; busy-quit/Keep Processing/cancel preserve result, restart export byte-identical",
+      "candidate_scope": "Local development app using verified read-only 0.3.2 runtime; not a signed/notarized public replacement",
+      "release_dependency": "No valid local Developer ID identity; no accessible repository signing secrets. Authorized signing/notarization environment and remaining release qualification required.",
+      "containment_scope": "Website/API pause only; preserved direct worker artifact still exists. No rollback inferred from query parameters.",
+      "website_local_qa": "15 tests and Next production build passed; real local download route tested from home/comparison at 1440x1000, 390x844, 320x740; correct 503 explanation/no redirect/bodyless HEAD/no overflow. Local-only pageview metrics fixture; production must be checked unmocked."
     }
   ],
   "next_actions": [
-    "Read GSC exact-query/page/country/device baseline after processing; inspect comparison indexing after crawl, without repeated indexing requests.",
-    "Resolve the E03 listening/voice/artifact review before publishing validated human-speech examples; retain all five cases and limitations.",
-    "Prepare factual distribution materials with specific primary-source eligibility and evidence; no third-party sending/submission without explicit messaging authorization.",
-    "Use future GSC observations to choose the next content change; retain the single comparison canonical and avoid thin duplicate pages."
+    "Obtain an authorized Developer ID signing/notarization environment for the tested startup source fix; complete remaining release checks including window reopen and independent second-Mac install.",
+    "Keep website downloads paused until a versioned signed/notarized replacement passes full public-download and native-flow validation; preserve original artifact and all evidence.",
+    "Read GSC exact-query/page/country/device baseline after processing; inspect comparison indexing after crawl without repeated indexing requests.",
+    "Resolve E03 subjective listening review before publishing validated human-speech examples; all five cases remain preserved.",
+    "Prepare factual distribution materials while release access is pending; no third-party messages or submissions without explicit messaging authorization."
   ],
   "validation": {
     "landing_tests": "14 passed",
@@ -121,7 +133,7 @@
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic."
   ],
-  "verified_utc": "2026-10-15T17:48:30.502858+00:00",
+  "verified_utc": "2026-10-15T18:11:41.121588+00:00",
   "search_observation": {
     "date": "2026-10-15",
     "engine": "Google Search, Chrome Incognito desktop, signed out; cookies rejected",
@@ -134,5 +146,12 @@
     "access": "Public Sign In page only; no project/citation metrics verified",
     "measurement": "Provider-specific sampled AI Performance citations/grounding queries; not universal AI-answer coverage",
     "permission": "No Google access grant or account creation performed; prefer narrow manual verification when authorized session is available"
+  },
+  "release_health": {
+    "published_version": "0.3.2",
+    "native_startup": "Failed on the tested M4, despite valid signing/notarization and successful direct runtime tests",
+    "source_fix": "Local working tree validated; not yet a signed public release",
+    "website_download": "Pause implemented and locally validated; production not changed yet at this checkpoint",
+    "signing": "Missing local identity/CI signing access; do not claim release-ready"
   }
 }
