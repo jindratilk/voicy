@@ -20,6 +20,7 @@ A development candidate was built with the fixed native shell, current frontend 
 - Native Save exported mono 48 kHz PCM24 WAV with all 235,440 expected frames. The exported SHA-256 is `74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994`.
 - During a second processing attempt, Quit displayed the busy confirmation; Keep Processing returned to the running job. Cancel preserved the original and previous result controls.
 - Restart restored the recording/result. A second native export after cancellation/restart was byte-identical to the first export.
+- After closing the main window, Window → Show Voicy restored the same recording/result UI.
 
 This is one short-file workflow, not all formats, long-form reliability, subjective sound quality, a second-Mac install or full release qualification. Test inputs and exports remain outside Git. The E03 source attribution and limitations still apply.
 
@@ -35,9 +36,13 @@ No valid local Developer ID signing identity was available (`security find-ident
 
 Before resuming public downloads:
 
-1. Review/merge the source fix, build a versioned candidate from that exact source, and complete the remaining release checks in [RELEASE.md](RELEASE.md), including window reopen and an independent second-Mac install.
+1. Review/merge the source fix, build a versioned candidate from that exact source, and complete the remaining release checks in [RELEASE.md](RELEASE.md), including an independent second-Mac install. Local window reopen was also verified after the initial candidate tests.
 2. Use an authorized Developer ID signing environment, sign nested code/application, notarize and staple, package the DMG, then sign/notarize/staple it and verify signatures/tickets/Gatekeeper.
 3. Publish the verified replacement artifact with checksums, verify a complete public download and native startup/import/enhance/export from that exact downloaded artifact.
 4. Update release/version metadata and remove the explicit download pause only after those checks pass. Preserve the original artifact and incident evidence.
 
 Do not publish the development candidate as a notarized fix, remove the pause merely because CI is green, or count technical worker evidence as native release verification. No passwords, signing keys or account exports belong in Git or chat.
+
+## Production containment checkpoint
+
+PR #4 merged with all CI checks passing. The website containment was verified at production source `4df60b7c8a1a62c407bd59191bbb7ed815dd3c10` on desktop, 390px and 320px mobile: indexable pages remain 200, the pause is visible, and download GET/HEAD is 503 without artifact redirect. HEAD has no body. Demo playback still works. These production checks had no metrics/API fixtures. Cloudflare CLI and Chrome were not authenticated, so distribution access also remains outstanding. No signed replacement has been published.

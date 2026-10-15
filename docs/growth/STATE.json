@@ -6,15 +6,15 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "ab4864b4f62e900663545ef4c8c016edaa047c11",
+  "shipped_commit": "4df60b7c8a1a62c407bd59191bbb7ed815dd3c10",
   "deployment": {
-    "id": "dpl_7nTjBWDkYCBN4FkhUmL5fhsmypTX",
-    "url": "https://voicy-cbnrqimnb-skaluj.vercel.app",
+    "id": "dpl_3yt33Ev2aFq2B6QzVoyoTLYsVY9z",
+    "url": "https://voicy-nmzxoom8a-skaluj.vercel.app",
     "environment": "production",
     "state": "READY",
     "custom_domain_verified": "https://usevoicy.app",
     "project": "skaluj/voicy",
-    "verification_scope": "Last verified production before this documentation checkpoint; custom domain HTML contains this deployment ID"
+    "verification_scope": "Last verified production before this documentation checkpoint; matched deployment ID in home/comparison HTML"
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -89,14 +89,15 @@
     },
     {
       "id": "E05",
-      "status": "Critical published-installer startup failure reproduced; source fix and native development candidate validated; website download pause validated locally, pending deployment",
+      "status": "Source fix merged in PR #4; native candidate validated; website containment shipped and verified in production; signed replacement installer not released",
       "incident": "docs/release/STARTUP-INCIDENT-2026-10-15.md",
       "cause": "Native launcher pins backend version 0.3.0, packaged server reports 0.3.1",
-      "native_proof": "Fixed shell opens/restarts, native import/enhance/A-B/playback/export succeeds on first E03 case; busy-quit/Keep Processing/cancel preserve result, restart export byte-identical",
+      "native_proof": "Fixed shell opens/restarts, native import/enhance/A-B/playback/export succeeds on first E03 case; busy-quit/Keep Processing/cancel preserve result, restart export byte-identical; closed window restored via Window -> Show Voicy",
       "candidate_scope": "Local development app using verified read-only 0.3.2 runtime; not a signed/notarized public replacement",
-      "release_dependency": "No valid local Developer ID identity; no accessible repository signing secrets. Authorized signing/notarization environment and remaining release qualification required.",
+      "release_dependency": "No local valid Developer ID identity, no accessible signing Actions secrets, Cloudflare CLI unauthenticated and Chrome at login. Authorized signing and distribution access required; no keys/passwords in chat.",
       "containment_scope": "Website/API pause only; preserved direct worker artifact still exists. No rollback inferred from query parameters.",
-      "website_local_qa": "15 tests and Next production build passed; real local download route tested from home/comparison at 1440x1000, 390x844, 320x740; correct 503 explanation/no redirect/bodyless HEAD/no overflow. Local-only pageview metrics fixture; production must be checked unmocked."
+      "website_local_qa": "15 tests and Next production build passed; real local download route tested from home/comparison at 1440x1000, 390x844, 320x740; correct 503 explanation/no redirect/bodyless HEAD/no overflow. Local-only pageview metrics fixture; production must be checked unmocked.",
+      "production_qa": "Real production at 1440x1000, 390x844, 320x740: home/comparison 200 with pause notice; status GET/HEAD 503, no redirect, HEAD empty, no overflow or unexpected console errors. No production fixtures. Both comparison native audio players and home original/Voicy toggle/play/pause remain verified."
     }
   ],
   "next_actions": [
@@ -107,14 +108,14 @@
     "Prepare factual distribution materials while release access is pending; no third-party messages or submissions without explicit messaging authorization."
   ],
   "validation": {
-    "landing_tests": "14 passed",
+    "landing_tests": "15 passed, including reachable-but-paused artifact and bodyless HEAD",
     "build": "Next 16.3.8 production build passed",
     "dependency_audit": "0 vulnerabilities after patch and transitive updates",
-    "browser": "Production Playwright with installed Chrome, 1440x1000 and 390x844: correct URL/title/content, no overlay or console errors, zero initial WAV requests, both native play buttons load correct media and advance time. Browser plugin unavailable; local and production exercised.",
+    "browser": "Production Chrome/Playwright: home/comparison -> download status at 1440x1000, 390x844, 320x740, real APIs/no fixtures. Demo playback verified separately at desktop/mobile; screenshots retained.",
     "http": "home, comparison, privacy 200; one correct canonical and H1 each; JSON-LD parses; robots excludes admin/API; sitemap has three URLs",
-    "review": "E03 run/audio-loading frozen autoreview clean (0.91), no accepted/actionable findings",
-    "ci": "All frontend, website and backend jobs passed for PR #3 head dccce222397d7443b31b6aa27d5e8f1ee76e93fd; rebased main ab4864b4 has the identical tree 4689bef959b93c0aaf95f685980bd49de96f36bb",
-    "production_http": "Home/comparison/privacy/robots/sitemap/llms 200; comparison correct canonical/one H1/two preload-none elements and exact deployment ID; download HEAD 302 then artifact HEAD 200 at 6513528823 bytes",
+    "review": "Final native-startup/website-containment frozen autoreview clean (0.91); no accepted/actionable findings",
+    "ci": "All frontend, website and backend jobs passed for PR #4 head 7b9a544bb0b6473021df79672f15b5826e72153c; rebase main 4df60b7 has identical tree 25c0676705aec50611abf81ca06262fc975b3df0",
+    "production_http": "Home/comparison 200 with notice and exact deployment ID; website download GET/HEAD 503/noindex/no redirect. Earlier 302/200 artifact checks are historical, not current website availability.",
     "preview_download": "Preview HEAD 503 due to missing preview download configuration; production redirect and artifact HEAD verified separately",
     "comparison_quality_audit": {
       "tool": "Lighthouse 13.5.0",
@@ -133,7 +134,7 @@
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic."
   ],
-  "verified_utc": "2026-10-15T18:11:41.121588+00:00",
+  "verified_utc": "2026-10-15T18:26:14.328446+00:00",
   "search_observation": {
     "date": "2026-10-15",
     "engine": "Google Search, Chrome Incognito desktop, signed out; cookies rejected",
@@ -150,8 +151,9 @@
   "release_health": {
     "published_version": "0.3.2",
     "native_startup": "Failed on the tested M4, despite valid signing/notarization and successful direct runtime tests",
-    "source_fix": "Local working tree validated; not yet a signed public release",
-    "website_download": "Pause implemented and locally validated; production not changed yet at this checkpoint",
-    "signing": "Missing local identity/CI signing access; do not claim release-ready"
+    "source_fix": "Merged in 4df60b7c8a1a62c407bd59191bbb7ed815dd3c10 and locally native-tested; not a signed public replacement",
+    "website_download": "Production website/API paused: GET/HEAD 503, explanatory page, no artifact redirect; main/comparison remain 200. Direct worker artifact preserved.",
+    "signing": "Missing local identity/CI signing access; do not claim release-ready",
+    "distribution_access": "Cloudflare CLI and Chrome not authenticated; old DMG not found locally, v=0.3.0 worker query still returns 0.3.2 and was rejected as rollback."
   }
 }
