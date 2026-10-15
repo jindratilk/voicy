@@ -1,0 +1,198 @@
+{
+  "checked_utc": "2026-10-15T18:37:34.692588+00:00",
+  "status": "Prepared drafts only; no external submissions or messages sent",
+  "goal_relation": "Relevant product discovery and editorial consideration; no guaranteed backlink, indexing, traffic or rank gain",
+  "release_gate": "Website downloads are paused; a signed/notarized replacement and exact public-download/native-flow verification are required first",
+  "communication_gate": "Explicit authorization for each third-party submission/message destination is still required; no account creation, paid review or purchase authorized",
+  "identity": {
+    "name": "Voicy",
+    "official_url": "https://usevoicy.app/",
+    "source": "https://github.com/jindratilk/voicy",
+    "comparison_url": "https://usevoicy.app/adobe-podcast-alternative",
+    "platform": "Apple Silicon Mac, macOS 14+",
+    "license": "MIT application source; models/dependencies retain separate licenses",
+    "price": "Free application",
+    "public_replacement_version": null
+  },
+  "assets": {
+    "square_icon": {
+      "repository_path": "src-tauri/icons/icon.png",
+      "width": 512,
+      "height": 512,
+      "alpha_channel": true,
+      "sha256": "949af04dd12a42336ceb210e3046a9f5fc1565c51a6c22e48f9f3ac633b1b017"
+    },
+    "website_icon": {
+      "repository_path": "landing/public/icon.png",
+      "width": 128,
+      "height": 128,
+      "note": "Below AlternativeTo recommended 280px; use existing native 512px source instead, no upscaling"
+    },
+    "social_image": {
+      "repository_path": "landing/public/og.png",
+      "width": 1200,
+      "height": 630
+    },
+    "native_gallery": "Fresh screenshots/video from the signed replacement are pending; existing development-candidate evidence must not be labeled as a published release"
+  },
+  "channels": [
+    {
+      "id": "awesome_mac",
+      "priority": 1,
+      "destination": "https://github.com/jaywcjlove/awesome-mac",
+      "guidelines": "https://github.com/jaywcjlove/awesome-mac/blob/master/docs/CONTRIBUTING.md",
+      "reviewed_source_commit": "f64bae9c02a4f92b44f5dfa5716121443eb23fe1",
+      "fit": "Mac software audience and an existing audio recording/processing category",
+      "duplicate_check": "No Voicy/usevoicy.app entry in four README files; separate Voicy issue and PR searches returned zero. Refresh before submission.",
+      "requirements_summary": "One suggestion per PR, concise useful sentence, local ordering and existing icon style; synchronize four README languages.",
+      "hold": [
+        "verified signed public replacement",
+        "explicit authorization for external PR",
+        "fresh duplicate/rules check"
+      ],
+      "entry": {
+        "name": "Voicy",
+        "url": "https://usevoicy.app/",
+        "source_url": "https://github.com/jindratilk/voicy",
+        "icons": [
+          "OSS Icon",
+          "Freeware Icon"
+        ],
+        "native_icon": false,
+        "languages": [
+          {
+            "file": "README.md",
+            "section": "Audio Record and Process",
+            "after": "Utter",
+            "before": "yovoice",
+            "description": "Open-source speech enhancement using local AuK models on Apple Silicon."
+          },
+          {
+            "file": "README-zh.md",
+            "section": "音频录制与编辑",
+            "after": "Utter",
+            "before": "yovoice",
+            "description": "在 Apple Silicon 上使用本地 AuK 模型增强语音的开源工具。"
+          },
+          {
+            "file": "README-ja.md",
+            "section": "オーディオ録音・処理",
+            "after": "Utter",
+            "before": "yovoice",
+            "description": "Apple Silicon 上でローカルの AuK モデルを使って音声を改善するオープンソースツール。"
+          },
+          {
+            "file": "README-ko.md",
+            "section": "오디오 및 비디오 도구",
+            "after": "Utter",
+            "before": "yovoice",
+            "description": "Apple Silicon에서 로컬 AuK 모델로 음성을 개선하는 오픈 소스 도구."
+          }
+        ]
+      },
+      "draft_pr_title": "Add Voicy to audio tools in four README languages",
+      "draft_pr_body": "Adds Voicy to the corresponding audio section in the English, Chinese, Japanese and Korean lists. It is an MIT-source application for local recorded-speech enhancement on Apple Silicon, with bundled models under separate licenses. The proposed entry uses the official product site plus source/freeware markers and preserves neighboring entries. Before submitting, attach the verified replacement version, public download/native validation and refreshed duplicate-check evidence. No subjective quality or Adobe superiority claim is made."
+    },
+    {
+      "id": "macupdate",
+      "priority": 1,
+      "destination": "https://member.macupdate.com/content/submit",
+      "guidelines": "https://www.macupdate.com/help/submit-app",
+      "fit": "macOS software catalog with audio production/recording categories",
+      "requirements_summary": "Plain app name without version/promo text; product and installer URLs; blank price for free software; factual descriptions, requirements and version changes. Authenticated form and any fee have not been verified.",
+      "hold": [
+        "verified signed public replacement",
+        "explicit submission authorization",
+        "authenticated form review, including any terms or charges"
+      ],
+      "draft_fields": {
+        "app_name": "Voicy",
+        "product_url": "https://usevoicy.app/",
+        "download_url": null,
+        "download_url_note": "Fill only after the new official endpoint resolves to the verified installer rather than a 503/HTML status page",
+        "price": "",
+        "short_description": "Local speech enhancement for Apple Silicon recordings.",
+        "description": "Enhance recorded speech locally with bundled AuK models, compare original and processed audio, and export mono 48 kHz, 24-bit WAV. Requires Apple Silicon and macOS 14 or later. Models require a large initial download and processing is not real time. Generative processing can alter speech, so compare the complete result with the preserved original. Application source is MIT licensed; bundled dependencies and models retain separate licenses.",
+        "version": null,
+        "version_changes": "Pending the actual signed replacement. State the startup-handshake fix only after the published artifact passes native validation; do not invent other release changes.",
+        "system_requirements": "Apple Silicon, macOS 14+; allow approximately 8 GB installed plus recordings. Re-check final download/installed size and memory recommendation from the replacement artifact."
+      }
+    },
+    {
+      "id": "alternativeto",
+      "priority": 2,
+      "destination": "https://alternativeto.net/faq/#add-a-new-application",
+      "guidelines": "https://alternativeto.net/faq/",
+      "fit": "Alternative-seeking audience, but partial fit to Adobe Enhance Speech rather than all Studio features",
+      "requirements_summary": "Verified email and moderated submission; use dedicated URL/source fields, no links/contact details in description or UTM on official URL. Current policy rejects some thin AI wrappers and indistinguishable apps; eligibility is uncertain. Free queue has no promised review date; optional paid priority is not approval or ranking.",
+      "hold": [
+        "verified signed public replacement",
+        "explicit submission authorization",
+        "moderation/AI-wrapper eligibility review",
+        "fresh duplicate/identity check"
+      ],
+      "identity_collision": {
+        "different_listing": "https://alternativeto.net/software/usevoicy--speech-to-text/about/",
+        "different_official_domain": "usevoicy.com",
+        "reason": "Dictation/transcription product, not this speech-enhancement app. Do not claim or edit its listing."
+      },
+      "draft_fields": {
+        "suggested_disambiguated_name": "Voicy – Local Speech Enhancement",
+        "official_url": "https://usevoicy.app/",
+        "source_url": "https://github.com/jindratilk/voicy",
+        "platforms": [
+          "Mac"
+        ],
+        "price_license": "Free; MIT application source, separately licensed models/dependencies",
+        "description": "Voicy is a focused tool for enhancing recorded speech on Apple Silicon Macs. It runs AuK locally with bundled models, without an account or audio upload. Import a recording, compare original and enhanced versions, then export a mono WAV. It is intended for speech cleanup, not transcription, a full recording studio, live microphone filtering or music mastering. macOS 14 or later is required. Allow storage for the bundled models and time for processing. Generative enhancement can change words or voice texture, so listen to the complete result before publishing.",
+        "proposed_features": [
+          "Local processing",
+          "Offline speech enhancement",
+          "Noise and room-echo cleanup",
+          "Original/enhanced comparison",
+          "WAV export"
+        ],
+        "alternative_relation": "If editors accept the task match, propose as a local alternative to Adobe Podcast Enhance Speech; disclose lack of Studio recording/transcript editing."
+      }
+    },
+    {
+      "id": "producthunt",
+      "priority": 3,
+      "destination": "https://www.producthunt.com/launch",
+      "guidelines": "https://help.producthunt.com/en/articles/17350772-launch-guide",
+      "featuring_guidelines": "https://help.producthunt.com/en/articles/9883485-product-hunt-featuring-guidelines",
+      "fit": "Broader maker/early-adopter discovery; secondary to the focused Mac/alternative channels",
+      "requirements_summary": "Personal maker account; tagline up to 60 characters, description up to 260, visuals/demo and up to three topics. Product must work publicly; featuring is editorial. No direct or incentivized upvote asks.",
+      "hold": [
+        "verified signed public replacement",
+        "explicit launch/comment authorization",
+        "correct personal maker account and verified maker attribution",
+        "fresh signed-release screenshots/video",
+        "time to respond honestly to comments"
+      ],
+      "identity_collision": {
+        "different_listing": "https://www.producthunt.com/products/voicy?launch=voicy",
+        "different_official_domain": "voicybot.com",
+        "reason": "Telegram transcription bot, not this project. Do not reuse/claim its product page, reviews or launch history."
+      },
+      "draft_fields": {
+        "name": "Voicy",
+        "url": "https://usevoicy.app/",
+        "tagline": "Clean up speech locally on your Apple Silicon Mac",
+        "description": "Free, open-source speech enhancement for Apple Silicon Macs. Process recordings locally with AuK, compare original and enhanced audio, and export WAV. No account or audio upload. macOS 14+; large model download required.",
+        "topics_proposed": [
+          "Audio",
+          "Mac",
+          "Open Source"
+        ],
+        "topics_note": "Choose available platform topics at submission, at most three; availability not verified in authenticated form.",
+        "maker_comment": "Voicy focuses on local speech cleanup for Apple Silicon. Models are included so recordings can be processed on the Mac without an upload or account. The workflow is import, enhance, compare, and export WAV. It is a focused alternative to Adobe Podcast Enhance Speech, not a replacement for every Studio feature. The tradeoffs are a large model download, hardware requirements and processing time. Generative enhancement can alter words or voice texture, so review the complete result before publishing. Application source is MIT licensed, while models and dependencies retain their own licenses. The official site links to the source, demo, requirements and comparison method. Feedback on import, comparison and export would help prioritize improvements.",
+        "maker_comment_note": "Project-description draft only; no invented personal origin story, user counts, listening panel, superiority score or claim of independent review.",
+        "character_counts": {
+          "tagline": 49,
+          "description": 220
+        }
+      }
+    }
+  ]
+}

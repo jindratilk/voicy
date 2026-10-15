@@ -101,11 +101,11 @@
     }
   ],
   "next_actions": [
-    "Obtain an authorized Developer ID signing/notarization environment for the tested startup source fix; complete remaining release checks including window reopen and independent second-Mac install.",
+    "Obtain an authorized Developer ID signing/notarization environment for the tested startup source fix; complete remaining release checks, including independent second-Mac install. Local window close/reopen already passed.",
     "Keep website downloads paused until a versioned signed/notarized replacement passes full public-download and native-flow validation; preserve original artifact and all evidence.",
     "Read GSC exact-query/page/country/device baseline after processing; inspect comparison indexing after crawl without repeated indexing requests.",
     "Resolve E03 subjective listening review before publishing validated human-speech examples; all five cases remain preserved.",
-    "Prepare factual distribution materials while release access is pending; no third-party messages or submissions without explicit messaging authorization."
+    "Refresh and submit prepared distribution materials only after public release validation and explicit named-destination messaging authorization; no external submissions made."
   ],
   "validation": {
     "landing_tests": "15 passed, including reachable-but-paused artifact and bodyless HEAD",
@@ -155,5 +155,23 @@
     "website_download": "Production website/API paused: GET/HEAD 503, explanatory page, no artifact redirect; main/comparison remain 200. Direct worker artifact preserved.",
     "signing": "Missing local identity/CI signing access; do not claim release-ready",
     "distribution_access": "Cloudflare CLI and Chrome not authenticated; old DMG not found locally, v=0.3.0 worker query still returns 0.3.2 and was rejected as rollback."
+  },
+  "distribution": {
+    "status": "Four destination-specific draft packets prepared; no external communications or submissions",
+    "packet": "docs/growth/DISTRIBUTION-PACK.md",
+    "fields": "docs/growth/DISTRIBUTION-PACK.json",
+    "priority": [
+      "Awesome Mac",
+      "MacUpdate",
+      "AlternativeTo (eligibility uncertain)",
+      "Product Hunt (secondary)"
+    ],
+    "identity_risk": "Existing Voicy listings on AlternativeTo and Product Hunt belong to usevoicy.com and voicybot.com respectively, not usevoicy.app",
+    "validation": "Six pinned source snapshots hash-verified; proposed-only four-language insertions preserve original bytes; icon/hash/dimensions and copy constraints verified",
+    "gates": [
+      "Signed/notarized working public replacement and exact native-flow validation",
+      "Explicit named-destination external communication authorization",
+      "Fresh rules/identity/duplicate/form checks; no spend or new terms accepted"
+    ]
   }
 }
