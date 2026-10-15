@@ -6,14 +6,15 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "41ec8e24d7bb82efbfd0acde9bf93bf6c53dcfd6",
+  "shipped_commit": "ab4864b4f62e900663545ef4c8c016edaa047c11",
   "deployment": {
-    "id": "dpl_DZhmKrdCLuDDyr58dmX5MW54guu3",
-    "url": "https://voicy-528v92hcy-skaluj.vercel.app",
+    "id": "dpl_7nTjBWDkYCBN4FkhUmL5fhsmypTX",
+    "url": "https://voicy-cbnrqimnb-skaluj.vercel.app",
     "environment": "production",
     "state": "READY",
     "custom_domain_verified": "https://usevoicy.app",
-    "project": "skaluj/voicy"
+    "project": "skaluj/voicy",
+    "verification_scope": "Last verified production before this documentation checkpoint; custom domain HTML contains this deployment ID"
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -50,31 +51,58 @@
     },
     {
       "id": "E03",
-      "status": "Five deterministic human-speech inputs prepared and independently replayed; no Voicy inference or quality verdict yet",
+      "status": "All five fixed cases processed successfully with the signed packaged runtime; structural checks and ASR complete; subjective listening unverified and new audio unpublished",
       "protocol": "docs/growth/E03-PROTOCOL.md",
       "manifest": "docs/growth/E03-MANIFEST.json",
       "source": "LibriSpeech test-clean, CC BY 4.0; official archive MD5 verified",
       "validation": "48kHz mono float32, finite, <= -3dBFS peak, no clipping; all input/reference hashes match a second preparation; case 3 independently measures 5.99999999786 dB using the frozen combined-signal mask",
-      "asr": "small.en checked all five references and inputs locally; one noisy-input recognition mismatch; ASR is not a perceptual quality result",
-      "runtime_acquisition": "Published Voicy 0.3.2 installer download in progress; exact live handles and recovery instructions in external e03-v1/RUNNING.json. Verify terminal/live state, full size/SHA and signing before execution."
+      "asr": "small.en checked all five enhanced outputs once. Case 3 enhanced recognition matches Whitney rather than noisy-input Kitten; compounding/date/hyphenation differences retained. Not a human intelligibility or quality result.",
+      "runtime_acquisition": "Complete: expected installer size/SHA256, signature integrity, notarized Gatekeeper acceptance, read-only mount and all 18 model-manifest hashes checked; image detached after execution",
+      "results": "docs/growth/E03-RESULTS.md",
+      "output_validation": "Five mono 24kHz float32 raw outputs, exact frames, finite/no clipping; 15 separate 48kHz PCM24 listening copies; all 20 independently checked using ffprobe/hashes",
+      "publication_gate": "Preserve the protocol: subjective listening/voice texture/artifact review remains unverified; do not publish these as validated audio improvements."
+    },
+    {
+      "id": "E04",
+      "status": "shipped and verified in production",
+      "change": "Comparison native audio preload none; no initial WAV requests in tested Chrome desktop/mobile, both play buttons work",
+      "observed_baseline_mobile_scores": [
+        81,
+        99,
+        84
+      ],
+      "observed_post_mobile_scores": [
+        99,
+        100,
+        100
+      ],
+      "observed_median_lcp_ms": {
+        "before": 4474.255,
+        "after": 1919.037
+      },
+      "initial_audio_bytes_before_range": [
+        476235,
+        554068
+      ],
+      "initial_audio_bytes_after": 0,
+      "limits": "Three sequential simulated mobile lab samples per phase, occupied Mac; no field CWV, controlled causal lift or ranking claim. One concurrent-QA run excluded before inspecting its metrics."
     }
   ],
   "next_actions": [
-    "Continue the existing installer download using its verified live handle; do not restart based on a stale observation. Full size/SHA/signature checks before running.",
-    "Run the packaged 0.3.2 runtime on all five prepared-corrected inputs with the fixed protocol; retain every failure and output.",
-    "Check enhanced output structure/transcript fidelity and arrange listening review where possible before publishing audio examples.",
-    "Read GSC baseline after processing and inspect comparison indexation after crawl; avoid repeated indexing requests.",
-    "Measure page performance after competing downloads/inference end; PageSpeed API unauthenticated quota returned 429, local Lighthouse quality categories passed."
+    "Read GSC exact-query/page/country/device baseline after processing; inspect comparison indexing after crawl, without repeated indexing requests.",
+    "Resolve the E03 listening/voice/artifact review before publishing validated human-speech examples; retain all five cases and limitations.",
+    "Prepare factual distribution materials with specific primary-source eligibility and evidence; no third-party sending/submission without explicit messaging authorization.",
+    "Use future GSC observations to choose the next content change; retain the single comparison canonical and avoid thin duplicate pages."
   ],
   "validation": {
     "landing_tests": "14 passed",
     "build": "Next 16.3.8 production build passed",
     "dependency_audit": "0 vulnerabilities after patch and transitive updates",
-    "browser": "Chrome desktop and 390x844 mobile; homepage play/Voicy toggle and comparison native play verified; no console errors",
+    "browser": "Production Playwright with installed Chrome, 1440x1000 and 390x844: correct URL/title/content, no overlay or console errors, zero initial WAV requests, both native play buttons load correct media and advance time. Browser plugin unavailable; local and production exercised.",
     "http": "home, comparison, privacy 200; one correct canonical and H1 each; JSON-LD parses; robots excludes admin/API; sitemap has three URLs",
-    "review": "Final frozen autoreview clean (0.93); no accepted/actionable findings",
-    "ci": "All frontend, website and backend jobs passed for PR head 6f8a5e78299f3476d6209893b957888de54c692c; rebased production source has identical tree",
-    "production_http": "Home, comparison, privacy, audio, robots, sitemap, llms HTTP 200; correct canonicals/H1 and parseable JSON-LD; production download 302 to worker, worker HEAD 200 for Voicy 0.3.2 with size 6513528823",
+    "review": "E03 run/audio-loading frozen autoreview clean (0.91), no accepted/actionable findings",
+    "ci": "All frontend, website and backend jobs passed for PR #3 head dccce222397d7443b31b6aa27d5e8f1ee76e93fd; rebased main ab4864b4 has the identical tree 4689bef959b93c0aaf95f685980bd49de96f36bb",
+    "production_http": "Home/comparison/privacy/robots/sitemap/llms 200; comparison correct canonical/one H1/two preload-none elements and exact deployment ID; download HEAD 302 then artifact HEAD 200 at 6513528823 bytes",
     "preview_download": "Preview HEAD 503 due to missing preview download configuration; production redirect and artifact HEAD verified separately",
     "comparison_quality_audit": {
       "tool": "Lighthouse 13.5.0",
@@ -86,10 +114,25 @@
       "failed_scored_audits": 0,
       "performance": "Not run in this audit; concurrent downloads would confound a local baseline",
       "limits": "Automated lab categories, not complete accessibility compliance or ranking proof"
-    }
+    },
+    "performance": "Completed three quiet post-change Lighthouse 13.5.0 simulated mobile runs: 99/100/100; median LCP 1919.037ms versus 4474.255ms before. Observational lab evidence, not field or ranking proof."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic."
-  ]
+  ],
+  "verified_utc": "2026-10-15T17:48:30.502858+00:00",
+  "search_observation": {
+    "date": "2026-10-15",
+    "engine": "Google Search, Chrome Incognito desktop, signed out; cookies rejected",
+    "location": "Unknown in Google UI despite hl=en/gl=us/pws=0; not a controlled US rank baseline",
+    "owned_result_on_first_observed_page": false,
+    "ai_answer_observed": false,
+    "scope": "First page only, desktop only; no universal ranking or AI-citation conclusion"
+  },
+  "bing": {
+    "access": "Public Sign In page only; no project/citation metrics verified",
+    "measurement": "Provider-specific sampled AI Performance citations/grounding queries; not universal AI-answer coverage",
+    "permission": "No Google access grant or account creation performed; prefer narrow manual verification when authorized session is available"
+  }
 }
