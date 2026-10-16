@@ -97,12 +97,12 @@
     },
     {
       "id": "E05",
-      "status": "Startup repair source retained; 0.3.3 versioned source candidate merged in PR #6 with real local native checks. No signed public replacement.",
+      "status": "Startup repair and 0.3.3 source candidate merged; full offline local app now Developer ID signed/deeply verified. App notarization running; no public replacement.",
       "incident": "docs/release/STARTUP-INCIDENT-2026-10-15.md",
       "cause": "Native launcher pins backend version 0.3.0, packaged server reports 0.3.1",
       "native_proof": "Fixed shell opens/restarts, native import/enhance/A-B/playback/export succeeds on first E03 case; busy-quit/Keep Processing/cancel preserve result, restart export byte-identical; closed window restored via Window -> Show Voicy",
       "candidate_scope": "Local development app using verified read-only 0.3.2 runtime; not a signed/notarized public replacement",
-      "release_dependency": "The owner requested local hosting. Existing signing/notarization access now verified on this Mac through a dedicated one-job runner; automatic deregistration and exact keychain restoration passed. Full installer and distribution validation remain pending; no budget increase or credential request is needed.",
+      "release_dependency": "Local signing access resolved. Notarization continuation is running; final DMG, clean second-machine and exact downloaded native flow remain. R2 HEAD diagnostic returned 403, independently of Apple notarization; storage/distribution needs diagnosis.",
       "containment_scope": "Website/API pause only; preserved direct worker artifact still exists. No rollback inferred from query parameters.",
       "website_local_qa": "15 tests and Next production build passed; real local download route tested from home/comparison at 1440x1000, 390x844, 320x740; correct 503 explanation/no redirect/bodyless HEAD/no overflow. Local-only pageview metrics fixture; production must be checked unmocked.",
       "production_qa": "Real production at 1440x1000, 390x844, 320x740: home/comparison 200 with pause notice; status GET/HEAD 503, no redirect, HEAD empty, no overflow or unexpected console errors. No production fixtures. Both comparison native audio players and home original/Voicy toggle/play/pause remain verified.",
@@ -129,8 +129,9 @@
     }
   ],
   "next_actions": [
-    "Local signing access is verified without raising financial limits. Finish the reviewed full offline 0.3.3 app signing/notarization job, then prepare/sign/notarize the DMG. Consult the local-runner checkpoint; do not ask again for the identified signing credentials.",
+    "Inspect the already-running local notarization continuation and private checkpoint before any new job. Do not restart/reupload unchanged. If Accepted, validate its ticket/Gatekeeper and exact accepted bundle manifest, then prepare/sign/notarize the versioned DMG with an upload-appropriate local timeout.",
     "Keep website downloads paused until a versioned signed/notarized replacement passes full public-download and native-flow validation; preserve original artifact and all evidence.",
+    "Diagnose the exact Voicy R2 HEAD 403 (signed ranged GET can distinguish a request/signature error from denied scope). Read access, write access and Worker deployment are separate proofs. No original artifact overwrite, raw credential export, financial-limit change or routine owner question.",
     "Read GSC exact-query/page/country/device baseline after processing; inspect comparison indexing after crawl without repeated indexing requests.",
     "Resolve E03 subjective listening review before publishing validated human-speech examples; all five cases remain preserved.",
     "Refresh and submit prepared distribution materials only after public release validation and explicit named-destination messaging authorization; no external submissions made.",
@@ -142,7 +143,7 @@
     "dependency_audit": "0 vulnerabilities after patch and transitive updates",
     "browser": "Production Chrome/Playwright: home/comparison -> download status at 1440x1000, 390x844, 320x740, real APIs/no fixtures. Demo playback verified separately at desktop/mobile; screenshots retained.",
     "http": "home, comparison, privacy 200; one correct canonical and H1 each; JSON-LD parses; robots excludes admin/API; sitemap has three URLs",
-    "review": "0.3.3 metadata/About frozen autoreview clean (0.98); isolated signing-access workflow review clean (0.94). Credential execution has not occurred. Local runner qualification passed with frozen clean review (0.86), actionlint and real signing/notarization access; the complete app-signing expansion passed frozen review (0.90), after correcting full-bundle provenance and cancellation/cleanup issues; local execution is running.",
+    "review": "Full local app-signing workflow final frozen review clean (0.90); continuation final frozen review clean (0.90), after fixing complete bundle provenance, retry-input preservation, cancellation/cleanup and durable submission IDs. Actionlint passed; real local identity signing/notarization authentication passed.",
     "ci": "All frontend, website and backend checks passed at PR #6 head a129f156a91cf92857109633f531d8448138c601; merged b2521cd0e58cd73cf8694ac10ff6e690e7b45278 has identical tree ffcdf3644ec882bf36d18e49e428ca5482ebdaff",
     "production_http": "Home/comparison 200 with notice and exact deployment ID; website download GET/HEAD 503/noindex/no redirect. Earlier 302/200 artifact checks are historical, not current website availability.",
     "preview_download": "Historical preview lacked download configuration; current production website/API remains intentionally paused with explanatory 503 and no redirect.",
@@ -164,14 +165,18 @@
       "optimized_release_binary_sha256": "6ac70fbc41f41a7ab477028f196684ee16db4d1ae5cc774bedf8d9d6a9f4e3e7",
       "frozen_bundle_manifest_sha256": "1b03fb58c3d6ed3160e9e109417513e915954bc1968b2d0aaddf463938404081",
       "whole_bundle_entries": 31036,
-      "signing_preflight": "passed; full app signing/notarization running; no signed public installer yet"
+      "signing_preflight": "passed; real full offline app signatures/deep verification passed; notarization continuation running; installer not public",
+      "signed_binary_sha256": "c7b9b51bd994490941a2427d7980591aa65a69b09805f2b1483dee3d953f7347",
+      "signed_bundle_manifest_sha256": "4cdf1791cd83560864f9502b97216718b44512a1a4d4ba7287acc6ecf310282a",
+      "signed_app_archive_sha256": "8656a1d312456616d5d7261c20526f4cfbbb0137481e938dd610caa3dab0cb2f",
+      "signed_app_archive_bytes": 6444151977
     }
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic."
   ],
-  "verified_utc": "2026-10-16T09:45:19.277884+00:00",
+  "verified_utc": "2026-10-16T10:19:03.489204+00:00",
   "search_observation": {
     "date": "2026-10-16",
     "engine": "Google Search, desktop Chrome Incognito, signed out, cookies rejected",
@@ -201,8 +206,8 @@
     "native_startup": "Failed on the tested M4, despite valid signing/notarization and successful direct runtime tests",
     "source_fix": "Startup source repair merged in PR #4; 0.3.3 metadata/About candidate merged in PR #6 at b2521cd0e58cd73cf8694ac10ff6e690e7b45278; not released as a signed installer",
     "website_download": "Production website/API paused: GET/HEAD 503, explanatory page, no artifact redirect; main/comparison remain 200. Direct worker artifact preserved.",
-    "signing": "Local ephemeral runner passed actual identity import/signing smoke, notarization authentication and exact host-keychain restoration on 16 October. Full offline app/installer signing is being prepared; no signed public replacement yet.",
-    "distribution_access": "Cloudflare CLI/Chrome were previously unauthenticated; distribution still requires qualification. The original 0.3.2 DMG is retained locally and immutable; the worker still serves that original artifact."
+    "signing": "Full offline 0.3.3 local candidate is Developer ID signed and deeply verified. Signed archive/app preserved; notarization continuation is running locally with a 120-minute limit and durable submission-ID checkpoint. No signed/notarized public replacement yet.",
+    "distribution_access": "The existing R2 credential account matches Voicy, but HEAD of the preserved original object returned 403. Read/write/Worker deployment access is not established; diagnose request/signature versus scope without overwriting 0.3.2 or exporting raw credentials. Voicy GitHub environments and Vercel metadata contained no Cloudflare deployment credential."
   },
   "distribution": {
     "status": "Four destination-specific draft packets prepared; no external communications or submissions",
@@ -223,9 +228,9 @@
     ]
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-16T09:45:19.277884+00:00",
-    "current_wait": "User resumed execution with local hosting. Hosted-runner budget dependency resolved through a dedicated ephemeral local runner. Full signed/notarized installer, clean second-machine, distribution and exact downloaded native-flow gates remain; GSC metrics were still processing at the earlier dated check.",
-    "completed_independent_work": "Local Apple signing and notarization authentication passed; runner deregistered and original keychain state restored. Production native binary compiled; writable-shadow full offline candidate prepared; original installer and all 18 model assets reverified; complete 31,036-entry bundle manifest frozen.",
+    "rechecked_utc": "2026-10-16T10:19:03.489204+00:00",
+    "current_wait": "Background local notarization continuation is executing after preserving the signed app/archive. Initial 45-minute upload attempt was deliberately canceled because measured ~1.7 MB/s could not finish it; signed inputs and original installer are preserved. Current limit is 120 minutes. No owner response is required for the current work.",
+    "completed_independent_work": "Existing signing access qualified; optimized binary and full offline 0.3.3 app assembled and Developer ID signed; deep signature verification passed before/after preserving the clone. Original installer and all 18 model assets match; complete input manifests frozen. Native automation and production rechecked; fresh GSC 7/28-day data still processing.",
     "owner_action_pending": false,
     "private_checkpoint": "voicy-growth-evidence/local-runner-2026-10-16/CHECKPOINT.json",
     "previous_blocked_audit": "Same signing-execution dependency has persisted through three consecutive resumed goal turns; independent candidate preparation and direct AEO observation are complete. Current next actions require owner input, provider processing, publication qualification or external-message authorization.",
