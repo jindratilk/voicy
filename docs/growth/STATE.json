@@ -6,15 +6,15 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "a45f4530be53b602c66f92efd0be0c88bda0c54f",
+  "shipped_commit": "b2521cd0e58cd73cf8694ac10ff6e690e7b45278",
   "deployment": {
-    "id": "dpl_Fpbf7G76gz72sXZSiHs1eLUWEqt4",
-    "url": "https://voicy-1k0rjhl3f-skaluj.vercel.app",
+    "id": "dpl_1HRSv5t2onmeDmy9v5kEA8ANkWKa",
+    "url": "https://voicy-mk07njfc0-skaluj.vercel.app",
     "environment": "production",
     "state": "READY",
     "custom_domain_verified": "https://usevoicy.app",
     "project": "skaluj/voicy",
-    "verification_scope": "Last verified code deployment before this documentation checkpoint; exact source/ID matched Vercel and served home/comparison/privacy HTML"
+    "verification_scope": "Last verified code deployment before this documentation checkpoint; exact ID matched production HTML, public pages 200, download status 503"
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -97,15 +97,22 @@
     },
     {
       "id": "E05",
-      "status": "Source fix merged in PR #4; native candidate validated; website containment shipped and verified in production; signed replacement installer not released",
+      "status": "Startup repair source retained; 0.3.3 versioned source candidate merged in PR #6 with real local native checks. No signed public replacement.",
       "incident": "docs/release/STARTUP-INCIDENT-2026-10-15.md",
       "cause": "Native launcher pins backend version 0.3.0, packaged server reports 0.3.1",
       "native_proof": "Fixed shell opens/restarts, native import/enhance/A-B/playback/export succeeds on first E03 case; busy-quit/Keep Processing/cancel preserve result, restart export byte-identical; closed window restored via Window -> Show Voicy",
       "candidate_scope": "Local development app using verified read-only 0.3.2 runtime; not a signed/notarized public replacement",
-      "release_dependency": "No local valid Developer ID identity, no accessible signing Actions secrets, Cloudflare CLI unauthenticated and Chrome at login. Authorized signing and distribution access required; no keys/passwords in chat.",
+      "release_dependency": "Existing owner-controlled signing/notarization secret metadata identified; isolated access qualification prepared but unable to execute. No identity or notarization validity inferred; owner action pending, detail in private checkpoint. Distribution access remains unqualified.",
       "containment_scope": "Website/API pause only; preserved direct worker artifact still exists. No rollback inferred from query parameters.",
       "website_local_qa": "15 tests and Next production build passed; real local download route tested from home/comparison at 1440x1000, 390x844, 320x740; correct 503 explanation/no redirect/bodyless HEAD/no overflow. Local-only pageview metrics fixture; production must be checked unmocked.",
-      "production_qa": "Real production at 1440x1000, 390x844, 320x740: home/comparison 200 with pause notice; status GET/HEAD 503, no redirect, HEAD empty, no overflow or unexpected console errors. No production fixtures. Both comparison native audio players and home original/Voicy toggle/play/pause remain verified."
+      "production_qa": "Real production at 1440x1000, 390x844, 320x740: home/comparison 200 with pause notice; status GET/HEAD 503, no redirect, HEAD empty, no overflow or unexpected console errors. No production fixtures. Both comparison native audio players and home original/Voicy toggle/play/pause remain verified.",
+      "candidate": {
+        "version": "0.3.3",
+        "source": "b2521cd0e58cd73cf8694ac10ff6e690e7b45278",
+        "note": "docs/release/0.3.3-CANDIDATE.md",
+        "proof": "Two Rust tests, seven frontend tests/build, native compilation; actual launch/About version/history restore/playback/native export, export byte-identical to prior result",
+        "limits": "Local ad-hoc app with verified original runtime mounted read-only; no new enhancement in this metadata cycle; clean second-machine and signed downloaded-artifact checks pending"
+      }
     },
     {
       "id": "E06",
@@ -122,7 +129,7 @@
     }
   ],
   "next_actions": [
-    "Obtain an authorized Developer ID signing/notarization environment for the tested startup source fix; complete remaining release checks, including independent second-Mac install. Local window close/reopen already passed.",
+    "After the pending owner action, qualify the identified existing signing/notarization pipeline; consult the private checkpoint before any retry. Do not ask again where credentials are, raise financial limits, export credentials or rerun an unchanged blocked check.",
     "Keep website downloads paused until a versioned signed/notarized replacement passes full public-download and native-flow validation; preserve original artifact and all evidence.",
     "Read GSC exact-query/page/country/device baseline after processing; inspect comparison indexing after crawl without repeated indexing requests.",
     "Resolve E03 subjective listening review before publishing validated human-speech examples; all five cases remain preserved.",
@@ -135,8 +142,8 @@
     "dependency_audit": "0 vulnerabilities after patch and transitive updates",
     "browser": "Production Chrome/Playwright: home/comparison -> download status at 1440x1000, 390x844, 320x740, real APIs/no fixtures. Demo playback verified separately at desktop/mobile; screenshots retained.",
     "http": "home, comparison, privacy 200; one correct canonical and H1 each; JSON-LD parses; robots excludes admin/API; sitemap has three URLs",
-    "review": "IndexNow final frozen autoreview clean (0.93), initial predictable-path finding corrected; native containment review remains historical clean (0.91)",
-    "ci": "All frontend/website/backend CI passed at PR #5 head ac5878d4cfd64f99c1f61b7c966d844c99870071; merged a45f4530be53b602c66f92efd0be0c88bda0c54f has identical tree 104cd3358452d476563b64f2ce8451835b9070b1",
+    "review": "0.3.3 metadata/About frozen autoreview clean (0.98); isolated signing-access workflow review clean (0.94). Credential execution has not occurred.",
+    "ci": "All frontend, website and backend checks passed at PR #6 head a129f156a91cf92857109633f531d8448138c601; merged b2521cd0e58cd73cf8694ac10ff6e690e7b45278 has identical tree ffcdf3644ec882bf36d18e49e428ca5482ebdaff",
     "production_http": "Home/comparison 200 with notice and exact deployment ID; website download GET/HEAD 503/noindex/no redirect. Earlier 302/200 artifact checks are historical, not current website availability.",
     "preview_download": "Historical preview lacked download configuration; current production website/API remains intentionally paused with explanatory 503 and no redirect.",
     "comparison_quality_audit": {
@@ -151,13 +158,14 @@
       "limits": "Automated lab categories, not complete accessibility compliance or ranking proof"
     },
     "performance": "Completed three quiet post-change Lighthouse 13.5.0 simulated mobile runs: 99/100/100; median LCP 1919.037ms versus 4474.255ms before. Observational lab evidence, not field or ranking proof.",
-    "indexnow": "Local actual production servers: configured/missing/invalid values, exact body/headers/bodyless HEAD, wrong/fixed aliases and known pages/assets/download containment. Production: correct private proof 200, HEAD 0 transfer bytes, wrong/fixed aliases 404; eight existing routes/assets still valid, key absent in public pages."
+    "indexnow": "Local actual production servers: configured/missing/invalid values, exact body/headers/bodyless HEAD, wrong/fixed aliases and known pages/assets/download containment. Production: correct private proof 200, HEAD 0 transfer bytes, wrong/fixed aliases 404; eight existing routes/assets still valid, key absent in public pages.",
+    "native_candidate_033": "Local app opens, About 0.3.3 (0.3.3), history restored, playback reaches 4.9 seconds, native mono 48kHz PCM24 export 235440 frames, hash 74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994; app quit and read-only image detached. Source changes are metadata/About only; no new enhancement run."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic."
   ],
-  "verified_utc": "2026-10-16T07:30:01.252631+00:00",
+  "verified_utc": "2026-10-16T09:04:22.751337+00:00",
   "search_observation": {
     "date": "2026-10-15",
     "engine": "Google Search, Chrome Incognito desktop, signed out; cookies rejected",
@@ -175,9 +183,9 @@
   "release_health": {
     "published_version": "0.3.2",
     "native_startup": "Failed on the tested M4, despite valid signing/notarization and successful direct runtime tests",
-    "source_fix": "Merged in 4df60b7c8a1a62c407bd59191bbb7ed815dd3c10 and locally native-tested; not a signed public replacement",
+    "source_fix": "Startup source repair merged in PR #4; 0.3.3 metadata/About candidate merged in PR #6 at b2521cd0e58cd73cf8694ac10ff6e690e7b45278; not released as a signed installer",
     "website_download": "Production website/API paused: GET/HEAD 503, explanatory page, no artifact redirect; main/comparison remain 200. Direct worker artifact preserved.",
-    "signing": "Missing local identity/CI signing access; do not claim release-ready",
+    "signing": "Existing owner-controlled signing infrastructure identified. Qualification could not execute; no signed candidate or current credential validity claim.",
     "distribution_access": "Cloudflare CLI and Chrome not authenticated; old DMG not found locally, v=0.3.0 worker query still returns 0.3.2 and was rejected as rollback."
   },
   "distribution": {
@@ -199,13 +207,15 @@
     ]
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-16T07:30:01.252631+00:00",
-    "current_wait": "16 October recheck: no valid local signing identity; repository signing-secret names empty; Wrangler unauthenticated. GSC performance still processing. Public release recovery still needs authorized signing/notarization and distribution environment.",
-    "completed_independent_work": "IndexNow implemented/tested/reviewed/shipped in PR #5; two real changed pages notified once (202 pending verification). Existing product/comparison/indexing and containment verified; no ranking result claimed.",
+    "rechecked_utc": "2026-10-16T09:04:22.751337+00:00",
+    "current_wait": "Owner-controlled CI qualification cannot execute; no credential step started. Explicit owner action is pending before retry; see private checkpoint. Public signing/notarization, second-machine and distribution gates remain.",
+    "completed_independent_work": "Prepared and merged 0.3.3 candidate metadata/About correction with clean review, CI, local native version/playback/export proof. Verified a small disk-image shadow merge preserves the original; this is not full-size capacity or release proof.",
     "resume_conditions": [
       "Authorized existing signing/notarization and Cloudflare environment becomes available",
       "GSC performance data becomes available for an evidence-led measurement/action cycle"
     ],
-    "monitor": "Daily native automation remains ACTIVE; the year-end campaign is not completed."
+    "monitor": "Daily native automation remains ACTIVE; the year-end campaign is not completed.",
+    "owner_action_pending": true,
+    "private_checkpoint": "voicy-growth-evidence/signing-discovery-2026-10-16/CI-QUALIFICATION.json"
   }
 }
