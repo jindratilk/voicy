@@ -22,13 +22,13 @@
     "verification_method": "Domain name provider; automatic ownership verification observed in Chrome",
     "home_indexed": true,
     "sitemap_status": "2026-10-16 morning: Successful; submitted/read 15 October; three discovered pages. No resubmission made.",
-    "performance": "2026-10-16 morning: 7-day and 28-day views both still processing; exact-query/page/country/device tabs and export/filter unavailable. UI last update 18.5 hours ago. No rank/click/impression baseline inferred.",
+    "performance": "16 October late morning: both 7-day and 28-day views still processing; last update shown 20.5 hours ago. Export/filter/query/page/country/device data unavailable; no baseline inferred.",
     "baseline_rank": null,
     "baseline_clicks": null,
     "baseline_impressions": null,
     "comparison_indexed": true,
     "comparison_status": "2026-10-16 morning authenticated UI: URL on Google; page indexed; HTTPS. Previous canonical/crawl detail preserved in the 15 October checkpoint.",
-    "rechecked_utc": "2026-10-16T07:30:01.252631+00:00",
+    "rechecked_utc": "2026-10-16T09:13:26.981948+00:00",
     "available_views": {
       "last_7_days": false,
       "last_28_days": false,
@@ -167,12 +167,22 @@
   ],
   "verified_utc": "2026-10-16T09:04:22.751337+00:00",
   "search_observation": {
-    "date": "2026-10-15",
-    "engine": "Google Search, Chrome Incognito desktop, signed out; cookies rejected",
-    "location": "Unknown in Google UI despite hl=en/gl=us/pws=0; not a controlled US rank baseline",
+    "date": "2026-10-16",
+    "engine": "Google Search, desktop Chrome Incognito, signed out, cookies rejected",
+    "location": "Unknown — Google says it cannot determine location; not a controlled US baseline",
     "owned_result_on_first_observed_page": false,
-    "ai_answer_observed": false,
-    "scope": "First page only, desktop only; no universal ranking or AI-citation conclusion"
+    "ai_answer_observed": true,
+    "owned_ai_citation_observed": false,
+    "verified_citation_destination": "https://diffio.ai/adobe-podcast-alternative/",
+    "other_visible_source_labels": [
+      "Reddit",
+      "Trebble",
+      "YouTube",
+      "Facebook",
+      "G2"
+    ],
+    "scope": "One first-page observation; AI Overview expanded, one citation destination followed; no mobile observation",
+    "limit": "One dynamic answer, not all-assistant coverage or controlled US rank. Competitor citations do not independently validate their claims or establish why Google included them."
   },
   "bing": {
     "access": "Public Sign In page only; no project/citation metrics verified",
@@ -217,5 +227,23 @@
     "monitor": "Daily native automation remains ACTIVE; the year-end campaign is not completed.",
     "owner_action_pending": true,
     "private_checkpoint": "voicy-growth-evidence/signing-discovery-2026-10-16/CI-QUALIFICATION.json"
+  },
+  "search_observation_history": [
+    {
+      "date": "2026-10-15",
+      "engine": "Google Search, Chrome Incognito desktop, signed out; cookies rejected",
+      "location": "Unknown in Google UI despite hl=en/gl=us/pws=0; not a controlled US rank baseline",
+      "owned_result_on_first_observed_page": false,
+      "ai_answer_observed": false,
+      "scope": "First page only, desktop only; no universal ranking or AI-citation conclusion"
+    }
+  ],
+  "aeo_observation": {
+    "provider": "Google Search AI Overview",
+    "date": "2026-10-16",
+    "query": "Adobe podcast alternative",
+    "own_citation": false,
+    "competitor_citation_verified": "https://diffio.ai/adobe-podcast-alternative/",
+    "implication": "Original inspectable evidence and explicit task scope remain priorities; no causal/ranking/quality conclusion. Do not weaken E03 publication gates or invent a benchmark/listening panel."
   }
 }
