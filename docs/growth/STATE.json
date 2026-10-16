@@ -1,34 +1,40 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "goal_status": "active",
   "deadline": "2026-12-31",
   "target_query": "Adobe podcast alternative",
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "4df60b7c8a1a62c407bd59191bbb7ed815dd3c10",
+  "shipped_commit": "a45f4530be53b602c66f92efd0be0c88bda0c54f",
   "deployment": {
-    "id": "dpl_3yt33Ev2aFq2B6QzVoyoTLYsVY9z",
-    "url": "https://voicy-nmzxoom8a-skaluj.vercel.app",
+    "id": "dpl_Fpbf7G76gz72sXZSiHs1eLUWEqt4",
+    "url": "https://voicy-1k0rjhl3f-skaluj.vercel.app",
     "environment": "production",
     "state": "READY",
     "custom_domain_verified": "https://usevoicy.app",
     "project": "skaluj/voicy",
-    "verification_scope": "Last verified production before this documentation checkpoint; matched deployment ID in home/comparison HTML"
+    "verification_scope": "Last verified code deployment before this documentation checkpoint; exact source/ID matched Vercel and served home/comparison/privacy HTML"
   },
   "gsc": {
     "property": "https://usevoicy.app/",
     "verified": true,
     "verification_method": "Domain name provider; automatic ownership verification observed in Chrome",
     "home_indexed": true,
-    "sitemap_status": "2026-10-15 recheck: submitted/read 15 October, Successful, three discovered pages. URL inspection separately shows a temporary sitemap-processing error; sitemap report success and indexed page retained as separate observations. No repeated submission made.",
-    "performance": "Rechecked 2026-10-15: still processing, UI asks to retry in approximately one day; export/filter disabled. No baseline inferred.",
+    "sitemap_status": "2026-10-16 morning: Successful; submitted/read 15 October; three discovered pages. No resubmission made.",
+    "performance": "2026-10-16 morning: 7-day and 28-day views both still processing; exact-query/page/country/device tabs and export/filter unavailable. UI last update 18.5 hours ago. No rank/click/impression baseline inferred.",
     "baseline_rank": null,
     "baseline_clicks": null,
     "baseline_impressions": null,
     "comparison_indexed": true,
-    "comparison_status": "2026-10-15 recheck: URL is on Google; page indexed; smartphone Googlebot, fetch successful, crawl/indexing allowed. Declared canonical is comparison URL and Google selected inspected URL. Crawl displayed 15. 10. 2026 18:58:19; UI timezone not independently established.",
-    "rechecked_utc": "2026-10-15T18:44:55.344779+00:00"
+    "comparison_status": "2026-10-16 morning authenticated UI: URL on Google; page indexed; HTTPS. Previous canonical/crawl detail preserved in the 15 October checkpoint.",
+    "rechecked_utc": "2026-10-16T07:30:01.252631+00:00",
+    "available_views": {
+      "last_7_days": false,
+      "last_28_days": false,
+      "exact_query_page_country_device": false,
+      "reason": "Source data processing, not measured zero performance"
+    }
   },
   "scheduler": {
     "intended_cadence": "Daily 09:15 and 17:15 Europe/Prague; scheduler jitter applies",
@@ -36,15 +42,16 @@
     "kind": "heartbeat",
     "target_thread_id": "01a14067-62f7-7d60-9615-f6d3f709f97d",
     "status": "ACTIVE; native TOML and live automation index match",
-    "verified_next_nominal_run": "2026-10-16T09:15:00+02:00",
-    "verified_next_run": "2026-10-16T09:16:35+02:00",
+    "verified_next_nominal_run": "2026-10-16T17:15:00+02:00",
+    "verified_next_run": "2026-10-16T17:19:23+02:00",
     "weekly_report": "Thursday; other unchanged runs quiet",
-    "execution_dependency": "Mac and Codex available; schedule is not proof of uninterrupted execution"
+    "execution_dependency": "Mac and Codex available; schedule is not proof of uninterrupted execution",
+    "verified_last_run_utc": "2026-10-16T07:17:03.911Z"
   },
   "experiments": [
     {
       "id": "E01",
-      "status": "shipped; awaiting indexing and 14/28-day measurements"
+      "status": "Comparison indexed and reconfirmed 16 October; performance still processing; await 14/28-day outcome measurements"
     },
     {
       "id": "E02",
@@ -99,6 +106,19 @@
       "containment_scope": "Website/API pause only; preserved direct worker artifact still exists. No rollback inferred from query parameters.",
       "website_local_qa": "15 tests and Next production build passed; real local download route tested from home/comparison at 1440x1000, 390x844, 320x740; correct 503 explanation/no redirect/bodyless HEAD/no overflow. Local-only pageview metrics fixture; production must be checked unmocked.",
       "production_qa": "Real production at 1440x1000, 390x844, 320x740: home/comparison 200 with pause notice; status GET/HEAD 503, no redirect, HEAD empty, no overflow or unexpected console errors. No production fixtures. Both comparison native audio players and home original/Voicy toggle/play/pause remain verified."
+    },
+    {
+      "id": "E06",
+      "status": "Shipped in PR #5 and production verified; first two-page IndexNow notification returned 202 (ownership verification pending)",
+      "change": "Random production-only ownership proof at a key-derived root filename; no fixed alias, Git value, client value or sitemap entry",
+      "source": "https://www.indexnow.org/documentation",
+      "notification_utc": "2026-10-16T07:28:48.599356+00:00",
+      "notification_urls": [
+        "https://usevoicy.app/",
+        "https://usevoicy.app/adobe-podcast-alternative"
+      ],
+      "acknowledgement": 202,
+      "limits": "Acknowledgement only, not confirmed key validation, crawling, indexing, rank gain or AI citation. No repeated unchanged notification; Google measurement remains GSC Web."
     }
   ],
   "next_actions": [
@@ -106,7 +126,8 @@
     "Keep website downloads paused until a versioned signed/notarized replacement passes full public-download and native-flow validation; preserve original artifact and all evidence.",
     "Read GSC exact-query/page/country/device baseline after processing; inspect comparison indexing after crawl without repeated indexing requests.",
     "Resolve E03 subjective listening review before publishing validated human-speech examples; all five cases remain preserved.",
-    "Refresh and submit prepared distribution materials only after public release validation and explicit named-destination messaging authorization; no external submissions made."
+    "Refresh and submit prepared distribution materials only after public release validation and explicit named-destination messaging authorization; no external submissions made.",
+    "Use IndexNow only after future meaningful canonical-page changes; do not repeat this 202 notification on unchanged heartbeat runs. Observe index/citation evidence separately when accessible."
   ],
   "validation": {
     "landing_tests": "15 passed, including reachable-but-paused artifact and bodyless HEAD",
@@ -114,10 +135,10 @@
     "dependency_audit": "0 vulnerabilities after patch and transitive updates",
     "browser": "Production Chrome/Playwright: home/comparison -> download status at 1440x1000, 390x844, 320x740, real APIs/no fixtures. Demo playback verified separately at desktop/mobile; screenshots retained.",
     "http": "home, comparison, privacy 200; one correct canonical and H1 each; JSON-LD parses; robots excludes admin/API; sitemap has three URLs",
-    "review": "Final native-startup/website-containment frozen autoreview clean (0.91); no accepted/actionable findings",
-    "ci": "All frontend, website and backend jobs passed for PR #4 head 7b9a544bb0b6473021df79672f15b5826e72153c; rebase main 4df60b7 has identical tree 25c0676705aec50611abf81ca06262fc975b3df0",
+    "review": "IndexNow final frozen autoreview clean (0.93), initial predictable-path finding corrected; native containment review remains historical clean (0.91)",
+    "ci": "All frontend/website/backend CI passed at PR #5 head ac5878d4cfd64f99c1f61b7c966d844c99870071; merged a45f4530be53b602c66f92efd0be0c88bda0c54f has identical tree 104cd3358452d476563b64f2ce8451835b9070b1",
     "production_http": "Home/comparison 200 with notice and exact deployment ID; website download GET/HEAD 503/noindex/no redirect. Earlier 302/200 artifact checks are historical, not current website availability.",
-    "preview_download": "Preview HEAD 503 due to missing preview download configuration; production redirect and artifact HEAD verified separately",
+    "preview_download": "Historical preview lacked download configuration; current production website/API remains intentionally paused with explanatory 503 and no redirect.",
     "comparison_quality_audit": {
       "tool": "Lighthouse 13.5.0",
       "date": "2026-10-15",
@@ -129,13 +150,14 @@
       "performance": "Not run in this audit; concurrent downloads would confound a local baseline",
       "limits": "Automated lab categories, not complete accessibility compliance or ranking proof"
     },
-    "performance": "Completed three quiet post-change Lighthouse 13.5.0 simulated mobile runs: 99/100/100; median LCP 1919.037ms versus 4474.255ms before. Observational lab evidence, not field or ranking proof."
+    "performance": "Completed three quiet post-change Lighthouse 13.5.0 simulated mobile runs: 99/100/100; median LCP 1919.037ms versus 4474.255ms before. Observational lab evidence, not field or ranking proof.",
+    "indexnow": "Local actual production servers: configured/missing/invalid values, exact body/headers/bodyless HEAD, wrong/fixed aliases and known pages/assets/download containment. Production: correct private proof 200, HEAD 0 transfer bytes, wrong/fixed aliases 404; eight existing routes/assets still valid, key absent in public pages."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic."
   ],
-  "verified_utc": "2026-10-15T18:26:14.328446+00:00",
+  "verified_utc": "2026-10-16T07:30:01.252631+00:00",
   "search_observation": {
     "date": "2026-10-15",
     "engine": "Google Search, Chrome Incognito desktop, signed out; cookies rejected",
@@ -147,7 +169,8 @@
   "bing": {
     "access": "Public Sign In page only; no project/citation metrics verified",
     "measurement": "Provider-specific sampled AI Performance citations/grounding queries; not universal AI-answer coverage",
-    "permission": "No Google access grant or account creation performed; prefer narrow manual verification when authorized session is available"
+    "permission": "No Google access grant or account creation performed; prefer narrow manual verification when authorized session is available",
+    "indexnow": "Initial changed-page notification accepted with 202; key verification pending. No Webmaster Tools access or AI citation metrics claimed."
   },
   "release_health": {
     "published_version": "0.3.2",
@@ -176,9 +199,9 @@
     ]
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-15T18:44:55.344779+00:00",
-    "current_wait": "No valid local signing identity; repository signing-secret names empty; Wrangler unauthenticated. GSC performance processing. Public release recovery requires authorized signing/notarization and distribution environment.",
-    "completed_independent_work": "Startup source fix/native flow and containment validated; distribution drafts finished; comparison indexing newly confirmed.",
+    "rechecked_utc": "2026-10-16T07:30:01.252631+00:00",
+    "current_wait": "16 October recheck: no valid local signing identity; repository signing-secret names empty; Wrangler unauthenticated. GSC performance still processing. Public release recovery still needs authorized signing/notarization and distribution environment.",
+    "completed_independent_work": "IndexNow implemented/tested/reviewed/shipped in PR #5; two real changed pages notified once (202 pending verification). Existing product/comparison/indexing and containment verified; no ranking result claimed.",
     "resume_conditions": [
       "Authorized existing signing/notarization and Cloudflare environment becomes available",
       "GSC performance data becomes available for an evidence-led measurement/action cycle"
