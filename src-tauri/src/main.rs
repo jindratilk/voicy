@@ -270,7 +270,7 @@ fn native_menu(app: &tauri::AppHandle) -> tauri::Result<Menu<tauri::Wry>> {
                 None,
                 Some(AboutMetadata {
                     name: Some("Voicy".into()),
-                    version: Some("0.3.0".into()),
+                    version: Some(env!("CARGO_PKG_VERSION").into()),
                     comments: Some("Local speech enhancement with AuK.".into()),
                     ..Default::default()
                 }),
