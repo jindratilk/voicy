@@ -32,6 +32,12 @@ Use Node's `crypto.randomBytes(16).toString('hex')` for a fresh salt and `crypto
 
 The website includes canonical URLs, Open Graph and social images, SoftwareApplication and FAQ JSON-LD, robots.txt, sitemap.xml and llms.txt. These help discovery and interpretation; they do not guarantee rankings, rich results or citation by AI systems. Admin and API routes are excluded from indexing. FAQ claims match visible content.
 
+## IndexNow notifications
+
+`INDEXNOW_KEY` is an optional server-only production variable (8–128 letters, digits or hyphens). Generate a fresh random value; keep it and the exact file URL out of Git, public logs, sitemaps and client bundles. The root path `/{INDEXNOW_KEY}.txt` intentionally serves the value as plain text for search-engine ownership verification, with `noindex` and no caching. There is no fixed alias or directory listing. Other unknown root paths and missing/invalid configuration return an empty 404; HEAD has no body. This proof only authorizes search-engine URL notifications, not admin access. Do not reuse another service's secret.
+
+After a meaningful public content change is deployed and verified, send only the changed canonical URLs in one JSON POST to `https://api.indexnow.org/indexnow`, using `host: "usevoicy.app"`, the configured `key`, and the matching root `.txt` URL as `keyLocation`. Keep the request payload and dated response outside public Git. Do not notify on every heartbeat, documentation-only commit or unchanged check. Do not include admin/API/download-status URLs or preview domains. HTTP 200 acknowledges receipt; 202 means verification is pending. Neither proves crawling, indexing, ranking or an AI citation. See the [protocol](https://www.indexnow.org/documentation) and [FAQ](https://www.indexnow.org/faq).
+
 ## Release artifact
 
 Upload the signed, notarized and stapled DMG to the release bucket using [R2 multipart upload](https://developers.cloudflare.com/r2/objects/upload-objects/#multipart-upload). Keep the object filename in `worker/index.js` consistent with the release version. The public Worker exposes downloads and authenticated metrics, not upload endpoints. Verify the artifact size, transport checksums and resumed downloads before publishing a GitHub release. Attach the final SHA-256 checksum to the release.
