@@ -1,34 +1,34 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-17",
   "goal_status": "active",
   "deadline": "2026-12-31",
   "target_query": "Adobe podcast alternative",
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "e65cb949af445209a6ad82283c348834e6f74367",
+  "shipped_commit": "c882b12a95d427c46f9dc41c07f8778cb9b86133",
   "deployment": {
-    "id": "dpl_HHzGR41BayTrD5ECSaF7skcBfjNQ",
-    "url": "https://voicy-dpygs1zwv-skaluj.vercel.app",
+    "id": "dpl_6hK7vKDHkbD15yg2Kgz41HdNh5Pn",
+    "url": "https://voicy-kcwsnt554-skaluj.vercel.app",
     "environment": "production",
     "state": "READY",
     "custom_domain_verified": "https://usevoicy.app",
     "project": "skaluj/voicy",
-    "verification_scope": "16 October afternoon: exact e65cb949 deployment ID matched in home/comparison HTML; public pages/robots/sitemap 200; download GET 503/noindex/no redirect."
+    "verification_scope": "17 October morning: exact c882b12 deployment matched in live home/comparison HTML; home/comparison/privacy/robots/sitemap200; website download503/noindex/no redirect."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
     "verified": true,
     "verification_method": "Domain name provider; automatic ownership verification observed in Chrome",
     "home_indexed": true,
-    "sitemap_status": "16 October afternoon: Successful; submitted/read 15 October; 3 discovered pages. No resubmission.",
-    "performance": "16 October afternoon: authenticated 7/28-day CSV reports available. Both contain only 14 October: 0 clicks, 5 impressions, CTR 0%, aggregate average position 6; homepage only. This predates comparison-page launch and is not target-query progress.",
+    "sitemap_status": "17 October morning: Successful, three discovered pages, last read 15 October. No repeated sitemap/indexing request.",
+    "performance": "17 October morning authenticated 7/28-day CSV exports unchanged: only 14 October, homepage 5 impressions / 0 clicks / 0% CTR / aggregate position 6, predominantly branded. Exact-target filter reports 0 impressions / 0 clicks, no rows; target rank remains undefined. No new post-launch outcome.",
     "baseline_rank": null,
     "baseline_clicks": 0,
     "baseline_impressions": 5,
     "comparison_indexed": true,
-    "comparison_status": "16 October afternoon: URL on Google, indexed, HTTPS, one valid breadcrumb. No repeated indexing request.",
-    "rechecked_utc": "2026-10-16T15:41:19.562510+00:00",
+    "comparison_status": "17 October morning: URL on Google, page indexed, HTTPS and one valid breadcrumb. Homepage also on Google/indexed.",
+    "rechecked_utc": "2026-10-17T07:24:45.058736+00:00",
     "available_views": {
       "last_7_days": true,
       "last_28_days": true,
@@ -58,7 +58,8 @@
       },
       "previous_period": "No previous-period export/baseline established; no trend claim.",
       "private_evidence": "voicy-growth-evidence/gsc-2026-10-16-afternoon/SUMMARY.json"
-    }
+    },
+    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-17-morning/GSC-EXPORTS.json"
   },
   "scheduler": {
     "intended_cadence": "Daily 09:15 and 17:15 Europe/Prague; scheduler jitter applies",
@@ -66,12 +67,12 @@
     "kind": "heartbeat",
     "target_thread_id": "01a14067-62f7-7d60-9615-f6d3f709f97d",
     "status": "ACTIVE; native TOML and live automation index match",
-    "verified_next_nominal_run": "2026-10-17T09:15:00+02:00",
+    "verified_next_nominal_run": "2026-10-17T17:15:00+02:00",
     "verified_next_run": null,
     "weekly_report": "Thursday; other unchanged runs quiet",
     "execution_dependency": "Mac and Codex available; schedule is not proof of uninterrupted execution",
-    "verified_last_run_utc": "2026-10-16T15:19:35.999Z",
-    "next_run_note": "Current afternoon heartbeat received; ACTIVE definition re-read. Next nominal time known, next indexed jittered timestamp not re-read in this checkpoint."
+    "verified_last_run_utc": "2026-10-17T07:10:40.490Z",
+    "next_run_note": "Morning heartbeat received. Next nominal slot is known; live jittered future index timestamp not re-read."
   },
   "experiments": [
     {
@@ -122,12 +123,12 @@
     },
     {
       "id": "E05",
-      "status": "Startup repair and 0.3.3 source retained. Full offline app accepted/notarized; actual optimized native flow passes from new local DMG. DMG signed and notarization running; no public replacement.",
+      "status": "App and final 0.3.3 DMG signed/notarized/stapled; independent final-image and full contained-app manifest checks pass. Developer-Mac native flow passes. Clean hosted-Mac capability measured; full candidate transfer/test pending; downloads remain paused.",
       "incident": "docs/release/STARTUP-INCIDENT-2026-10-15.md",
       "cause": "Native launcher pins backend version 0.3.0, packaged server reports 0.3.1",
       "native_proof": "Fixed shell opens/restarts, native import/enhance/A-B/playback/export succeeds on first E03 case; busy-quit/Keep Processing/cancel preserve result, restart export byte-identical; closed window restored via Window -> Show Voicy",
       "candidate_scope": "Actual optimized notarized full offline app in the new local read-only DMG; developer Mac, not clean second machine or exact public download.",
-      "release_dependency": "Inspect already-running DMG notarization before any new job; then clean second-machine and exact downloaded-native-flow gates. R2 ranged GET returned typed AccessDenied, so storage/Worker distribution remains unqualified.",
+      "release_dependency": "Qualify draft transport to the measured fresh Mac and test the frozen final installer; then resolve public distribution and exact public-download native flow. Do not re-notarize accepted unchanged bytes.",
       "containment_scope": "Website/API pause only; preserved direct worker artifact still exists. No rollback inferred from query parameters.",
       "website_local_qa": "15 tests and Next production build passed; real local download route tested from home/comparison at 1440x1000, 390x844, 320x740; correct 503 explanation/no redirect/bodyless HEAD/no overflow. Local-only pageview metrics fixture; production must be checked unmocked.",
       "production_qa": "Real production at 1440x1000, 390x844, 320x740: home/comparison 200 with pause notice; status GET/HEAD 503, no redirect, HEAD empty, no overflow or unexpected console errors. No production fixtures. Both comparison native audio players and home original/Voicy toggle/play/pause remain verified.",
@@ -154,9 +155,9 @@
     }
   ],
   "next_actions": [
-    "Inspect the already-running local DMG notarization and private checkpoint before any new job. Do not reupload unchanged. On Accepted require DMG staple/signature/Gatekeeper and contained accepted-app manifest checks; then clean second-machine and exact public-download/native-flow validation before resuming downloads.",
+    "Do not restart signing/notarization: final 0.3.3 DMG is Accepted and independently verified (e8c2511d...). Inspect the draft-transport probe and staging checkpoint; finish hash-verified multipart transport into the unpublished validation draft, then test the exact final candidate on the fresh hosted Mac. Hardware discovery alone is not a release pass.",
     "Keep website downloads paused until a versioned signed/notarized replacement passes full public-download and native-flow validation; preserve original artifact and all evidence.",
-    "Qualify appropriate Voicy R2 read/write and Worker deployment access. Existing account-matching credential returns typed AccessDenied for one signed ranged GET of the original object (and HEAD 403); this is not evidence of write/Worker access. Preserve the original object; no raw-credential export, financial-limit change or routine owner question.",
+    "Public distribution remains separate: existing R2 credential returned AccessDenied on the exact preserved object; Chrome 17 October shows signed-out Cloudflare email/password login with a by-continuing terms agreement. No sign-in/terms/OAuth grant, unrelated bucket probe or credential export performed. Independently qualify appropriate existing access; no original-object overwrite or spend.",
     "Compare future mature 7/28-day GSC exact-query/page/country/device exports against the first sparse baseline. Do not interpret aggregate branded position as target rank or repeat indexing requests.",
     "Resolve E03 subjective listening review before publishing validated human-speech examples; all five cases remain preserved.",
     "Refresh and submit prepared distribution materials only after public release validation and explicit named-destination messaging authorization; no external submissions made.",
@@ -202,16 +203,22 @@
       "unsigned_dmg_bytes": 6518352057,
       "signed_dmg_sha256": "65295d86744c25e4e6a9e5f2efe3fbdb66901011a0541d1d53c3bf06d8d94853",
       "signed_dmg_bytes": 6518361665,
-      "dmg_notary_status": "running; submission UUID written after upload returns",
+      "dmg_notary_status": "Accepted; independent final-image checks passed 17 October",
       "native_flow": "Actual new read-only DMG: native launch/import/enhancement, A/B playback through 4.9s, export, busy-quit/Keep Processing/cancel, Show Voicy, restart, About 0.3.3 and identical post-restart export. App quit, image detached, post-test deep signature and ticket valid. Developer-Mac proof only.",
-      "native_export_sha256": "74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994"
-    }
+      "native_export_sha256": "74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994",
+      "dmg_notary_id": "239ae0ce-c419-4097-a9db-86849fbe7568",
+      "final_dmg_sha256": "e8c2511d77f7bf710675a7cad4aba0f7c8095ffaebd67a27c447786ffcfaafec",
+      "final_dmg_bytes": 6518369424,
+      "final_dmg_checks": "codesign strict, stapler validate, spctl open, hdiutil verify; contained app complete31,036-entry manifest matches accepted 7a0af8..., app deep strict/stapler/Gatekeeper all passed. Mounted read-only and detached.",
+      "signed_app_archive_retention": "Historical submission identity; the task-owned ZIP was reclaimed after notarization and complete accepted-app reconstruction equivalence were proven. Original0.3.2 installer and final 0.3.3 DMG remain."
+    },
+    "clean_host_probe": "Initial Metal/environment probe frozen review clean (0.93), local Swift execution and real hosted run pass. Draft-access/download change frozen review clean (0.94) and actionlint pass; actual authenticated manifest download/hash verified on a new hosted Mac. Main repository permissions remain unchanged; no model/native-flow result yet."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic."
   ],
-  "verified_utc": "2026-10-16T15:48:51.426545+00:00",
+  "verified_utc": "2026-10-17T07:24:45.058736+00:00",
   "search_observation": {
     "date": "2026-10-16",
     "engine": "Google Search, desktop Chrome Incognito, signed out, cookies rejected",
@@ -241,7 +248,7 @@
     "native_startup": "Failed on the tested M4, despite valid signing/notarization and successful direct runtime tests",
     "source_fix": "Startup source repair merged in PR #4; 0.3.3 metadata/About candidate merged in PR #6 at b2521cd0e58cd73cf8694ac10ff6e690e7b45278; not released as a signed installer",
     "website_download": "Production website/API paused: GET/HEAD 503, explanatory page, no artifact redirect; main/comparison remain 200. Direct worker artifact preserved.",
-    "signing": "Full offline 0.3.3 app accepted by Apple, stapled, full-manifest/deep-signature/Gatekeeper verified. Actual optimized app native flow passed from the new read-only DMG. DMG now Developer ID signed; host keychains restored. DMG notarization runs on an ephemeral local runner with a 120-minute limit. No public replacement.",
+    "signing": "Full offline 0.3.3 app AND final DMG accepted by Apple and stapled. Independent final DMG digest/image checksum/signature/ticket/Gatekeeper and contained complete accepted-app manifest all passed on 17 October. Developer-Mac native flow passed earlier; clean-host full-flow and public-download qualification remain. No public replacement.",
     "distribution_access": "Exact Voicy account/object signed ranged GET returned HTTP 403 with S3 AccessDenied, following HEAD 403. This credential has not qualified original-object read access; no write/Worker deployment permission inferred or attempted. Apple notarization proceeds independently. Existing Voicy GitHub/Vercel metadata contains no Cloudflare deployment credential."
   },
   "distribution": {
@@ -263,9 +270,9 @@
     ]
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-16T15:48:51.426545+00:00",
-    "current_wait": "Local ephemeral DMG notarization run is in progress after successful DMG signing and exact host-keychain restoration. 120-minute limit, frozen input and durable UUID checkpoint; no owner response needed for the current work. Clean second-machine and distribution/public-download qualification remain.",
-    "completed_independent_work": "App notarization accepted; integrity/ticket/Gatekeeper verified; disk-capacity issue resolved through a verified 14.5MB delta and equivalent 42MB shadow; versioned DMG valid. First GSC 7/28-day CSV baselines exported, exact query checked, home/comparison indexing and sitemap reconfirmed. Complete optimized native flow from the new DMG passed, including identical exports before/after cancellation/restart. DMG signed; typed R2 ranged-GET denial recorded.",
+    "rechecked_utc": "2026-10-17T07:24:45.058736+00:00",
+    "current_wait": "Hash-verified multipart transport to the unpublished validation draft is starting after exact draft-manifest retrieval passed on the clean hosted Mac. Final app/DMG notarization is complete. Next run must inspect existing upload checkpoint before retries; then test actual final candidate on clean host. No owner reply required for current work.",
+    "completed_independent_work": "Final 6,518,369,424-byte DMG and contained complete accepted app independently verified; ephemeral runner auto-removed, idle-sleep assertion ended, original Keychain state intact. Fresh GSC 7/28-day CSVs and exact target/index/sitemap checks complete. Remote clean macOS 15.7.9 arm64 VM has Metal device/GUI/~45.7 GB free disk; model/full native flow not yet tested.",
     "owner_action_pending": false,
     "private_checkpoint": "voicy-growth-evidence/local-runner-2026-10-16/CHECKPOINT.json",
     "monitor": "Daily native automation remains ACTIVE, dependent on Mac/Codex availability. Ranking goal remains unachieved."
@@ -287,5 +294,27 @@
     "own_citation": false,
     "competitor_citation_verified": "https://diffio.ai/adobe-podcast-alternative/",
     "implication": "Original inspectable evidence and explicit task scope remain priorities; no causal/ranking/quality conclusion. Do not weaken E03 publication gates or invent a benchmark/listening panel."
+  },
+  "clean_host_validation": {
+    "status": "Fresh clean-host capability and authenticated exact draft-manifest download both passed; frozen full-candidate multipart upload is starting. Installer/native flow not yet tested remotely.",
+    "branch": "codex/clean-mac-qualification",
+    "capability_source": "ee33745f1e697f08cde429dd50d89316a738d03b",
+    "capability_run_id": 39013051754,
+    "macos": "15.7.9",
+    "architecture": "arm64",
+    "physical_memory_bytes": 7516192768,
+    "metal_device": "Apple Paravirtual device",
+    "metal_recommended_working_set_bytes": 5010800640,
+    "gui_session_available": true,
+    "limits": "Device discovery only, not shader/MLX/model/native-flow success. About7 GiB RAM is below the recommended16 GB; measure the actual short-case result, do not infer compatibility.",
+    "cost_scope": "Standard macos-15 on public Voicy repository; official GitHub docs say standard public-repo runners are free. No larger/paid runner or subscription.",
+    "draft_read_probe": "Default contents:read token returned 403 Resource not accessible by integration. An isolated trusted-branch job now qualifies exact draft-manifest bytes with temporary job-specific contents:write; performs only GETs, no signing secrets or persistent credential. No main-branch permission change.",
+    "draft_download_source": "7940539c52d74213e8b4f8eef7457b16728ae532",
+    "draft_tag": "v0.3.3-validation-staging",
+    "consumer_release": false,
+    "draft_download_run_id": 39013474351,
+    "draft_download_job_id": 117340676015,
+    "draft_download_result": "The same fresh macOS host retrieved the exact 1269-byte draft manifest with SHA-256 24bcfe253bbed938246ce9dfcbed6442b89cc8a595788718f243b09c13f09ebc. Default read-token denial preserved separately; only the isolated job token scope was adjusted.",
+    "staging": "Unpublished draft; four parts (three 1,800,000,000 bytes and one 1,118,369,424 bytes), full reassembly must match e8c2511d...; per-part remote GitHub digests required. Upload has a three-hour bound, one temporary part at a time, full original/final installers preserved."
   }
 }
