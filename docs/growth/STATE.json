@@ -6,29 +6,33 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "c882b12a95d427c46f9dc41c07f8778cb9b86133",
+  "shipped_commit": "0e151e7806ada7a1ab793c4d9207e25194208f6d",
   "deployment": {
-    "id": "dpl_6hK7vKDHkbD15yg2Kgz41HdNh5Pn",
-    "url": "https://voicy-kcwsnt554-skaluj.vercel.app",
-    "environment": "production",
+    "id": "dpl_8mzgNJkfWhe7NS4Ja3qd868XVMyA",
+    "url": "https://voicy-psn6pbkyr-skaluj.vercel.app",
     "state": "READY",
-    "custom_domain_verified": "https://usevoicy.app",
+    "target": "production",
+    "team": "skaluj",
     "project": "skaluj/voicy",
-    "verification_scope": "17 October morning: exact c882b12 deployment matched in live home/comparison HTML; home/comparison/privacy/robots/sitemap200; website download503/noindex/no redirect."
+    "source_commit": "0e151e7806ada7a1ab793c4d9207e25194208f6d",
+    "scope": "Verified code-merge production deployment before this documentation checkpoint; final checkpoint deployment recorded privately.",
+    "environment": "production",
+    "custom_domain_verified": "https://usevoicy.app",
+    "verification_scope": "17 October afternoon: main0e151e7 READY deployment matched in live home/comparison HTML; both200; download503/no redirect. Final documentation-checkpoint deployment retained privately."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
     "verified": true,
     "verification_method": "Domain name provider; automatic ownership verification observed in Chrome",
     "home_indexed": true,
-    "sitemap_status": "17 October morning: Successful, three discovered pages, last read 15 October. No repeated sitemap/indexing request.",
-    "performance": "17 October morning authenticated 7/28-day CSV exports unchanged: only 14 October, homepage 5 impressions / 0 clicks / 0% CTR / aggregate position 6, predominantly branded. Exact-target filter reports 0 impressions / 0 clicks, no rows; target rank remains undefined. No new post-launch outcome.",
+    "sitemap_status": "17 October afternoon: Successful, three discovered pages, last read 15 October. No repeated sitemap/indexing request.",
+    "performance": "17 October afternoon authenticated 7/28-day CSV exports unchanged: only 14 October, homepage 5 impressions / 0 clicks / aggregate position 6. Exact target has no reported impressions/rows; position undefined. A separate preliminary rolling 24-hour report now shows one comparison-page impression; it is not exact-target outcome or mature trend evidence.",
     "baseline_rank": null,
     "baseline_clicks": 0,
     "baseline_impressions": 5,
     "comparison_indexed": true,
-    "comparison_status": "17 October morning: URL on Google, page indexed, HTTPS and one valid breadcrumb. Homepage also on Google/indexed.",
-    "rechecked_utc": "2026-10-17T07:24:45.058736+00:00",
+    "comparison_status": "17 October afternoon: comparison URL on Google, indexed, HTTPS, one valid breadcrumb. No new indexing request.",
+    "rechecked_utc": "2026-10-17T15:36:01.790079+00:00",
     "available_views": {
       "last_7_days": true,
       "last_28_days": true,
@@ -59,7 +63,24 @@
       "previous_period": "No previous-period export/baseline established; no trend claim.",
       "private_evidence": "voicy-growth-evidence/gsc-2026-10-16-afternoon/SUMMARY.json"
     },
-    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-17-morning/GSC-EXPORTS.json"
+    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-17-afternoon/GSC-SUMMARY.json",
+    "preliminary_24_hours": {
+      "observed_utc": "2026-10-17T15:36:01.790079+00:00",
+      "period_display": "16–17 October 2026, local time",
+      "clicks": 0,
+      "impressions": 4,
+      "aggregate_average_position": 26,
+      "comparison_page": {
+        "impressions": 1,
+        "average_position": 9
+      },
+      "visible_nonbrand_query": {
+        "query": "adobe podcast",
+        "impressions": 1,
+        "average_position": 9
+      },
+      "caveats": "Preliminary rolling incomplete data, distinct from 7/28-day exports. Separate query/page rows do not prove their pairing. Not the exact target query, controlled US ranking, causal lift or stable position. Query rows account for only 2 of 4 impressions. Exact-target 7/28-day position remains null."
+    }
   },
   "scheduler": {
     "intended_cadence": "Daily 09:15 and 17:15 Europe/Prague; scheduler jitter applies",
@@ -155,7 +176,7 @@
     }
   ],
   "next_actions": [
-    "Do not restart signing/notarization: final 0.3.3 DMG is Accepted and independently verified (e8c2511d...). Inspect the draft-transport probe and staging checkpoint; finish hash-verified multipart transport into the unpublished validation draft, then test the exact final candidate on the fresh hosted Mac. Hardware discovery alone is not a release pass.",
+    "Build a superseding full candidate from merged0e151e7806ada7a1ab793c4d9207e25194208f6d: use scripts/pin-runtime-mlx.py on the project-owned staged CPython3.13 runtime, audit platform tags, then run real AuK/model/native-flow validation on clean macOS14/15. Baseline14 wheels already pass actual GPU compute there. Preserve failed frozen0.3.3 installer and original0.3.2. Changed candidate bytes need new signature/notarization and exact public-download testing before unpausing; never reuse old accepted-ticket/digest claims.",
     "Keep website downloads paused until a versioned signed/notarized replacement passes full public-download and native-flow validation; preserve original artifact and all evidence.",
     "Public distribution remains separate: existing R2 credential returned AccessDenied on the exact preserved object; Chrome 17 October shows signed-out Cloudflare email/password login with a by-continuing terms agreement. No sign-in/terms/OAuth grant, unrelated bucket probe or credential export performed. Independently qualify appropriate existing access; no original-object overwrite or spend.",
     "Compare future mature 7/28-day GSC exact-query/page/country/device exports against the first sparse baseline. Do not interpret aggregate branded position as target rank or repeat indexing requests.",
@@ -212,17 +233,17 @@
       "final_dmg_checks": "codesign strict, stapler validate, spctl open, hdiutil verify; contained app complete31,036-entry manifest matches accepted 7a0af8..., app deep strict/stapler/Gatekeeper all passed. Mounted read-only and detached.",
       "signed_app_archive_retention": "Historical submission identity; the task-owned ZIP was reclaimed after notarization and complete accepted-app reconstruction equivalence were proven. Original0.3.2 installer and final 0.3.3 DMG remain."
     },
-    "clean_host_probe": "Initial Metal/environment probe frozen review clean (0.93), local Swift execution and real hosted run pass. Draft-access/download change frozen review clean (0.94) and actionlint pass; actual authenticated manifest download/hash verified on a new hosted Mac. Main repository permissions remain unchanged; no model/native-flow result yet."
+    "clean_host_probe": "Exact frozen0.3.3 DMG clean-host signatures/tickets/Gatekeeper/native launch/health/input analysis passed; actual AuK import failed because host-selected MLX wheels target26. Corrected same-version baseline14 wheels passed actual GPU computation on freshmacOS14.8.9/15.7.9 and developer27.0.1. Full rebuilt candidate/model/public-download qualification remains. Workflow review clean0.89; staging correction clean0.91; CIbootstrap clean0.96; actionlint and focused regression checks passed."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic."
   ],
-  "verified_utc": "2026-10-17T07:24:45.058736+00:00",
+  "verified_utc": "2026-10-17T15:52:41.618157+00:00",
   "search_observation": {
     "date": "2026-10-16",
     "engine": "Google Search, desktop Chrome Incognito, signed out, cookies rejected",
-    "location": "Unknown \u2014 Google says it cannot determine location; not a controlled US baseline",
+    "location": "Unknown — Google says it cannot determine location; not a controlled US baseline",
     "owned_result_on_first_observed_page": false,
     "ai_answer_observed": true,
     "owned_ai_citation_observed": false,
@@ -248,7 +269,7 @@
     "native_startup": "Failed on the tested M4, despite valid signing/notarization and successful direct runtime tests",
     "source_fix": "Startup source repair merged in PR #4; 0.3.3 metadata/About candidate merged in PR #6 at b2521cd0e58cd73cf8694ac10ff6e690e7b45278; not released as a signed installer",
     "website_download": "Production website/API paused: GET/HEAD 503, explanatory page, no artifact redirect; main/comparison remain 200. Direct worker artifact preserved.",
-    "signing": "Full offline 0.3.3 app AND final DMG accepted by Apple and stapled. Independent final DMG digest/image checksum/signature/ticket/Gatekeeper and contained complete accepted-app manifest all passed on 17 October. Developer-Mac native flow passed earlier; clean-host full-flow and public-download qualification remain. No public replacement.",
+    "signing": "The frozen0.3.3 app/DMG are Apple Accepted/stapled and pass independent and clean-host signature/Gatekeeper checks, but candidate is NOT release-ready: clean macOS15 AuK import failed because both bundled MLX wheels target macOS26. Preserve it as failed-candidate evidence; correct staging, rebuild, retest and re-sign/notarize changed bytes before distribution.",
     "distribution_access": "Exact Voicy account/object signed ranged GET returned HTTP 403 with S3 AccessDenied, following HEAD 403. This credential has not qualified original-object read access; no write/Worker deployment permission inferred or attempted. Apple notarization proceeds independently. Existing Voicy GitHub/Vercel metadata contains no Cloudflare deployment credential."
   },
   "distribution": {
@@ -270,9 +291,9 @@
     ]
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-17T07:24:45.058736+00:00",
-    "current_wait": "Hash-verified multipart transport to the unpublished validation draft is starting after exact draft-manifest retrieval passed on the clean hosted Mac. Final app/DMG notarization is complete. Next run must inspect existing upload checkpoint before retries; then test actual final candidate on clean host. No owner reply required for current work.",
-    "completed_independent_work": "Final 6,518,369,424-byte DMG and contained complete accepted app independently verified; ephemeral runner auto-removed, idle-sleep assertion ended, original Keychain state intact. Fresh GSC 7/28-day CSVs and exact target/index/sitemap checks complete. Remote clean macOS 15.7.9 arm64 VM has Metal device/GUI/~45.7 GB free disk; model/full native flow not yet tested.",
+    "rechecked_utc": "2026-10-17T15:52:41.618157+00:00",
+    "current_wait": "No active signing/upload/qualification job is awaiting owner input. Confirmed macOS-baseline staging defect corrected and merged; next bounded cycle must build and qualify a superseding complete candidate, then sign/notarize the changed bytes. Existing public distribution access remains independently unqualified.",
+    "completed_independent_work": "All multipart transport completed. Actual frozen-DMG clean-host signatures/tickets/Gatekeeper/native launch/health/input analysis passed; actual AuK import failed, traced to macOS26-only MLX wheels. Read-only metadata identified the precise pair; official same-version14 artifacts pinned. Local regressions and full final-head CI passed; actual GPU compute passed on new macOS14.8.9/15.7.9 and isolated developer27.0.1. PR7 merged; Vercel production0e151e7 READY. GSC7/28-day, exact target, indexing/sitemap plus separate preliminary24-hour comparison signal retained.",
     "owner_action_pending": false,
     "private_checkpoint": "voicy-growth-evidence/local-runner-2026-10-16/CHECKPOINT.json",
     "monitor": "Daily native automation remains ACTIVE, dependent on Mac/Codex availability. Ranking goal remains unachieved."
@@ -296,7 +317,7 @@
     "implication": "Original inspectable evidence and explicit task scope remain priorities; no causal/ranking/quality conclusion. Do not weaken E03 publication gates or invent a benchmark/listening panel."
   },
   "clean_host_validation": {
-    "status": "Fresh clean-host capability and authenticated exact draft-manifest download both passed; frozen full-candidate multipart upload is starting. Installer/native flow not yet tested remotely.",
+    "status": "Actual final DMG clean-host run failed during AuK import after signatures, Gatekeeper, native startup, authenticated health and file analysis passed. Root cause verified: bundled mlx and mlx-metal 0.32.2 wheel tags both require macOS26, contradicting declared macOS14 baseline.",
     "branch": "codex/clean-mac-qualification",
     "capability_source": "ee33745f1e697f08cde429dd50d89316a738d03b",
     "capability_run_id": 39013051754,
@@ -315,6 +336,38 @@
     "draft_download_run_id": 39013474351,
     "draft_download_job_id": 117340676015,
     "draft_download_result": "The same fresh macOS host retrieved the exact 1269-byte draft manifest with SHA-256 24bcfe253bbed938246ce9dfcbed6442b89cc8a595788718f243b09c13f09ebc. Default read-token denial preserved separately; only the isolated job token scope was adjusted.",
-    "staging": "Unpublished draft; four parts (three 1,800,000,000 bytes and one 1,118,369,424 bytes), full reassembly must match e8c2511d...; per-part remote GitHub digests required. Upload has a three-hour bound, one temporary part at a time, full original/final installers preserved."
+    "staging": "All four parts completed 17 October 08:31 UTC; each remote size and SHA-256 digest verified. Original/final installers retained; temporary part copies reclaimed only after verification. Unpublished validation draft remains internal, not consumer release.",
+    "qualification_source": "25e4a6063fa0799fb74cb3157645d92e70c096a6",
+    "qualification_run_id": 39045468738,
+    "qualification_job_id": 117433191151,
+    "qualification_scope": "DMG/app signatures, tickets, Gatekeeper, actual bundle launch and authenticated packaged-engine AuK inference on licensed 4.905-second input; export structure and changed decoded signal. Not full native GUI flow, public download or subjective audio quality.",
+    "qualification_review": "Final frozen autoreview clean (0.89), actionlint, Python compile, negative draft-target gates and pass-through rejection examples passed. All normal repository CI at exact source passed.",
+    "qualification_conclusion": "failure",
+    "qualification_result": {
+      "installer_sha256_verified": true,
+      "dmg_signature_ticket_gatekeeper_checksum": "passed",
+      "contained_app_signature_ticket_gatekeeper": "passed",
+      "native_bundle_launch": "passed",
+      "authenticated_packaged_engine_health": "passed",
+      "licensed_recording_analysis": "passed",
+      "auk_inference": "failed before model inference; default metallib language4.0 unsupported",
+      "export": "not reached",
+      "full_native_gui_flow_tested": false,
+      "public_download_tested": false
+    },
+    "compatibility_evidence": "Read-only inspection of all25 platform-wheel metadata: only mlx and mlx-metal require macOS26. Official PyPI offers the same0.32.2 versions built for14/15/26. Selected build-host wheels are a confirmed packaging defect; virtual GPU limitations may still remain after correcting them.",
+    "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-17-afternoon/CLEAN-MAC-REPORT.json; BUNDLED-WHEEL-PLATFORMS.json",
+    "correction_branch": "codex/macos-14-runtime",
+    "correction_status": "PR7 merged after all final-head frontend/backend/website checks (including new regression tests) and actual clean macOS14/15 GPU compute passed. Staging correction review clean0.91; bootstrap and explicit CI wiring reviews clean0.96. This repairs staging only; existing DMG is unchanged and failed for the declared baseline. New full-model/native-flow candidate proof is still required.",
+    "correction_pr": "https://github.com/jindratilk/voicy/pull/7",
+    "correction_source": "8e4858141cc829e847da5accc37d79931724cd42",
+    "baseline_compute_run_id": 39046793642,
+    "baseline_compute_jobs": {
+      "macos14": 117436469824,
+      "macos15": 117436470062
+    },
+    "baseline_compute_pr_run_id": 39046797903,
+    "correction_merged_commit": "0e151e7806ada7a1ab793c4d9207e25194208f6d",
+    "correction_ci_run": 39046797973
   }
 }
