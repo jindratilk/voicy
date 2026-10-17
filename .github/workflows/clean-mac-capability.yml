@@ -12,6 +12,11 @@ permissions:
 jobs:
   capability:
     if: github.repository == 'jindratilk/voicy'
+    # GitHub denies draft-release reads to the default read token (HTTP 403).
+    # This isolated trusted-branch job needs temporary repository write scope
+    # solely to retrieve draft validation inputs; it performs only GET requests.
+    permissions:
+      contents: write
     # Standard macOS runner: free for public repositories. No larger runner,
     # signing secrets, product download, checkout, cache or artifact upload.
     runs-on: macos-15
@@ -49,7 +54,7 @@ jobs:
           let data = try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
           print(String(decoding: data, as: UTF8.self))
           SWIFT
-      - name: Qualify read-only access to draft validation metadata
+      - name: Qualify draft metadata and exact manifest download
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -57,3 +62,8 @@ jobs:
           set -euo pipefail
           gh api repos/jindratilk/voicy/releases/415650533 \
             --jq '{id, draft, tag_name, target_commitish}'
+          gh api repos/jindratilk/voicy/releases/assets/649848575 \
+            -H 'Accept: application/octet-stream' > "$RUNNER_TEMP/voicy-validation-manifest.json"
+          printf '%s  %s\n' \
+            '24bcfe253bbed938246ce9dfcbed6442b89cc8a595788718f243b09c13f09ebc' \
+            "$RUNNER_TEMP/voicy-validation-manifest.json" | shasum -a 256 -c -
