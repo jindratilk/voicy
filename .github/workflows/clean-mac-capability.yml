@@ -49,3 +49,11 @@ jobs:
           let data = try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
           print(String(decoding: data, as: UTF8.self))
           SWIFT
+      - name: Qualify read-only access to draft validation metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api repos/jindratilk/voicy/releases/415650533 \
+            --jq '{id, draft, tag_name, target_commitish}'
