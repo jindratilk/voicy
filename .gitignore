@@ -20,6 +20,7 @@
 /scripts/*
 !/scripts/bootstrap-auk.py
 !/scripts/stage-python.py
+!/scripts/pin-runtime-mlx.py
 !/scripts/prepare-portable-runtime.py
 !/scripts/build-ffmpeg.sh
 !/scripts/build-native-frontend.py

@@ -12,4 +12,7 @@ if not target.exists():
  subprocess.run(['cp','-cR',str(base),str(target)],check=True)
  subprocess.run(['cp','-cR',str(venv/'lib/python3.13/site-packages')+'/.',str(target/'lib/python3.13/site-packages')+'/'],check=True)
 subprocess.run(['uv','pip','install','--python',str(target/'bin/python3'),'--break-system-packages','fastapi==0.141.1','uvicorn==0.53.0','python-multipart==0.0.32'],check=True)
+# A build on macOS 26 otherwise selects MLX's macOS-26-only wheels, despite
+# the app's macOS 14 deployment target. Pin both matching baseline wheels.
+subprocess.run([os.sys.executable,str(root/'scripts/pin-runtime-mlx.py'),str(target/'bin/python3')],check=True)
 print(target)
