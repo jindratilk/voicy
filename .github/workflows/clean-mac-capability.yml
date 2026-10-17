@@ -1,0 +1,51 @@
+name: Clean Mac release capability
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/clean-mac-qualification]
+    paths: [.github/workflows/clean-mac-capability.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  capability:
+    if: github.repository == 'jindratilk/voicy'
+    # Standard macOS runner: free for public repositories. No larger runner,
+    # signing secrets, product download, checkout, cache or artifact upload.
+    runs-on: macos-15
+    timeout-minutes: 5
+    steps:
+      - name: Measure architecture, Metal and memory before installer staging
+        shell: bash
+        run: |
+          set -euo pipefail
+          swift - <<'SWIFT'
+          import Foundation
+          import Metal
+          import CoreGraphics
+
+          #if arch(arm64)
+          let architecture = "arm64"
+          #else
+          let architecture = "unsupported"
+          #endif
+          let device = MTLCreateSystemDefaultDevice()
+          let filesystem = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
+          let report: [String: Any] = [
+              "scope": "Fresh hosted macOS capability only; no installer or release qualification",
+              "architecture": architecture,
+              "macos": ProcessInfo.processInfo.operatingSystemVersionString,
+              "physical_memory_bytes": ProcessInfo.processInfo.physicalMemory,
+              "available_disk_bytes": filesystem[.systemFreeSize] as? NSNumber ?? 0,
+              "metal_device_available": device != nil,
+              "metal_device": device?.name ?? "unavailable",
+              "metal_recommended_working_set_bytes": device?.recommendedMaxWorkingSetSize ?? 0,
+              "unified_memory": device?.hasUnifiedMemory ?? false,
+              "gui_session_available": CGSessionCopyCurrentDictionary() != nil,
+              "full_native_flow_tested": false,
+          ]
+          let data = try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
+          print(String(decoding: data, as: UTF8.self))
+          SWIFT
