@@ -31,6 +31,11 @@ jobs:
       - name: Install pinned baseline wheels in a new isolated Python
         run: |
           set -euo pipefail
+          # Hosted images do not include uv. Bootstrap the same pinned tool
+          # tested locally, without changing the runner's system Python.
+          python3 -m venv "$RUNNER_TEMP/uv-bootstrap"
+          "$RUNNER_TEMP/uv-bootstrap/bin/python" -m pip install 'uv==0.10.0'
+          export PATH="$RUNNER_TEMP/uv-bootstrap/bin:$PATH"
           uv venv --python 3.13 "$RUNNER_TEMP/mlx-baseline"
           python3 "$RUNNER_TEMP/pin-runtime-mlx.py" "$RUNNER_TEMP/mlx-baseline/bin/python"
       - name: Import MLX and execute real Metal computation
