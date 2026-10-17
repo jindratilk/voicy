@@ -1,4 +1,4 @@
-name: Clean Mac release capability
+name: Clean Mac final installer qualification
 
 on:
   workflow_dispatch:
@@ -17,10 +17,9 @@ jobs:
     # solely to retrieve draft validation inputs; it performs only GET requests.
     permissions:
       contents: write
-    # Standard macOS runner: free for public repositories. No larger runner,
-    # signing secrets, product download, checkout, cache or artifact upload.
+    # Standard free public-repository runner, no signing secrets or larger VM.
     runs-on: macos-15
-    timeout-minutes: 5
+    timeout-minutes: 35
     steps:
       - name: Measure architecture, Metal and memory before installer staging
         shell: bash
@@ -54,16 +53,27 @@ jobs:
           let data = try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
           print(String(decoding: data, as: UTF8.self))
           SWIFT
-      - name: Qualify draft metadata and exact manifest download
+      - name: Retrieve reviewed qualification script at this exact source
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location \
+            "https://raw.githubusercontent.com/jindratilk/voicy/$SOURCE_SHA/scripts/release/qualify-clean-mac.py" \
+            --output "$RUNNER_TEMP/qualify-clean-mac.py"
+      - name: Download and verify frozen final installer and licensed fixture
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
-          gh api repos/jindratilk/voicy/releases/415650533 \
-            --jq '{id, draft, tag_name, target_commitish}'
-          gh api repos/jindratilk/voicy/releases/assets/649848575 \
-            -H 'Accept: application/octet-stream' > "$RUNNER_TEMP/voicy-validation-manifest.json"
-          printf '%s  %s\n' \
-            '24bcfe253bbed938246ce9dfcbed6442b89cc8a595788718f243b09c13f09ebc' \
-            "$RUNNER_TEMP/voicy-validation-manifest.json" | shasum -a 256 -c -
+          python3 "$RUNNER_TEMP/qualify-clean-mac.py" download
+      - name: Assess signatures, launch packaged app and test actual inference
+        # The app and inference never inherit the draft-access token.
+        run: python3 "$RUNNER_TEMP/qualify-clean-mac.py" qualify
+      - name: Show sanitized qualification evidence
+        if: always()
+        run: |
+          if test -f "$RUNNER_TEMP/voicy-clean/report.json"; then
+            cat "$RUNNER_TEMP/voicy-clean/report.json"
+          fi
