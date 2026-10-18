@@ -19,7 +19,7 @@
 
 ![Voicy — your voice in the clear](landing/public/og.png)
 
-**Download status — 15 October 2026:** Downloads are temporarily paused because the published 0.3.2 installer times out during startup. The source includes a locally tested startup fix; a signed replacement installer is pending. [Incident, validation and release requirements](docs/release/STARTUP-INCIDENT-2026-10-15.md). The prerecorded website demo remains available.
+**Current release — 18 October 2026:** [Voicy 0.3.3 is available](https://github.com/jindratilk/voicy/releases/tag/v0.3.3). The signed and notarized download assistant retrieves and verifies the complete offline app image. This release fixes the earlier startup issue. [Release checks and their limits](https://github.com/jindratilk/voicy/releases/download/v0.3.3/QUALIFICATION.json) include the exact downloads and actual enhancement/export checks on macOS 14 and 15; they do not establish audio-quality superiority.
 
 ## Your voice. In the clear.
 
