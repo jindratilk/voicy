@@ -1,0 +1,37 @@
+# Coordinator template: deploy exactly this content to the EXISTING private
+# jindratilk/cutagent branch codex/voicy-signing-preflight at
+# .github/workflows/voicy-corrected-signing.yml. It intentionally cannot run
+# in the public Voicy repository, which has no signing credentials.
+name: Voicy corrected app signing
+on:
+  push:
+    branches: [codex/voicy-signing-preflight]
+    paths: [.github/workflows/voicy-corrected-signing.yml]
+permissions:
+  contents: read
+concurrency:
+  group: voicy-apple-signing
+  cancel-in-progress: false
+jobs:
+  sign:
+    if: github.repository == 'jindratilk/cutagent' && github.ref == 'refs/heads/codex/voicy-signing-preflight'
+    runs-on: voicy-signing-20261018-corrected
+    timeout-minutes: 35
+    environment: macos-release
+    env:
+      DEVELOPER_DIR: /Library/Developer/CommandLineTools
+    steps:
+      - name: Verify reviewed helper before importing the known owner identity
+        env:
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+        run: |
+          python3 - <<'PYCODE'
+          from pathlib import Path
+          import hashlib, runpy
+          p = Path('/Users/giuseppe/Documents/projects/voicy/scripts/release/sign-corrected-local.py')
+          if hashlib.sha256(p.read_bytes()).hexdigest() != '0ea30350a14e7b75c658c71c3e722176dd871efe7e0e64cb421f013c4482324b':
+              raise RuntimeError('Reviewed helper changed')
+          runpy.run_path(str(p), run_name='__main__')
+          PYCODE
