@@ -1,0 +1,45 @@
+name: Voicy read-only notary status
+on:
+  push:
+    branches: [codex/clean-mac-qualification]
+    paths: [.github/workflows/voicy-notary-status.yml]
+permissions: {}
+jobs:
+  status:
+    if: github.repository == 'jindratilk/voicy' && github.ref == 'refs/heads/codex/clean-mac-qualification'
+    runs-on: macos-15
+    timeout-minutes: 8
+    environment: voicy-release-20261018
+    steps:
+      - name: Read only today's existing Voicy submissions without reuploading
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          python3 - <<'PY'
+          import datetime, json, os, subprocess, uuid
+          try:
+              if os.environ['APPLE_TEAM_ID'] != 'P65VQHHXCB':
+                  raise RuntimeError('Wrong intended Apple team')
+              result = subprocess.run(['xcrun', 'notarytool', 'history',
+                  '--apple-id', os.environ['APPLE_ID'], '--password', os.environ['APPLE_PASSWORD'],
+                  '--team-id', os.environ['APPLE_TEAM_ID'], '--output-format', 'json'],
+                  capture_output=True, timeout=180)
+              if result.returncode:
+                  raise RuntimeError('Notary status request failed')
+              submissions = json.loads(result.stdout)['history']
+              allowed = {'Voicy-0.3.3-signed-app.zip', 'Voicy-0.3.3-arm64-signed.dmg'}
+              today = []
+              for item in submissions:
+                  created = datetime.datetime.fromisoformat(item['createdDate'].replace('Z', '+00:00'))
+                  if item['name'] not in allowed or created < datetime.datetime(2026, 10, 18, tzinfo=datetime.timezone.utc):
+                      continue
+                  today.append({'id': str(uuid.UUID(item['id'])), 'created_utc': created.isoformat(),
+                      'filename': item['name'], 'status': item['status']})
+              print(json.dumps({'scope': 'Read-only existing Voicy submissions; no uploads/cancellation/other product records',
+                  'observed_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'submissions': today}))
+          except Exception as error:
+              print(json.dumps({'error_type': type(error).__name__, 'no_raw_command_output': True}))
+              raise SystemExit(1)
+          PY
