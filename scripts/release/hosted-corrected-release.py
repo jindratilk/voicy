@@ -15,6 +15,7 @@ import subprocess
 import sys
 import tarfile
 import tempfile
+import time
 import uuid
 
 ROOT = Path(os.environ['RUNNER_TEMP']) / 'voicy-corrected-release'
@@ -56,8 +57,19 @@ def digest(path):
 
 
 def run(*args, data=None, output=None, timeout=1800):
-    result = subprocess.run(args, input=data, stdout=output if output is not None else subprocess.PIPE,
-                            stderr=subprocess.PIPE, timeout=timeout)
+    is_stapler = Path(args[0]).name == 'xcrun' and args[1:2] == ('stapler',)
+    retries = []
+    for attempt in range(3 if is_stapler else 1):
+        result = subprocess.run(args, input=data, stdout=output if output is not None else subprocess.PIPE,
+                                stderr=subprocess.PIPE, timeout=timeout)
+        if is_stapler:
+            retries.append({'attempt': attempt + 1, 'exit_code': result.returncode})
+            save(REPORTS / ('STAPLER-' + args[2] + '-' + Path(args[-1]).name + '.json'), {'attempts': retries})
+        detail = ((result.stdout or b'') + (result.stderr or b'')).decode(errors='replace')
+        known_network_loss = result.returncode == 68 and 'NSURLErrorDomain Code=-1005' in detail
+        if not is_stapler or not known_network_loss or attempt == 2:
+            break
+        time.sleep(5)
     if result.returncode:
         tool = Path(args[0]).name
         diagnostic = {'tool': tool, 'exit_code': result.returncode}

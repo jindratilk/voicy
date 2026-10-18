@@ -13,7 +13,7 @@ concurrency:
 jobs:
   build:
     if: github.repository == 'jindratilk/voicy' && github.ref == 'refs/heads/codex/clean-mac-qualification'
-    runs-on: macos-15
+    runs-on: macos-14
     timeout-minutes: 120
     environment: voicy-release-20261018
     # Draft inputs and draft-only multipart output; no consumer release publish.

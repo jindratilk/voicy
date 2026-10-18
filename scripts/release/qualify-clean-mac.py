@@ -50,8 +50,16 @@ def sha(path):
 
 def command(args, timeout=180):
     # Never echo environment or token-bearing process listings to CI logs.
-    result = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                            timeout=timeout)
+    is_stapler = args[:3] == ['xcrun', 'stapler', 'validate']
+    for attempt in range(3 if is_stapler else 1):
+        result = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                timeout=timeout)
+        if is_stapler:
+            REPORT.setdefault('stapler_attempts', []).append({'target': Path(args[-1]).name, 'attempt': attempt + 1, 'exit_code': result.returncode})
+        known_network_loss = result.returncode == 68 and b'NSURLErrorDomain Code=-1005' in result.stdout
+        if not is_stapler or not known_network_loss or attempt == 2:
+            break
+        time.sleep(5)
     require(result.returncode == 0, 'Command failed: ' + str(args[0]) + ': ' +
             result.stdout.decode(errors='replace')[-1500:])
     return result.stdout
