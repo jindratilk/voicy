@@ -45,10 +45,11 @@ The demo uses an ElevenLabs-generated voice with simulated laptop-fan noise and 
 ## Getting started
 
 1. [Download Voicy for Mac](https://usevoicy.app/api/download).
-2. Open the disk image and drag **Voicy** into **Applications**.
-3. Open a recording, enhance it, compare both versions, and export.
+2. Open the small disk image and run **Voicy Installer**. Choose where to save the complete 6.5 GB app image; the assistant downloads and verifies it.
+3. Open the downloaded image and drag **Voicy** into **Applications**.
+4. Open a recording, enhance it, compare both versions, and export.
 
-**Requirements:** Apple Silicon, macOS 14 or newer. Approximately 6.5 GB to download and 8 GB for the installed offline app, plus space for your recordings. 16 GB of unified memory or more is recommended. Intel Macs, Windows and mobile devices are not supported in this release.
+**Requirements:** Apple Silicon, macOS 14 or newer. Setup requires an Internet connection and downloads approximately 6.5 GB. Allow about 15 GB during setup for the disk image and 8 GB installed offline app, plus space for your recordings. 16 GB of unified memory or more is recommended. Intel Macs, Windows and mobile devices are not supported in this release.
 
 | Action | Shortcut |
 | --- | --- |

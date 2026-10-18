@@ -295,7 +295,7 @@ export default function Landing() {
               </a>
             </div>
             <span className="requirements">
-              Apple Silicon · macOS 14+ · 6.5 GB download
+              Apple Silicon · macOS 14+ · 6.5 GB setup download
             </span>
             {site.downloadPaused && (
               <span className="download-notice">

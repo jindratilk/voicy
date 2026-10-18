@@ -28,9 +28,12 @@ export async function GET() {
       cache: "no-store",
       signal: AbortSignal.timeout(5000),
     });
+    const filename = `Voicy-${site.version}-arm64.dmg`;
+    const disposition = check.headers.get("Content-Disposition");
     if (check.status !== 200 ||
         check.headers.get("Content-Length") !== String(expectedBytes) ||
-        check.headers.get("Content-Disposition") !== `attachment; filename="Voicy-${site.version}-arm64.dmg"`) return unavailable();
+        (disposition !== `attachment; filename="${filename}"` &&
+         disposition !== `attachment; filename=${filename}`)) return unavailable();
   } catch {
     return unavailable();
   }

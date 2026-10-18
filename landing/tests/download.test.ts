@@ -108,3 +108,19 @@ test("an unqualified installer size fails closed without contacting the download
   const probe = t.mock.method(globalThis, "fetch", async () => { throw new Error("Unqualified artifact must not be probed"); });
   assert.equal((await GET()).status, 503); assert.equal(probe.mock.calls.length, 0);
 });
+
+
+test("GitHub's exact unquoted filename is accepted with the qualified byte count", async (t) => {
+  const previous = { paused: site.downloadPaused, bytes: site.downloadBytes, url: process.env.DOWNLOAD_URL };
+  site.downloadPaused = false; site.downloadBytes = 123;
+  process.env.DOWNLOAD_URL = "https://github.com/jindratilk/voicy/releases/download/v0.3.3/Voicy-0.3.3-arm64.dmg";
+  t.after(() => {
+    site.downloadPaused = previous.paused; site.downloadBytes = previous.bytes;
+    if (previous.url === undefined) delete process.env.DOWNLOAD_URL; else process.env.DOWNLOAD_URL = previous.url;
+  });
+  t.mock.method(globalThis, "fetch", async () => new Response(null, { status: 200, headers: {
+    "Content-Length": "123", "Content-Disposition": `attachment; filename=Voicy-${site.version}-arm64.dmg`,
+  } }));
+  assert.equal((await GET()).status, 302);
+  const head = await HEAD(); assert.equal(head.status, 302); assert.equal(await head.text(), "");
+});

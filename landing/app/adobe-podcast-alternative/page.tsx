@@ -132,7 +132,7 @@ export default function ComparisonPage() {
             </a>
           </div>
           <p className="requirements">
-            macOS 14+ · Apple Silicon · 6.5 GB download · 16 GB memory
+            macOS 14+ · Apple Silicon · 6.5 GB setup download · 16 GB memory
             recommended
           </p>
           {site.downloadPaused && (
@@ -265,9 +265,10 @@ export default function ComparisonPage() {
                 mobile devices.
               </li>
               <li>
-                <strong>Storage:</strong> about 6.5 GB to download and 8 GB
-                installed, plus your recordings. The models are included so
-                enhancement can work offline.
+                <strong>Storage:</strong> the small download assistant retrieves and verifies
+                the complete 6.5 GB app image. Allow about 15 GB during setup
+                for that image and the 8 GB installed app, plus your recordings.
+                Setup needs the Internet; models are included for offline enhancement.
               </li>
               <li>
                 <strong>Speed:</strong> not real time. The 8.7-second demo took
