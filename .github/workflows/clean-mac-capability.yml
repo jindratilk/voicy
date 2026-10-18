@@ -1,4 +1,4 @@
-name: Clean Mac final installer qualification
+name: Corrected runtime full-model preflight
 
 on:
   workflow_dispatch:
@@ -18,8 +18,12 @@ jobs:
     permissions:
       contents: write
     # Standard free public-repository runner, no signing secrets or larger VM.
-    runs-on: macos-15
-    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, macos-15]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 40
     steps:
       - name: Measure architecture, Metal and memory before installer staging
         shell: bash
@@ -68,9 +72,16 @@ jobs:
         run: |
           set -euo pipefail
           python3 "$RUNNER_TEMP/qualify-clean-mac.py" download
-      - name: Assess signatures, launch packaged app and test actual inference
+      - name: Bootstrap reviewed staging tool without repository credentials
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/uv-bootstrap"
+          "$RUNNER_TEMP/uv-bootstrap/bin/python" -m pip install 'uv==0.10.0'
+      - name: Assemble corrected debug bundle and run actual full model
         # The app and inference never inherit the draft-access token.
-        run: python3 "$RUNNER_TEMP/qualify-clean-mac.py" qualify
+        run: |
+          export PATH="$RUNNER_TEMP/uv-bootstrap/bin:$PATH"
+          python3 "$RUNNER_TEMP/qualify-clean-mac.py" corrected-runtime
       - name: Show sanitized qualification evidence
         if: always()
         run: |
