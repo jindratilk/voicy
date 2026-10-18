@@ -1,0 +1,39 @@
+# Deploy only to the EXISTING private jindratilk/cutagent Voicy coordinator
+# branch codex/voicy-signing-preflight, .github/workflows/voicy-ci-setup.yml.
+# Existing private environment supplies existing Apple fields; no checkout.
+name: Voicy protected CI setup
+on:
+  push:
+    branches: [codex/voicy-signing-preflight]
+    paths: [.github/workflows/voicy-ci-setup.yml]
+permissions:
+  contents: read
+concurrency:
+  group: voicy-ci-setup
+  cancel-in-progress: false
+jobs:
+  setup:
+    if: github.repository == 'jindratilk/cutagent' && github.ref == 'refs/heads/codex/voicy-signing-preflight'
+    runs-on: voicy-ci-setup-20261018
+    timeout-minutes: 10
+    environment: macos-release
+    steps:
+      - name: Configure only the owner-reviewed Voicy release environment
+        env:
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          set -euo pipefail
+          umask 077
+          python3 - <<'PYCODE'
+          from pathlib import Path
+          import hashlib, runpy
+          p = Path('/Users/giuseppe/Documents/projects/voicy/scripts/release/configure-voicy-release-secrets.py')
+          if hashlib.sha256(p.read_bytes()).hexdigest() != '27505bd59e428476a7697ae47ce5d6bf442bcd4b329a3c9e47dda75218209f05':
+              raise RuntimeError('Reviewed helper changed')
+          runpy.run_path(str(p), run_name='__main__')
+          PYCODE
