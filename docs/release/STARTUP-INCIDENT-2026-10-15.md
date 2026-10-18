@@ -1,5 +1,7 @@
 # Native startup incident — 15 October 2026
 
+Resolved in public version **0.3.3**, verified 18 October 2026. The corrected complete app passes real AuK/export on clean macOS 14/15; the actual public Chrome/assistant/full-download/native import/enhance/playback/export/restart flow passes on the developer Mac. The website now redirects to the signed/notarized versioned assistant. [Current release qualification](0.3.3-CANDIDATE.md) distinguishes current bytes, scope and the retained failed candidate. The incident timeline below is historical.
+
 The published Voicy 0.3.2 installer reaches **Audio engine startup timed out** on the tested Apple M4 Mac. The backend starts successfully, but the native launcher accepts only the literal backend version `0.3.0`; the bundled backend reports `0.3.1`. A successful worker run, valid code signature or notarization does not test this handshake.
 
 The failure was reproduced from the full official download, whose SHA-256 is `7e23011e3169adff45be0126d1af9bed2e25338e15b69beb5550ec31d8fa3081`. The original app passed signature verification and Gatekeeper, and all 18 model-manifest entries matched. It was mounted read-only. The actual native error screen and engine-start log were retained privately. No customer recording was used.

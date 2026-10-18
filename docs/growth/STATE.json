@@ -6,19 +6,20 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "0e151e7806ada7a1ab793c4d9207e25194208f6d",
+  "shipped_commit": "5e62f7c1bef2fd9d2e1f1c063a2d8d9b8e0905e3",
   "deployment": {
-    "id": "dpl_FKmshDv7w9NenCysAzTLx8Xh6tp5",
-    "url": "https://voicy-pg0ys9ukn-skaluj.vercel.app",
+    "id": "dpl_DfViiwhsstmtK5V9nt4FxqHaL3Lt",
+    "url": "https://voicy-ldfdzz80e-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
+    "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "5088878f26d82622219c8882e78af690970bea62",
-    "scope": "Verified main documentation checkpoint before today's next checkpoint; final post-commit deployment recorded privately.",
-    "environment": "production",
+    "source_commit": "5e62f7c1bef2fd9d2e1f1c063a2d8d9b8e0905e3",
     "custom_domain_verified": "https://usevoicy.app",
-    "verification_scope": "18Octafternoonbeforethisdocumentationcheckpoint: exactteam/project/production/source confirmed throughconnectorandliveHTML; home/comparison/privacy200, sitemap3URLs, downloadGET/HEAD503/noindex/no redirect. Finalcheckpoint deployment recordedprivately."
+    "verified_utc": "2026-10-18T21:21:44.048918+00:00",
+    "scope": "Actual live activation deployment before this documentation-only checkpoint. Final post-checkpoint deployment recorded privately; no source or download behavior change in this checkpoint.",
+    "verification_scope": "Home/comparison/privacy200, one correct H1/canonical each, JSON-LD parses, sitemap3URLs, robots200; pause removed; GET/HEAD302 to exact public0.3.3 small installer, actual followed download146704bytes/SHA61b69b2a verified."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -125,11 +126,12 @@
       "feature_split": null,
       "scope": "Combined AIOverviews/AIMode linkimpressions, already inWebtotals; no query/position/click/feature-split attribution inobservedreport. Not exacttarget success, controlledorganicrank, universalAIcitation coverage or incremental14+1 impressions."
     },
-    "access_rechecked_utc": "2026-10-18T15:17:55.068129+00:00",
-    "auth_status": "18 October afternoon: correct intended account requires reauthentication; empty password field and no standard autofill. No credentials requested/inspected. Fresh exports and indexing/sitemap data unavailable; cached initial screen is not a fresh measurement.",
+    "access_rechecked_utc": "2026-10-18T20:29:30Z",
+    "auth_status": "Evening fresh browser reload requires Google sign-in. Cached inspection is not current evidence; no fresh metrics/indexing or rank claim.",
     "latest_verified_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-morning/GSC-SUMMARY.json",
     "indexing_last_verified_utc": "2026-10-18T07:27:19.533906+00:00",
-    "fresh_indexing_available": false
+    "fresh_indexing_available": false,
+    "current_indexing_sitemap_check": null
   },
   "scheduler": {
     "intended_cadence": "Daily 09:15 and 17:15 Europe/Prague; scheduler jitter applies",
@@ -193,22 +195,15 @@
     },
     {
       "id": "E05",
-      "status": "Complete corrected debugcandidate frozen and actual developer-Mac nativeUI flow passes; remoteexact model/export/manifest pass, preceding14/15 proof preserved. NewDeveloperID signing/notary, final signedclean-host and exactpublicdownload gates remain. Website paused.",
+      "status": "Shipped stable0.3.3 and production download restored",
       "incident": "docs/release/STARTUP-INCIDENT-2026-10-15.md",
-      "cause": "Native launcher pins backend version 0.3.0, packaged server reports 0.3.1",
-      "native_proof": "Actual complete corrected ad-hocapp: import/freshAuK, A-B playback, nativeSavePanel export, busy-quit/KeepProcessing, cancel-preserved result, restart/history/playback/export, About0.3.3. All3exports mono48kPCM24/235440frames, byteidenticalSHA74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994.",
-      "candidate_scope": "Exact full debugapp transported as55.9MBdelta from validated hosted15 run, reconstructed locally withall30942entries anddeepstrictsignature matchingbefore/afteractualUI. Ad-hoc, no freshAppleacceptance.",
-      "release_dependency": "Freeze currentvalidateddebuginput, prepare newcapacity-qualified owner-controlledDeveloperID signing/notary, then signedinstaller14/15 and versionedpublicdownload/nativeflow qualification.",
-      "containment_scope": "Website/API pause only; preserved direct worker artifact still exists. No rollback inferred from query parameters.",
-      "website_local_qa": "15 tests and Next production build passed; real local download route tested from home/comparison at 1440x1000, 390x844, 320x740; correct 503 explanation/no redirect/bodyless HEAD/no overflow. Local-only pageview metrics fixture; production must be checked unmocked.",
-      "production_qa": "Real production at 1440x1000, 390x844, 320x740: home/comparison 200 with pause notice; status GET/HEAD 503, no redirect, HEAD empty, no overflow or unexpected console errors. No production fixtures. Both comparison native audio players and home original/Voicy toggle/play/pause remain verified.",
-      "candidate": {
-        "version": "0.3.3",
-        "source": "b2521cd0e58cd73cf8694ac10ff6e690e7b45278",
-        "note": "docs/release/0.3.3-CANDIDATE.md",
-        "proof": "Two Rust tests, seven frontend tests/build, native compilation; actual launch/About version/history restore/playback/native export, export byte-identical to prior result",
-        "limits": "Historical metadata-cycle development proof only; later frozen signed candidate failed baseline compatibility. New corrected staging and clean-host preflight are separate evidence."
-      }
+      "qualification": "docs/release/0.3.3-CANDIDATE.md",
+      "release": "https://github.com/jindratilk/voicy/releases/tag/v0.3.3",
+      "cause": "Native launcher pinned unrelated backend0.3.0 while bundled healthy engine reports0.3.1; later packaging selectedmacOS26 MLX wheels despite declared14minimum. Both corrected in current artifact.",
+      "native_proof": "Actual public Chrome-downloaded assistant retrieved the complete image; normal macOS quarantine/Open, native startup/import/freshAuK/A-B/playback/nativeexport/restart/history restore/identical re-export passed on developerMac.",
+      "release_dependency": "No blocker for current release; normal health monitoring.",
+      "production_qa": "Home/comparison/privacy200, one correct H1/canonical each, JSON-LD parses, sitemap3URLs, robots200; pause removed; GET/HEAD302 to exact public0.3.3 small installer, actual followed download146704bytes/SHA61b69b2a verified.",
+      "limits": "One licensed4.905s fixture; no subjective audio-quality or broad long-form reliability conclusion. Developer public GUI run from read-only image, not an Applications copy. Earlier background automation restart hung on nearly-full disk; subsequent normal restarts pass, cause unisolated."
     },
     {
       "id": "E06",
@@ -225,23 +220,24 @@
     }
   ],
   "next_actions": [
-    "Use frozen exact validateddebugcandidate as the next signinginput. Solve local signing/archive capacity without touching otherprojects or spending; preserve immutable original/final sources and frozenmanifests. Do not run unboundedcodesign/fullhash against writableAPFSshadow again. Use existingqualified owner-controlledVoicy identity pipeline withfresh frozeninputs, newDeveloperID/Apple receipts, signedinstaller14/15 and versionedpublicdownload/nativeflow checks beforeunpausing. Currentartifact/nativeflow proof isdevelopmentonly.",
-    "Keep website downloads paused until a versioned signed/notarized replacement passes full public-download and native-flow validation; preserve original artifact and all evidence.",
-    "Public distribution remains separate: existing R2 credential returned AccessDenied on the exact preserved object; Chrome 17 October shows signed-out Cloudflare email/password login with a by-continuing terms agreement. No sign-in/terms/OAuth grant, unrelated bucket probe or credential export performed. Independently qualify appropriate existing access; no original-object overwrite or spend.",
-    "Compare mature 7/28-day exact-query/page/country/device data against dated sparse baselines; currently14impressions/0clicks and noexacttargetdata. Also export the observed Google generative-AI report separately (1homepageimpression, included inWebtotals), without inferring queries/clicks/ranks or adding counts. No unchanged indexing requests.",
-    "Resolve E03 subjective listening review before publishing validated human-speech examples; all five cases remain preserved.",
-    "Refresh and submit prepared distribution materials only after public release validation and explicit named-destination messaging authorization; no external submissions made.",
-    "Use IndexNow only after future meaningful canonical-page changes; do not repeat this 202 notification on unchanged heartbeat runs. Observe index/citation evidence separately when accessible."
+    "Resume SEO/AEO demand and evidence improvements on the one primary comparison URL. The working public app is restored; do not repeat signing/release recovery without a demonstrated regression.",
+    "When existing Chrome account access is available, collect fresh7/28-day exact-query/page/country/device data and current indexing/sitemap. Last morning Web14impressions/0clicks; exact target has0reported impressions and nullposition, not a ranking. Do not invent a trend or keep submitting unchanged URLs.",
+    "Improve practical installation/troubleshooting answers on the existing comparison using the actual release evidence; preserve no-upload/privacy, slow processing, hardware and model-license limits and source citations.",
+    "Preserve E03 fixed inputs/outputs/objective checks. Subjective listening remains unverified; no invented panels, human judgments or audio superiority. Publish only evidence that meets its stated protocol.",
+    "Repair the measurement interpretation before future conversion reports: legacy Worker download counts no longer cover the primary GitHub route. Primary assistant asset counts include QA/retries/bots and are not completed installs or organic conversion rates.",
+    "Continue prepared distribution research/pitches; no external submissions/messages without explicit named-destination authorization. No purchases, thin-page production or link manipulation.",
+    "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
+    "MacOS14 hosted runner retirement is scheduled for2Nov2026; migrate compatibility CI deliberately while preserving real minimum-OS evidence, not by weakening gates."
   ],
   "validation": {
-    "landing_tests": "15 passed, including reachable-but-paused artifact and bodyless HEAD",
-    "build": "Next 16.3.8 production build passed",
+    "landing_tests": "18 passed, including legacy/mismatched artifact rejection and exact GitHub quoted/unquoted filename with qualified size",
+    "build": "Next16.3.8 production build passed",
     "dependency_audit": "0 vulnerabilities after patch and transitive updates",
-    "browser": "Production Chrome/Playwright: home/comparison -> download status at 1440x1000, 390x844, 320x740, real APIs/no fixtures. Demo playback verified separately at desktop/mobile; screenshots retained.",
+    "browser": "Actual production IAB home/comparison at1440x1000,390x844,320x740: active Download CTAs, no pause, one correct H1, no horizontal overflow. Real APIs/no fixtures. Native Chrome public assistant/full download/native processing verified separately.",
     "http": "home, comparison, privacy 200; one correct canonical and H1 each; JSON-LD parses; robots excludes admin/API; sitemap has three URLs",
-    "review": "DMG workflow final frozen autoreview clean (0.91); actionlint passed. Retry/stapling-failure/submission-reuse/no-overwrite and optimized-Python input checks passed under actual CLT Python, with Apple calls mocked. Actual local app signing/notarization and DMG signing separately passed.",
-    "ci": "Product correction PR7: all final-head frontend/backend/website checks, including2new platform regressions, passed; actual baseline14-wheel GPU computation passed on cleanmacOS14/15. Exact current experimental preflight branch CI checked separately; documentation-checkpoint CI recorded privately.",
-    "production_http": "Home/comparison 200 with notice and exact deployment ID; website download GET/HEAD 503/noindex/no redirect. Earlier 302/200 artifact checks are historical, not current website availability.",
+    "review": "Current website frozen review clean0.94; native download assistant clean0.86; full-image CloudKit retry/build-host change clean0.94. Paired with actual runtime/artifact/GUI checks, not review alone.",
+    "ci": "All frontend/backend/website checks pass at PR8 head2f55879be5cb8657e67421aaae20445113505867 and merged activation5e62f7c1bef2fd9d2e1f1c063a2d8d9b8e0905e3. Documentation checkpoint checked separately.",
+    "production_http": "Live activation5e62/dpl_DfViiwhsstmtK5V9nt4FxqHaL3Lt: pages200, active CTAs, downloadGET/HEAD302; exact public primarybytes/SHA verified.",
     "preview_download": "Historical preview lacked download configuration; current production website/API remains intentionally paused with explanatory 503 and no redirect.",
     "comparison_quality_audit": {
       "tool": "Lighthouse 13.5.0",
@@ -256,40 +252,23 @@
     },
     "performance": "Completed three quiet post-change Lighthouse 13.5.0 simulated mobile runs: 99/100/100; median LCP 1919.037ms versus 4474.255ms before. Observational lab evidence, not field or ranking proof.",
     "indexnow": "Local actual production servers: configured/missing/invalid values, exact body/headers/bodyless HEAD, wrong/fixed aliases and known pages/assets/download containment. Production: correct private proof 200, HEAD 0 transfer bytes, wrong/fixed aliases 404; eight existing routes/assets still valid, key absent in public pages.",
-    "native_candidate_033": "Local app opens, About 0.3.3 (0.3.3), history restored, playback reaches 4.9 seconds, native mono 48kHz PCM24 export 235440 frames, hash 74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994; app quit and read-only image detached. Source changes are metadata/About only; no new enhancement run.",
     "native_release_033": {
-      "optimized_release_binary_sha256": "6ac70fbc41f41a7ab477028f196684ee16db4d1ae5cc774bedf8d9d6a9f4e3e7",
-      "frozen_bundle_manifest_sha256": "1b03fb58c3d6ed3160e9e109417513e915954bc1968b2d0aaddf463938404081",
-      "whole_bundle_entries": 31036,
-      "signing_preflight": "passed; actual local app signing/notarization passed; complete manifest, ticket, deep signature and Gatekeeper independently verified",
-      "signed_binary_sha256": "c7b9b51bd994490941a2427d7980591aa65a69b09805f2b1483dee3d953f7347",
-      "signed_bundle_manifest_sha256": "4cdf1791cd83560864f9502b97216718b44512a1a4d4ba7287acc6ecf310282a",
-      "signed_app_archive_sha256": "8656a1d312456616d5d7261c20526f4cfbbb0137481e938dd610caa3dab0cb2f",
-      "signed_app_archive_bytes": 6444151977,
-      "app_notary_id": "c0703562-8d8a-4291-8dfc-5342116aacac",
-      "app_notary_status": "Accepted",
-      "accepted_bundle_manifest_sha256": "7a0af8e0873ee0cd40b550e25e61d1b46b37e739f7ef1ed1e27c160126047913",
-      "unsigned_dmg_sha256": "fd802867f8a3126d21f285fd2561c62189dba606ea0c57e1c752f348eeb20548",
-      "unsigned_dmg_bytes": 6518352057,
-      "signed_dmg_sha256": "65295d86744c25e4e6a9e5f2efe3fbdb66901011a0541d1d53c3bf06d8d94853",
-      "signed_dmg_bytes": 6518361665,
-      "dmg_notary_status": "Accepted; independent final-image checks passed 17 October",
-      "native_flow": "Actual new read-only DMG: native launch/import/enhancement, A/B playback through 4.9s, export, busy-quit/Keep Processing/cancel, Show Voicy, restart, About 0.3.3 and identical post-restart export. App quit, image detached, post-test deep signature and ticket valid. Developer-Mac proof only.",
-      "native_export_sha256": "74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994",
-      "dmg_notary_id": "239ae0ce-c419-4097-a9db-86849fbe7568",
-      "final_dmg_sha256": "e8c2511d77f7bf710675a7cad4aba0f7c8095ffaebd67a27c447786ffcfaafec",
-      "final_dmg_bytes": 6518369424,
-      "final_dmg_checks": "codesign strict, stapler validate, spctl open, hdiutil verify; contained app complete31,036-entry manifest matches accepted 7a0af8..., app deep strict/stapler/Gatekeeper all passed. Mounted read-only and detached.",
-      "signed_app_archive_retention": "Historical submission identity; the task-owned ZIP was reclaimed after notarization and complete accepted-app reconstruction equivalence were proven. Original0.3.2 installer and final 0.3.3 DMG remain."
+      "qualification": "https://github.com/jindratilk/voicy/releases/download/v0.3.3/QUALIFICATION.json",
+      "actual_public_full_download_native_flow": true,
+      "full_image_sha256": "459f8699304ec2efa923001b0691a9fd3231067716a66b18f676f88f4c4f6e7b",
+      "restart_export_identical_sha256": "74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994",
+      "scope_and_limits": "One licensed4.905s fixture; no subjective audio-quality or broad long-form reliability conclusion. Developer public GUI run from read-only image, not an Applications copy. Earlier background automation restart hung on nearly-full disk; subsequent normal restarts pass, cause unisolated."
     },
     "clean_host_probe": "Exact frozen0.3.3 DMG clean-host signatures/tickets/Gatekeeper/native launch/health/input analysis passed; actual AuK import failed because host-selected MLX wheels target26. Corrected same-version baseline14 wheels passed actual GPU computation on freshmacOS14.8.9/15.7.9 and developer27.0.1. Full rebuilt candidate/model/public-download qualification remains. Workflow review clean0.89; staging correction clean0.91; CIbootstrap clean0.96; actionlint and focused regression checks passed.",
-    "corrected_runtime_preflight": "New e21825c run39141557720 fullmodel+artifact pass, normalCI39141557841 success. All artifact ZIP/tar/manifests verified. Actual reconstructed completeapp nativeUI flow and threeidentical48kPCM24exports pass;30942entrymanifest anddeepstrictsignature identicalbefore/after. Prior14/15 proof retained. No newDeveloperID/notary/publicrelease/subjectivelistening pass."
+    "corrected_runtime_preflight": "New e21825c run39141557720 fullmodel+artifact pass, normalCI39141557841 success. All artifact ZIP/tar/manifests verified. Actual reconstructed completeapp nativeUI flow and threeidentical48kPCM24exports pass;30942entrymanifest anddeepstrictsignature identicalbefore/after. Prior14/15 proof retained. No newDeveloperID/notary/publicrelease/subjectivelistening pass.",
+    "historical_metadata_candidate_033": "Local app opens, About 0.3.3 (0.3.3), history restored, playback reaches 4.9 seconds, native mono 48kHz PCM24 export 235440 frames, hash 74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994; app quit and read-only image detached. Source changes are metadata/About only; no new enhancement run.",
+    "local_services": "Two Voicy-only loopback user LaunchAgents; website HEAD302 to correct primary installer; fullimage HEAD200 and three live ranges match frozen bytes, unlisted/private routes404. Require logged-in Mac availability."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic."
   ],
-  "verified_utc": "2026-10-18T16:10:14.147214+00:00",
+  "verified_utc": "2026-10-18T21:23:41.918507+00:00",
   "search_observation": {
     "date": "2026-10-16",
     "engine": "Google Search, desktop Chrome Incognito, signed out, cookies rejected",
@@ -315,43 +294,33 @@
     "indexnow": "Initial changed-page notification accepted with 202; key verification pending. No Webmaster Tools access or AI citation metrics claimed."
   },
   "release_health": {
-    "published_version": "0.3.2",
-    "native_startup": "Failed on the tested M4, despite valid signing/notarization and successful direct runtime tests",
-    "source_fix": "Startup source repair merged in PR #4; 0.3.3 metadata/About candidate merged in PR #6 at b2521cd0e58cd73cf8694ac10ff6e690e7b45278; not released as a signed installer",
-    "website_download": "Production website/API paused: GET/HEAD 503, explanatory page, no artifact redirect; main/comparison remain 200. Direct worker artifact preserved.",
-    "signing": "The frozen0.3.3 app/DMG are Apple Accepted/stapled and pass independent and clean-host signature/Gatekeeper checks, but candidate is NOT release-ready: clean macOS15 AuK import failed because both bundled MLX wheels target macOS26. Preserve it as failed-candidate evidence; correct staging, rebuild, retest and re-sign/notarize changed bytes before distribution.",
-    "distribution_access": "Exact Voicy account/object signed ranged GET returned HTTP 403 with S3 AccessDenied, following HEAD 403. This credential has not qualified original-object read access; no write/Worker deployment permission inferred or attempted. Apple notarization proceeds independently. Existing Voicy GitHub/Vercel metadata contains no Cloudflare deployment credential.",
-    "corrected_staging": {
-      "source": "54312ac67aa7479e6baebc3b0ef30017f57dede9",
-      "portable_python": "CPython3.13.14, same-version official macOS14 MLX/core+metal wheels SHA-pinned; all installed platform tags audited",
-      "actual_local_gpu_compute": "passed on staged Python",
-      "manifest_sha256": "3064ab9e02868c198fb195b69bb7ff316dfdcc376cad4971490cea0ec8738af2",
-      "delta_sha256": "b399a76bcfb4181dd706df4ebed9a02a8f4390c2dd43bec114f211e83728bbf9",
-      "delta_bytes": 42074553,
-      "delta_entries": {
-        "changed": 16,
-        "deleted": 100
-      },
-      "limits": "New project-owned Python staging, not signed complete app/installer. Delta contents independently hash-verified; original installer preserved.",
-      "clean_host_model": "Complete corrected debugbundle native launch/AuK/export/unchanged-manifest passed14.8.9 and15.7.9, run39108724581 at0564c69; no new signedinstaller.",
-      "local_staging_status": "Superseded1,203,690,768-byte project-owned Pythoncopy reclaimed after fresh30773-entry equality check, preservedsource+42MBdelta+reconstructionproof, and full currentcandidate validation. Archivedinputs retained; do not assume old stagingpath exists."
+    "published_version": "0.3.3",
+    "consumer_release": "https://github.com/jindratilk/voicy/releases/tag/v0.3.3",
+    "public_qualification": "https://github.com/jindratilk/voicy/releases/download/v0.3.3/QUALIFICATION.json",
+    "native_startup": "Actual public Chrome-downloaded assistant retrieved the complete image; normal macOS quarantine/Open, native startup/import/freshAuK/A-B/playback/nativeexport/restart/history restore/identical re-export passed on developerMac.",
+    "source_fix": "PR4 startup handshake, PR6 version/About, PR7 macOS14 MLX wheel baseline, PR9 native download assistant and PR8 verified website activation all merged.",
+    "website_download": "Restored: live GET/HEAD302 to qualified versioned small installer; homepage/comparison active Download CTAs and no pause notice.",
+    "primary_installer": {
+      "bytes": 146704,
+      "sha256": "61b69b2a812daa837240ab70057c74e0cf62ba02ba090757f38663e9489c4b45",
+      "assistant_source": "2b556709fb84b0e7ae55abddb3b2e4aa2a3ea800",
+      "app_notary_id": "a0938bb1-dcbf-4ad8-8509-d51b51723178",
+      "dmg_notary_id": "cdedd4da-d2c6-43e5-b532-e2c0f69effe6"
     },
-    "corrected_candidate": {
-      "unsigned_reconstructed_complete_app_entries": 30942,
-      "canonical_manifest_sha256": "60a3d884e095fb8339213e52ab16626c62ad731ac4f03f6d25799af55b0075b9",
-      "manifest_file_sha256": "e4a18ce962a1de1ac3257683b0e71c7f6ee1f02082d42b31d529fd8421792409",
-      "python_equals_frozen_corrected_stage": true,
-      "other_files_equal_preserved_final_source": true,
-      "local_ad_hoc_signing": "Stopped before completion when writableAPFSshadow grew4.43GB; faileddisposableoverlay discarded afterunmount and independentlyverifiedunsignedclone. No signingpass claimed.",
-      "transport": "Reviewed exactdebugdelta producer on isolated experimentalbranch; model+manifest validation before upload, archiveindependentlyhashed, nativeUI qualificationpending.",
-      "signed_notarized_public_release": false,
-      "validated_debug_manifest_sha256": "6783d5c8db9b452f9131cf18c774548a1f14c0af5f8de5b44a7316812902ede1",
-      "validated_debug_archive_sha256": "a89d78d874681341c17158da7ddc7e85cb17eee85bc2a70791966aebdd446226",
-      "validated_debug_archive_bytes": 55908183,
-      "native_UI": "Actual complete corrected ad-hocapp: import/freshAuK, A-B playback, nativeSavePanel export, busy-quit/KeepProcessing, cancel-preserved result, restart/history/playback/export, About0.3.3. All3exports mono48kPCM24/235440frames, byteidenticalSHA74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994.",
-      "post_UI_integrity": "All30942entries match exact hosted-testedapp and deepstrictsignature before/after. Appquit, old/new native+engine processesgone, originalpreferencesrestored, image detached.",
-      "scope": "Development qualification only; no new DeveloperID/notary/publicdownload or subjectivequality proof."
-    }
+    "complete_offline_image": {
+      "bytes": 6510981427,
+      "sha256": "459f8699304ec2efa923001b0691a9fd3231067716a66b18f676f88f4c4f6e7b",
+      "complete_app_manifest_sha256": "453d935f0aefba850adec0c392461c15c53001ac0f5c876e395266f712ac8246",
+      "entries": 30942,
+      "app_notary_id": "68db7df7-9a78-471e-baeb-e60f1e061433",
+      "dmg_notary_id": "1119d373-4ff0-40b6-b5dd-4b43b2fdfb11",
+      "qualification_run": 39159471304
+    },
+    "signing": "Existing owner DeveloperID used in isolated protected Voicy CI. New full app/image and assistant/image Apple Accepted; signatures, tickets, Gatekeeper and complete contained app manifests independently verified.",
+    "distribution": "Proper stable GitHub release with signed small assistant and four sealed full-image payloads. No manual assembly or Mac-host dependency for public downloads. Existing Cloudflare write/deploy access remains unqualified403; legacy object untouched.",
+    "local_hosting": "Voicy-only user LaunchAgents serve website127.0.0.1:54832 and frozen full installer127.0.0.1:54831; require this logged-in Mac to be available. No public tunnel or uninterrupted-hosting claim.",
+    "limits": "One licensed4.905s fixture; no subjective audio-quality or broad long-form reliability conclusion. Developer public GUI run from read-only image, not an Applications copy. Earlier background automation restart hung on nearly-full disk; subsequent normal restarts pass, cause unisolated.",
+    "superseded_candidate": "The old e8c2511d image is failed minimum-OS evidence, never the current459f8699 image; history in docs/release/0.3.3-CANDIDATE.md and Git."
   },
   "distribution": {
     "status": "Four destination-specific draft packets prepared; no external communications or submissions",
@@ -372,12 +341,11 @@
     ]
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-18T16:10:14.147214+00:00",
-    "current_wait": "No active build/model/signing job or routine owner question. Exact corrected complete debugapp passes newfullmodel/export, localnativeUI and before/afterfullmanifest/deepsignature checks. Next newDeveloperID signing/notary needs a capacity-qualified assembly path; do notrepeat localfullcodesign onwritableAPFSshadow. Publicdistribution stillindependentlyunqualified. FreshGSC data requiresChromeGoogle reauthentication.",
-    "completed_independent_work": "Fullunsignedcandidate30942entriesverified; exact testeddebugcandidate exported fromfreehostedMac and independentlyreconstructed/read-onlyvalidated locally. ActualnativefreshAuK/import/A-B/playback/export/busy-quit/cancel/restart/About passes;3exports identical. Original/finalinstallers preserved. Redundantoldintermediateimages and supersededverifiedPythoncopy reclaimed withreceipt; no otherproject touched. FreshGSCdata unavailable, lastmorningbaseline retained.",
+    "rechecked_utc": "2026-10-18T21:23:41.918507+00:00",
+    "current_wait": "No release blocker or routine owner question. Fresh GSC queries/indexing/sitemap require Google reauthentication; last verified morning data retained. Independent SEO/evidence work can continue.",
     "owner_action_pending": false,
     "private_checkpoint": "voicy-growth-evidence/local-runner-2026-10-16/CHECKPOINT.json",
-    "monitor": "Daily native automation remains ACTIVE, dependent on Mac/Codex availability. Ranking goal remains unachieved."
+    "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
   },
   "search_observation_history": [
     {
@@ -398,132 +366,20 @@
     "implication": "Original inspectable evidence and explicit task scope remain priorities; no causal/ranking/quality conclusion. Do not weaken E03 publication gates or invent a benchmark/listening panel."
   },
   "clean_host_validation": {
-    "status": "Frozen signed0.3.3 remains failed for declared baseline. Separate corrected complete debugbundle now passes actual AuK/model/export on clean14.8.9 and15.7.9; not signed-installer qualification.",
-    "branch": "codex/clean-mac-qualification",
-    "capability_source": "ee33745f1e697f08cde429dd50d89316a738d03b",
-    "capability_run_id": 39013051754,
-    "macos": "15.7.9",
-    "architecture": "arm64",
-    "physical_memory_bytes": 7516192768,
-    "metal_device": "Apple Paravirtual device",
-    "metal_recommended_working_set_bytes": 5010800640,
-    "gui_session_available": true,
-    "limits": "Initial capability probe only measured device/GUI/RAM; later actual GPU and full-model results are separate fields. Virtual7GiB hosts below16GB recommendation; one short synthetic test does not establish general memory/performance/quality.",
-    "cost_scope": "Standard macos-15 on public Voicy repository; official GitHub docs say standard public-repo runners are free. No larger/paid runner or subscription.",
-    "draft_read_probe": "Default contents:read token returned 403 Resource not accessible by integration. An isolated trusted-branch job now qualifies exact draft-manifest bytes with temporary job-specific contents:write; performs only GETs, no signing secrets or persistent credential. No main-branch permission change.",
-    "draft_download_source": "7940539c52d74213e8b4f8eef7457b16728ae532",
-    "draft_tag": "v0.3.3-validation-staging",
-    "consumer_release": false,
-    "draft_download_run_id": 39013474351,
-    "draft_download_job_id": 117340676015,
-    "draft_download_result": "The same fresh macOS host retrieved the exact 1269-byte draft manifest with SHA-256 24bcfe253bbed938246ce9dfcbed6442b89cc8a595788718f243b09c13f09ebc. Default read-token denial preserved separately; only the isolated job token scope was adjusted.",
-    "staging": "All four parts completed 17 October 08:31 UTC; each remote size and SHA-256 digest verified. Original/final installers retained; temporary part copies reclaimed only after verification. Unpublished validation draft remains internal, not consumer release.",
-    "qualification_source": "25e4a6063fa0799fb74cb3157645d92e70c096a6",
-    "qualification_run_id": 39045468738,
-    "qualification_job_id": 117433191151,
-    "qualification_scope": "DMG/app signatures, tickets, Gatekeeper, actual bundle launch and authenticated packaged-engine AuK inference on licensed 4.905-second input; export structure and changed decoded signal. Not full native GUI flow, public download or subjective audio quality.",
-    "qualification_review": "Final frozen autoreview clean (0.89), actionlint, Python compile, negative draft-target gates and pass-through rejection examples passed. All normal repository CI at exact source passed.",
-    "qualification_conclusion": "failure",
-    "qualification_result": {
-      "installer_sha256_verified": true,
-      "dmg_signature_ticket_gatekeeper_checksum": "passed",
-      "contained_app_signature_ticket_gatekeeper": "passed",
-      "native_bundle_launch": "passed",
-      "authenticated_packaged_engine_health": "passed",
-      "licensed_recording_analysis": "passed",
-      "auk_inference": "failed before model inference; default metallib language4.0 unsupported",
-      "export": "not reached",
-      "full_native_gui_flow_tested": false,
-      "public_download_tested": false
-    },
-    "compatibility_evidence": "Read-only inspection of all25 platform-wheel metadata: only mlx and mlx-metal require macOS26. Official PyPI offers the same0.32.2 versions built for14/15/26. Selected build-host wheels are a confirmed packaging defect; virtual GPU limitations may still remain after correcting them.",
-    "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-17-afternoon/CLEAN-MAC-REPORT.json; BUNDLED-WHEEL-PLATFORMS.json",
-    "correction_branch": "codex/macos-14-runtime",
-    "correction_status": "PR7 merged after all final-head frontend/backend/website checks (including new regression tests) and actual clean macOS14/15 GPU compute passed. Staging correction review clean0.91; bootstrap and explicit CI wiring reviews clean0.96. This repairs staging only; existing DMG is unchanged and failed for the declared baseline. New full-model/native-flow candidate proof is still required.",
-    "correction_pr": "https://github.com/jindratilk/voicy/pull/7",
-    "correction_source": "8e4858141cc829e847da5accc37d79931724cd42",
-    "baseline_compute_run_id": 39046793642,
-    "baseline_compute_jobs": {
-      "macos14": 117436469824,
-      "macos15": 117436470062
-    },
-    "baseline_compute_pr_run_id": 39046797903,
-    "correction_merged_commit": "0e151e7806ada7a1ab793c4d9207e25194208f6d",
-    "correction_ci_run": 39046797973,
-    "corrected_preflight": {
-      "source": "0564c69bf7a971a490861a21e0716ca1d2d064db",
-      "run_id": 39108724581,
-      "scope": "New complete debug app using original native/server/model payloads and corrected full portable Python; actual bundle launch, packaged AuK model and export via authenticated loopback API. Not complete native GUI flow or signed public release.",
-      "macos14_job": 117620062853,
-      "macos15_original_job": 117617659900,
-      "status": "success; complete stated-scope pass on both14.8.9 and15.7.9",
-      "review": "Reviewed source; verified capacity guard rejects undersized hosts before copying. Bytecode-mutation finding rejected with frozen launcher PYTHONDONTWRITEBYTECODE and inherited worker environment; before/after complete-manifest gate retained. Actionlint, compile and manifest mutation checks passed.",
-      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-morning/",
-      "developer_id_signed_corrected_bundle": false,
-      "notarized_corrected_bundle": false,
-      "public_release_qualified": false,
-      "macos15_job": 117620062957,
-      "initial_attempt": {
-        "source": "4c473ab67007b48c4525c516592afa8f6b086e9a",
-        "run_id": 39107914983,
-        "macos14": "AuK completed173.76s; WAV structural checks passed; final test failed because minimalFFmpeg lacks rawf32le muxer. Completepass notclaimed.",
-        "macos15": "AppleCloudKit connection lost during originalDMG stapler validation; before corrected staging/model.",
-        "preservation": "Original logs retained. New source fixes only test decoder using supportedWAVPCM24, actual bundledFFmpeg/fixture and pass-through examples verified; review clean0.95."
-      },
-      "macos14_result": {
-        "os": "14.8.9",
-        "status": "passed_for_stated_scope",
-        "inference_seconds": 165.01,
-        "export_sha256": "17cc2bd4c42537937b6f76f7a16d8b674a243a6797c7d6c6cf8a9fbbf7fda616",
-        "export": {
-          "channels": 1,
-          "sample_rate": 48000,
-          "frames": 235440,
-          "sample_width": 3
-        },
-        "decoded_audio_differs_beyond_encoding_and_scalar_gain": true,
-        "corrected_bundle_unchanged_during_test": true,
-        "corrected_manifest_sha256": "f8cfe3596072de9860752852c5b3d1976fc15a1bba5dcd177b4956bd1538e29b"
-      },
-      "checks_run": 39108724756,
-      "checks_conclusion": "success",
-      "macos15_result": {
-        "os": "15.7.9",
-        "status": "passed_for_stated_scope",
-        "inference_seconds": 197.5,
-        "export_sha256": "e39db5730a7eba4d773aad80c59c95b6a0a7feeb7a4a4b9d313a4eb66f7fca47",
-        "export": {
-          "channels": 1,
-          "sample_rate": 48000,
-          "frames": 235440,
-          "sample_width": 3
-        },
-        "decoded_audio_differs_beyond_encoding_and_scalar_gain": true,
-        "corrected_bundle_unchanged_during_test": true,
-        "corrected_manifest_sha256": "dd2bcccbfa5b874e9fdf8c9a84841a4fdf9b077fcb96403213af5149059e12d5"
-      },
-      "limits": "Distinct debug bundle manifests/exports retained per host; no cross-host determinism or representative speed/quality claim. Both 7GiB virtual hosts are below16GB recommendation. Complete native GUI interactions and newly signed/notarized/public installer remain untested."
-    },
-    "debug_delta_transport": {
-      "source": "e21825c68d2ffe92ab65dc4b717fecc4956c0c39",
-      "run_id": 39141557720,
-      "job_id": 117716869820,
-      "status": "success",
-      "inference_seconds": 181.97,
-      "artifact_id": 12141809075,
-      "artifact_zip_bytes": 58096897,
-      "artifact_zip_sha256": "df153d9fa02967e97f4101db9184aa0006a40bf0893432ef09f14e18955f730c",
-      "changed_entries": 19,
-      "deleted_entries": 100,
-      "archive_bytes": 55908183,
-      "archive_sha256": "a89d78d874681341c17158da7ddc7e85cb17eee85bc2a70791966aebdd446226",
-      "candidate_manifest_sha256": "6783d5c8db9b452f9131cf18c774548a1f14c0af5f8de5b44a7316812902ede1",
-      "normal_CI_run": 39141557841,
-      "normal_CI": "success",
-      "native_UI_QA": "passed for stateddevelopment scope on localMac; completeappunchanged aftertest",
-      "review": "P2artifactidentitysnapshot fixed andchecked. P1one-hostexport finding consciouslyrejected: this isone-off experimentalartifactproducer, existing14/15 proofs and mainplatformmatrix unchanged; finalsignedinstaller14/15 gates stillrequired. No acceptedremaining findings; raw review/disposition private.",
-      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-afternoon/",
-      "new_DeveloperID_notarized_public_release": false
-    }
+    "status": "Actual final signed/notarized complete offline image passes on fresh macOS14 and15 arm64 hosts",
+    "run_id": 39159471304,
+    "source": "bacfb41be03e2f316d3a08acfa604eae20883214",
+    "hosts": [
+      "macos-14",
+      "macos-15"
+    ],
+    "scope": "Finalimage/app signatures,tickets,Gatekeeper; actual native launch, authenticated bundled engine, licensed fixture analysis, realAuK inference, PCM24 mono48k export235440frames, rejects unchanged/scalar-only output. Packaged engine API, not complete GUI on hosts.",
+    "inference_seconds": [
+      245.21,
+      278.83
+    ],
+    "limits": "Virtual hosts below16GB recommendation; timings not consumer benchmark or audio quality. Actual developerMac public/native GUI checks separate.",
+    "cost_scope": "Standard macOS14/15 runners in public Voicy repo; no paid larger runner or new subscription.",
+    "old_failure": "Superseded e8 candidate bundled MLX wheels for macOS26; corrected same-version baseline14 artifacts are pinned and staging audited. Full corrected rebuilt bytes were newly signed/notarized and qualified."
   }
 }
