@@ -3,14 +3,16 @@
 > Free, open-source AI speech enhancement for Apple Silicon Macs. A local Adobe Podcast alternative. Audio is processed on the user's Mac, with no account or audio upload.
 
 ## Current availability
-Downloads are temporarily paused as of 15 October 2026: the published 0.3.2 native launcher times out because it expects an older backend version. A source fix is being tested; a signed replacement has not been published. The prerecorded website demo remains available.
+Voicy 0.3.3 is available as of 18 October 2026. The signed and notarized download assistant retrieves and verifies the complete 6.5 GB offline app image. Initial setup needs an Internet connection and about 15 GB for the image and installed app, plus recordings. Audio enhancement then works offline. This release fixes the earlier native startup issue.
 
 ## Product
 - [Adobe Podcast alternative comparison](https://usevoicy.app/adobe-podcast-alternative): sourced feature comparison, audio samples, requirements, limitations, and alternatives by workflow. Written by the Voicy project, not an independent review.
 - [Home and audible demo](https://usevoicy.app/): overview, prerecorded original/enhanced comparison, requirements, and FAQ.
-- [Download status](https://usevoicy.app/api/download): current availability; downloads paused pending a verified startup fix.
+- [Download for Mac](https://usevoicy.app/api/download): current signed and notarized installer for Apple Silicon, macOS 14 or later.
+- [Installation and offline setup](https://usevoicy.app/adobe-podcast-alternative#install): download assistant, full app image, Applications installation, and the earlier startup issue.
+- [Release checks and limits](https://github.com/jindratilk/voicy/releases/download/v0.3.3/QUALIFICATION.json): exact installer identities, supported-host checks, public native-flow checks and their scope.
 - [Source and documentation](https://github.com/jindratilk/voicy): MIT application code, build instructions, model licenses, limitations.
 - [Privacy](https://usevoicy.app/privacy): local processing and aggregate website statistics.
 
 ## Accurate facts
-Voicy uses Tencent AuK with 32 solver steps, executed through MLX/Metal. It requires Apple Silicon and macOS 14 or later. The download is approximately 6.5 GB with models included, and the full installed app needs approximately 8 GB; 16 GB of memory or more is recommended. There is no fixed recording-duration or file-size cap. Processing capacity depends on available memory and disk space. Exports are mono 48 kHz PCM24 WAV, from a model operating at 24 kHz. Processing is not real time. Generative enhancement can alter voice texture or words. The original is preserved. Results vary. Voicy is independent and is not affiliated with Adobe or Apple. Application source is MIT; dependencies and models retain their own licenses. Voicy does not claim objective superiority over Adobe Podcast or universal quality improvements.
+Voicy uses Tencent AuK with 32 solver steps, executed through MLX/Metal. It requires Apple Silicon and macOS 14 or later. The initial setup downloads approximately 6.5 GB with models included. Allow about 15 GB during setup for the image and approximately 8 GB installed app; 16 GB of memory or more is recommended. There is no fixed recording-duration or file-size cap. Processing capacity depends on available memory and disk space. Exports are mono 48 kHz PCM24 WAV, from a model operating at 24 kHz. Processing is not real time. Generative enhancement can alter voice texture or words. The original is preserved. Results vary. Voicy is independent and is not affiliated with Adobe or Apple. Application source is MIT; dependencies and models retain their own licenses. Voicy does not claim objective superiority over Adobe Podcast or universal quality improvements.
