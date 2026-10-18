@@ -70,7 +70,7 @@ export default function ComparisonPage() {
     description,
     url: `${site.url}/adobe-podcast-alternative`,
     datePublished: "2026-10-15",
-    dateModified: "2026-10-15",
+    dateModified: "2026-10-18",
     about: { "@type": "SoftwareApplication", name: "Voicy", url: site.url },
     breadcrumb: {
       "@type": "BreadcrumbList",
@@ -135,6 +135,9 @@ export default function ComparisonPage() {
             macOS 14+ · Apple Silicon · 6.5 GB setup download · 16 GB memory
             recommended
           </p>
+          <p className="source-note">
+            <a href="#install">How to install and run offline ↓</a>
+          </p>
           {site.downloadPaused && (
             <p className="download-notice">
               Downloads paused while we verify a startup fix.
@@ -145,6 +148,8 @@ export default function ComparisonPage() {
           <div className="editorial-note">
             Published by the Voicy project ·{" "}
             <time dateTime="2026-10-15">15 October 2026</time>
+            {" · Updated "}
+            <time dateTime="2026-10-18">18 October 2026</time>
             <br />
             This is our product comparison, not an independent review. Adobe
             facts are linked to official documentation below.
@@ -185,7 +190,7 @@ export default function ComparisonPage() {
             >
               <table className="comparison-table">
                 <caption>
-                  Voicy {site.version} and Adobe Podcast Enhance Speech —
+                  Voicy {site.version}; Adobe Podcast Enhance Speech facts
                   checked 15 October 2026
                 </caption>
                 <thead>
@@ -296,12 +301,53 @@ export default function ComparisonPage() {
               </li>
             </ul>
           </section>
+          <section id="install">
+            <h2>How to install Voicy on your Mac.</h2>
+            <p>
+              Use an Apple Silicon Mac with macOS 14 or later; 16 GB of memory
+              is recommended. Setup needs the Internet. Your recordings are
+              processed locally after installation.
+            </p>
+            <ol className="comparison-list">
+              <li>
+                <a href="/api/download">Download Voicy {site.version}</a>, open
+                the small disk image, and run <strong>Voicy Installer</strong>.
+              </li>
+              <li>
+                Choose where to save the complete app image. The assistant
+                downloads and verifies about 6.5 GB of app and models. Allow
+                about 15 GB during setup for that image and the installed app,
+                plus space for recordings.
+              </li>
+              <li>
+                Open the verified image in Finder, drag <strong>Voicy</strong>
+                {" "}to <strong>Applications</strong>, then open that copy.
+                Enhancement can now work offline; no recording upload or
+                account is required.
+              </li>
+            </ol>
+            <p>
+              Voicy {site.version} is signed and notarized. The complete release
+              passed actual enhancement and WAV export on clean macOS 14 and
+              15 hosts. See the{" "}
+              <a href={`${site.github}/releases/download/v${site.version}/QUALIFICATION.json`}>
+                release checks and their limits
+              </a>.
+            </p>
+            <p>
+              If an older copy stops at <strong>Audio engine startup timed out</strong>,
+              install the current release and open the new copy from Applications.
+              Version 0.3.3 includes the startup fix; the{" "}
+              <a href={`${site.github}/releases/tag/v${site.version}`}>release notes</a>
+              {" "}explain the changes.
+            </p>
+          </section>
           <section>
             <h2>How to switch from an upload workflow.</h2>
             <ol className="comparison-list">
               <li>
-                Download Voicy and install it on a supported Mac. Keep an
-                untouched copy of your recording.
+                Keep an untouched copy of your recording before trying
+                enhancement.
               </li>
               <li>
                 Import an audio file, then run enhancement locally. No Adobe
@@ -337,8 +383,8 @@ export default function ComparisonPage() {
             <p>
               Voicy capabilities come from{" "}
               <a href={site.github}>the source and documentation</a> and{" "}
-              <a href={`${site.github}/blob/main/docs/release/VALIDATION.md`}>
-                release validation
+              <a href={`${site.github}/releases/download/v${site.version}/QUALIFICATION.json`}>
+                current release checks
               </a>{" "}
               for version {site.version}. Adobe capabilities come from its{" "}
               <a href="https://podcast.adobe.com/en/features">
