@@ -1,0 +1,45 @@
+name: Voicy download installer checks
+on:
+  push:
+    branches: [codex/standalone-download-installer]
+    paths: [installer/**, .github/workflows/download-installer-checks.yml, .gitignore]
+  pull_request:
+    paths: [installer/**, .github/workflows/download-installer-checks.yml, .gitignore]
+permissions:
+  contents: read
+jobs:
+  download-installer:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, macos-15]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compile the macOS 14 native installer interface
+        run: swiftc -swift-version 5 -target arm64-apple-macos14.0 -parse-as-library -typecheck installer/DownloadCore.swift installer/VoicyInstaller.swift
+      - name: Exercise streaming integrity, quarantine, cancellation and file preservation
+        run: |
+          swiftc -swift-version 5 -target arm64-apple-macos14.0 -parse-as-library \
+            installer/DownloadCore.swift installer/Tests/DownloadCoreTests.swift \
+            -o "$RUNNER_TEMP/voicy-installer-tests"
+          "$RUNNER_TEMP/voicy-installer-tests"
+      - name: Reject unqualified release payloads even with optimized Python
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, subprocess, tempfile
+          with tempfile.TemporaryDirectory(prefix='voicy-payload-guard-', dir=os.environ['RUNNER_TEMP']) as owned:
+              root = pathlib.Path(owned)
+              payload = root / 'invalid.json'
+              payload.write_text(json.dumps({'version': 'invalid', 'bytes': 1, 'sha256': 'bad', 'parts': []}))
+              for optimize in ('0', '1'):
+                  output = root / ('output-' + optimize)
+                  result = subprocess.run(['bash', 'installer/build.sh', str(payload), str(output)],
+                      env={**os.environ, 'PYTHONOPTIMIZE': optimize}, capture_output=True)
+                  if result.returncode == 0 or (output / 'Voicy Installer.app').exists():
+                      raise SystemExit('Unqualified payload crossed the build gate')
+          print('Invalid payload rejected before app creation with Python optimization off/on')
+          PY
