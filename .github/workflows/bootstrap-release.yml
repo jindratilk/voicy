@@ -1,0 +1,83 @@
+name: Voicy consumer download installer candidate
+on:
+  push:
+    branches: [codex/clean-mac-qualification]
+    paths: [.github/workflows/bootstrap-release.yml, scripts/release/bootstrap-release.py]
+permissions:
+  contents: read
+concurrency:
+  group: voicy-bootstrap-release
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.repository == 'jindratilk/voicy' && github.ref == 'refs/heads/codex/clean-mac-qualification'
+    runs-on: macos-14
+    timeout-minutes: 90
+    environment: voicy-release-20261018
+    permissions:
+      contents: write
+      actions: read
+    env:
+      VOICY_SOURCE_DIR: /tmp/voicy-bootstrap-sources-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - name: Fetch only the exact reviewed release orchestration
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$VOICY_SOURCE_DIR"
+          for script in hosted-corrected-release.py bootstrap-release.py; do
+            curl --fail --silent --show-error --location --retry 3 \
+              "https://raw.githubusercontent.com/jindratilk/voicy/$SOURCE_SHA/scripts/release/$script" \
+              --output "$VOICY_SOURCE_DIR/$script"
+          done
+      - name: Verify full-image macOS 14/15 proof and copy exact payloads to a new proper consumer draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 "$VOICY_SOURCE_DIR/bootstrap-release.py" stage
+      - name: Build only the frozen main installer source without signing or repository credentials
+        run: python3 "$VOICY_SOURCE_DIR/bootstrap-release.py" build
+      - name: Sign the native download assistant with the existing owner Developer ID
+        env:
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+        run: python3 "$VOICY_SOURCE_DIR/bootstrap-release.py" sign-app
+      - name: New Apple acceptance of the small assistant app
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: python3 "$VOICY_SOURCE_DIR/bootstrap-release.py" app-notary
+      - name: Staple and independently verify the app
+        run: python3 "$VOICY_SOURCE_DIR/bootstrap-release.py" app-staple
+      - name: Package the consumer download image
+        run: python3 "$VOICY_SOURCE_DIR/bootstrap-release.py" package
+      - name: Sign the small image in an isolated temporary keychain
+        env:
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+        run: python3 "$VOICY_SOURCE_DIR/bootstrap-release.py" sign-dmg
+      - name: New Apple acceptance of the small disk image
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: python3 "$VOICY_SOURCE_DIR/bootstrap-release.py" dmg-notary
+      - name: Staple and verify the final small image and its complete app
+        run: python3 "$VOICY_SOURCE_DIR/bootstrap-release.py" dmg-staple
+      - name: Retain qualified primary installer and checksums in the proper unpublished consumer draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 "$VOICY_SOURCE_DIR/bootstrap-release.py" retain-draft
+      - name: Preserve only sanitized receipts and project release files for owner native QA
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: voicy-consumer-candidate-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/voicy-corrected-release/reports/
+            ${{ runner.temp }}/voicy-corrected-release/Voicy-0.3.3-installer-app.zip
+            ${{ runner.temp }}/voicy-corrected-release/Voicy-0.3.3-arm64.dmg
+          retention-days: 7
