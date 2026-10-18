@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Mark from "./Mark";
+import DemoTranscript from "./DemoTranscript";
 import { faqs, site } from "@/lib/site";
 const arrow = (
   <svg
@@ -320,6 +321,7 @@ export default function Landing() {
             Real Voicy output. Synthetic voice with simulated fan noise. Switch
             while it plays.
           </p>
+          <DemoTranscript />
         </section>
         <section className="statement shell reveal">
           <h2>

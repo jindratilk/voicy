@@ -400,6 +400,30 @@ p {
   color: #92929a;
   margin-top: 18px;
 }
+.demo-transcript {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 18px 0;
+  border-block: 1px solid var(--line);
+  font-size: 12px;
+  line-height: 1.85;
+}
+.demo-transcript summary {
+  color: #ddd8e3;
+  cursor: pointer;
+}
+.demo-transcript p {
+  margin-top: 16px;
+  color: #a6a3ad;
+}
+.demo-transcript blockquote {
+  margin: 12px 0;
+  color: #ddd8e3;
+}
+.demo-transcript a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .statement {
   padding-top: 170px;
   text-align: center;

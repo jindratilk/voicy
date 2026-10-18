@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Mark from "@/components/Mark";
+import DemoTranscript from "@/components/DemoTranscript";
 import { site } from "@/lib/site";
 
 const title = "Adobe Podcast Alternative — Free & Offline for Mac";
@@ -254,6 +255,7 @@ export default function ComparisonPage() {
                 <a href="/audio/after.wav">Open enhanced WAV</a>
               </figure>
             </div>
+            <DemoTranscript />
             <p>
               This demonstrates Voicy on one synthetic example. It does not
               demonstrate superiority over Adobe. Try a copy of your own
