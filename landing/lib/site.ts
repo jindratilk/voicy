@@ -1,8 +1,10 @@
 export const site = {
   url: "https://usevoicy.app",
   github: "https://github.com/jindratilk/voicy",
-  version: "0.3.2",
-  downloadPaused: true,
+  version: "0.3.3",
+  downloadPaused: false,
+  // Set only from the qualified final installer receipt before unpausing.
+  downloadBytes: 146704 as number | null,
 };
 export const faqs = [
   [
@@ -19,7 +21,7 @@ export const faqs = [
   ],
   [
     "Which Macs can run Voicy?",
-    "An Apple Silicon Mac with macOS 14 or newer. Intel Macs, Windows, and mobile devices are not supported in this release. The download is about 6.5 GB with models included. Allow about 8 GB for the installed app, plus space for recordings. 16 GB of memory or more is recommended; memory use adapts to available headroom.",
+    "An Apple Silicon Mac with macOS 14 or newer. Intel Macs, Windows, and mobile devices are not supported in this release. The small download assistant retrieves and verifies the complete 6.5 GB disk image. Open that image and drag Voicy to Applications. Allow about 15 GB during setup for the image and 8 GB installed app, plus space for recordings. Setup needs an Internet connection; enhancement then works offline. 16 GB of memory or more is recommended; memory use adapts to available headroom.",
   ],
   [
     "What can I enhance?",
