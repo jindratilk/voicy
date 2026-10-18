@@ -7,7 +7,7 @@ Preparation, attribution and transcript: docs/growth/E03-MANIFEST.json.
 Only the synthetic test recording is processed; never run on a user's library.
 """
 import hashlib
-from array import array
+from io import BytesIO
 import json
 import os
 from pathlib import Path
@@ -288,11 +288,17 @@ def qualify(corrected=False):
         ffmpeg = app / 'Contents/Resources/runtime/bin/ffmpeg'
 
         def samples(path):
+            # The minimal packaged FFmpeg has a WAV muxer, but no raw f32le
+            # muxer. Decode through its supported PCM24 WAV path.
             raw = command([str(ffmpeg), '-nostdin', '-v', 'error', '-i', str(path),
-                           '-f', 'f32le', '-acodec', 'pcm_f32le', '-ac', '1', '-ar', '48000', '-'])
-            values = array('f')
-            values.frombytes(raw)
-            return values
+                           '-f', 'wav', '-acodec', 'pcm_s24le', '-ac', '1', '-ar', '48000', '-'])
+            with wave.open(BytesIO(raw)) as wav:
+                require((wav.getnchannels(), wav.getframerate(), wav.getsampwidth()) == (1, 48000, 3),
+                        'Unexpected decoded PCM format')
+                pcm = wav.readframes(wav.getnframes())
+            require(len(pcm) % 3 == 0, 'Truncated decoded sample')
+            return [int.from_bytes(pcm[i:i + 3], 'little', signed=True) / 8388608
+                    for i in range(0, len(pcm), 3)]
 
         original, enhanced = samples(BASE / 'fixture.wav'), samples(output)
         require(len(original) == len(enhanced) == 235440, 'Decoded export length mismatch')
