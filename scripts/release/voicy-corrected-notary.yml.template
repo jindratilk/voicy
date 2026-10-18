@@ -1,0 +1,90 @@
+# Template for the existing private Voicy-only coordinator branch, deployed as
+# .github/workflows/voicy-corrected-notary.yml in jindratilk/cutagent.
+# No checkout, product execution, credential export, purchase or publication.
+name: Voicy corrected app notarization
+on:
+  push:
+    branches: [codex/voicy-signing-preflight]
+    paths: [.github/workflows/voicy-corrected-notary.yml]
+permissions:
+  contents: read
+concurrency:
+  group: voicy-apple-signing
+  cancel-in-progress: false
+jobs:
+  notarize:
+    if: github.repository == 'jindratilk/cutagent' && github.ref == 'refs/heads/codex/voicy-signing-preflight'
+    runs-on: voicy-notary-20261018-corrected
+    timeout-minutes: 65
+    environment: macos-release
+    env:
+      DEVELOPER_DIR: /Library/Developer/CommandLineTools
+    steps:
+      - name: Qualify only new-object access in the exact existing Voicy bucket
+        continue-on-error: true
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_R2_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
+          CLOUDFLARE_R2_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
+        run: |
+          set -euo pipefail
+          umask 077
+          python3 - <<'PYCODE'
+          import hashlib, json, os, re, subprocess, tempfile, uuid
+          from pathlib import Path
+          report = {'scope': 'Unique disposable Voicy-only permission marker, no existing object overwritten; no Worker permission inferred'}
+          try:
+              account = '3bf057cebb5d135aa761ca7ce05bcba5'
+              if os.environ['CLOUDFLARE_ACCOUNT_ID'] != account:
+                  raise RuntimeError('Wrong account')
+              key, secret = os.environ['CLOUDFLARE_R2_ACCESS_KEY_ID'], os.environ['CLOUDFLARE_R2_SECRET_ACCESS_KEY']
+              if not all(re.fullmatch(r'[A-Za-z0-9/+=_-]{16,128}', v) for v in (key, secret)):
+                  raise RuntimeError('Unexpected credential format')
+              config = 'aws-sigv4 = "aws:amz:auto:s3"\nuser = "' + key + ':' + secret + '"\n'
+              name = 'Voicy-0.3.3-permission-probe-' + str(uuid.uuid4()) + '.json'
+              report['owned_marker'] = name
+              url = 'https://' + account + '.r2.cloudflarestorage.com/voicy-releases/' + name
+              with tempfile.TemporaryDirectory(prefix='voicy-r2-marker-', dir=os.environ['RUNNER_TEMP']) as owned:
+                  owned = Path(owned)
+                  payload = owned / 'marker.json'
+                  payload.write_bytes(b'{"product":"Voicy","purpose":"release permission qualification","no_customer_data":true}'.ljust(100, b' '))
+                  response = owned / 'response'
+                  def request(method):
+                      args = ['/usr/bin/curl', '--silent', '--show-error', '--max-time', '30', '--max-filesize', '65536', '--config', '-', '--request', method, '--output', str(response), '--write-out', '%{http_code}']
+                      if method == 'PUT':
+                          args += ['--data-binary', '@' + str(payload), '--header', 'If-None-Match: *', '--header', 'Content-Type: application/json']
+                      result = subprocess.run(args + [url], input=config.encode(), capture_output=True)
+                      if result.returncode or not result.stdout.isdigit():
+                          raise RuntimeError('Scoped request failed')
+                      return int(result.stdout)
+                  report['put_status'] = request('PUT')
+                  if report['put_status'] == 200:
+                      report['get_status'] = request('GET')
+                      report['owned_payload_verified'] = report['get_status'] == 200 and response.read_bytes() == payload.read_bytes()
+                      if report['owned_payload_verified']:
+                          report['delete_owned_marker_status'] = request('DELETE')
+                      report['new_object_write_read_qualified'] = report.get('owned_payload_verified', False)
+                  else:
+                      report['new_object_write_read_qualified'] = False
+          except Exception as error:
+              report['error_type'] = type(error).__name__
+          out = Path('/Users/giuseppe/Documents/voicy-growth-evidence/checkpoints/2026-10-18-release-recovery/R2-WRITE-QUALIFICATION.json')
+          out.write_text(json.dumps(report, indent=2))
+          print(json.dumps(report, indent=2))
+          PYCODE
+      - name: Submit and retain a new Apple result for the frozen corrected app
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          set -euo pipefail
+          umask 077
+          python3 - <<'PYCODE'
+          from pathlib import Path
+          import hashlib, runpy
+          p = Path('/Users/giuseppe/Documents/projects/voicy/scripts/release/notarize-corrected-local.py')
+          if hashlib.sha256(p.read_bytes()).hexdigest() != '99cc223538779d4ae46d0aa60e0ddff3d2f9cdebd38baa85696a1ec701fce776':
+              raise RuntimeError('Reviewed helper changed')
+          runpy.run_path(str(p), run_name='__main__')
+          PYCODE
