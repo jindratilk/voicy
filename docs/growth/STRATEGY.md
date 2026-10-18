@@ -4,6 +4,12 @@ Owner authorization: 15 October 2026. Deadline: 31 December 2026, Europe/Prague.
 Target: `Adobe podcast alternative`. Product: https://usevoicy.app/.
 This is an execution plan and measurement protocol, not a promise of a Google position.
 
+## Current execution checkpoint — 18 October 2026
+
+Public downloads are restored in 0.3.3. The full corrected signed/notarized image passes actual AuK/export on fresh macOS 14 and 15, and the real Chrome/assistant/full-download/native GUI flow passes on the developer Mac. [Release qualification and limits](../release/0.3.3-CANDIDATE.md) identify the selected bytes; the old minimum-OS failure remains historical. Production activation `5e62f7c` is verified with active CTAs and exact signed small-installer delivery. User-only localhost services require this Mac; public GitHub distribution does not depend on it.
+
+Return the next bounded cycle to useful comparison evidence, practical answers and measured search demand. Fresh GSC access currently requires reauthentication; retain the last verified morning Web baseline of 14 impressions and 0 clicks, with no reported exact-target rows and null target position. Do not report a ranking win. Legacy Worker download counters no longer cover the primary GitHub route; assistant asset downloads include QA, bots and retries and cannot establish installs or organic conversion. E03 subjective listening remains unverified. No outreach or external submissions were sent.
+
 ## Positioning and search intent
 
 Voicy is a free local speech enhancer for Apple Silicon, not a replacement for every Adobe Podcast Studio feature. Lead with no audio uploads, offline processing, open application code and no account/daily quota. Preserve the product's limitations: large download, hardware requirements, slower-than-real-time processing, mono output, generative changes and separate model licenses.
