@@ -126,7 +126,7 @@
       "feature_split": null,
       "scope": "Combined AIOverviews/AIMode linkimpressions, already inWebtotals; no query/position/click/feature-split attribution inobservedreport. Not exacttarget success, controlledorganicrank, universalAIcitation coverage or incremental14+1 impressions."
     },
-    "access_rechecked_utc": "2026-10-18T20:29:19Z",
+    "access_rechecked_utc": "2026-10-18T20:29:30Z",
     "auth_status": "Evening fresh browser reload requires Google sign-in. Cached inspection is not current evidence; no fresh metrics/indexing or rank claim.",
     "latest_verified_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-morning/GSC-SUMMARY.json",
     "indexing_last_verified_utc": "2026-10-18T07:27:19.533906+00:00",
@@ -195,23 +195,15 @@
     },
     {
       "id": "E05",
-      "status": "Shipped: stable0.3.3 complete corrected signed/notarized app, public download assistant and live website download restored",
+      "status": "Shipped stable0.3.3 and production download restored",
       "incident": "docs/release/STARTUP-INCIDENT-2026-10-15.md",
-      "cause": "Native launcher pins backend version 0.3.0, packaged server reports 0.3.1",
-      "native_proof": "Actual public Chrome/assistant/full-download/native import/freshAuK/A-B/playback/export/restart/result restore and identical re-export; clean14/15 finalimage native+AuK/export passes.",
-      "candidate_scope": "Current wholeimage459f8699/completeApp453d, new Apple acceptance; old failed minimum-OS candidate is historical.",
-      "release_dependency": "None for current release. Preserve exact artifacts and qualification report; ordinary release monitoring remains.",
-      "containment_scope": "Website/API pause only; preserved direct worker artifact still exists. No rollback inferred from query parameters.",
-      "website_local_qa": "15 tests and Next production build passed; real local download route tested from home/comparison at 1440x1000, 390x844, 320x740; correct 503 explanation/no redirect/bodyless HEAD/no overflow. Local-only pageview metrics fixture; production must be checked unmocked.",
-      "production_qa": "Activation5e62/dpl_DfViiwhsstmtK5V9nt4FxqHaL3Lt: pages200, pause removed, GET/HEAD302, exact public small146704-byte artifact verified.",
-      "candidate": {
-        "version": "0.3.3",
-        "source": "b2521cd0e58cd73cf8694ac10ff6e690e7b45278",
-        "note": "docs/release/0.3.3-CANDIDATE.md",
-        "proof": "Two Rust tests, seven frontend tests/build, native compilation; actual launch/About version/history restore/playback/native export, export byte-identical to prior result",
-        "limits": "Historical metadata-cycle development proof only; later frozen signed candidate failed baseline compatibility. New corrected staging and clean-host preflight are separate evidence."
-      },
-      "public_release": "https://github.com/jindratilk/voicy/releases/tag/v0.3.3"
+      "qualification": "docs/release/0.3.3-CANDIDATE.md",
+      "release": "https://github.com/jindratilk/voicy/releases/tag/v0.3.3",
+      "cause": "Native launcher pinned unrelated backend0.3.0 while bundled healthy engine reports0.3.1; later packaging selectedmacOS26 MLX wheels despite declared14minimum. Both corrected in current artifact.",
+      "native_proof": "Actual public Chrome-downloaded assistant retrieved the complete image; normal macOS quarantine/Open, native startup/import/freshAuK/A-B/playback/nativeexport/restart/history restore/identical re-export passed on developerMac.",
+      "release_dependency": "No blocker for current release; normal health monitoring.",
+      "production_qa": "Home/comparison/privacy200, one correct H1/canonical each, JSON-LD parses, sitemap3URLs, robots200; pause removed; GET/HEAD302 to exact public0.3.3 small installer, actual followed download146704bytes/SHA61b69b2a verified.",
+      "limits": "One licensed4.905s fixture; no subjective audio-quality or broad long-form reliability conclusion. Developer public GUI run from read-only image, not an Applications copy. Earlier background automation restart hung on nearly-full disk; subsequent normal restarts pass, cause unisolated."
     },
     {
       "id": "E06",
@@ -241,10 +233,10 @@
     "landing_tests": "18 passed, including legacy/mismatched artifact rejection and exact GitHub quoted/unquoted filename with qualified size",
     "build": "Next16.3.8 production build passed",
     "dependency_audit": "0 vulnerabilities after patch and transitive updates",
-    "browser": "Production Chrome/Playwright: home/comparison -> download status at 1440x1000, 390x844, 320x740, real APIs/no fixtures. Demo playback verified separately at desktop/mobile; screenshots retained.",
+    "browser": "Actual production IAB home/comparison at1440x1000,390x844,320x740: active Download CTAs, no pause, one correct H1, no horizontal overflow. Real APIs/no fixtures. Native Chrome public assistant/full download/native processing verified separately.",
     "http": "home, comparison, privacy 200; one correct canonical and H1 each; JSON-LD parses; robots excludes admin/API; sitemap has three URLs",
-    "review": "DMG workflow final frozen autoreview clean (0.91); actionlint passed. Retry/stapling-failure/submission-reuse/no-overwrite and optimized-Python input checks passed under actual CLT Python, with Apple calls mocked. Actual local app signing/notarization and DMG signing separately passed.",
-    "ci": "Product correction PR7: all final-head frontend/backend/website checks, including2new platform regressions, passed; actual baseline14-wheel GPU computation passed on cleanmacOS14/15. Exact current experimental preflight branch CI checked separately; documentation-checkpoint CI recorded privately.",
+    "review": "Current website frozen review clean0.94; native download assistant clean0.86; full-image CloudKit retry/build-host change clean0.94. Paired with actual runtime/artifact/GUI checks, not review alone.",
+    "ci": "All frontend/backend/website checks pass at PR8 head2f55879be5cb8657e67421aaae20445113505867 and merged activation5e62f7c1bef2fd9d2e1f1c063a2d8d9b8e0905e3. Documentation checkpoint checked separately.",
     "production_http": "Live activation5e62/dpl_DfViiwhsstmtK5V9nt4FxqHaL3Lt: pages200, active CTAs, downloadGET/HEAD302; exact public primarybytes/SHA verified.",
     "preview_download": "Historical preview lacked download configuration; current production website/API remains intentionally paused with explanatory 503 and no redirect.",
     "comparison_quality_audit": {
@@ -260,7 +252,6 @@
     },
     "performance": "Completed three quiet post-change Lighthouse 13.5.0 simulated mobile runs: 99/100/100; median LCP 1919.037ms versus 4474.255ms before. Observational lab evidence, not field or ranking proof.",
     "indexnow": "Local actual production servers: configured/missing/invalid values, exact body/headers/bodyless HEAD, wrong/fixed aliases and known pages/assets/download containment. Production: correct private proof 200, HEAD 0 transfer bytes, wrong/fixed aliases 404; eight existing routes/assets still valid, key absent in public pages.",
-    "native_candidate_033": "Local app opens, About 0.3.3 (0.3.3), history restored, playback reaches 4.9 seconds, native mono 48kHz PCM24 export 235440 frames, hash 74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994; app quit and read-only image detached. Source changes are metadata/About only; no new enhancement run.",
     "native_release_033": {
       "qualification": "https://github.com/jindratilk/voicy/releases/download/v0.3.3/QUALIFICATION.json",
       "actual_public_full_download_native_flow": true,
@@ -269,7 +260,9 @@
       "scope_and_limits": "One licensed4.905s fixture; no subjective audio-quality or broad long-form reliability conclusion. Developer public GUI run from read-only image, not an Applications copy. Earlier background automation restart hung on nearly-full disk; subsequent normal restarts pass, cause unisolated."
     },
     "clean_host_probe": "Exact frozen0.3.3 DMG clean-host signatures/tickets/Gatekeeper/native launch/health/input analysis passed; actual AuK import failed because host-selected MLX wheels target26. Corrected same-version baseline14 wheels passed actual GPU computation on freshmacOS14.8.9/15.7.9 and developer27.0.1. Full rebuilt candidate/model/public-download qualification remains. Workflow review clean0.89; staging correction clean0.91; CIbootstrap clean0.96; actionlint and focused regression checks passed.",
-    "corrected_runtime_preflight": "New e21825c run39141557720 fullmodel+artifact pass, normalCI39141557841 success. All artifact ZIP/tar/manifests verified. Actual reconstructed completeapp nativeUI flow and threeidentical48kPCM24exports pass;30942entrymanifest anddeepstrictsignature identicalbefore/after. Prior14/15 proof retained. No newDeveloperID/notary/publicrelease/subjectivelistening pass."
+    "corrected_runtime_preflight": "New e21825c run39141557720 fullmodel+artifact pass, normalCI39141557841 success. All artifact ZIP/tar/manifests verified. Actual reconstructed completeapp nativeUI flow and threeidentical48kPCM24exports pass;30942entrymanifest anddeepstrictsignature identicalbefore/after. Prior14/15 proof retained. No newDeveloperID/notary/publicrelease/subjectivelistening pass.",
+    "historical_metadata_candidate_033": "Local app opens, About 0.3.3 (0.3.3), history restored, playback reaches 4.9 seconds, native mono 48kHz PCM24 export 235440 frames, hash 74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994; app quit and read-only image detached. Source changes are metadata/About only; no new enhancement run.",
+    "local_services": "Two Voicy-only loopback user LaunchAgents; website HEAD302 to correct primary installer; fullimage HEAD200 and three live ranges match frozen bytes, unlisted/private routes404. Require logged-in Mac availability."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
