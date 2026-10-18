@@ -5,17 +5,20 @@ import { GET, HEAD } from "../app/api/download/route";
 test("download redirects only when the artifact is available", async (t) => {
   const previous = process.env.DOWNLOAD_URL;
   const previousPause = site.downloadPaused;
+  const previousBytes = site.downloadBytes;
+  site.downloadBytes = 123;
   site.downloadPaused = false;
   process.env.DOWNLOAD_URL = "https://example.com/download";
   t.after(() => {
     site.downloadPaused = previousPause;
+    site.downloadBytes = previousBytes;
     if (previous === undefined) delete process.env.DOWNLOAD_URL;
     else process.env.DOWNLOAD_URL = previous;
   });
   t.mock.method(
     globalThis,
     "fetch",
-    async () => new Response(null, { status: 200 }),
+    async () => new Response(null, { status: 200, headers: { "Content-Length": "123", "Content-Disposition": `attachment; filename="Voicy-${site.version}-arm64.dmg"` } }),
   );
   const response = await GET();
   assert.equal(response.status, 302);
@@ -27,10 +30,13 @@ test("download redirects only when the artifact is available", async (t) => {
 test("unavailable artifact produces a human-readable retry page and bodyless HEAD", async (t) => {
   const previous = process.env.DOWNLOAD_URL;
   const previousPause = site.downloadPaused;
+  const previousBytes = site.downloadBytes;
+  site.downloadBytes = 123;
   site.downloadPaused = false;
   process.env.DOWNLOAD_URL = "https://example.com/download";
   t.after(() => {
     site.downloadPaused = previousPause;
+    site.downloadBytes = previousBytes;
     if (previous === undefined) delete process.env.DOWNLOAD_URL;
     else process.env.DOWNLOAD_URL = previous;
   });
@@ -68,4 +74,37 @@ test("paused release explains the startup issue without probing or redirecting t
   assert.equal(head.status, 503);
   assert.equal(await head.text(), "");
   assert.equal(fetch.mock.calls.length, 0);
+});
+
+
+test("a legacy or mismatched installer stays unavailable even when its server returns 200", async (t) => {
+  const previous = { paused: site.downloadPaused, bytes: site.downloadBytes, version: site.version, url: process.env.DOWNLOAD_URL };
+  site.downloadPaused = false;
+  site.downloadBytes = 123;
+  site.version = "0.3.3";
+  process.env.DOWNLOAD_URL = "https://example.com/download";
+  t.after(() => {
+    site.downloadPaused = previous.paused; site.downloadBytes = previous.bytes; site.version = previous.version;
+    if (previous.url === undefined) delete process.env.DOWNLOAD_URL; else process.env.DOWNLOAD_URL = previous.url;
+  });
+  const artifactHeaders: Record<string, string>[] = [
+    { "Content-Length": "123", "Content-Disposition": 'attachment; filename="Voicy-0.3.2-arm64.dmg"' },
+    { "Content-Length": "124", "Content-Disposition": 'attachment; filename="Voicy-0.3.3-arm64.dmg"' },
+    {},
+  ];
+  for (const headers of artifactHeaders) {
+    t.mock.method(globalThis, "fetch", async () => new Response(null, { status: 200, headers }));
+    const response = await GET();
+    assert.equal(response.status, 503); assert.equal(response.headers.get("Location"), null);
+    const head = await HEAD(); assert.equal(head.status, 503); assert.equal(await head.text(), "");
+    t.mock.restoreAll();
+  }
+});
+
+test("an unqualified installer size fails closed without contacting the download host", async (t) => {
+  const paused = site.downloadPaused, bytes = site.downloadBytes;
+  site.downloadPaused = false; site.downloadBytes = null;
+  t.after(() => { site.downloadPaused = paused; site.downloadBytes = bytes; });
+  const probe = t.mock.method(globalThis, "fetch", async () => { throw new Error("Unqualified artifact must not be probed"); });
+  assert.equal((await GET()).status, 503); assert.equal(probe.mock.calls.length, 0);
 });

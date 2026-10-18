@@ -15,6 +15,8 @@ const unavailable = (paused = false) =>
   );
 export async function GET() {
   if (site.downloadPaused) return unavailable(true);
+  const expectedBytes = site.downloadBytes;
+  if (typeof expectedBytes !== "number" || !Number.isSafeInteger(expectedBytes) || expectedBytes <= 0) return unavailable();
   const configuredUrl = process.env.DOWNLOAD_URL;
   if (!configuredUrl) return unavailable();
   let url: URL;
@@ -26,7 +28,9 @@ export async function GET() {
       cache: "no-store",
       signal: AbortSignal.timeout(5000),
     });
-    if (!check.ok) return unavailable();
+    if (check.status !== 200 ||
+        check.headers.get("Content-Length") !== String(expectedBytes) ||
+        check.headers.get("Content-Disposition") !== `attachment; filename="Voicy-${site.version}-arm64.dmg"`) return unavailable();
   } catch {
     return unavailable();
   }

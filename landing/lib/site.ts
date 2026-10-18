@@ -3,6 +3,8 @@ export const site = {
   github: "https://github.com/jindratilk/voicy",
   version: "0.3.2",
   downloadPaused: true,
+  // Set only from the qualified final installer receipt before unpausing.
+  downloadBytes: null as number | null,
 };
 export const faqs = [
   [
