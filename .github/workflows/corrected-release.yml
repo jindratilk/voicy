@@ -42,16 +42,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 "$VOICY_SOURCE_DIR/hosted-corrected-release.py" download-inputs
-      - name: Verify every app entry and archive the complete offline app
-        run: python3 "$VOICY_SOURCE_DIR/hosted-corrected-release.py" app-archive
-      - name: New Apple notarization of the exact corrected app
-        env:
-          APPLE_ID: ${{ secrets.APPLE_ID }}
-          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
-          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
-        run: python3 "$VOICY_SOURCE_DIR/hosted-corrected-release.py" app-notary
-      - name: Staple and independently verify the accepted app
-        run: python3 "$VOICY_SOURCE_DIR/hosted-corrected-release.py" staple-app
+      - name: Verify the exact already accepted app, ticket and complete resources
+        # Existing Accepted UUID is pinned to the same complete signed app; never reupload it.
+        run: python3 "$VOICY_SOURCE_DIR/hosted-corrected-release.py" verify-accepted-app
       - name: Package the accepted full offline app
         run: python3 "$VOICY_SOURCE_DIR/hosted-corrected-release.py" package
       - name: Sign only the frozen DMG in an isolated temporary keychain

@@ -24,21 +24,27 @@ ORIGINAL = ROOT / 'original.dmg'
 MOUNT = ROOT / 'mounted'
 SHADOW = INPUTS / 'signed-compact.shadow'
 STAPLED = ROOT / 'stapled.shadow'
-ZIP = ROOT / 'Voicy-0.3.3-signed-app.zip'
 UNSIGNED = ROOT / 'Voicy-0.3.3-arm64-unsigned.dmg'
 SIGNED = ROOT / 'Voicy-0.3.3-arm64-signed.dmg'
 FINAL = ROOT / 'Voicy-0.3.3-arm64.dmg'
-APP_HASH = '8c263dfec8aa5ad640d38361b0c1fe32e82ca75b0f34b5a8bb335a0b1d767925'
+APP_HASH = '453d935f0aefba850adec0c392461c15c53001ac0f5c876e395266f712ac8246'
+PRE_TICKET_HASH = '8c263dfec8aa5ad640d38361b0c1fe32e82ca75b0f34b5a8bb335a0b1d767925'
+ACCEPTED_APP_ID = '68db7df7-9a78-471e-baeb-e60f1e061433'
+ACCEPTED_ARCHIVE_HASH = 'd66c03590e0d07581ab30d4034b6bea4b6f0423b384207006409e068b3db2c9a'
 ORIGINAL_HASH = '7e23011e3169adff45be0126d1af9bed2e25338e15b69beb5550ec31d8fa3081'
-INPUT_HASH = '5378883dea5a4f9b226a0b2a7b951992352fe8a9310aec1576d0d999ff27fb71'
+INPUT_HASH = '4cfe4409b8100c4db59b58ff81b5762fa2a1f57eb5061d0b1e3e53c61ed70fea'
 FIXTURE_HASH = '75e626fae7dbd8ece6b057881bc0584c798cc79eae97ca517bbca3e000458d02'
 REPO = 'jindratilk/voicy'
 APPLE_NAMES = ('APPLE_CERTIFICATE', 'APPLE_CERTIFICATE_PASSWORD', 'APPLE_SIGNING_IDENTITY', 'APPLE_ID', 'APPLE_PASSWORD', 'APPLE_TEAM_ID')
 
 
+class ReleaseError(RuntimeError):
+    pass
+
+
 def require(ok, message):
     if not ok:
-        raise RuntimeError(message)
+        raise ReleaseError(message)
 
 
 def digest(path):
@@ -52,7 +58,20 @@ def digest(path):
 def run(*args, data=None, output=None, timeout=1800):
     result = subprocess.run(args, input=data, stdout=output if output is not None else subprocess.PIPE,
                             stderr=subprocess.PIPE, timeout=timeout)
-    require(result.returncode == 0, 'Tool failed: ' + Path(args[0]).name)
+    if result.returncode:
+        tool = Path(args[0]).name
+        diagnostic = {'tool': tool, 'exit_code': result.returncode}
+        # No argv or raw security/notary output: those commands carry credentials.
+        if tool in ('hdiutil', 'codesign', 'spctl') or (tool == 'xcrun' and args[1:2] == ('stapler',)):
+            detail = (result.stdout or b'') + (result.stderr or b'')
+            detail = detail.decode(errors='replace')
+            for name in APPLE_NAMES:
+                value = os.environ.get(name)
+                if value:
+                    detail = detail.replace(value, '[redacted]')
+            diagnostic['public_tool_detail'] = detail[-4000:]
+        save(REPORTS / 'LAST-TOOL-ERROR.json', diagnostic)
+        raise ReleaseError('Tool failed: ' + tool)
     return result.stdout
 
 
@@ -132,7 +151,7 @@ def download_inputs():
     REPORTS.mkdir()
     require(shutil.disk_usage(ROOT).free > 24_000_000_000, 'Insufficient hosted disk capacity')
     archive = ROOT / 'inputs.tar.gz'
-    asset(654102627, archive, INPUT_HASH, 148654332)
+    asset(654260731, archive, INPUT_HASH, 148636707)
     names = {'signed-compact.shadow', 'app-manifest.json', 'signing-receipt.json', 'authority-proof.json', 'input.json'}
     with tarfile.open(archive) as tar:
         members = tar.getmembers()
@@ -143,7 +162,7 @@ def download_inputs():
             with tar.extractfile(member) as source, (INPUTS / member.name).open('wb') as output:
                 shutil.copyfileobj(source, output, 8 * 1024 * 1024)
     data = json.loads((INPUTS / 'input.json').read_text())
-    require(data['original_sha256'] == ORIGINAL_HASH and data['complete_app_manifest_sha256'] == APP_HASH and data['entries'] == 30942,
+    require(data['original_sha256'] == ORIGINAL_HASH and data['complete_app_manifest_sha256'] == APP_HASH and data['entries'] == 30942 and data['signed_manifest_before_ticket'] == PRE_TICKET_HASH and data['accepted_app_notary_id'] == ACCEPTED_APP_ID and data['accepted_archive_sha256'] == ACCEPTED_ARCHIVE_HASH,
             'Wrong source identity')
     require(SHADOW.stat().st_size == data['shadow_bytes'] and digest(SHADOW) == data['shadow_sha256'] and digest(INPUTS / 'app-manifest.json') == APP_HASH, 'Frozen shadow/manifest changed')
     run('/usr/bin/curl', '--fail', '--silent', '--show-error', '--location', '--retry', '3', '--max-time', '1200',
@@ -154,17 +173,27 @@ def download_inputs():
                                  'app_manifest_sha256': APP_HASH, 'source_signing_run': 39148933627})
 
 
-def app_archive():
+def verify_accepted_app():
     app = mount(SHADOW)
-    require(manifest(app) == (INPUTS / 'app-manifest.json').read_bytes(), 'Complete signed application differs')
+    raw = manifest(app)
+    require(raw == (INPUTS / 'app-manifest.json').read_bytes(), 'Complete accepted application differs')
+    receipt = json.loads((INPUTS / 'signing-receipt.json').read_text())['app_notarization']
+    require(receipt['id'] == ACCEPTED_APP_ID and receipt['sha256'] == ACCEPTED_ARCHIVE_HASH and
+            receipt['status'] == receipt['log_status'] == 'Accepted', 'Wrong existing app acceptance')
     run('codesign', '--verify', '--deep', '--strict', str(app))
     authority(app, runtime=True)
+    run('xcrun', 'stapler', 'validate', str(app))
+    run('spctl', '--assess', '--type', 'execute', str(app))
     info = plistlib.loads((app / 'Contents/Info.plist').read_bytes())
     require((info['CFBundleShortVersionString'], info['CFBundleVersion']) == ('0.3.3', '0.3.3'), 'Wrong version')
-    require(not ZIP.exists() and shutil.disk_usage(ROOT).free > 9_500_000_000, 'Archive capacity/preservation guard')
-    run('ditto', '-c', '-k', '--keepParent', str(app), str(ZIP))
-    save(REPORTS / 'APP-ARCHIVE.json', {'sha256': digest(ZIP), 'bytes': ZIP.stat().st_size, 'app_manifest_sha256': APP_HASH, 'entries': 30942})
+    (REPORTS / 'STAPLED-APP-MANIFEST.json').write_bytes(raw)
+    save(REPORTS / 'APP-QUALIFICATION.json', {'manifest_sha256': APP_HASH, 'entries': 30942,
+        'signature_ticket_gatekeeper': True, 'new_app_submission_skipped': True,
+        'existing_accepted_id': ACCEPTED_APP_ID, 'source_manifest_before_ticket': PRE_TICKET_HASH})
+    save(REPORTS / 'app-accepted.json', receipt)
     detach()
+    require(not STAPLED.exists(), 'Preserve existing accepted shadow')
+    run('/bin/cp', '-cp', str(SHADOW), str(STAPLED))
 
 
 def notarize(path, kind):
@@ -198,30 +227,6 @@ def notarize(path, kind):
     save(receipt, report)
     require(report['status'] == 'Accepted' and report['log_status'] == 'Accepted', 'Apple did not accept ' + kind)
     save(REPORTS / (kind + '-accepted.json'), report)
-
-
-def staple_app():
-    accepted = json.loads((REPORTS / 'app-accepted.json').read_text())
-    proof = json.loads((REPORTS / 'APP-ARCHIVE.json').read_text())
-    require(accepted['sha256'] == proof['sha256'] and accepted['status'] == 'Accepted', 'Wrong app acceptance')
-    require(not STAPLED.exists(), 'Preserve stapled candidate')
-    run('/bin/cp', '-cp', str(SHADOW), str(STAPLED))
-    app = mount(STAPLED, readonly=False)
-    run('xcrun', 'stapler', 'staple', str(app))
-    detach()
-    app = mount(STAPLED)
-    run('xcrun', 'stapler', 'validate', str(app))
-    run('codesign', '--verify', '--deep', '--strict', str(app))
-    run('spctl', '--assess', '--type', 'execute', str(app))
-    before = {x['path']: x for x in json.loads((INPUTS / 'app-manifest.json').read_text())}
-    after_raw = manifest(app)
-    after = {x['path']: x for x in json.loads(after_raw)}
-    require(before.keys() == after.keys() and {n for n in before if before[n] != after[n]} <= {'Contents/CodeResources'}, 'Stapling changed code/resources')
-    (REPORTS / 'STAPLED-APP-MANIFEST.json').write_bytes(after_raw)
-    save(REPORTS / 'APP-QUALIFICATION.json', {'manifest_sha256': hashlib.sha256(after_raw).hexdigest(), 'entries': len(after), 'signature_ticket_gatekeeper': True})
-    detach()
-    require(digest(ZIP) == proof['sha256'], 'Notary archive changed')
-    ZIP.unlink()  # Only this VM's superseded archive; exact accepted app retained.
 
 
 def package():
@@ -316,7 +321,7 @@ def staple_dmg():
         'new_app_and_dmg_notarization': 'Accepted', 'local_signature_ticket_gatekeeper': True,
         'app_manifest_sha256': json.loads((REPORTS / 'APP-QUALIFICATION.json').read_text())['manifest_sha256'],
         'app_notary_id': json.loads((REPORTS / 'app-accepted.json').read_text())['id'], 'dmg_notary_id': accepted['id'],
-        'public_release': False, 'source_app_manifest_before_ticket': APP_HASH})
+        'public_release': False, 'source_app_manifest_before_ticket': PRE_TICKET_HASH})
 
 
 def publish_internal():
@@ -410,13 +415,12 @@ if __name__ == '__main__':
     phase = sys.argv[1]
     try:
         require(os.environ.get('GITHUB_REPOSITORY') == REPO and os.environ.get('GITHUB_REF') == 'refs/heads/codex/clean-mac-qualification', 'Only the reviewed owner branch may execute this pipeline')
-        {'download-inputs': download_inputs, 'app-archive': app_archive, 'app-notary': lambda: notarize(ZIP, 'app'),
-         'staple-app': staple_app, 'package': package, 'sign-dmg': sign_dmg, 'dmg-notary': lambda: notarize(SIGNED, 'dmg'),
+        {'download-inputs': download_inputs, 'verify-accepted-app': verify_accepted_app, 'package': package, 'sign-dmg': sign_dmg, 'dmg-notary': lambda: notarize(SIGNED, 'dmg'),
          'staple-dmg': staple_dmg, 'publish-internal': publish_internal, 'download-final': download_final,
          'qualify': qualify, 'cleanup': detach}[phase]()
     except Exception as error:
         # Never render secret-bearing argv or raw tool output.
         if REPORTS.exists():
-            save(REPORTS / ('ERROR-' + phase + '.json'), {'phase': phase, 'error_type': type(error).__name__})
-        print(json.dumps({'phase': phase, 'error_type': type(error).__name__}))
+            save(REPORTS / ('ERROR-' + phase + '.json'), {'phase': phase, 'error_type': type(error).__name__, **({'message': str(error)} if isinstance(error, ReleaseError) else {})})
+        print(json.dumps({'phase': phase, 'error_type': type(error).__name__, **({'message': str(error)} if isinstance(error, ReleaseError) else {})}))
         raise SystemExit(1)
