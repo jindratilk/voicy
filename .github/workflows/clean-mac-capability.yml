@@ -14,14 +14,18 @@ jobs:
     if: github.repository == 'jindratilk/voicy'
     # GitHub denies draft-release reads to the default read token (HTTP 403).
     # This isolated trusted-branch job needs temporary repository write scope
-    # solely to retrieve draft validation inputs; it performs only GET requests.
+    # solely to retrieve draft inputs; repository API access performs only GETs.
+    # The later artifact upload uses GitHub's separate job artifact service.
     permissions:
       contents: write
     # Standard free public-repository runner, no signing secrets or larger VM.
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-14, macos-15]
+        # One-off artifact producer on this experimental branch. Full-model14/15
+        # passed at0564c69 (run39108724581); main's14/15 platform CI is unchanged.
+        # This debug export does not replace final signed-installer14/15 gates.
+        os: [macos-15]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 40
     steps:
@@ -88,3 +92,10 @@ jobs:
           if test -f "$RUNNER_TEMP/voicy-clean/report.json"; then
             cat "$RUNNER_TEMP/voicy-clean/report.json"
           fi
+      - name: Preserve exact validated debug delta for local native UI checks
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: voicy-validated-debug-delta-${{ github.sha }}
+          path: ${{ runner.temp }}/voicy-clean/validated-debug-candidate/
+          if-no-files-found: error
+          retention-days: 1

@@ -18,6 +18,7 @@ import signal
 import stat
 import subprocess
 import sys
+import tarfile
 import time
 import urllib.error
 import urllib.request
@@ -107,6 +108,56 @@ def bundle_manifest(app):
             item['directory'] = True
         entries.append(item)
     return json.dumps(entries, sort_keys=True, separators=(',', ':')).encode()
+
+
+def save_debug_delta(original, app, verified_manifest):
+    """Transport exact tested debug bytes, never a consumer installer."""
+    require(REPORT.get('status') == 'passed_for_stated_scope' and
+            REPORT.get('corrected_bundle_unchanged_during_test'), 'Unvalidated candidate')
+    baseline = bundle_manifest(original)
+    old = {row['path']: row for row in json.loads(baseline)}
+    new = {row['path']: row for row in json.loads(verified_manifest)}
+    changed = {name: row for name, row in new.items() if old.get(name) != row}
+    deleted = sorted(old.keys() - new.keys())
+    out = BASE / 'validated-debug-candidate'
+    out.mkdir()
+    archive = out / 'delta.tar.gz'
+    with tarfile.open(archive, 'w:gz') as tar:
+        for name in sorted(changed):
+            require(not Path(name).is_absolute() and '..' not in Path(name).parts,
+                    'Unsafe manifest path')
+            tar.add(app / name, arcname=name, recursive=False)
+    # Independently read every archived payload against the tested manifest.
+    seen = set()
+    with tarfile.open(archive, 'r:gz') as tar:
+        for member in tar:
+            require(member.name in changed and member.name not in seen, 'Unexpected archive entry')
+            row = changed[member.name]
+            require(member.mode == row['mode'], 'Archive mode differs')
+            if 'sha256' in row:
+                require(member.isfile(), 'Expected regular file')
+                digest = hashlib.sha256()
+                with tar.extractfile(member) as stream:
+                    for block in iter(lambda: stream.read(8 * 1024 * 1024), b''):
+                        digest.update(block)
+                require(digest.hexdigest() == row['sha256'], 'Archive payload differs')
+            elif 'symlink' in row:
+                require(member.issym() and member.linkname == row['symlink'], 'Archive link differs')
+            else:
+                require(row.get('directory') and member.isdir(), 'Archive directory differs')
+            seen.add(member.name)
+    require(seen == changed.keys(), 'Archive missing changed entries')
+    (out / 'base-manifest.json').write_bytes(baseline)
+    (out / 'candidate-manifest.json').write_bytes(verified_manifest)
+    metadata = {'source_dmg_sha256': DMG_HASH, 'changed': changed, 'deleted': deleted,
+                'base_manifest_sha256': hashlib.sha256(baseline).hexdigest(),
+                'candidate_manifest_sha256': hashlib.sha256(verified_manifest).hexdigest(),
+                'archive_sha256': sha(archive), 'archive_bytes': archive.stat().st_size,
+                'scope': 'Exact validated ad-hoc debug app delta; not Developer ID/notarized/public release'}
+    (out / 'delta.json').write_text(json.dumps(metadata, indent=2) + '\n')
+    REPORT['validated_debug_delta'] = {key: metadata[key] for key in
+                                      ('archive_sha256', 'archive_bytes', 'candidate_manifest_sha256')}
+    (out / 'VALIDATION.json').write_text(json.dumps(REPORT, indent=2) + '\n')
 
 
 def corrected_bundle(original):
@@ -314,6 +365,7 @@ def qualify(corrected=False):
         if before is not None:
             require(bundle_manifest(app) == before, 'Corrected bundle changed during execution')
             REPORT['corrected_bundle_unchanged_during_test'] = True
+            save_debug_delta(mount / 'Voicy.app', app, before)
     finally:
         engine_log = support / 'logs/engine.log'
         if engine_log.exists() and REPORT.get('status') != 'passed_for_stated_scope':
