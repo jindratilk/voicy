@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "goal_status": "active",
   "deadline": "2026-12-31",
   "target_query": "Adobe podcast alternative",
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "f1df4849102b5128c232b2686f0c24e726d17285",
+  "shipped_commit": "e9fdfc0586aa99cb9a2012e9b343ce43b724a719",
   "deployment": {
-    "id": "dpl_8DGUWNvLjkywEpRXHZAe2zoGdaWd",
-    "url": "https://voicy-2iegebdip-skaluj.vercel.app",
+    "id": "dpl_97FxDMULPGr4HwRq9SdZf13HMSpA",
+    "url": "https://voicy-23ccrrt8o-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "f1df4849102b5128c232b2686f0c24e726d17285",
+    "source_commit": "e9fdfc0586aa99cb9a2012e9b343ce43b724a719",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-18T21:46:05.609567+00:00",
-    "scope": "Last fully verified production before this demo-transcript patch. Final deployment proof retained privately after merge; do not chase documentation-only deployment SHAs.",
+    "verified_utc": "2026-10-19T15:14:25.287691+00:00",
+    "scope": "Last fully verified production before this metric-coverage/privacy disclosure patch. Final post-merge receipts retained privately; no deployment-SHA chase.",
     "verification_scope": "Home/comparison/privacy200, one correct H1/canonical each, JSON-LD parses, sitemap3URLs, robots200; pause removed; GET/HEAD302 to exact public0.3.3 small installer, actual followed download146704bytes/SHA61b69b2a verified."
   },
   "gsc": {
@@ -126,8 +126,8 @@
       "feature_split": null,
       "scope": "Combined AIOverviews/AIMode linkimpressions, already inWebtotals; no query/position/click/feature-split attribution inobservedreport. Not exacttarget success, controlledorganicrank, universalAIcitation coverage or incremental14+1 impressions."
     },
-    "access_rechecked_utc": "2026-10-18T21:49:19.383844+00:00",
-    "auth_status": "Intended jindra account is listed as Session expired. Normal reauthentication reached an empty password challenge on18Oct21:47UTC. No credentials entered, wrong-account property or new permissions. Fresh7/28/query/page/country/device/indexing/sitemap unavailable; morning evidence retained.",
+    "access_rechecked_utc": "2026-10-19T15:19:07.101798+00:00",
+    "auth_status": "19Octafternoon nativeChrome direct intendedaccount/propertyURL again redirects to public SearchConsole/about; no fresh7/28/query/page/country/device/indexing/sitemap. Last detailed18Octauthdiagnostic showedexpired intendedaccount. No credentials/permission/wrongaccount changes.",
     "latest_verified_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-morning/GSC-SUMMARY.json",
     "indexing_last_verified_utc": "2026-10-18T07:27:19.533906+00:00",
     "fresh_indexing_available": false,
@@ -216,7 +216,16 @@
         "https://usevoicy.app/adobe-podcast-alternative"
       ],
       "acknowledgement": 202,
-      "limits": "Acknowledgement only, not confirmed key validation, crawling, indexing, rank gain or AI citation. No repeated unchanged notification; Google measurement remains GSC Web."
+      "limits": "Acknowledgement only, not confirmed key validation, crawling, indexing, rank gain or AI citation. No repeated unchanged notification; Google measurement remains GSC Web.",
+      "latest_changed_page_notification": {
+        "utc": "2026-10-18T22:00:45.156853+00:00",
+        "urls": [
+          "https://usevoicy.app/",
+          "https://usevoicy.app/adobe-podcast-alternative"
+        ],
+        "status": 200,
+        "scope": "Genuine E08visiblechanges; ownershipproof200/exactbody; receipt only, not crawling/index/rank/citation. No repeated19Octunchangednotification."
+      }
     },
     {
       "id": "E07",
@@ -228,7 +237,7 @@
     },
     {
       "id": "E08",
-      "status": "Implemented; existing18tests and Next16.3.8 build passed; rendered keyboard/audio checks and frozen review before publication. Final production proof retained privately.",
+      "status": "Shipped PR12/e9fdfc0 and production verified19Oct; native disclosure, realmethod navigation, desktop/mobile, keyboard and unchangedWAV checks pass. Reviewclean0.94, allCIgreen.",
       "change": "Shared native details text alternative beside existing home/comparison audio; linked method with exact current public WAV identities and honest ASR brand-name discrepancy. Correct obsolete paused status in main GitHubREADME.",
       "scope": "Same pre-existing synthetic demonstration, not a new0.3.3 benchmark or E03 listening publication. Public WAV files unchanged.",
       "evidence": "Public original/output bytes match repository; fixed local Whisperbase.en decode once each corroborates wording but recognizes brand voice/Voicey. Transcript retains source-script spellingVoicy with disclosure. No human listening, quality or ranking claim.",
@@ -236,6 +245,13 @@
         "https://www.w3.org/WAI/WCAG22/Understanding/audio-only-and-video-only-prerecorded.html",
         "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
       ]
+    },
+    {
+      "id": "E09",
+      "status": "Implemented; focused regression/render review before merge, final production proof retained privately.",
+      "change": "Privacy names actual GitHubinstaller distribution alongside Vercel and legacyCloudflare; admincards/chart/table and documentation disclose legacydownload/homepage-event coverage. Only privacy lastmod changes.",
+      "scope": "Copy/disclosure only; no event, auth, stats schema, collection/storage or download behavior change.",
+      "limits": "No completedinstall, uniquevisitor, whole-site traffic or organicconversion inference from these counters. LocaladminQA uses explicitly synthetic metrics through real auth/API, never productiondata."
     }
   ],
   "next_actions": [
@@ -243,7 +259,7 @@
     "When existing Chrome account access is available, collect fresh7/28-day exact-query/page/country/device data and current indexing/sitemap. Last morning Web14impressions/0clicks; exact target has0reported impressions and nullposition, not a ranking. Do not invent a trend or keep submitting unchanged URLs.",
     "Keep the working single comparison URL stable; E07 installation answers and E08 demo text/provenance improve existing content without new keyword pages. Use actual fresh search demand for next copy decision rather than snippet churn.",
     "Preserve E03 fixed inputs/outputs/objective checks. Subjective listening remains unverified; no invented panels, human judgments or audio superiority. Publish only evidence that meets its stated protocol.",
-    "Repair the measurement interpretation before future conversion reports: legacy Worker download counts no longer cover the primary GitHub route. Primary assistant asset counts include QA/retries/bots and are not completed installs or organic conversion rates.",
+    "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Define a separate minimal measurement contract before any future collection change or conversionreport.",
     "Continue prepared distribution research/pitches; no external submissions/messages without explicit named-destination authorization. No purchases, thin-page production or link manipulation.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
     "MacOS14 hosted runner retirement is scheduled for2Nov2026; migrate compatibility CI deliberately while preserving real minimum-OS evidence, not by weakening gates."
@@ -289,7 +305,7 @@
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic."
   ],
-  "verified_utc": "2026-10-18T21:54:28.748718+00:00",
+  "verified_utc": "2026-10-19T15:19:07.101798+00:00",
   "search_observation": {
     "date": "2026-10-16",
     "engine": "Google Search, desktop Chrome Incognito, signed out, cookies rejected",
@@ -362,7 +378,7 @@
     ]
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-18T21:54:28.748718+00:00",
+    "rechecked_utc": "2026-10-19T15:19:07.101798+00:00",
     "current_wait": "No release blocker or routine owner question. Fresh GSC queries/indexing/sitemap require Google reauthentication; last verified morning data retained. Independent SEO/evidence work can continue.",
     "owner_action_pending": false,
     "private_checkpoint": "voicy-growth-evidence/local-runner-2026-10-16/CHECKPOINT.json",
