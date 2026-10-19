@@ -14,7 +14,7 @@ Required server-only environment variables:
 - `SESSION_SECRET`: random signing secret, at least 32 random bytes.
 - `METRICS_URL`: deployed download worker origin.
 - `METRICS_KEY`: private shared key matching the worker's `ADMIN_KEY`.
-- `DOWNLOAD_URL`: worker `/download` URL.
+- `DOWNLOAD_URL`: qualified primary installer URL. Production currently uses the signed 0.3.3 GitHub Releases download assistant, not the legacy Worker `/download` route. Match the qualified artifact filename and byte count in `lib/site.ts`.
 
 ## Deployment
 
@@ -22,7 +22,7 @@ The website is hosted on Vercel. Link to your own project, set encrypted product
 
 The Cloudflare worker serves the R2 release artifact and keeps daily aggregates in a SQLite-backed Durable Object. Adjust account ID and bucket name in `worker/wrangler.jsonc` for your account, then deploy with Wrangler. Set `ADMIN_KEY` using Wrangler secrets. Do not expose the internal API key to the client.
 
-The worker records full-file download starts, not completed installs or unique people. Byte-range resumes are excluded. Page views can include repeats and bots. Network infrastructure still handles standard network metadata. Admin login uses a 15-minute rate limit with keyed IP hashes, secure HTTP-only cookies, HMAC-signed 8-hour sessions and origin checks.
+The Worker records full-file starts only on its legacy `/download` route; it does not observe the primary GitHub installer or its full-image payload downloads. Byte-range resumes are excluded. The existing page-view event is emitted by the homepage; comparison and privacy pages do not emit it. Admin labels show this coverage. Repeats, bots and QA can affect totals. Neither these aggregates nor GitHub asset counts establish completed installs, unique users or organic conversion rates. No new event collection is introduced by this disclosure. Network infrastructure still handles standard network metadata. Admin login uses a 15-minute rate limit with keyed IP hashes, secure HTTP-only cookies, HMAC-signed 8-hour sessions and origin checks.
 
 ## Change the admin password
 
@@ -40,4 +40,6 @@ After a meaningful public content change is deployed and verified, send only the
 
 ## Release artifact
 
-Upload the signed, notarized and stapled DMG to the release bucket using [R2 multipart upload](https://developers.cloudflare.com/r2/objects/upload-objects/#multipart-upload). Keep the object filename in `worker/index.js` consistent with the release version. The public Worker exposes downloads and authenticated metrics, not upload endpoints. Verify the artifact size, transport checksums and resumed downloads before publishing a GitHub release. Attach the final SHA-256 checksum to the release.
+Current production uses the signed/notarized GitHub download assistant and four verified full-image payloads. Follow the [0.3.3 qualification record](../docs/release/0.3.3-CANDIDATE.md) and its public release checks; do not point `DOWNLOAD_URL` back at the old Worker artifact. The Worker/R2 path below is legacy infrastructure, not current-release qualification.
+
+For a future deliberately qualified R2 release, use [R2 multipart upload](https://developers.cloudflare.com/r2/objects/upload-objects/#multipart-upload), keep the Worker artifact metadata consistent, and verify exact signed bytes, checksums and resumes before activation. The public Worker exposes downloads and authenticated metrics, not upload endpoints.

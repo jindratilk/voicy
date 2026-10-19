@@ -84,16 +84,18 @@ export default function Admin() {
         <>
           <h1>A little perspective.</h1>
           <p className="notice">
-            Website activity. No tracking inside the app.
+            The primary installer moved to GitHub on 18 October 2026. Download
+            counts below cover only the legacy Cloudflare route and exclude
+            GitHub downloads. No tracking inside the app.
           </p>
           <div className="metrics">
             <div>
               <strong>{stats.total.downloads.toLocaleString()}</strong>
-              <span>Download starts · all time</span>
+              <span>Legacy starts · all time</span>
             </div>
             <div>
               <strong>{stats.total.views.toLocaleString()}</strong>
-              <span>Page views · all time</span>
+              <span>Recorded page views · all time</span>
             </div>
             <div>
               <strong>
@@ -103,15 +105,15 @@ export default function Admin() {
                   )?.downloads ?? 0
                 ).toLocaleString()}
               </strong>
-              <span>Download starts · today</span>
+              <span>Legacy starts · today</span>
             </div>
           </div>
           <h2 style={{ fontSize: 20 }}>Last 30 days</h2>
-          <div className="chart" role="img" aria-label="Download starts by day">
+          <div className="chart" role="img" aria-label="Legacy Cloudflare download starts by day">
             {days.map((d) => (
               <div
                 key={d.day}
-                title={`${d.day}: ${d.downloads} downloads`}
+                title={`${d.day}: ${d.downloads} legacy download starts`}
                 style={{ height: `${Math.max(1, (d.downloads / max) * 100)}%` }}
               />
             ))}
@@ -124,8 +126,8 @@ export default function Admin() {
             <thead>
               <tr>
                 <th>Date (UTC)</th>
-                <th>Page views</th>
-                <th>Download starts</th>
+                <th>Recorded views</th>
+                <th>Legacy starts</th>
               </tr>
             </thead>
             <tbody>
@@ -139,9 +141,11 @@ export default function Admin() {
             </tbody>
           </table>
           <p className="notice">
-            Download starts count successful full-file requests, not completed
-            installations or unique people. Resumes using byte ranges are
-            excluded. Page views may include repeat visits and bots.
+            Legacy starts count successful full-file Worker requests; byte-range
+            resumes are excluded. Current page-view events come from the
+            homepage, not the comparison or privacy pages. Totals can include
+            repeats, bots and our own checks. These counters do not measure
+            completed installations, unique people or organic conversion rates.
           </p>
           <p className="notice">
             Updated {new Date(stats.updatedAt).toLocaleString()} ·{" "}

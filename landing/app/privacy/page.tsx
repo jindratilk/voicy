@@ -8,7 +8,7 @@ export default function Page() {
     <main className="prose">
       <a href="/">← Voicy</a>
       <h1>Your audio stays yours.</h1>
-      <p>Last updated: 22 September 2026.</p>
+      <p>Last updated: 19 October 2026.</p>
       <h2>The desktop application</h2>
       <p>
         Voicy processes audio on your Mac. The downloadable app includes its
@@ -19,13 +19,24 @@ export default function Page() {
       </p>
       <h2>This website</h2>
       <p>
-        The site is hosted on Vercel and downloads are served through
-        Cloudflare. Those providers process standard network information to
-        deliver and protect their services, subject to their own privacy
-        policies. Voicy stores aggregate daily page-view and download-start
-        counts, without recording visitors’ IP addresses, fingerprints, or
-        audio. Counts are not unique-person counts. No advertising or cross-site
-        tracking cookies are used.
+        The site is hosted on Vercel. The current installer and its app-image
+        files are downloaded from GitHub Releases; initial setup needs the
+        Internet. Cloudflare hosts the legacy download route and aggregate
+        website counters. These providers process network information to deliver
+        and protect their services, under their own privacy policies:
+        {" "}<a href="https://vercel.com/legal/privacy-notice">Vercel</a>,{" "}
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a>
+        {" "}and <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>.
+        Downloading the app does not send them your recordings.
+      </p>
+      <p>
+        Voicy’s own aggregate counters store daily page-view events and legacy
+        Cloudflare download starts, without visitor IP addresses, fingerprints
+        or audio. Page-view events currently come from the homepage, not the
+        comparison or privacy pages. Legacy download counts exclude the current
+        GitHub installer and are not install counts or unique-person counts.
+        Repeats, bots and our own checks can contribute to the totals. No
+        advertising or cross-site tracking cookies are used on this website.
       </p>
       <h2>Administration</h2>
       <p>
