@@ -8,18 +8,18 @@
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
   "shipped_commit": "b7ee9137c6c1c34aafce6e18b9e101751c49bda3",
   "deployment": {
-    "id": "dpl_9hWqnpsEnMnndugEEmgXB5f7kGTR",
-    "url": "https://voicy-jw19lk7ra-skaluj.vercel.app",
+    "id": "dpl_58stNepM2J9jLEzxzDMTwsvzwGFD",
+    "url": "https://voicy-1ch3wzl1l-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "f6972f4572fc6d35dedefedf36e7ca2728cc8bb3",
+    "source_commit": "5b757fb1e101d46d1498cd9acd8f884900cf77a0",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-20T18:37:56.920040+00:00",
-    "scope": "Last verified production before E16 research-results closeout. Same public website tree; final post-merge deployment proof remains outsideGit.",
-    "verification_scope": "18:37UTC actualhome200/exactdeployment/activeCTA/pauseabsent andHEAD302 toexactqualified033. Fullhome/comparison/privacy/canonical/schema/sitemap/robots/GET-HEAD proof separately at18:19UTC; no repeatedfullinstallerdownload."
+    "verified_utc": "2026-10-20T19:29:45.431023+00:00",
+    "scope": "Exact current production/source verified before E17 research-results closeout. Public website unchanged; postmerge proof retained privately.",
+    "verification_scope": "Home/comparison/privacy200, exact deployment/canonical/H1/JSONLD, sitemap3/robots200, activeCTA/pauseabsent andGET/HEAD302 exact qualified033."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -27,7 +27,7 @@
     "verification_method": "Domain name provider; automatic ownership verification observed in Chrome",
     "home_indexed": true,
     "sitemap_status": "Last verified18Octmorning: Successful3URLs,lastread15Oct. Afternoonaccountreport unavailable; public sitemap still200/3URLs. No resubmission.",
-    "performance": "Last verified18Oct morning:7/28-day Web14–16Oct,0clicks/14impressions/position11.8; comparison1impression9; exacttarget0reported/nullposition. Afternoonauthblocked: no fresh metric/trend/rank claim.",
+    "performance": "Last verified18Oct morning:7/28-day Web14\u201316Oct,0clicks/14impressions/position11.8; comparison1impression9; exacttarget0reported/nullposition. Afternoonauthblocked: no fresh metric/trend/rank claim.",
     "baseline_rank": null,
     "baseline_clicks": 0,
     "baseline_impressions": 5,
@@ -67,7 +67,7 @@
     "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-search-access/GSC-AUTH-DIAGNOSIS.json",
     "preliminary_24_hours": {
       "observed_utc": "2026-10-17T15:36:01.790079+00:00",
-      "period_display": "16–17 October 2026, local time",
+      "period_display": "16\u201317 October 2026, local time",
       "clicks": 0,
       "impressions": 4,
       "aggregate_average_position": 26,
@@ -259,7 +259,7 @@
     },
     {
       "id": "E11",
-      "status": "PR15 initial audio transfer0 inall3postdeploycoldruns versus514939–576450before; observedmedianlabLCP3.116s->1.957s, not field/causal/rankproof. ProductionUI exposedpendingfirstplay->A/B cancellationrace. Reproducedwith2500msactualWAVtransportdelay; fix tracksplayintent/currentrequest so cancelledpromise cannotsetstaleerror. Actualdelayedswitch/pause/mobile checks pass; finalreview/CI/prod receipts private."
+      "status": "PR15 initial audio transfer0 inall3postdeploycoldruns versus514939\u2013576450before; observedmedianlabLCP3.116s->1.957s, not field/causal/rankproof. ProductionUI exposedpendingfirstplay->A/B cancellationrace. Reproducedwith2500msactualWAVtransportdelay; fix tracksplayintent/currentrequest so cancelledpromise cannotsetstaleerror. Actualdelayedswitch/pause/mobile checks pass; finalreview/CI/prod receipts private."
     },
     {
       "id": "E12",
@@ -283,7 +283,7 @@
     },
     {
       "id": "E15",
-      "status": "Canonical transport verified in actual CI: all ten original hashes match and generated variants preserved. Batch failed on case2 Metal GPU timeout (-6) after case1 completed; cases3–5 not run. Encrypted artifact fully retrieved/decrypted/inventory checked; one valid raw output independently audited and decoded once with unchanged small.en policy. Not a five-case success or human quality result.",
+      "status": "Canonical transport verified in actual CI: all ten original hashes match and generated variants preserved. Batch failed on case2 Metal GPU timeout (-6) after case1 completed; cases3\u20135 not run. Encrypted artifact fully retrieved/decrypted/inventory checked; one valid raw output independently audited and decoded once with unchanged small.en policy. Not a five-case success or human quality result.",
       "protocol": "docs/growth/E03-CANONICAL-INPUTS.md",
       "model_cases_completed": 1,
       "human_reviews_received": 0,
@@ -319,22 +319,38 @@
     },
     {
       "id": "E17",
-      "status": "Separately frozen one controlled pair prepared: case2control and explicitThinkerparameter materialization onfreshstandardmacos15jobs/maxparallel1. Sameexternalobserver/wrapper/metadata work, signedimage/input/model/settings/guards; onlytreatment addsoneeval(parameters). Candidateexecutionhypothesis, not provenfix/publicruntime/qualityevidence. Actualarmsnotyetstarted.",
+      "status": "One controlled pair terminal: control failed at mx.eval(text) with MetalGPUtimeout; explicit parameter materialization completed case2. Both encrypted artifacts independently retrieved/hash/inventory verified, all10 canonical hashes and exact equal configs checked. One valid raw24k mono float output audited and decoded once with fixed small.en; not a cause/fix, public-app, five-case or human quality result. Workflow conclusion remains failure.",
       "protocol": "docs/growth/E03-WEIGHT-LOADING.md",
       "planned_arms": [
         "control",
         "materialize"
       ],
-      "attempt_pairs_started": 0,
+      "attempt_pairs_started": 1,
       "human_reviews_received": 0,
-      "audio_published": 0
+      "audio_published": 0,
+      "attempt_pairs_completed": 1,
+      "results": "docs/growth/E03-WEIGHT-LOADING-RESULTS.md",
+      "run_id": 39480972284,
+      "source_commit": "e3d92a3b5a5ea83ec259ee1cb490ea74a39814f7",
+      "control": {
+        "job_id": 118829126870,
+        "conclusion": "failure",
+        "output": null,
+        "ASR": null
+      },
+      "materialize": {
+        "job_id": 118829127711,
+        "conclusion": "success",
+        "output_sha256": "8d631b07055c55dd6e79b6224d9466a61d37efdb697013f6568e662ea44d81ec",
+        "enhanced_ASR_cases": 1
+      }
     }
   ],
   "next_actions": [
     "Resume SEO/AEO demand and evidence improvements on the one primary comparison URL. The working public app is restored; do not repeat signing/release recovery without a demonstrated regression.",
     "When existing Chrome account access is available, collect fresh7/28-day exact-query/page/country/device data and current indexing/sitemap. Last morning Web14impressions/0clicks; exact target has0reported impressions and nullposition, not a ranking. Do not invent a trend or keep submitting unchanged URLs.",
     "Keep the working single comparison URL stable; E07 installation answers and E08 demo text/provenance improve existing content without new keyword pages. Use actual fresh search demand for next copy decision rather than snippet churn.",
-    "Execute one reviewed separatelyfrozen E17control/materialize pair, eachcase2 first onfreshstandardhost, maxparallel1/failfastfalse. Recordbothactualoutcomes andallbindings/trace/parameteridentitychecks; modelsettings/weights/inputs/guards unchanged. No rerun-until-pass, watchdogflags, provenfix orfivecase/qualityclaim. Interpretperprespecifiedoutcome table andpreserveE15/E16failures.",
+    "E17 closed as one control-failed/materialize-completed investigative pair, not shippingfix. Preserve adverse control/E15/E16 and public signedapp. No further same-day modelattempt; any replication/fullfivecase/nativequalification requires separatelyjustifiedscope. Nextgrowthcycle: evaluate compact sourced Hush localMac workflow option on existingcomparison, distinguishing standaloneHush from ProToolsHushPro; no untestedquality/price/speed claims or newURL.",
     "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Use DOWNLOAD-MEASUREMENT.md for separate qualified GitHub asset series; new collection/organic attribution still needs its own concrete contract.",
     "Distribution drafts now bind qualified0.3.3 and20OctAwesomeMac/publicMacUpdatechecks. No third-party messages/submissions without named-destination authorization. Preserve secondary-channel eligibility/account/gallery checks; no purchases or manipulated links.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
@@ -378,8 +394,9 @@
     "aeo_demo_text_alternative": "18existingtests and Next16.3.8 build pass; public WAV hashes/probe and one fixed local ASR decode per file verified. Actual native details/keyboard/audio/render QA and frozen review tracked outside publicGit; no E03 publication or quality-score pass.",
     "homepage_audio_loading": "18 existing tests and Next16.3.8 build pass. ActualCUAIAB targetflow: initialreadyState0, pre-loadkeyboardseek2.61s, firstplaycontinues2.718965s, A/Bsync, naturalend/UIreset, Voicy-first/pause and390pxmobileplay/switch/pause/nooverflow; consoleclear. No new audio/assets/layout/title/URLs/tracking. ProductionpendingPlay->A/B failed afterinitialPR15; not acceptedascomplete. Follow-up fixescurrentrequestownership. WithactualWAVresponsesdelayed2500ms, rapid3switches keeponlyselectedpending/playing, finishnormallywithoutstaleerror; pausewhilependingremainsstoppedafterload;390pxpendingA/B verified.18tests/build rerun afterfix.",
     "private_listening_review": "3focusedPythonHTTP/bindingtests pass; actualnativeChromeQA verifiesplay/otherclipautopause, note/selectorstorageafterreload, actualJSONdownloadqa_fixture/attestedfalse, andcleanlive0/15namespace. Mobile390x788visibleformselectionworks; no frameworkoverlay. DevToolsautomaticwell-knownprobe blockedbyconnect-srcnone produced2tool-onlyerrors; no appJSexceptionobserved. Privateassignmenthash/sourcehash fixedbeforehumanresponses; actualmap/audio/QAexport stayoutsideGit.",
-    "current_release_E15": "Exact10canonical hashes and original generated files verified after encrypted artifact retrieval. Independent raw24kfloat mono case1 audit and one fixed small.en decode pass. Case2 GPU timeout;3–5 notrun; secondary normaldetach failure retained. Whole modelbatch failed, no humanquality/publicaudio pass.",
-    "current_release_E16": "Independentall10canonical/generated-file andprotocol/observeridentity audit afterZIP/cipher/archive/65entryinventory verification.12monotonictraceevents, noCevents/cap; originalRuntimeErrortraceback at mx.eval(text), returncode1, noWAV/newASR, no guardtrigger orrecordednormaldetacherror. Diagnosticfailed; no rootcause/humanquality/generalreliability pass."
+    "current_release_E15": "Exact10canonical hashes and original generated files verified after encrypted artifact retrieval. Independent raw24kfloat mono case1 audit and one fixed small.en decode pass. Case2 GPU timeout;3\u20135 notrun; secondary normaldetach failure retained. Whole modelbatch failed, no humanquality/publicaudio pass.",
+    "current_release_E16": "Independentall10canonical/generated-file andprotocol/observeridentity audit afterZIP/cipher/archive/65entryinventory verification.12monotonictraceevents, noCevents/cap; originalRuntimeErrortraceback at mx.eval(text), returncode1, noWAV/newASR, no guardtrigger orrecordednormaldetacherror. Diagnosticfailed; no rootcause/humanquality/generalreliability pass.",
+    "current_release_E17": "27 focusedtests/actionlint pass; code review capacityfinding rejected using two actualstandardhostreceipts, not labelledclean. Both actualarms terminal, 65/67inventory exactfilesets andall10canonical hashes checked. Sameconfigs/metadata/objects/training verified; control0/treatment1extraeval. Controlfailed; materialize raw212640frames/24k/mono/float finite/0clipped verified plusonefixedASR. No humanquality/publicfix pass."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
@@ -388,13 +405,13 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-20T18:47:31.196523+00:00",
+  "verified_utc": "2026-10-20T19:33:20.797247+00:00",
   "search_observation": {
     "date": "2026-10-20",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
     "query": "Adobe podcast alternative",
     "requested_parameters": "hl=en, gl=us, pws=0; visible before cookie choice; post-choice address simplified to /search",
-    "location": "Unknown — Google footer says it cannot determine location; not a controlled US baseline",
+    "location": "Unknown \u2014 Google footer says it cannot determine location; not a controlled US baseline",
     "owned_result_on_first_observed_page": false,
     "ai_answer_observed": true,
     "owned_ai_citation_observed": false,
@@ -465,10 +482,10 @@
     ]
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-20T18:47:31.196523+00:00",
-    "current_wait": "No active research CI wait: E15 and E16 terminal failures retrieved and inspected. E16narrows exception to Thinkerconditioning evaluation; underlyingGPUcause/fix unproven. LocalAuKstillcannotmeet12GiB guard. Existing ownerChromeGoogle session needs reauthentication for fresh GSC; human listening remains unverified.",
+    "rechecked_utc": "2026-10-20T19:33:20.797247+00:00",
+    "current_wait": "E17 pair terminal, both artifacts retrieved/audited; no active modelwait. Controlfailed/materializecompleted is investigativeonly. FreshGSCstillneeds actualownerGoogle reauthentication; no repeatedpasswordflow. LocalAuK12GiBguard stillunmet; humanlistening unverified.",
     "owner_action_pending": true,
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-20-e03-gpu-diagnosis/attempt-1/RETRIEVAL-VERIFIED.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-20-e03-weight-loading/TERMINAL-RUN.json",
     "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
   },
   "search_observation_history": [
@@ -483,7 +500,7 @@
     {
       "date": "2026-10-16",
       "engine": "Google Search, desktop Chrome Incognito, signed out, cookies rejected",
-      "location": "Unknown — Google says it cannot determine location; not a controlled US baseline",
+      "location": "Unknown \u2014 Google says it cannot determine location; not a controlled US baseline",
       "owned_result_on_first_observed_page": false,
       "ai_answer_observed": true,
       "owned_ai_citation_observed": false,
@@ -497,6 +514,15 @@
       ],
       "scope": "One first-page observation; AI Overview expanded, one citation destination followed; no mobile observation",
       "limit": "One dynamic answer, not all-assistant coverage or controlled US rank. Competitor citations do not independently validate their claims or establish why Google included them."
+    },
+    {
+      "date": "2026-10-20",
+      "method": "Supplementary desktop Google Incognito signedout/cookiesrejected, explicit USresultsregion preference andEnglishdisplay verified beforequery andafterfreshsettingsreload. One query.",
+      "owned_result_on_first_observed_page": false,
+      "owned_ai_citation_observed": null,
+      "location": "Google footer Unknown/cannotdetermine; explicit resultsregion is not verified USphysicalmarket or primaryrank.",
+      "limits": "AI remained generating; no completedanswer/citation inspection. Englishfilterpreference set but activeper-resultlanguagefilter notverified. No mobile. OwnIncognitowindowclosed; regularChrome preserved.",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-serp-region-method/METHOD-RESULT.json"
     }
   ],
   "aeo_observation": {
