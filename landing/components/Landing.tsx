@@ -191,6 +191,7 @@ function Demo() {
         ref={b}
         src="/audio/after.wav"
         preload="none"
+        onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
         onTimeUpdate={(e) => {
           if (enhanced) setTime(e.currentTarget.currentTime);
         }}
