@@ -6,19 +6,19 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "e5ea0c173e2a88421d6ebbb85a46929dc17648a9",
+  "shipped_commit": "33339c19b30e267e0f1deaeebf58f117909f217a",
   "deployment": {
-    "id": "dpl_5bCpxe55vJ9D9P628DEpv72AQuq1",
-    "url": "https://voicy-4dgi14ajk-skaluj.vercel.app",
+    "id": "dpl_43G2gyYmy9u5eM1iZpvJ5Y4ruwJm",
+    "url": "https://voicy-xwvj1bc0j-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "e5ea0c173e2a88421d6ebbb85a46929dc17648a9",
+    "source_commit": "33339c19b30e267e0f1deaeebf58f117909f217a",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-20T22:00:11.905817+00:00",
-    "scope": "Actual E26 production verification before E27 homepage closeout; finalE27 deployment and media/UI receipts retained privately after merge.",
+    "verified_utc": "2026-10-20T22:18:56.442010+00:00",
+    "scope": "Verified E27 publication before E28 document closeout. Final postmerge evidence for this docs-only revision stays private; no website content change.",
     "verification_scope": "Home/comparison/privacy200 exactdeployment/H1/canonical/JSONLD; robots200/sitemap3; activeCTA/no pause; GET/HEAD302 exactqualified033. Staticvideo public/local GET/HEAD200 andRange206, fullhashmatch."
   },
   "gsc": {
@@ -477,7 +477,7 @@
     },
     {
       "id": "E27",
-      "status": "Local nativeChrome disclosure/play/pause/realAXscrubberseek/close/reopen/text pass. EphemeralChrome1200/390/320 confirms0MP4/WAVrequests beforePlay, nativeplay/timeadvance andclosepause; nooverflow/pageerrors. Existing18tests/build and source autoreview clean0.91; poster separately source/privacy/CRC reviewed because helper rejects binary. FinalCI/publicdeploy acceptance tracked privately before closeout. Local/api/event403 sameexistingbaseline; not assertedasproductionanalytics pass.",
+      "status": "Shipped PR30/33339c1. Seven final-head and three main checks passed. Production desktop/390/320 and actual native Chrome controls/seek/close-pause passed; zero production console/page errors and no media before Play. Named localhost rebuilt, previous build retained, exact assets/download redirect verified. One changed-homepage IndexNow200 is receipt only; no ranking result.",
       "primary_url": "https://usevoicy.app/#how-it-works",
       "video_sha256": "cf73eda373cd69bbf1227bbcb56c194dd7e20b38c6f3f24b6aaf2d803520ea51",
       "poster_sha256": "5abe5f8bb666cf067b3c0e42c287e595cc2427e71a9a7567371dadfbb232eec6",
@@ -485,6 +485,18 @@
       "hypothesis": "A visitor can inspect real app operation before installing, rather than leave the website to find repository media. Unmeasured usability/editorial benefit.",
       "comparison_unchanged": true,
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-homepage-walkthrough/SCOPE.json"
+    },
+    {
+      "id": "E28",
+      "status": "Product Hunt preflight corrects media-field mapping and removes a model-written maker comment from ready fields. Five primary rule sources and bounded public identity/search checked; no external submission or launch. Actual account/form admission remains unknown.",
+      "packet": "docs/growth/DISTRIBUTION-PACK.json",
+      "sources": "voicy-growth-evidence/checkpoints/2026-10-21-producthunt-preflight/SOURCES.json",
+      "scope": "Preparation only; homepage/comparison/assets/runtime unchanged.",
+      "external_submissions": 0,
+      "comments_posted": 0,
+      "new_accounts": 0,
+      "new_subscriptions": 0,
+      "ranking_effect": null
     }
   ],
   "next_actions": [
@@ -502,7 +514,8 @@
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
     "MacOS14 hosted runner retirement is scheduled for2Nov2026; migrate compatibility CI deliberately while preserving real minimum-OS evidence, not by weakening gates.",
     "E26 controls video complements the existing release gallery with equivalent text. Keep the actual comparison/title stable; no IndexNow for this static asset or documentation-only changes. No need to repeat the capture. Refresh any destination-specific video/gallery requirements only before an explicitly authorized submission; this silent UI clip is not model-quality or launch completion evidence.",
-    "E27 makes E26 evidence discoverable from the actual homepage workflow; validate nativecontrols, no initialMP4request, pauseonclose and desktop/mobile before shipping. Keep comparison/title stable and collect new actual demand after E18 evaluationwindows when access returns. A genuine homecontent change merits one homepage-only discovery notification after deploy, not comparison/unchangedURLs."
+    "E27 makes E26 evidence discoverable from the actual homepage workflow; validate nativecontrols, no initialMP4request, pauseonclose and desktop/mobile before shipping. Keep comparison/title stable and collect new actual demand after E18 evaluationwindows when access returns. A genuine homecontent change merits one homepage-only discovery notification after deploy, not comparison/unchangedURLs.",
+    "E28 closes the documented Product Hunt field mismatch in preparation. Do not submit the direct MP4 as a YouTube link or post the old generated maker comment. Human/account/form and named submission approval remain gates; do not recreate assets for recommendations alone or confuse this secondary packet with a launch/ranking outcome."
   ],
   "validation": {
     "landing_tests": "18 passed, including legacy/mismatched artifact rejection and exact GitHub quoted/unquoted filename with qualified size",
@@ -561,7 +574,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-20T22:08:05.953528+00:00",
+  "verified_utc": "2026-10-20T22:42:05.947346+00:00",
   "search_observation": {
     "date": "2026-10-20",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
@@ -644,13 +657,14 @@
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-editorial-six-colors/PACKET.json",
       "messages_sent": 0
     },
-    "native_gallery": "Two actual033 native PNGs plus one silent30second controls walkthrough with equivalent text/source limits. No new inference, audible quality evidence or complete launch package. Actual destination format/account/authorization checks remain open."
+    "native_gallery": "Two actual033 native PNGs plus one silent30second controls walkthrough with equivalent text/source limits. No new inference, audible quality evidence or complete launch package. Actual destination format/account/authorization checks remain open.",
+    "producthunt_preflight": "Current sourced rules and asset candidates mapped; ready maker-comment field is null under the general human-comment guidance. Known same-name page belongs to voicybot.com. The bounded domain query found no product, not exhaustive absence. Actual authenticated identity/form/topics remain unverified."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-20T22:14:04.121990+00:00",
-    "current_wait": "E26 published actual productcontrols evidence; E27 makes it reachable inside thehomepage workflow. These are verified product/evidence improvements, not measured rankinglift. FreshGSC still unavailable under lastowner-session observation; E20 exactmessageauthorization and actualhumanlistening unresolved. No same-day credential/query/model churn.",
+    "rechecked_utc": "2026-10-20T22:42:05.947354+00:00",
+    "current_wait": "E28 found a concrete remaining preparation task and corrected it. No live research job is pending. Fresh GSC, the existing exact E20 message answer, genuine listening and later E18 evaluation windows remain separate dependencies; no unchanged password/search/model retries.",
     "owner_action_pending": true,
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-21-homepage-walkthrough/NATIVE-CHROME-QA.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-21-producthunt-preflight/BROWSER-OBSERVATION.json",
     "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
   },
   "search_observation_history": [
