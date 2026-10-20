@@ -42,6 +42,8 @@ No subscription. No account. No audio uploads. Models are included in the deskto
 
 Actual released 0.3.3 interface, captured 20 October 2026. This view shows an imported original before enhancement. [Result view, source attribution and capture limits](docs/release/0.3.3-GALLERY.md).
 
+[Watch the 30-second silent controls walkthrough](https://usevoicy.app/videos/voicy-0.3.3-controls.mp4): switch Original/Enhanced, play/pause and toggle Match volume on an existing result. [Equivalent text and recording method](docs/release/0.3.3-GALLERY.md#silent-controls-walkthrough). This shows operation, not a new enhancement or sound-quality test.
+
 ## Hear it yourself
 
 [**Play the before / after demo →**](https://usevoicy.app/#demo)
