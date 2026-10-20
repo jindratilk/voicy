@@ -467,6 +467,48 @@ p {
 .workflow-copy p {
   font-size: 12px;
 }
+.app-preview {
+  grid-column: 1 / -1;
+  width: 100%;
+  border-block: 1px solid #ffffff18;
+  padding-block: 20px;
+}
+.app-preview > summary {
+  cursor: pointer;
+  font-size: 14px;
+}
+.app-preview > summary span {
+  color: #92929a;
+  font-size: 11px;
+  margin-left: 12px;
+  white-space: nowrap;
+}
+.app-preview-body {
+  padding-top: 24px;
+}
+.app-preview video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ffffff18;
+  border-radius: 14px;
+  background: #090909;
+}
+.app-preview-body p,
+.app-preview-text {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.app-preview-text summary {
+  cursor: pointer;
+}
+.app-preview-text a {
+  display: inline-block;
+  margin-top: 8px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .workflow-visual {
   display: grid;
   place-items: center;
