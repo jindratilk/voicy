@@ -372,6 +372,18 @@
         "2026-10-27",
         "2026-11-03"
       ]
+    },
+    {
+      "id": "E19",
+      "status": "Separatelyfrozen onehostUS-networkmeasurementmethod prepared; exacttagcreationonly, no branchpush/forcedupdate/manualdispatch execution andfirstattemptguardbeforeanyfetch. RequireuniqueCloudflarelocUSbeforeGoogle; freshisolatedheadlessdesktop via pinnedofficialPlaywrightCLI/preinstalledsandboxedChrome. Atmostoneexactquery, noCAPTCHAbypass/proxy/account/geogrant/replacement. Captureisnotrank; actualfooter/English/organicblocks needmanualreview afterencryptedretrieval. Noactualhost/queryoutputyet.",
+      "protocol": "docs/growth/US-SEARCH-OBSERVATION.md",
+      "planned_attempts": 1,
+      "attempts_started": 0,
+      "target_query": "Adobe podcast alternative",
+      "rank": null,
+      "market_eligible": null,
+      "mobile_observation": false,
+      "execution_tag": "voicy-us-search-e19-20261020"
     }
   ],
   "next_actions": [
@@ -379,6 +391,7 @@
     "When existing Chrome account access is available, collect fresh7/28-day exact-query/page/country/device data and current indexing/sitemap. Last morning Web14impressions/0clicks; exact target has0reported impressions and nullposition, not a ranking. Do not invent a trend or keep submitting unchanged URLs.",
     "Keep the working single comparison URL stable; E07 installation answers and E08 demo text/provenance improve existing content without new keyword pages. Use actual fresh search demand for next copy decision rather than snippet churn.",
     "E18 shipped andproduction/localverified. Keepcomparison/title stable; reviewactualquery/page demand on/after27Oct and3Nov whenGSCauthavailable. No same-daycopy/title/querychurn, repeatedunchangedIndexNow or causalrankclaim. E17 remainsinvestigativeonly; no further same-day modelattempt.",
+    "Executeone reviewedE19measurementmethod attempt. ActualnetworkcountrybeforeGoogle; preserveanyfailure/unknowncountry/challenge withoutreplacement. Retrieveencryptedartifact, verifyallbindings/inventory andmanuallyassessGooglefooter/English/organicblocks. USnetworkhintaloneisnotUSrank; capturealoneisnotyearendsuccess. No websitecopy/IndexNow/modelrun changes.",
     "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Use DOWNLOAD-MEASUREMENT.md for separate qualified GitHub asset series; new collection/organic attribution still needs its own concrete contract.",
     "Distribution drafts now bind qualified0.3.3 and20OctAwesomeMac/publicMacUpdatechecks. No third-party messages/submissions without named-destination authorization. Preserve secondary-channel eligibility/account/gallery checks; no purchases or manipulated links.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
@@ -434,7 +447,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-20T19:51:42.434069+00:00",
+  "verified_utc": "2026-10-20T20:01:40.626805+00:00",
   "search_observation": {
     "date": "2026-10-20",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",

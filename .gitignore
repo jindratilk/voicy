@@ -94,6 +94,7 @@ landing/*.tsbuildinfo
 !/scripts/growth/run_e03_current.py
 !/scripts/growth/trace_e03_case.py
 !/scripts/growth/run_e03_weight_arm.py
+!/scripts/growth/observe_us_search.py
 !/scripts/growth/restore_canonical_inputs.py
 !/docs/growth/E03-PROTOCOL.md
 !/docs/growth/E03-MANIFEST.json
@@ -107,6 +108,7 @@ landing/*.tsbuildinfo
 !/docs/growth/E03-GPU-TRACE-RESULTS.md
 !/docs/growth/E03-WEIGHT-LOADING.md
 !/docs/growth/E03-WEIGHT-LOADING-RESULTS.md
+!/docs/growth/US-SEARCH-OBSERVATION.md
 !/docs/growth/E03-033-RECIPIENT.pub
 !/docs/growth/E03-CANONICAL-INPUTS.md
 !/docs/growth/E03-CANONICAL-INPUTS.json

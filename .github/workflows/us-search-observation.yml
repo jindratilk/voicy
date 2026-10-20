@@ -1,0 +1,39 @@
+name: One US search observation method
+on:
+  push:
+    tags: [voicy-us-search-e19-20261020]
+permissions: {}
+concurrency:
+  group: voicy-us-search-observation
+  cancel-in-progress: false
+jobs:
+  observe:
+    if: >-
+      github.repository == 'jindratilk/voicy' &&
+      github.ref == 'refs/tags/voicy-us-search-e19-20261020' &&
+      github.event.created && !github.event.forced && github.run_attempt == '1'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Retrieve exact public owner code and encryption recipient
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          printf 'VOICY_US_STARTED_EPOCH=%s\n' "$(date +%s)" >> "$GITHUB_ENV"
+          code="$RUNNER_TEMP/voicy-us-search-code"
+          for path in scripts/growth/observe_us_search.py scripts/growth/run_e03_current.py docs/growth/US-SEARCH-OBSERVATION.md docs/growth/E03-033-RECIPIENT.pub; do
+            mkdir -p "$code/$(dirname "$path")"
+            curl --fail --silent --show-error --location --max-time 30 \
+              "https://raw.githubusercontent.com/jindratilk/voicy/$SOURCE_SHA/$path" --output "$code/$path"
+          done
+      - name: One network preflight and at most one query; seal evidence
+        run: python3 "$RUNNER_TEMP/voicy-us-search-code/scripts/growth/observe_us_search.py"
+      - name: Retain encrypted evidence only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: voicy-us-search-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/voicy-us-search-${{ github.run_id }}-${{ github.run_attempt }}/sealed/
+          if-no-files-found: error
+          retention-days: 7
