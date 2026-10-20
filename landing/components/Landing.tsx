@@ -180,7 +180,7 @@ function Demo() {
       <audio
         ref={a}
         src="/audio/before.wav"
-        preload="metadata"
+        preload="none"
         onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
         onTimeUpdate={(e) => {
           if (!enhanced) setTime(e.currentTarget.currentTime);
@@ -190,7 +190,7 @@ function Demo() {
       <audio
         ref={b}
         src="/audio/after.wav"
-        preload="metadata"
+        preload="none"
         onTimeUpdate={(e) => {
           if (enhanced) setTime(e.currentTarget.currentTime);
         }}

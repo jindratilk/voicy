@@ -6,19 +6,19 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "7946abb82f71bbfaa35e97739331ac3613dfd4ce",
+  "shipped_commit": "fca5b5a9d79469f650640d6da722c4654832a7a5",
   "deployment": {
-    "id": "dpl_FKPHAjj8FYjw9tG8gSCGg2goLA73",
-    "url": "https://voicy-pnplaagwa-skaluj.vercel.app",
+    "id": "dpl_5AzpxnN3wjAcxADWf2KLsByveboj",
+    "url": "https://voicy-82n5lyz2f-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "7946abb82f71bbfaa35e97739331ac3613dfd4ce",
+    "source_commit": "fca5b5a9d79469f650640d6da722c4654832a7a5",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-20T07:18:19.131537+00:00",
-    "scope": "Current fully verified production before this documentation-only checkpoint. No public page, sitemap date, release or metric collection change.",
+    "verified_utc": "2026-10-20T14:50:10.788824+00:00",
+    "scope": "Last fully verified production before homepage audio loading-hint optimization. Final post-merge receipts retained privately; no deployment-SHA chase.",
     "verification_scope": "Home/comparison/privacy200, one correct H1/canonical each, JSON-LD parses, sitemap3URLs, robots200; pause removed; GET/HEAD302 to exact public0.3.3 small installer, actual followed download146704bytes/SHA61b69b2a verified."
   },
   "gsc": {
@@ -64,7 +64,7 @@
       "previous_period": "No previous-period export/baseline established; no trend claim.",
       "private_evidence": "voicy-growth-evidence/gsc-2026-10-16-afternoon/SUMMARY.json"
     },
-    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-morning/GSC-ACCESS.json",
+    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-afternoon/GSC-ACCESS.json",
     "preliminary_24_hours": {
       "observed_utc": "2026-10-17T15:36:01.790079+00:00",
       "period_display": "16–17 October 2026, local time",
@@ -126,8 +126,8 @@
       "feature_split": null,
       "scope": "Combined AIOverviews/AIMode linkimpressions, already inWebtotals; no query/position/click/feature-split attribution inobservedreport. Not exacttarget success, controlledorganicrank, universalAIcitation coverage or incremental14+1 impressions."
     },
-    "access_rechecked_utc": "2026-10-20T07:22:59.074582+00:00",
-    "auth_status": "20Oct native Chrome direct intendedaccount/property URL redirects to public SearchConsole/about. No fresh7/28/query/page/country/device/indexing/sitemap. Detailed18Octdiagnostic showedexpired intendedaccount; no credential/account/permission changes.",
+    "access_rechecked_utc": "2026-10-20T14:49:00.574135+00:00",
+    "auth_status": "20Octafternoon native Chrome direct intendedaccount/property URL again redirects to publicSearchConsole/about; fresh7/28/query/page/country/device/indexing/sitemap unavailable/null. No credential/account/permission changes.",
     "latest_verified_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-morning/GSC-SUMMARY.json",
     "indexing_last_verified_utc": "2026-10-18T07:27:19.533906+00:00",
     "fresh_indexing_available": false,
@@ -256,13 +256,17 @@
     {
       "id": "E10",
       "status": "Distribution draft refresh only: qualified release/version/direct installer, current AwesomeMac four-language proposed patch and MacUpdate field rules. No third-party submission, acquired link or SEO outcome."
+    },
+    {
+      "id": "E11",
+      "status": "Homepage initial audio transfer measured in3 cold production mobile lab runs:2media requests/514939–576450bytes before interaction. Defer both audio preloads; localfirstplay/pre-metadata keyboardseek/A-B/naturalend/Voicy-first/mobile behavior verified. Three post-deployment cold runs to be retained privately; no fieldCWV/rank/causalclaim."
     }
   ],
   "next_actions": [
     "Resume SEO/AEO demand and evidence improvements on the one primary comparison URL. The working public app is restored; do not repeat signing/release recovery without a demonstrated regression.",
     "When existing Chrome account access is available, collect fresh7/28-day exact-query/page/country/device data and current indexing/sitemap. Last morning Web14impressions/0clicks; exact target has0reported impressions and nullposition, not a ranking. Do not invent a trend or keep submitting unchanged URLs.",
     "Keep the working single comparison URL stable; E07 installation answers and E08 demo text/provenance improve existing content without new keyword pages. Use actual fresh search demand for next copy decision rather than snippet churn.",
-    "Preserve E03 fixed inputs/outputs/objective checks. Subjective listening remains unverified; no invented panels, human judgments or audio superiority. Publish only evidence that meets its stated protocol.",
+    "Keep frozenE03v1 allfivehistorical0.3.2outputs/ASR/objectivechecks; humanlistening unverified. A distinct current0.3.3 rerun needs its own pre-run addendum and>=12GiBheadroom; do not silently overwrite historicalversion/results or weaken guard/publicationgate.",
     "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Define a separate minimal measurement contract before any future collection change or conversionreport.",
     "Distribution drafts now bind qualified0.3.3 and20OctAwesomeMac/publicMacUpdatechecks. No third-party messages/submissions without named-destination authorization. Preserve secondary-channel eligibility/account/gallery checks; no purchases or manipulated links.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
@@ -303,13 +307,15 @@
     "historical_metadata_candidate_033": "Historical pre-public stage; superseded by release_health and native_release_033 qualification. Local app opens, About 0.3.3 (0.3.3), history restored, playback reaches 4.9 seconds, native mono 48kHz PCM24 export 235440 frames, hash 74d94f86a17771c55fef6c70f5dc0e602bb254f0f26a0f0e199c7e60ad5f7994; app quit and read-only image detached. Source changes are metadata/About only; no new enhancement run.",
     "local_services": "Two Voicy-only loopback user LaunchAgents; website HEAD302 to correct primary installer; fullimage HEAD200 and three live ranges match frozen bytes, unlisted/private routes404. Require logged-in Mac availability.",
     "aeo_installation_copy": "18 existing regression tests and Next16.3.8 build pass; actual local HTML/visible and JSONLD date agreement, one install anchor, llms availability, honest sitemap dates and current public release proof checked. CUA IAB desktop/mobile anchor/render QA; final production receipts kept outside Git.",
-    "aeo_demo_text_alternative": "18existingtests and Next16.3.8 build pass; public WAV hashes/probe and one fixed local ASR decode per file verified. Actual native details/keyboard/audio/render QA and frozen review tracked outside publicGit; no E03 publication or quality-score pass."
+    "aeo_demo_text_alternative": "18existingtests and Next16.3.8 build pass; public WAV hashes/probe and one fixed local ASR decode per file verified. Actual native details/keyboard/audio/render QA and frozen review tracked outside publicGit; no E03 publication or quality-score pass.",
+    "homepage_audio_loading": "18 existing tests and Next16.3.8 build pass. ActualCUAIAB targetflow: initialreadyState0, pre-loadkeyboardseek2.61s, firstplaycontinues2.718965s, A/Bsync, naturalend/UIreset, Voicy-first/pause and390pxmobileplay/switch/pause/nooverflow; consoleclear. No new audio/assets/layout/title/URLs/tracking."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
-    "Automated page fetches and audits are non-customer traffic."
+    "Automated page fetches and audits are non-customer traffic.",
+    "20Oct homepage Lighthouse/browser QA requests are agent traffic, not customer acquisitions. Retain all3before and3after runs; no score-based exclusion. Initialaudio transfer is a lab observation, not fieldCWV or ranking proof."
   ],
-  "verified_utc": "2026-10-20T07:22:59.074582+00:00",
+  "verified_utc": "2026-10-20T14:49:00.574135+00:00",
   "search_observation": {
     "date": "2026-10-20",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
@@ -386,8 +392,8 @@
     ]
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-20T07:22:59.074582+00:00",
-    "current_wait": "No release blocker. Fresh GSC data needs existing Google reauthentication; routine password flow not repeated. External messages/submissions remain unauthorized; independent evidence/research continues.",
+    "rechecked_utc": "2026-10-20T14:49:00.574135+00:00",
+    "current_wait": "Fresh GSC data still requires existingGoogle session. E03 current-release extension was not started:1.6GiB localfree versus frozen12GiB guard, subjective reviewstillunverified. Voicy-onlycacheinspection found no sufficient reclaimable space without deleting retained evidence/localinstaller; no deletion or otherprojectaccess. Independentwebsite improvement continues.",
     "owner_action_pending": false,
     "private_checkpoint": "voicy-growth-evidence/local-runner-2026-10-16/CHECKPOINT.json",
     "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
