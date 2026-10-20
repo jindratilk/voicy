@@ -170,7 +170,9 @@ def runtime_environment(runtime, evidence):
     return env
 
 
-def run_cases(runtime, prepared, evidence, validation_ffmpeg, diagnostic_trace=None):
+def run_cases(runtime, prepared, evidence, validation_ffmpeg, diagnostic_trace=None, weight_arm=None):
+    require(weight_arm in (None, 'control', 'materialize') and
+            (weight_arm is None or diagnostic_trace is not None), 'Invalid weight arm/bootstrap')
     manifest = json.loads((prepared / 'manifest.json').read_text())
     runner = runtime / 'experiments/enhance_auk_local.py'
     require(sha(runner) == RUNNER_HASH, 'Unreviewed packaged model runner')
@@ -186,7 +188,10 @@ def run_cases(runtime, prepared, evidence, validation_ffmpeg, diagnostic_trace=N
         argv = [runtime / 'python/bin/python3', '-u', runner, source, '--output', dest,
                 '--models', runtime / '.auk/models', '--nfe', '32', '--memory-mode', 'auto']
         if diagnostic_trace is not None:
-            argv[2:2] = [diagnostic_trace, evidence / 'CASE2-TRACE.jsonl']
+            prefix = [diagnostic_trace, evidence / 'CASE2-TRACE.jsonl']
+            if weight_arm is not None:
+                prefix.insert(1, weight_arm)
+            argv[2:2] = prefix
         rec = {'case': case['case'], 'input_sha256': sha(source), 'status': 'running', 'samples': []}
         records.append(rec)
         save(evidence / 'RUNS.json', records)
@@ -240,12 +245,14 @@ def seal(evidence, destination, certificate):
 
 def main():
     global WORK_DEADLINE
-    diagnostic = os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-gpu-diagnosis'
+    weight_loading = os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-weight-loading'
+    diagnostic = weight_loading or os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-gpu-diagnosis'
     canonical_transport = diagnostic or os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-canonical-inputs'
     require(os.environ.get('GITHUB_REPOSITORY') == 'jindratilk/voicy'
             and os.environ.get('GITHUB_REF') in ('refs/heads/codex/e03-current-release',
                                                'refs/heads/codex/e03-canonical-inputs',
-                                               'refs/heads/codex/e03-gpu-diagnosis'),
+                                               'refs/heads/codex/e03-gpu-diagnosis',
+                                               'refs/heads/codex/e03-weight-loading'),
             'Only the exact owner research branch may execute')
     require(platform.system() == 'Darwin' and platform.machine() == 'arm64', 'Need native macOS arm64')
     # Include bounded source retrieval in the work budget; finalization is separate.
@@ -272,11 +279,19 @@ def main():
         if canonical_transport:
             system['canonical_transport_protocol_sha256'] = sha(code / 'docs/growth/E03-CANONICAL-INPUTS.md')
         if diagnostic:
-            system.update(diagnostic_protocol_sha256=sha(code / 'docs/growth/E03-GPU-DIAGNOSIS.md'),
-                          observer_sha256=sha(code / 'scripts/growth/trace_e03_case.py'),
+            system.update(observer_sha256=sha(code / 'scripts/growth/trace_e03_case.py'),
                           selected_cases=[2],
                           scope='Single case2 CPU profile diagnosis; observer overhead; not five-case evidence, UI or quality')
+            if weight_loading:
+                system.update(weight_loading_protocol_sha256=sha(code / 'docs/growth/E03-WEIGHT-LOADING.md'),
+                              weight_bootstrap_sha256=sha(code / 'scripts/growth/run_e03_weight_arm.py'),
+                              weight_arm=os.environ.get('VOICY_E17_ARM'),
+                              scope='Single case2 weight-loading arm; external override/observer; not public runtime or quality proof')
+            else:
+                system['diagnostic_protocol_sha256'] = sha(code / 'docs/growth/E03-GPU-DIAGNOSIS.md')
         save(evidence / 'SYSTEM.json', system)
+        if weight_loading:
+            require(system['weight_arm'] in ('control', 'materialize'), 'Unknown weight arm')
         system.update(physical_memory_bytes=int(command('sysctl', '-n', 'hw.memsize')),
                       chip=command('sysctl', '-n', 'machdep.cpu.brand_string').decode().strip(),
                       initial_observation=resources(root), initial_minimum_bytes=26 * GIB)
@@ -331,10 +346,13 @@ def main():
         save(evidence / 'SYSTEM.json', system)
         save(evidence / 'INPUT-BINDING.json', {'all_five_input_and_reference_hashes_match': True,
              'release': '0.3.3', 'image_sha256': IMAGE_HASH, 'signed_app_verified': True})
-        run_cases(runtime, prepared, evidence, preparation_ffmpeg,
-                  code / 'scripts/growth/trace_e03_case.py' if diagnostic else None)
-        status = ('single case2 diagnostic returned; not five-case evidence or quality' if diagnostic
-                  else 'five cases structurally checked; no listening or ASR judgment')
+        bootstrap = code / 'scripts/growth/run_e03_weight_arm.py' if weight_loading else (
+            code / 'scripts/growth/trace_e03_case.py' if diagnostic else None)
+        run_cases(runtime, prepared, evidence, preparation_ffmpeg, bootstrap,
+                  system['weight_arm'] if weight_loading else None)
+        status = ('single case2 weight arm ' + system['weight_arm'] + ' returned; not public runtime proof'
+                  if weight_loading else 'single case2 diagnostic returned; not five-case evidence or quality'
+                  if diagnostic else 'five cases structurally checked; no listening or ASR judgment')
     except Exception as exc:
         save(evidence / 'ERROR.json', {'type': type(exc).__name__, 'message': str(exc)})
     finally:
@@ -349,7 +367,8 @@ def main():
         receipt.update(status=status, release='0.3.3', human_quality_review=False)
         save(sealed / 'RECEIPT.json', receipt)
         print(json.dumps(receipt), flush=True)
-    return 0 if status.startswith(('five cases', 'single case2 diagnostic returned')) else 1
+    return 0 if status.startswith(('five cases', 'single case2 diagnostic returned',
+                                   'single case2 weight arm')) else 1
 
 
 if __name__ == '__main__':
