@@ -274,17 +274,19 @@
     },
     {
       "id": "E14",
-      "status": "Pre-run0.3.3 extension protocol and standardmacos15CI harness prepared; no newmodeloutput yet. Must exact-match all frozeninput/reference hashes before sequentialinference. Preserves12GiBguard; encrypts privateevidence beforeartifact upload.",
+      "status": "Two actualCIpreflight failures preserved/decrypted/hashverified. Attempt1verifiedsigned033 thenfailedmissingPCMfloatmuxer; adapterfixed/reviewedclean0.98. Attempt2correcteddecodepasses; all5sources/reference/parameters match,9/10input-referenceSHAexact,case2input numericaldifference rejects beforeappdownload/inference. Zero currentmodelcases run; no tolerance/gatewaiver.",
       "protocol": "docs/growth/E03-033-ADDENDUM.md",
       "human_reviews_received": 0,
-      "audio_published": 0
+      "audio_published": 0,
+      "preflight_results": "docs/growth/E03-033-PREFLIGHT.md",
+      "current_model_cases_completed": 0
     }
   ],
   "next_actions": [
     "Resume SEO/AEO demand and evidence improvements on the one primary comparison URL. The working public app is restored; do not repeat signing/release recovery without a demonstrated regression.",
     "When existing Chrome account access is available, collect fresh7/28-day exact-query/page/country/device data and current indexing/sitemap. Last morning Web14impressions/0clicks; exact target has0reported impressions and nullposition, not a ranking. Do not invent a trend or keep submitting unchanged URLs.",
     "Keep the working single comparison URL stable; E07 installation answers and E08 demo text/provenance improve existing content without new keyword pages. Use actual fresh search demand for next copy decision rather than snippet churn.",
-    "Execute/inspect the separately frozen E03-033-ADDENDUM.md standardCI attempt: exactpublicsigned0.3.3, samefiveinputs/settings, initial26GiB and model12GiB guards, onlyencryptedartifact transport. Keep failures and historical0.3.2 unchanged; no newaudio publication/quality claim. LocalMacguard remains unchanged.",
+    "Define separately frozen canonical-input transport after E14preflight rejection: preserve original15OctinputSHA and regeneratedvariant; require all10originalinput/reference hashes before later033inference. No hash tolerance, substitution or skippedcase. E14negativeevidence remains in E03-033-PREFLIGHT.md; currentmodelcases/humanreview/publicaudio remain0.",
     "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Use DOWNLOAD-MEASUREMENT.md for separate qualified GitHub asset series; new collection/organic attribution still needs its own concrete contract.",
     "Distribution drafts now bind qualified0.3.3 and20OctAwesomeMac/publicMacUpdatechecks. No third-party messages/submissions without named-destination authorization. Preserve secondary-channel eligibility/account/gallery checks; no purchases or manipulated links.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
