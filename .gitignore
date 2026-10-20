@@ -92,6 +92,7 @@ landing/*.tsbuildinfo
 !/scripts/growth/prepare_audio_cases.py
 !/scripts/growth/serve_listening_review.py
 !/scripts/growth/run_e03_current.py
+!/scripts/growth/restore_canonical_inputs.py
 !/docs/growth/E03-PROTOCOL.md
 !/docs/growth/E03-MANIFEST.json
 !/docs/growth/E03-RESULTS.json
@@ -100,6 +101,12 @@ landing/*.tsbuildinfo
 !/docs/growth/E03-033-ADDENDUM.md
 !/docs/growth/E03-033-PREFLIGHT.md
 !/docs/growth/E03-033-RECIPIENT.pub
+!/docs/growth/E03-CANONICAL-INPUTS.md
+!/docs/growth/E03-CANONICAL-INPUTS.json
+!/docs/growth/fixtures/
+/docs/growth/fixtures/*
+!/docs/growth/fixtures/e03-case2-canonical.xor.json
+!/docs/growth/fixtures/README.md
 !/docs/growth/DOWNLOAD-MEASUREMENT.md
 !/docs/growth/DISTRIBUTION-PACK.md
 !/docs/growth/DISTRIBUTION-PACK.json

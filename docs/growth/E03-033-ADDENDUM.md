@@ -1,6 +1,6 @@
 # E03 current-release extension, version 1
 
-Frozen 20 October 2026 before current-release model output generation. This is a separate run of the original five-case demonstration with the qualified public 0.3.3 runtime. It does not amend or overwrite the historical 0.3.2 protocol/results, establish superiority or create human judgments.
+Frozen 20 October 2026 before model output generation for this five-case extension. Earlier separate0.3.3 release qualification already processed its first fixture and that output was inspected; no blinded prospective quality-trial claim follows. This is a separate run of the original five-case demonstration with the qualified public 0.3.3 runtime. It does not amend or overwrite the historical 0.3.2 protocol/results, establish superiority or create human judgments.
 
 ## Fixed execution
 

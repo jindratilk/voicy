@@ -5,6 +5,9 @@ on:
     paths:
       - .github/workflows/e03-current.yml
       - scripts/growth/run_e03_current.py
+      - scripts/growth/prepare_audio_cases.py
+      - docs/growth/E03-PROTOCOL.md
+      - docs/growth/E03-MANIFEST.json
       - docs/growth/E03-033-ADDENDUM.md
       - docs/growth/E03-033-RECIPIENT.pub
 permissions:
