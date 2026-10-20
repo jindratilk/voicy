@@ -92,6 +92,7 @@ landing/*.tsbuildinfo
 !/scripts/growth/prepare_audio_cases.py
 !/scripts/growth/serve_listening_review.py
 !/scripts/growth/run_e03_current.py
+!/scripts/growth/trace_e03_case.py
 !/scripts/growth/restore_canonical_inputs.py
 !/docs/growth/E03-PROTOCOL.md
 !/docs/growth/E03-MANIFEST.json
@@ -101,6 +102,7 @@ landing/*.tsbuildinfo
 !/docs/growth/E03-033-ADDENDUM.md
 !/docs/growth/E03-033-PREFLIGHT.md
 !/docs/growth/E03-033-CURRENT-RESULTS.md
+!/docs/growth/E03-GPU-DIAGNOSIS.md
 !/docs/growth/E03-033-RECIPIENT.pub
 !/docs/growth/E03-CANONICAL-INPUTS.md
 !/docs/growth/E03-CANONICAL-INPUTS.json

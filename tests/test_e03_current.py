@@ -67,9 +67,10 @@ def test_work_deadline_reserves_finalization(monkeypatch):
     assert seen['timeout'] == 300
 
 
-def test_rejected_host_retains_structured_facts_without_downloading(monkeypatch, tmp_path):
+@pytest.mark.parametrize('ref', ['e03-current-release', 'e03-canonical-inputs', 'e03-gpu-diagnosis'])
+def test_rejected_host_retains_structured_facts_without_downloading(monkeypatch, tmp_path, ref):
     monkeypatch.setenv('GITHUB_REPOSITORY', 'jindratilk/voicy')
-    monkeypatch.setenv('GITHUB_REF', 'refs/heads/codex/e03-current-release')
+    monkeypatch.setenv('GITHUB_REF', 'refs/heads/codex/' + ref)
     monkeypatch.setenv('GITHUB_RUN_ID', 'fixture')
     monkeypatch.setenv('GITHUB_RUN_ATTEMPT', '1')
     monkeypatch.setenv('GITHUB_SHA', 'fixture-commit')
@@ -90,6 +91,10 @@ def test_rejected_host_retains_structured_facts_without_downloading(monkeypatch,
         assert system['physical_memory_bytes'] == 7516192768
         assert system['initial_observation']['free_bytes'] == 13 * e03.GIB
         assert system['initial_minimum_bytes'] == 26 * e03.GIB
+        if ref == 'e03-gpu-diagnosis':
+            assert system['selected_cases'] == [2] and system['observer_sha256']
+        else:
+            assert 'selected_cases' not in system and 'observer_sha256' not in system
         assert json.loads((evidence / 'STATUS.json').read_text())['status'] == 'failed'
         return {'fixture_only': True}
 
