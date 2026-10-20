@@ -305,3 +305,8 @@ NativeChrome Bing access was also checked: no active Webmaster session, and both
 ### Current-release preflight outcome — 20 October 2026
 
 [Two preserved attempts](E03-033-PREFLIGHT.md) established actual standardmacos15 capacity, exact signed-app acceptance, encrypted retrieval and a preparation adapter fix. They did not run the five current-release model cases: the second attempt correctly rejected a tiny numerical regeneration difference in the simulated-reflections input. Nine of ten input/reference files matched exactly; all original source/parameter records matched. Keep the original canonical bytes and strict hash gate. Stop patching the old experiment contract and define a separately frozen lossless canonical-input transport before another model attempt. No new audio, subjective review, conversion or ranking result follows.
+
+
+### Canonical transport follow-up — 20 October 2026 pre-run
+
+[E15](E03-CANONICAL-INPUTS.md) freezes a separate identity-bound transport for the original case-2 bytes. A21KB compressed difference fixture restores one recorded CI regeneration to the already-fixed15October SHA, preserving the generated directory and every other original file. Actual local integration on the decoded CI material restores all ten original hashes; the already-canonical path also preserves its source. Current-release model execution remains pending. No input/hash tolerance, altered recipe, new listening file, quality score or ranking claim is introduced.

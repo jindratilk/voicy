@@ -236,8 +236,10 @@ def seal(evidence, destination, certificate):
 
 def main():
     global WORK_DEADLINE
+    canonical_transport = os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-canonical-inputs'
     require(os.environ.get('GITHUB_REPOSITORY') == 'jindratilk/voicy'
-            and os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-current-release',
+            and os.environ.get('GITHUB_REF') in ('refs/heads/codex/e03-current-release',
+                                               'refs/heads/codex/e03-canonical-inputs'),
             'Only the exact owner research branch may execute')
     require(platform.system() == 'Darwin' and platform.machine() == 'arm64', 'Need native macOS arm64')
     # Include bounded source retrieval in the work budget; finalization is separate.
@@ -261,6 +263,8 @@ def main():
                   'protocol_sha256': sha(code / 'docs/growth/E03-033-ADDENDUM.md'),
                   'work_budget_seconds': 90 * 60, 'finalization_reserve_seconds': 30 * 60,
                   'scope': 'Direct packaged runner on hosted VM; no desktop UI, quality or consumer speed benchmark'}
+        if canonical_transport:
+            system['canonical_transport_protocol_sha256'] = sha(code / 'docs/growth/E03-CANONICAL-INPUTS.md')
         save(evidence / 'SYSTEM.json', system)
         system.update(physical_memory_bytes=int(command('sysctl', '-n', 'hw.memsize')),
                       chip=command('sysctl', '-n', 'machdep.cpu.brand_string').decode().strip(),
@@ -281,6 +285,11 @@ def main():
         command(python, code / 'scripts/growth/prepare_audio_cases.py', '--archive', archive,
                 '--output', prepared, '--protocol', code / 'docs/growth/E03-PROTOCOL.md',
                 '--ffmpeg', preparation_ffmpeg, '--ffprobe', preparation_ffmpeg.with_name('ffprobe'))
+        if canonical_transport:
+            from restore_canonical_inputs import restore
+            prepared = restore(prepared, evidence / 'canonical-prepared',
+                               code / 'docs/growth/E03-MANIFEST.json',
+                               code / 'docs/growth/E03-CANONICAL-INPUTS.json')
         verify_inputs(json.loads((prepared / 'manifest.json').read_text()),
                       frozen)
         print(json.dumps({'phase': 'all_five_input_reference_hashes_verified'}), flush=True)

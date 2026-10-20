@@ -1,0 +1,3 @@
+`e03-case2-canonical.xor.json` is a lossless reconstruction fixture derived from the fixed LibriSpeech utterance `121-121726-0000` after E03v1 resampling, normalization and simulated reflections.
+
+LibriSpeech ©2014 Vassil Panayotov · [OpenSLR SLR12](https://www.openslr.org/12) · [CC BY4.0](https://creativecommons.org/licenses/by/4.0/). No reader endorsement is implied. Retain this notice and the [contract/provenance](../E03-CANONICAL-INPUTS.md) with the fixture; its [manifest](../E03-CANONICAL-INPUTS.json) binds the source, target and payload hashes. It is not a complete listening file or a quality result.
