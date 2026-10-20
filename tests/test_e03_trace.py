@@ -71,8 +71,11 @@ def test_trace_cap_discloses_missing_events_and_does_not_evaluate(tmp_path):
     assert [e['event'] for e in events] == ['c_call', 'c_call', 'trace_capped']
 
 
-@pytest.mark.parametrize('diagnostic', [False, True])
-def test_only_explicit_diagnosis_selects_case2_and_changes_entrypoint(monkeypatch, tmp_path, diagnostic):
+@pytest.mark.parametrize('mode', ['batch', 'trace', 'control', 'materialize'])
+def test_only_explicit_diagnosis_selects_case2_and_changes_entrypoint(monkeypatch, tmp_path, mode):
+    diagnostic = mode != 'batch'
+    weight_arm = mode if mode in ('control', 'materialize') else None
+    bootstrap = ROOT / 'scripts/growth/run_e03_weight_arm.py' if weight_arm else TRACER
     runtime, prepared, evidence = (tmp_path / n for n in ('runtime', 'prepared', 'evidence'))
     prepared.mkdir(); evidence.mkdir()
     cases = [{'case': n, 'outputs': {'input': {'path': f'{n}/input.wav', 'sha256': 'fixture',
@@ -90,11 +93,15 @@ def test_only_explicit_diagnosis_selects_case2_and_changes_entrypoint(monkeypatc
         return SimpleNamespace(poll=lambda: 0, wait=lambda: 0)
 
     monkeypatch.setattr(core.subprocess, 'Popen', start)
-    core.run_cases(runtime, prepared, evidence, tmp_path / 'ffmpeg', TRACER if diagnostic else None)
+    core.run_cases(runtime, prepared, evidence, tmp_path / 'ffmpeg',
+                   bootstrap if diagnostic else None, weight_arm)
     runs = json.loads((evidence / 'RUNS.json').read_text())
     assert [r['case'] for r in runs] == ([2] if diagnostic else [1, 2, 3, 4, 5])
     for command in commands:
-        if diagnostic:
+        if weight_arm:
+            assert command[2:6] == [str(bootstrap), weight_arm, str(evidence / 'CASE2-TRACE.jsonl'),
+                                     str(runtime / 'experiments/enhance_auk_local.py')]
+        elif diagnostic:
             assert command[2:5] == [str(TRACER), str(evidence / 'CASE2-TRACE.jsonl'),
                                      str(runtime / 'experiments/enhance_auk_local.py')]
         else:
