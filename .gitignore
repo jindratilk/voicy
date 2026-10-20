@@ -103,6 +103,7 @@ landing/*.tsbuildinfo
 !/docs/growth/E03-033-PREFLIGHT.md
 !/docs/growth/E03-033-CURRENT-RESULTS.md
 !/docs/growth/E03-GPU-DIAGNOSIS.md
+!/docs/growth/E03-GPU-TRACE-RESULTS.md
 !/docs/growth/E03-033-RECIPIENT.pub
 !/docs/growth/E03-CANONICAL-INPUTS.md
 !/docs/growth/E03-CANONICAL-INPUTS.json

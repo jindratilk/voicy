@@ -6,7 +6,7 @@ This is an execution plan and measurement protocol, not a promise of a Google po
 
 ## Current execution checkpoint — 20 October 2026
 
-Public downloads are restored in 0.3.3. The full corrected signed/notarized image passes actual AuK/export on fresh macOS 14 and 15, and the real Chrome/assistant/full-download/native GUI flow passes on the developer Mac. [Release qualification and limits](../release/0.3.3-CANDIDATE.md) identify the selected bytes; the old minimum-OS failure remains historical. Production `ac5a415` was verified at18:07UTC before this research-results patch, with the same website tree as `b7ee913`, active CTAs and exact signed small-installer delivery. User-only localhost services require this Mac; public GitHub distribution does not depend on it.
+Public downloads are restored in 0.3.3. The full corrected signed/notarized image passes actual AuK/export on fresh macOS 14 and 15, and the real Chrome/assistant/full-download/native GUI flow passes on the developer Mac. [Release qualification and limits](../release/0.3.3-CANDIDATE.md) identify the selected bytes; the old minimum-OS failure remains historical. Production `f6972f4` was verified at18:37UTC before the E16 results closeout, with the same website tree as `b7ee913`, active CTAs and the exact signed small-installer redirect. Full route/schema/sitemap checks were also verified at18:19UTC. User-only localhost services require this Mac; public GitHub distribution does not depend on it.
 
 The installation/startup guide and corrected machine-readable availability are shipped in PR11 (`f1df484`), with desktop/mobile and exact production verification. PR12 (`e9fdfc0`) adds a verified text alternative beside the existing synthetic demo, exact public-file identities and a candid automated-transcription check. These old demo assets are not a new0.3.3 benchmark; E03 subjective listening remains a separate gate.
 
@@ -322,3 +322,10 @@ Close the transport work with that negative result and diagnose the exact GPU ab
 ### Single-case GPU diagnosis — 20 October 2026 pre-run
 
 [E16](E03-GPU-DIAGNOSIS.md) defines one instrumented attempt of the exact failed case2 after all ten original hashes and signed-image checks. An external main-thread CPU profile observer leaves bundle files, inputs, model settings and resource guards unchanged. It records bounded flushed stage/eval events without inspecting arguments/tensors. Observer timing, asynchronous GPU execution, exception-unwinding return events and possibly absent C events limit attribution; no result exists yet. Retain the complete failed E15ledger and clean-control absence. This is fault isolation, not a replacement five-case trial or public quality evidence.
+
+
+### Single-case diagnostic outcome — 20 October 2026
+
+[One actual E16 attempt](E03-GPU-TRACE-RESULTS.md) failed with the same MetalGPUtimeout class, raised at the conditioning tensor evaluation after Thinker construction. The12-record monotonic trace exposed no Cevents and was not capped; the traceback/source identify the CPU exception boundary, not a GPUkernel or proven rootcause. Exactprotocol/observer/all10input hashes and the entire65-entry encrypted artifact inventory were independently checked. No output/ASR/listening result exists, and E15 remains a failed five-case ledger with its control unrun.
+
+Actual E15configs have the same one12-second computational chunk/parameters for cases1and2, despite differentvalidsource lengths. Staticinspection of the exactsignedimage plus pinnedMLXsource distinguishes Module.eval inference-mode selection from arraymaterialization. A separatelycontrolled weight-loading/conditioning-boundary investigation is now the narrow next technical hypothesis; do not declare a fix or add extraeval/flags to the already-run E16contract. No public website content, model audio, ranking claim, watchdog override or further E16attempt follows.
