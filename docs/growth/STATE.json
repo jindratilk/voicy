@@ -6,20 +6,20 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "b7ee9137c6c1c34aafce6e18b9e101751c49bda3",
+  "shipped_commit": "3bc9b3f680189fa681e3173c59272f2c13d4236d",
   "deployment": {
-    "id": "dpl_AvrvVdUcTaivxYhDMagsfok14M4N",
-    "url": "https://voicy-ecmri3cao-skaluj.vercel.app",
+    "id": "dpl_GLTCduhv9zqDTH5383zvdMU96se4",
+    "url": "https://voicy-f0lx3dhal-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "f12c2710a24dac189e5937fe8db20b4f55ecc7dc",
+    "source_commit": "3bc9b3f680189fa681e3173c59272f2c13d4236d",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-20T19:38:33.778550+00:00",
-    "scope": "Last exactproduction/source verified before E18 reader-facingcopychange. PostE18merge deployment receipt remainsoutsideGit.",
-    "verification_scope": "Fullhome/comparison/privacy200/exactdeployment/canonical/H1/JSONLD, sitemap3/robots200, activeCTA/no pause andGET/HEAD302 exactqualified033."
+    "verified_utc": "2026-10-20T19:48:47.520541+00:00",
+    "scope": "E18 production/source fullyverified at3bc9b3f before this documentation checkpoint; final postcheckpoint deploymentproof retainedprivately. Website tree remains3bc9b3f.",
+    "verification_scope": "Full3pages200/exactdeployment/canonical/H1/JSONLD, newHushcopy/source links/visibledate/schema20Oct, sitemapcomparison-only20Oct(home18/privacy19), robots200, activeCTA/no pause andGET/HEAD302 qualified033."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -218,13 +218,12 @@
       "acknowledgement": 202,
       "limits": "Acknowledgement only, not confirmed key validation, crawling, indexing, rank gain or AI citation. No repeated unchanged notification; Google measurement remains GSC Web.",
       "latest_changed_page_notification": {
-        "utc": "2026-10-18T22:00:45.156853+00:00",
+        "utc": "2026-10-20T19:49:18.364754+00:00",
         "urls": [
-          "https://usevoicy.app/",
           "https://usevoicy.app/adobe-podcast-alternative"
         ],
         "status": 200,
-        "scope": "Genuine E08visiblechanges; ownershipproof200/exactbody; receipt only, not crawling/index/rank/citation. No repeated19Octunchangednotification."
+        "scope": "GenuineE18comparisoncontentchange only; nohomepage/privacy/unchangedURLnotification. Receipt only, notcrawl/index/rank/AIcitation."
       }
     },
     {
@@ -347,7 +346,7 @@
     },
     {
       "id": "E18",
-      "status": "Implemented sourcedworkflowchoice on existingcomparison: paidlocalstandaloneHush vs separateProToolsAudioSuiteHushPro, officiallinks andexplicitunbenchmarkeddisclosure.18tests/build/localHTTP andnativeChrome desktop/mobile390x788/linknavigation/console checks pass. Finalreview/CI/productionreceipts are retained privately during shipping; no quality/speed/ranking claim.",
+      "status": "Shipped PR23 at3bc9b3f andactualproductionverified.18tests/build, nativeChrome desktop/mobile390x788/sourceclick/console/HTTPchecks pass; reviewclean0.96 andall7normalfinalheadchecks pass. Correctcomparison-onlydate; primarysourcevendorfacts andunbenchmarkeddisclosure. Local54832updated/200. OnechangedcomparisonIndexNownotification200. No rank/CTR/conversion/qualitylift measured.",
       "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
       "sources": [
         "https://hush.audio/products/hush",
@@ -355,14 +354,31 @@
       ],
       "source_checked": "2026-10-20",
       "hypothesis": "Reader choosing local speechcleanup can compare a paidstandalone option and ProTools workflow rather than infer Voicy is the only localchoice. Editorial usefulness, not a controlledrank/CTRtest.",
-      "evaluation": "Verify faithful productidentity/source links and practical scope now; review actualquery/page demand after7/14days when authenticatedGSCavailable, without attributing causality from sparsebeforeafter data."
+      "evaluation": "Verify faithful productidentity/source links and practical scope now; review actualquery/page demand after7/14days when authenticatedGSCavailable, without attributing causality from sparsebeforeafter data.",
+      "PR": "https://github.com/jindratilk/voicy/pull/23",
+      "shipped_commit": "3bc9b3f680189fa681e3173c59272f2c13d4236d",
+      "indexnow": {
+        "utc": "2026-10-20T19:49:18.364754+00:00",
+        "proof_status": 200,
+        "proof_body_exact": true,
+        "submitted_urls": [
+          "https://usevoicy.app/adobe-podcast-alternative"
+        ],
+        "response_status": 200,
+        "attempts": 1,
+        "scope": "GenuineE18comparisoncontentchange only; nohomepage/privacy/unchangedURLnotification. Receipt only, notcrawl/index/rank/AIcitation."
+      },
+      "evaluate_not_before": [
+        "2026-10-27",
+        "2026-11-03"
+      ]
     }
   ],
   "next_actions": [
     "Resume SEO/AEO demand and evidence improvements on the one primary comparison URL. The working public app is restored; do not repeat signing/release recovery without a demonstrated regression.",
     "When existing Chrome account access is available, collect fresh7/28-day exact-query/page/country/device data and current indexing/sitemap. Last morning Web14impressions/0clicks; exact target has0reported impressions and nullposition, not a ranking. Do not invent a trend or keep submitting unchanged URLs.",
     "Keep the working single comparison URL stable; E07 installation answers and E08 demo text/provenance improve existing content without new keyword pages. Use actual fresh search demand for next copy decision rather than snippet churn.",
-    "E17 terminal/landedPR22; no further same-day modelattempt. E18 sourcedlocalMacchoice implemented andlocallyvalidated. Preserve onecanonical/title/otherpagedates. Follow actualcomparisonquery/page demand after7/14days whenGSCauthavailable; no repeatedsame-daycopy/title/query churn or causalrankclaim.",
+    "E18 shipped andproduction/localverified. Keepcomparison/title stable; reviewactualquery/page demand on/after27Oct and3Nov whenGSCauthavailable. No same-daycopy/title/querychurn, repeatedunchangedIndexNow or causalrankclaim. E17 remainsinvestigativeonly; no further same-day modelattempt.",
     "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Use DOWNLOAD-MEASUREMENT.md for separate qualified GitHub asset series; new collection/organic attribution still needs its own concrete contract.",
     "Distribution drafts now bind qualified0.3.3 and20OctAwesomeMac/publicMacUpdatechecks. No third-party messages/submissions without named-destination authorization. Preserve secondary-channel eligibility/account/gallery checks; no purchases or manipulated links.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
@@ -418,7 +434,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-20T19:45:31.115475+00:00",
+  "verified_utc": "2026-10-20T19:51:42.434069+00:00",
   "search_observation": {
     "date": "2026-10-20",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
