@@ -36,6 +36,12 @@ No subscription. No account. No audio uploads. Models are included in the deskto
 - **Adaptive memory use:** budgets respond to RAM, available headroom and macOS memory pressure.
 - **Open source:** MIT application code, with separately licensed model assets and dependencies.
 
+## Inside the app
+
+![Voicy 0.3.3 with a local original recording loaded and Enhance available](docs/release/assets/0.3.3/voicy-0.3.3-original-loaded.png)
+
+Actual released 0.3.3 interface, captured 20 October 2026. This view shows an imported original before enhancement. [Result view, source attribution and capture limits](docs/release/0.3.3-GALLERY.md).
+
 ## Hear it yourself
 
 [**Play the before / after demo →**](https://usevoicy.app/#demo)

@@ -33,7 +33,37 @@
       "width": 1200,
       "height": 630
     },
-    "native_gallery": "Signed-release validation evidence exists; no curated, privacy-reviewed launch gallery/video is prepared. Product Hunt gallery gate remains open."
+    "native_gallery": {
+      "status": "Two unedited1000x650 actual released033 native-window PNGs prepared and privacy-reviewed; source/method/captions public. No launchvideo; destinationform/dimensions/account/explicitsubmissionauthorization still required.",
+      "guide": "docs/release/0.3.3-GALLERY.md",
+      "captured": "2026-10-20",
+      "states": [
+        "Fresh original input; no enhancement started",
+        "18Octqualified033result restored20Oct; whole job record unchanged"
+      ],
+      "files": [
+        {
+          "file": "voicy-0.3.3-original-loaded.png",
+          "bytes": 35284,
+          "sha256": "ab6182c0a81826bd2388e59a0a1ae421fd017f16a418d12ebc6c922e0ed9937e",
+          "width": 1000,
+          "height": 650,
+          "repository_path": "docs/release/assets/0.3.3/voicy-0.3.3-original-loaded.png"
+        },
+        {
+          "file": "voicy-0.3.3-restored-result.png",
+          "bytes": 38197,
+          "sha256": "7c3015d56a0a96f00eacc37d5b61f03b9d338f92123a4481d8598e63526ee689",
+          "width": 1000,
+          "height": 650,
+          "repository_path": "docs/release/assets/0.3.3/voicy-0.3.3-restored-result.png"
+        }
+      ],
+      "source_image_sha256": "459f8699304ec2efa923001b0691a9fd3231067716a66b18f676f88f4c4f6e7b",
+      "new_inference_runs": 0,
+      "new_audio_published": 0,
+      "quality_claim": null
+    }
   },
   "channels": [
     {
@@ -169,7 +199,7 @@
       "hold": [
         "explicit launch/comment authorization",
         "correct personal maker account and verified maker attribution",
-        "fresh signed-release screenshots/video",
+        "launchvideo and actual destinationgallery format/dimension check; two signed033screenshots prepared",
         "time to respond honestly to comments"
       ],
       "identity_collision": {
