@@ -1,8 +1,8 @@
-# Voicy distribution preparation — 15 October 2026
+# Voicy distribution preparation — refreshed 20 October 2026
 
-**Drafts only. No external submission, message, fork, listing, purchase or launch has been made.** Website downloads remain paused while the native startup fix awaits a signed/notarized public replacement. These materials support relevant product discovery; they do not establish backlinks, editorial acceptance or a ranking gain.
+**Drafts only. No external submission, message, fork, listing, purchase or launch has been made.** The selected 0.3.3 public release now passes the signed/notarized download and native-workflow gate within its documented limits. These materials support relevant product discovery; they do not establish backlinks, editorial acceptance or a ranking gain.
 
-The machine-readable [field drafts](DISTRIBUTION-PACK.json) contain the proposed copy, identity checks, source URLs and holds. Version and installer URL deliberately remain empty. Refresh the evidence before use.
+The machine-readable [field drafts](DISTRIBUTION-PACK.json) contain the proposed copy, identity checks, source URLs and holds. The packet now contains the qualified version, direct setup-assistant URL and exact release identities. Awesome Mac and public MacUpdate field rules were refreshed on 20 October; AlternativeTo/Product Hunt rules and identity observations remain dated 15 October. Refresh outstanding checks before use.
 
 ## Destination decisions
 
@@ -17,7 +17,7 @@ The machine-readable [field drafts](DISTRIBUTION-PACK.json) contain the proposed
 
 This product is **Voicy at usevoicy.app**, with source at [jindratilk/voicy](https://github.com/jindratilk/voicy). It enhances recorded speech locally on Apple Silicon, requires macOS 14+, provides original/enhanced comparison and WAV export. The application source is MIT licensed; models and dependencies have separate licenses. Large bundled models, processing time and possible generative speech changes must remain visible in substantive product descriptions.
 
-The existing [AlternativeTo dictation listing](https://alternativeto.net/software/usevoicy--speech-to-text/about/) points to **usevoicy.com**. The existing [Product Hunt Voicy page](https://www.producthunt.com/products/voicy?launch=voicy) points to **voicybot.com**, a transcription bot. Neither belongs to this project; do not claim their reviews, listings or history. A fresh identity/duplicate check is required before submission.
+The existing [AlternativeTo dictation listing](https://alternativeto.net/software/usevoicy--speech-to-text/about/) points to **usevoicy.com**. The existing [Product Hunt Voicy page](https://www.producthunt.com/products/voicy?launch=voicy) points to **voicybot.com**, a transcription bot. Neither belongs to this project; do not claim their reviews, listings or history. These two identity observations were made on 15 October, not reverified in this refresh. A fresh identity/duplicate check is required before submission.
 
 The Adobe comparison is specifically a local alternative for the **Enhance Speech task**, not a replacement for every Podcast Studio feature. No draft claims independent listening validation, superior sound, adoption numbers or achieved search position. The five fixed E03 cases remain unpublished pending the existing subjective-review gate.
 
@@ -27,7 +27,7 @@ Awesome Mac English entry description:
 
 > Open-source speech enhancement using local AuK models on Apple Silicon.
 
-Chinese, Japanese and Korean descriptions and exact sections are in the JSON packet. At reviewed source `f64bae9c02a4f92b44f5dfa5716121443eb23fe1`, all four entries can be inserted after Utter and before yovoice without changing other bytes. All four README files and separate issue/PR searches had no Voicy match at inspection. This is a bounded duplicate check, not a guarantee against every possible duplicate.
+Chinese, Japanese and Korean descriptions and exact sections are in the JSON packet. At reviewed source `c91298e281feed6f61d7d8c757c3afe0e191375d`, all four entries can be inserted after Utter and before yovoice without changing other bytes. All four README files and separate issue/PR searches had no Voicy match on 20 October (both searches reported complete results). This is a bounded duplicate check, not a guarantee against every possible duplicate.
 
 MacUpdate short description:
 
@@ -43,17 +43,21 @@ Product Hunt description (220 characters):
 
 Long descriptions, requirements, proposed features, maker-comment draft and an Awesome Mac PR description are preserved in the JSON packet. Maker attribution and available topic names still need verification; no invented personal origin story is included.
 
-## Assets and release gate
+## Selected public release and assets
+
+Release [0.3.3](https://github.com/jindratilk/voicy/releases/tag/v0.3.3) is public. Its [signed native assistant](https://github.com/jindratilk/voicy/releases/download/v0.3.3/Voicy-0.3.3-arm64.dmg) is 146,704 bytes and retrieves the approximately 6.5 GB complete app image from GitHub. Setup needs Internet; enhancement then runs offline. The [qualification record](https://github.com/jindratilk/voicy/releases/download/v0.3.3/QUALIFICATION.json) binds exact hashes, clean macOS 14/15 packaged-engine checks and the developer-Mac native flow. The latter ran from a read-only image, not a copy in Applications, with one licensed 4.905-second fixture. It does not establish subjective quality or long-form reliability. The live website GET/HEAD redirect was reverified on 20 October; the large image was not downloaded again for this editorial refresh.
 
 Use the existing `src-tauri/icons/icon.png`: 512×512, alpha channel, SHA256 `949af04dd12a42336ceb210e3046a9f5fc1565c51a6c22e48f9f3ac633b1b017`. Its preparation copy is byte-identical. The 128×128 website icon is below AlternativeTo's suggested size; do not upscale it when the native source exists. Existing social art is 1200×630. Fresh native screenshots/video must show the verified signed replacement, rather than label the local development candidate as a released product.
 
 Before any external communication:
 
-1. Publish and independently validate the signed/notarized replacement through the exact public installer path, then complete the native import → enhance → compare → export flow. Preserve the incident and previous artifact evidence.
+1. Preserve the satisfied release gate for the exact selected 0.3.3 bytes. Reopen it on a demonstrated regression or changed release; retain original incident and qualification limits. Do not restart signing/download recovery for unchanged drafts.
 2. Obtain explicit authorization for the named external submission/message. Existing project authorization covers these preparations and this repository, not third-party messaging. No account creation, paid review or purchase is included.
-3. Re-read destination rules, inspect the correct account and actual form, refresh duplicate/identity checks, fill actual version/installer facts and verify links/assets. Do not accept unexpected terms or charges automatically.
+3. Re-read destination rules, inspect the correct account and actual form, refresh duplicate/identity checks, check the selected version/installer facts and verify links/assets. Do not accept unexpected terms or charges automatically.
 4. Record the exact submitted text, destination, date and moderation state. A submission, acceptance, crawl or referral visit must not be reported as a ranking gain.
 
 ## Validation and provenance
 
-External local evidence lives under `voicy-growth-evidence/distribution-2026-10-15/`. Six pinned Awesome Mac source snapshots match their SHA256 provenance. A proposed-only local patch adds exactly one entry per README and removal recovers every original byte. It has not been applied to an external repository. PNG dimensions/hash, copy limits, null replacement version and every publication hold passed validation. No application code changed in this checkpoint; application tests were not rerun for editorial drafts.
+The initial evidence remains immutable under `voicy-growth-evidence/distribution-2026-10-15/`. Six pinned Awesome Mac source snapshots match their SHA256 provenance. A proposed-only local patch adds exactly one entry per README and removal recovers every original byte. It has not been applied to an external repository. PNG dimensions/hash, copy limits, then-null replacement version and every publication hold passed validation. No application code changed in this checkpoint; application tests were not rerun for editorial drafts.
+
+The 20 October refresh is retained separately under `voicy-growth-evidence/checkpoints/2026-10-20-morning/`. Six newly pinned Awesome Mac sources and the proposed-only four-language patch are revalidated against that revision. No external fork, PR, listing, account or message was created. MacUpdate authenticated form acceptance, charges and duplicate checks remain unverified; the two secondary channels were not re-audited.
