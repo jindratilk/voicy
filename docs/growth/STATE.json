@@ -8,17 +8,17 @@
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
   "shipped_commit": "3bc9b3f680189fa681e3173c59272f2c13d4236d",
   "deployment": {
-    "id": "dpl_8H2LzmH7J59sWrJrNfHAC1nACg63",
-    "url": "https://voicy-lfsq9bfzh-skaluj.vercel.app",
+    "id": "dpl_28aoLUbWRQo5wY2nEVmuprFB9D6Y",
+    "url": "https://voicy-g5j5fumt5-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "f6d87bd28fe5c9cd51d63b1691912fec9e026474",
+    "source_commit": "cece2b09c2c994fe91cc37c7e6641a4853c43f9e",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-20T20:34:47.691572+00:00",
-    "scope": "Full live verification before E20 documentation closeout; website tree remains3bc9b3f. Final postmerge proof retained privately.",
+    "verified_utc": "2026-10-20T20:51:24.362982+00:00",
+    "scope": "Full live verification before E21 gallery/docs closeout; landingtree remains3bc9b3f. Final postmerge proof retained privately.",
     "verification_scope": "Actualhome/comparison/privacy200/exactdeployment/canonical/H1/JSONLD, sitemap3/robots200, activeCTA/no pause andGET/HEAD302 exactqualified033."
   },
   "gsc": {
@@ -407,6 +407,20 @@
       "acquired_links": 0,
       "ranking_effect": null,
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-editorial-six-colors/PACKET.json"
+    },
+    {
+      "id": "E21",
+      "status": "Two actual033 native-window PNGs captured/privacy-reviewed and source/rights bound; README preview plus public gallery. Fresh original import only, then restored exact18Octqualifiedjob with fullrecord equality. No new modelrun/audio/quality/rank result. Signature/Gatekeeper/About pass. NativeQuit ended ownedapp/engine, originalpreferences restored, image normaldetach.",
+      "gallery": "docs/release/0.3.3-GALLERY.md",
+      "screenshots": 2,
+      "dimensions": [
+        1000,
+        650
+      ],
+      "new_inference_runs": 0,
+      "new_audio_published": 0,
+      "ranking_effect": null,
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-native-gallery/GALLERY-PROVENANCE.json"
     }
   ],
   "next_actions": [
@@ -417,6 +431,7 @@
     "E19closedwithUSnetworkhintbutGoogle429/reCAPTCHA; no usablerank/market/ownedpresence data. Keepfrozenresearchtagunchanged; nohostrotation/proxy/stealth/solver/repeatedqueryor new same-dayobservationattempt. Preservelastrealnativeunknownlocationobservations andyearendcriterion. FreshGSCstillneedsexistingownerreauth; averagepositionwouldonlysupportliteralrankobservations.",
     "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Use DOWNLOAD-MEASUREMENT.md for separate qualified GitHub asset series; new collection/organic attribution still needs its own concrete contract.",
     "E20 exact SixColors/JasonSnell independent-evaluation message is fully prepared privately and held for explicit named-recipient authorization. No email/cloud draft/submission/follow-up sent. Refresh actualsender/contact/rules/duplicates/releaseknownlimits/links before any approvedsend; no backlink/positive-review request. Do not repeatedly ask the same approval or collect a bulk contactlist.",
+    "E21 actual033 nativegallery now public in repo/README; use only with factual original/restored-result captions and explicit destinationauthorization. Two1000x650images are not a complete ProductHuntlaunch/video/formcheck. E20 exactemailapproval remains pending; do not re-ask unchanged or send automatically.",
     "Distribution drafts now bind qualified0.3.3 and20OctAwesomeMac/publicMacUpdatechecks. No third-party messages/submissions without named-destination authorization. Preserve secondary-channel eligibility/account/gallery checks; no purchases or manipulated links.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
     "MacOS14 hosted runner retirement is scheduled for2Nov2026; migrate compatibility CI deliberately while preserving real minimum-OS evidence, not by weakening gates."
@@ -464,7 +479,8 @@
     "current_release_E17": "27 focusedtests/actionlint pass; code review capacityfinding rejected using two actualstandardhostreceipts, not labelledclean. Both actualarms terminal, 65/67inventory exactfilesets andall10canonical hashes checked. Sameconfigs/metadata/objects/training verified; control0/treatment1extraeval. Controlfailed; materialize raw212640frames/24k/mono/float finite/0clipped verified plusonefixedASR. No humanquality/publicfix pass.",
     "comparison_local_mac_choice": "18existingtests andNext16.3.8productionbuild pass. LocalHTTP singleH1/canonical/visible-JSONLDdate20Oct andcomparison-onlysitemapdate checked; otherdates18/19Oct. NativeChrome1200x916 and390x788 render/nooverlay, actualHush/HushPro navigation andreturn, reloadNoerrors/Nowarnings. Currentprimaryvendorclaims only; no humanquality orrankingpass.",
     "US_search_method": "19focusedtests/actionlint/offlineactualmainnegativefixture pass; twoinitialreviewtriggerfindingsaccepted/fixed, finalcodeautorreviewclean0.97. OneactualrunfailedatGoogle429/challengeafter1query, rawZIP/cipher/archive/22inventory/exactfileset/frozenbindings/pins/IPmatch/1440x1000images/normalbrowserclosechecked. NoCAPTCHAbypass, usableSERP, USrank ormobilepass.",
-    "editorial_packet": "Exact194wordbody manually compared with current release qualification/E15 failure ledger/licenses and primaryhistoricalreview/currentbio/disclosure. All5captured sourceSHA verified and3messageURLs HTTP200; source/sender/contact/body remain private. Literal-domaininternal search has0article tags, not exhaustive duplicateproof. No emaildeliverytest or message sent."
+    "editorial_packet": "Exact194wordbody manually compared with current release qualification/E15 failure ledger/licenses and primaryhistoricalreview/currentbio/disclosure. All5captured sourceSHA verified and3messageURLs HTTP200; source/sender/contact/body remain private. Literal-domaininternal search has0article tags, not exhaustive duplicateproof. No emaildeliverytest or message sent.",
+    "native_gallery": "Full selectedDMGsize/SHA, mountedapp deepstrictsignature/Gatekeeper, nativeAbout033, translocated executable/plist equality and owned authenticatedengine401negative/health pass. Fresh original import unprocessed; restoredjob fullrecord equals18Octpublicqualification. ThreeactualPNGs manuallyinspected, two1000x650selected andunchangedSHA; no rawprivatechooser/history/About public. Native/enginePIDsgone, originalpreferencesSHArestored, normalimagedetach0."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
@@ -473,7 +489,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-20T20:35:09.985529+00:00",
+  "verified_utc": "2026-10-20T20:52:06.136991+00:00",
   "search_observation": {
     "date": "2026-10-20",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
@@ -555,13 +571,14 @@
       "fit_limit": "Current publisher/bio; historical2022Macpodcastrecordingreview is not proof of current cleanup need, product use or interest.",
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-editorial-six-colors/PACKET.json",
       "messages_sent": 0
-    }
+    },
+    "native_gallery": "Two source-bound/privacy-reviewed actual033 screenshots and publicmethod/captions prepared. Launchvideo and actual destinationformat/account/authorization still open."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-20T20:35:09.985529+00:00",
-    "current_wait": "E17/E19terminal; no further same-day model/search attempts. E20 complete unsent message awaits explicitnamedrecipient authorization. GSC freshmetrics require priorobservedownerreauth; Gmail identity alone doesnot establish GSCscopes/access. Humanlisteningunverified; no rankingwin.",
+    "rechecked_utc": "2026-10-20T20:52:06.136991+00:00",
+    "current_wait": "E21 nativegallery prepared independently. E20 namedmessageapproval pending actualanswer, do not re-ask. No newmodel/search attempts. GSCfreshdata still ownerreauthdependent; independenthumanlistening absent. No rankingwin.",
     "owner_action_pending": true,
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-20-editorial-six-colors/PACKET.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-20-native-gallery/HOST-RESTORED.json",
     "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
   },
   "search_observation_history": [
