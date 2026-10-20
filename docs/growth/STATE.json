@@ -452,8 +452,8 @@
     "old_failure": "Superseded e8 candidate bundled MLX wheels for macOS26; corrected same-version baseline14 artifacts are pinned and staging audited. Full corrected rebuilt bytes were newly signed/notarized and qualified."
   },
   "goal_runtime_status": {
-    "status": "blocked",
-    "checked_date": "2026-10-20",
-    "note": "Goal API flag remains blocked and cannot be resumed through update_goal. User-authorized campaign continues through delivered native heartbeats; no ranking completion claimed."
+    "status": "active",
+    "checked_utc": "2026-10-20T14:53:24.175370+00:00",
+    "note": "Fresh user goal continuation resumed runtime after the earlier blocked flag. get_goal now reportsactive; native automation is separate. Ranking goal remains unachieved."
   }
 }
