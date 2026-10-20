@@ -8,18 +8,18 @@
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
   "shipped_commit": "b7ee9137c6c1c34aafce6e18b9e101751c49bda3",
   "deployment": {
-    "id": "dpl_7VVzuVn2cE5Ke4akgA9E9jbw3RDC",
-    "url": "https://voicy-8u4hzx0ng-skaluj.vercel.app",
+    "id": "dpl_FvbkJ7GxvWtXTrwJ1djfC12n47Yp",
+    "url": "https://voicy-1ww0lmnr2-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "b7ee9137c6c1c34aafce6e18b9e101751c49bda3",
+    "source_commit": "ac5a41569ff49ab73adbb172aef0005176ff645f",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-20T15:28:19.142129+00:00",
-    "scope": "Lastverifiedproductionbeforeprivate listening-helper/protocol patch. E11pendingplayrepairqualified; finalhelper/private-service/deploymentreceipts keptoutsideGit; publiclandingtreeunchangedbythispatch.",
-    "verification_scope": "Home/comparison/privacy200, one correct H1/canonical each, JSON-LD parses, sitemap3URLs, robots200; pause removed; GET/HEAD302 to exact public0.3.3 small installer, actual followed download146704bytes/SHA61b69b2a verified."
+    "verified_utc": "2026-10-20T18:07:53.482181+00:00",
+    "scope": "Last verified production before E15 research-results closeout. Public website tree unchanged by research protocol/results. Final post-merge deployment receipt must remain outside public Git.",
+    "verification_scope": "At18:07UTC: home/comparison/privacy200 with correct H1/canonical/JSONLD, robots200, sitemap3URLs, pause absent, GET/HEAD302 to exact qualified0.3.3 small installer. Earlier separate actual146704-byte/SHA61b69b2a delivery proof retained; not downloaded again by this check."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -283,18 +283,29 @@
     },
     {
       "id": "E15",
-      "status": "SeparatecanonicaltransportcontractfrozenbeforeE15extensionoutputs; earlier033single-fixturequalificationalreadyknown/separate;21KBidentity-boundlosslessXORfixture restoresonlyknowncase2base tooriginal15OctSHA innewdirectory, preservinggeneratedvariant. Localgoldenactualdata checksall10originalhashes andsource-directorypreservation. CI/currentmodelrun stillpending.",
+      "status": "Canonical transport verified in actual CI: all ten original hashes match and generated variants preserved. Batch failed on case2 Metal GPU timeout (-6) after case1 completed; cases3–5 not run. Encrypted artifact fully retrieved/decrypted/inventory checked; one valid raw output independently audited and decoded once with unchanged small.en policy. Not a five-case success or human quality result.",
       "protocol": "docs/growth/E03-CANONICAL-INPUTS.md",
-      "model_cases_completed": 0,
+      "model_cases_completed": 1,
       "human_reviews_received": 0,
-      "audio_published": 0
+      "audio_published": 0,
+      "model_cases_failed": 1,
+      "model_cases_not_run": [
+        3,
+        4,
+        5
+      ],
+      "results": "docs/growth/E03-033-CURRENT-RESULTS.md",
+      "run_id": 39470226394,
+      "source_commit": "3340674568dd61e0697d84523fd161c8c9b3a4dd",
+      "artifact_id": 12288306190,
+      "enhanced_ASR_cases": 1
     }
   ],
   "next_actions": [
     "Resume SEO/AEO demand and evidence improvements on the one primary comparison URL. The working public app is restored; do not repeat signing/release recovery without a demonstrated regression.",
     "When existing Chrome account access is available, collect fresh7/28-day exact-query/page/country/device data and current indexing/sitemap. Last morning Web14impressions/0clicks; exact target has0reported impressions and nullposition, not a ranking. Do not invent a trend or keep submitting unchanged URLs.",
     "Keep the working single comparison URL stable; E07 installation answers and E08 demo text/provenance improve existing content without new keyword pages. Use actual fresh search demand for next copy decision rather than snippet churn.",
-    "Execute separatelyfrozen E15canonical-inputtransport: restoreonlyknowncase2regeneration toexact15OctSHA innewdirectory, retainbothvariants, requireall10originalhashes before033inference. Use E03-CANONICAL-INPUTS.md; no tolerance/substitution/newpubliclisteningaudio. E14negativepreflight remainsunchanged.",
+    "Diagnose the exact E15 case2 Metal GPU abort under a separately frozen bounded plan before another inference attempt. Preserve failed run39470226394/all5 ledger/negative control, exact canonical bytes/model settings and original resource guards. No silent retry, shortened input, paid runner or five-case quality claim. Transport itself is verified; historical E14 failures remain unchanged.",
     "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Use DOWNLOAD-MEASUREMENT.md for separate qualified GitHub asset series; new collection/organic attribution still needs its own concrete contract.",
     "Distribution drafts now bind qualified0.3.3 and20OctAwesomeMac/publicMacUpdatechecks. No third-party messages/submissions without named-destination authorization. Preserve secondary-channel eligibility/account/gallery checks; no purchases or manipulated links.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
@@ -337,14 +348,16 @@
     "aeo_installation_copy": "18 existing regression tests and Next16.3.8 build pass; actual local HTML/visible and JSONLD date agreement, one install anchor, llms availability, honest sitemap dates and current public release proof checked. CUA IAB desktop/mobile anchor/render QA; final production receipts kept outside Git.",
     "aeo_demo_text_alternative": "18existingtests and Next16.3.8 build pass; public WAV hashes/probe and one fixed local ASR decode per file verified. Actual native details/keyboard/audio/render QA and frozen review tracked outside publicGit; no E03 publication or quality-score pass.",
     "homepage_audio_loading": "18 existing tests and Next16.3.8 build pass. ActualCUAIAB targetflow: initialreadyState0, pre-loadkeyboardseek2.61s, firstplaycontinues2.718965s, A/Bsync, naturalend/UIreset, Voicy-first/pause and390pxmobileplay/switch/pause/nooverflow; consoleclear. No new audio/assets/layout/title/URLs/tracking. ProductionpendingPlay->A/B failed afterinitialPR15; not acceptedascomplete. Follow-up fixescurrentrequestownership. WithactualWAVresponsesdelayed2500ms, rapid3switches keeponlyselectedpending/playing, finishnormallywithoutstaleerror; pausewhilependingremainsstoppedafterload;390pxpendingA/B verified.18tests/build rerun afterfix.",
-    "private_listening_review": "3focusedPythonHTTP/bindingtests pass; actualnativeChromeQA verifiesplay/otherclipautopause, note/selectorstorageafterreload, actualJSONdownloadqa_fixture/attestedfalse, andcleanlive0/15namespace. Mobile390x788visibleformselectionworks; no frameworkoverlay. DevToolsautomaticwell-knownprobe blockedbyconnect-srcnone produced2tool-onlyerrors; no appJSexceptionobserved. Privateassignmenthash/sourcehash fixedbeforehumanresponses; actualmap/audio/QAexport stayoutsideGit."
+    "private_listening_review": "3focusedPythonHTTP/bindingtests pass; actualnativeChromeQA verifiesplay/otherclipautopause, note/selectorstorageafterreload, actualJSONdownloadqa_fixture/attestedfalse, andcleanlive0/15namespace. Mobile390x788visibleformselectionworks; no frameworkoverlay. DevToolsautomaticwell-knownprobe blockedbyconnect-srcnone produced2tool-onlyerrors; no appJSexceptionobserved. Privateassignmenthash/sourcehash fixedbeforehumanresponses; actualmap/audio/QAexport stayoutsideGit.",
+    "current_release_E15": "Exact10canonical hashes and original generated files verified after encrypted artifact retrieval. Independent raw24kfloat mono case1 audit and one fixed small.en decode pass. Case2 GPU timeout;3–5 notrun; secondary normaldetach failure retained. Whole modelbatch failed, no humanquality/publicaudio pass."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic.",
-    "20Oct homepage Lighthouse/browser QA requests are agent traffic, not customer acquisitions. Retain all3before and3after runs; no score-based exclusion. Initialaudio transfer is a lab observation, not fieldCWV or ranking proof."
+    "20Oct homepage Lighthouse/browser QA requests are agent traffic, not customer acquisitions. Retain all3before and3after runs; no score-based exclusion. Initialaudio transfer is a lab observation, not fieldCWV or ranking proof.",
+    "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio."
   ],
-  "verified_utc": "2026-10-20T15:56:09.432878+00:00",
+  "verified_utc": "2026-10-20T18:15:27.317535+00:00",
   "search_observation": {
     "date": "2026-10-20",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
@@ -421,10 +434,10 @@
     ]
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-20T15:56:09.432878+00:00",
-    "current_wait": "ExistingtargetGooglewebsessionneedsreauthenticationforfreshGSCdata. E03newinferenceguard stillrequires>=12GiB; privateworksheetreusesverifiedhistorical0.3.2audio withoutcopying/processing. Humanassessment/publicationremainpending.",
+    "rechecked_utc": "2026-10-20T18:15:27.317535+00:00",
+    "current_wait": "No active CI wait: E15 terminal failure retrieved and inspected. Exact case2 GPU abort needs independent diagnosis; local AuK still cannot meet12GiB guard. Existing intended Chrome Google session needs reauthentication for fresh GSC; human listening remains unverified.",
     "owner_action_pending": true,
-    "private_checkpoint": "voicy-growth-evidence/local-runner-2026-10-16/CHECKPOINT.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-20-e03-canonical-inputs/attempt-1/RETRIEVAL-VERIFIED.json",
     "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
   },
   "search_observation_history": [

@@ -6,7 +6,7 @@ This is an execution plan and measurement protocol, not a promise of a Google po
 
 ## Current execution checkpoint — 20 October 2026
 
-Public downloads are restored in 0.3.3. The full corrected signed/notarized image passes actual AuK/export on fresh macOS 14 and 15, and the real Chrome/assistant/full-download/native GUI flow passes on the developer Mac. [Release qualification and limits](../release/0.3.3-CANDIDATE.md) identify the selected bytes; the old minimum-OS failure remains historical. Current production `b7ee913` is verified with active CTAs and exact signed small-installer delivery. User-only localhost services require this Mac; public GitHub distribution does not depend on it.
+Public downloads are restored in 0.3.3. The full corrected signed/notarized image passes actual AuK/export on fresh macOS 14 and 15, and the real Chrome/assistant/full-download/native GUI flow passes on the developer Mac. [Release qualification and limits](../release/0.3.3-CANDIDATE.md) identify the selected bytes; the old minimum-OS failure remains historical. Production `ac5a415` was verified at18:07UTC before this research-results patch, with the same website tree as `b7ee913`, active CTAs and exact signed small-installer delivery. User-only localhost services require this Mac; public GitHub distribution does not depend on it.
 
 The installation/startup guide and corrected machine-readable availability are shipped in PR11 (`f1df484`), with desktop/mobile and exact production verification. PR12 (`e9fdfc0`) adds a verified text alternative beside the existing synthetic demo, exact public-file identities and a candid automated-transcription check. These old demo assets are not a new0.3.3 benchmark; E03 subjective listening remains a separate gate.
 
@@ -310,3 +310,10 @@ NativeChrome Bing access was also checked: no active Webmaster session, and both
 ### Canonical transport follow-up — 20 October 2026 pre-run
 
 [E15](E03-CANONICAL-INPUTS.md) freezes a separate identity-bound transport for the original case-2 bytes. A21KB compressed difference fixture restores one recorded CI regeneration to the already-fixed15October SHA, preserving the generated directory and every other original file. Actual local integration on the decoded CI material restores all ten original hashes; the already-canonical path also preserves its source. Current-release model execution remains pending. No input/hash tolerance, altered recipe, new listening file, quality score or ranking claim is introduced.
+
+
+### Canonical transport and current-release failure — 20 October 2026
+
+[Actual E15 evidence](E03-033-CURRENT-RESULTS.md) was retrieved, decrypted and checked against the GitHub artifact digest, archive and complete71-entry inventory. All ten canonical input/reference hashes passed; both generation and restoration records remain intact. Case1 completed and its raw WAV passed independent structure/sample/hash checks plus one unchanged small.en decode. Case2 aborted with a Metal GPU timeout on the7GiB hosted M1; cases3–5 were not run. The storage/critical-pressure gates did not trigger. Final normal image detachment also failed busy; preserve it separately. This is a failed batch, not five-case evidence or human quality validation.
+
+Close the transport work with that negative result and diagnose the exact GPU abort separately, using a frozen bounded plan before another inference attempt. Do not change model settings, shorten cases, discard the negative control, disable guards or buy larger runners to produce a passing result. No new audio, public website claim, ranking gain or IndexNow notification follows from these research records. Current public download/page health remains separately verified.
