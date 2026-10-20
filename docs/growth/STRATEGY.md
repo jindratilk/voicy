@@ -293,3 +293,10 @@ The prior readonlycycle also established that normalChromeGoogleaccess isblocked
 ### Download measurement checkpoint — 20 October 2026
 
 The [version 1 contract](DOWNLOAD-MEASUREMENT.md) and first qualified public-metadata snapshot establish separate asset series without adding website or app tracking. The primary assistant counter is42, including our own validation; installs, unique people, organic conversion and the baseline interval delta remain unavailable. Payload-part counters are separate, never summed or treated as a completion funnel. Future observations must preserve exact identity and raw receipts outside public Git. Official Adobe plan limits/video support were rechecked on20October and remain consistent with the existing comparison; no public copy/date churn was justified. This is measurement preparation, not search-demand or ranking evidence.
+
+
+### Current-release evidence extension — 20 October 2026 pre-run
+
+The [separate 0.3.3 addendum](E03-033-ADDENDUM.md) freezes a standard macOS15 CI attempt to overcome local storage limits without relaxing them. It consumes the exact existing signed public image, reconstructs and hash-matches every original input/reference before any model execution, and retains all outputs or failures encrypted to a local-only recipient key. No new signing/release, paid runner, new telemetry, subjective review or public audio is authorized by this experiment. Actual run/head/attempt, guards, retrieval and results must be established separately before any completion claim. Historical0.3.2 evidence remains unchanged.
+
+NativeChrome Bing access was also checked: no active Webmaster session, and both personal/work-school Microsoft sign-in variants rejected the intended owner username. No new account, permission grant, Google import or site was created; citation/indexing metrics remain unavailable. Do not repeat this username flow without new evidence.

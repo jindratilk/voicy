@@ -91,11 +91,14 @@ landing/*.tsbuildinfo
 /scripts/growth/*
 !/scripts/growth/prepare_audio_cases.py
 !/scripts/growth/serve_listening_review.py
+!/scripts/growth/run_e03_current.py
 !/docs/growth/E03-PROTOCOL.md
 !/docs/growth/E03-MANIFEST.json
 !/docs/growth/E03-RESULTS.json
 !/docs/growth/E03-RESULTS.md
 !/docs/growth/E03-LISTENING-REVIEW.md
+!/docs/growth/E03-033-ADDENDUM.md
+!/docs/growth/E03-033-RECIPIENT.pub
 !/docs/growth/DOWNLOAD-MEASUREMENT.md
 !/docs/growth/DISTRIBUTION-PACK.md
 !/docs/growth/DISTRIBUTION-PACK.json
