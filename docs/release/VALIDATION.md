@@ -1,8 +1,16 @@
-# Current release warning — 15 October 2026
+# Voicy validation evidence
 
-The published 0.3.2 artifact was found to time out in native startup on the current M4 Mac: the launcher expects backend version 0.3.0, while the packaged backend reports 0.3.1. Earlier worker/signature checks below do not prove this native path works. The [startup incident report](STARTUP-INCIDENT-2026-10-15.md) records the reproduced failure, locally verified source fix and outstanding signed-release requirements. Website downloads are paused by the incident change; the original artifact is preserved.
+## Current release status — 20 October 2026
 
-# Validation evidence
+[Voicy 0.3.3 is available](https://github.com/jindratilk/voicy/releases/tag/v0.3.3) and website downloads are restored. The [qualification record](https://github.com/jindratilk/voicy/releases/download/v0.3.3/QUALIFICATION.json) identifies the exact signed/notarized artifacts, actual packaged-engine enhancement/export on fresh macOS 14/15 hosts and the separate developer-Mac native workflow. See [release scope and limits](0.3.3-CANDIDATE.md) and [actual app views](0.3.3-GALLERY.md).
+
+That qualification used one short fixture; it is not broad reliability or independent listening evidence. A subsequent [current five-case run](../growth/E03-033-CURRENT-RESULTS.md) completed case 1, failed with a GPU timeout on case 2, and left cases 3–5 unrun on a 7 GiB virtual Mac below the recommended 16 GB. The historical startup incident and negative model results remain preserved. The input-decoding checks below do not establish a model fix or sound-quality improvement.
+
+## Historical 0.3.2 startup warning — 15 October 2026
+
+The published 0.3.2 artifact timed out in native startup on the M4 Mac: the launcher expected backend 0.3.0, while the packaged backend reported0.3.1. Earlier worker/signature checks did not prove that native path worked. The [startup incident report](STARTUP-INCIDENT-2026-10-15.md) retains the reproduced failure and then-outstanding signed-release requirements. Website downloads were paused at that point; qualified 0.3.3 subsequently restored them. The original artifact is preserved.
+
+## Historical 0.3.0 development-machine evidence
 
 Voicy 0.3.0, Apple Silicon, macOS 26.6.2. These are development-machine results, not a claim of universal compatibility or best-in-world speech quality.
 
@@ -113,3 +121,27 @@ R2 upload verified all 98 part MD5 values and the completed multipart ETag again
 the local final artifact. Public verification checks the declared filename/size,
 exact beginning/middle/end byte ranges and rejection of an invalid range; it does
 not claim a second complete download.
+
+
+## Released 0.3.3 input decoding — 20 October 2026
+
+One ordered batch exercised the actual upload/analysis API from the exact public app image: 6,510,981,427 bytes, SHA256 `459f8699304ec2efa923001b0691a9fd3231067716a66b18f676f88f4c4f6e7b`. Whole-image hash and deep/strict app signature passed again. The packaged Python/server and FFmpeg 7.1 ran from a read-only mount on an Apple M4, 24 GiB, macOS 27.0.1 (`26A434`, arm64), with a private empty recording library, private caches, an in-memory session token and offline flags. Decoding used only the bundled FFmpeg, not the host encoder. No enhancement endpoint/model was invoked.
+
+The fixed 4.905-second [E03 case 1 source](../growth/E03-MANIFEST.json) was encoded with existing host FFmpeg 9.0.1, then all six fixture hashes/ffprobe metadata were frozen before import. WAV and AIFF use PCM24, MP3 uses libmp3lame at 128 kb/s, M4A uses AAC at 128 kb/s, FLAC uses 24-bit encoding, and OGG uses native Vorbis quality 4 in stereo. All other inputs are mono. E03 source attribution and CC BY 4.0 terms remain in the linked manifest; no new audio is published here.
+
+| Concrete input example | API analysis outcome | Decoded original frames at 48 kHz | Decoded audio duration (s) |
+| --- | --- | --- | --- |
+| WAV / PCM24 little-endian | Ready | 235,440 | 4.905000 |
+| MP3 / 128 kb/s | Ready | 235,440 | 4.905000 |
+| M4A / AAC 128 kb/s | Ready | 235,520 | 4.906667 |
+| FLAC / 24-bit | Ready | 235,440 | 4.905000 |
+| AIFF / PCM24 big-endian | Ready | 235,440 | 4.905000 |
+| OGG / Vorbis stereo | Ready | 235,456 | 4.905333 |
+
+Every actual decoded original is finite, nonconstant mono 48 kHz float32. Lossless examples retain exactly 235,440 frames and have maximum absolute deviation `1.1891825124621391e-7` from the original float source after fixture PCM24 quantization, within the predeclared `2e-7` tolerance; their decoded WAV hashes are identical. Lossy durations meet the predeclared ±0.10-second allowance. The small AAC/Vorbis frame differences above are retained, not hidden by trimming or a retry. These are audio durations, not processing-speed measurements or perceptual equivalence claims.
+
+A nonempty corrupt WAV uploaded with 201 but reached analysis error without an original WAV/metadata. An empty upload returned 400 and added no recording. Missing session authentication returned 401. The isolated library ended with exactly six ready originals and one failed corrupt import, with no enhanced output. Host ffprobe independently agreed with all six WAV headers/durations; protocol/fixture/output hashes and actual job records were checked. The owned server exited, original user preferences were unchanged, and normal image detachment succeeded.
+
+Protocol v1 was superseded **before any encoding or import run** after upstream [FFmpeg 9.0.1 source](https://raw.githubusercontent.com/FFmpeg/FFmpeg/n9.0.1/libavcodec/vorbisenc.c) established that its native Vorbis encoder requires two channels. Frozen v2 therefore specifies a stereo OGG fixture; all outcome criteria/batch limits remain unchanged. Actual v2 protocol SHA256: `811ccf0c57ba1f657112cb2133afefa20d8a09f1bcb2a10cd4e2309fd8e927c3`. The stdlib audit reads float-WAV samples; no host audio dependency was installed. Exact recipes, commands, generated fixtures, API ledger, job files and independent audit remain private under `voicy-growth-evidence/checkpoints/2026-10-20-connected-evidence/`.
+
+**Limits:** six short codec/container examples on one developer Mac, through the packaged-engine API. This does not test every codec profile, long/stereo/multichannel recording, native file-dialog flow or minimum-OS combination, and does not replace the separate E15/E17 model results, original five-case protocol or independent human listening. No new inference, ASR, Adobe comparison, audio publication or ranking claim follows.
