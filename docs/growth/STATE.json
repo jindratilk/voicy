@@ -8,18 +8,18 @@
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
   "shipped_commit": "3bc9b3f680189fa681e3173c59272f2c13d4236d",
   "deployment": {
-    "id": "dpl_GLTCduhv9zqDTH5383zvdMU96se4",
-    "url": "https://voicy-f0lx3dhal-skaluj.vercel.app",
+    "id": "dpl_5Xsu2kmYgTVazbvfFetK4zLtE9SV",
+    "url": "https://voicy-mfh31rntx-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "3bc9b3f680189fa681e3173c59272f2c13d4236d",
+    "source_commit": "6c2d444cd7a987a51f729cad59c7f6105890be0a",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-20T19:48:47.520541+00:00",
-    "scope": "E18 production/source fullyverified at3bc9b3f before this documentation checkpoint; final postcheckpoint deploymentproof retainedprivately. Website tree remains3bc9b3f.",
-    "verification_scope": "Full3pages200/exactdeployment/canonical/H1/JSONLD, newHushcopy/source links/visibledate/schema20Oct, sitemapcomparison-only20Oct(home18/privacy19), robots200, activeCTA/no pause andGET/HEAD302 qualified033."
+    "verified_utc": "2026-10-20T20:02:52.695957+00:00",
+    "scope": "Last fullproductionverification before E19researchresults closeout. Website tree remains3bc9b3f; finalpostmergeproofretainedprivately.",
+    "verification_scope": "Actualhome/comparison/privacy200/exactdeployment/canonical/H1/JSONLD, sitemap3/robots200, activeCTA/no pause andGET/HEAD302 exactqualified033."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -375,15 +375,25 @@
     },
     {
       "id": "E19",
-      "status": "Separatelyfrozen onehostUS-networkmeasurementmethod prepared; exacttagcreationonly, no branchpush/forcedupdate/manualdispatch execution andfirstattemptguardbeforeanyfetch. RequireuniqueCloudflarelocUSbeforeGoogle; freshisolatedheadlessdesktop via pinnedofficialPlaywrightCLI/preinstalledsandboxedChrome. Atmostoneexactquery, noCAPTCHAbypass/proxy/account/geogrant/replacement. Captureisnotrank; actualfooter/English/organicblocks needmanualreview afterencryptedretrieval. Noactualhost/queryoutputyet.",
+      "status": "Oneactualtag-triggeredattempt terminalfailure: CloudflareUSnetworkhint/IPmatch toGoogle, pinnedChrome/CLIlaunched, oneexactqueryredirectedto/sorry/index HTTP429/reCAPTCHA. Stoppedwithoutclick/bypass/retry. ArtifactZIP/CMS/archive/all22inventory/exactfileset andsource/protocol/packagebindings independentlyverified, screenshotmanuallyinspected. No usableGoogle resultpage; rank/market/ownedpresence/AIcitationnull, no mobile. Not a rankingbaseline.",
       "protocol": "docs/growth/US-SEARCH-OBSERVATION.md",
       "planned_attempts": 1,
-      "attempts_started": 0,
+      "attempts_started": 1,
       "target_query": "Adobe podcast alternative",
       "rank": null,
       "market_eligible": null,
       "mobile_observation": false,
-      "execution_tag": "voicy-us-search-e19-20261020"
+      "execution_tag": "voicy-us-search-e19-20261020",
+      "attempts_completed": 1,
+      "run_id": 39489587648,
+      "source_commit": "6e1d7fce25e668ee67e359ca95d14a2dbd74c8fa",
+      "results": "docs/growth/US-SEARCH-OBSERVATION-RESULTS.md",
+      "network_country_hint": "US",
+      "explicit_query_navigations": 1,
+      "Google_response_status": 429,
+      "owned_result_observed": null,
+      "AI_citation_observed": null,
+      "retry_authorized": false
     }
   ],
   "next_actions": [
@@ -391,7 +401,7 @@
     "When existing Chrome account access is available, collect fresh7/28-day exact-query/page/country/device data and current indexing/sitemap. Last morning Web14impressions/0clicks; exact target has0reported impressions and nullposition, not a ranking. Do not invent a trend or keep submitting unchanged URLs.",
     "Keep the working single comparison URL stable; E07 installation answers and E08 demo text/provenance improve existing content without new keyword pages. Use actual fresh search demand for next copy decision rather than snippet churn.",
     "E18 shipped andproduction/localverified. Keepcomparison/title stable; reviewactualquery/page demand on/after27Oct and3Nov whenGSCauthavailable. No same-daycopy/title/querychurn, repeatedunchangedIndexNow or causalrankclaim. E17 remainsinvestigativeonly; no further same-day modelattempt.",
-    "Executeone reviewedE19measurementmethod attempt. ActualnetworkcountrybeforeGoogle; preserveanyfailure/unknowncountry/challenge withoutreplacement. Retrieveencryptedartifact, verifyallbindings/inventory andmanuallyassessGooglefooter/English/organicblocks. USnetworkhintaloneisnotUSrank; capturealoneisnotyearendsuccess. No websitecopy/IndexNow/modelrun changes.",
+    "E19closedwithUSnetworkhintbutGoogle429/reCAPTCHA; no usablerank/market/ownedpresence data. Keepfrozenresearchtagunchanged; nohostrotation/proxy/stealth/solver/repeatedqueryor new same-dayobservationattempt. Preservelastrealnativeunknownlocationobservations andyearendcriterion. FreshGSCstillneedsexistingownerreauth; averagepositionwouldonlysupportliteralrankobservations.",
     "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Use DOWNLOAD-MEASUREMENT.md for separate qualified GitHub asset series; new collection/organic attribution still needs its own concrete contract.",
     "Distribution drafts now bind qualified0.3.3 and20OctAwesomeMac/publicMacUpdatechecks. No third-party messages/submissions without named-destination authorization. Preserve secondary-channel eligibility/account/gallery checks; no purchases or manipulated links.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
@@ -438,7 +448,8 @@
     "current_release_E15": "Exact10canonical hashes and original generated files verified after encrypted artifact retrieval. Independent raw24kfloat mono case1 audit and one fixed small.en decode pass. Case2 GPU timeout;3\u20135 notrun; secondary normaldetach failure retained. Whole modelbatch failed, no humanquality/publicaudio pass.",
     "current_release_E16": "Independentall10canonical/generated-file andprotocol/observeridentity audit afterZIP/cipher/archive/65entryinventory verification.12monotonictraceevents, noCevents/cap; originalRuntimeErrortraceback at mx.eval(text), returncode1, noWAV/newASR, no guardtrigger orrecordednormaldetacherror. Diagnosticfailed; no rootcause/humanquality/generalreliability pass.",
     "current_release_E17": "27 focusedtests/actionlint pass; code review capacityfinding rejected using two actualstandardhostreceipts, not labelledclean. Both actualarms terminal, 65/67inventory exactfilesets andall10canonical hashes checked. Sameconfigs/metadata/objects/training verified; control0/treatment1extraeval. Controlfailed; materialize raw212640frames/24k/mono/float finite/0clipped verified plusonefixedASR. No humanquality/publicfix pass.",
-    "comparison_local_mac_choice": "18existingtests andNext16.3.8productionbuild pass. LocalHTTP singleH1/canonical/visible-JSONLDdate20Oct andcomparison-onlysitemapdate checked; otherdates18/19Oct. NativeChrome1200x916 and390x788 render/nooverlay, actualHush/HushPro navigation andreturn, reloadNoerrors/Nowarnings. Currentprimaryvendorclaims only; no humanquality orrankingpass."
+    "comparison_local_mac_choice": "18existingtests andNext16.3.8productionbuild pass. LocalHTTP singleH1/canonical/visible-JSONLDdate20Oct andcomparison-onlysitemapdate checked; otherdates18/19Oct. NativeChrome1200x916 and390x788 render/nooverlay, actualHush/HushPro navigation andreturn, reloadNoerrors/Nowarnings. Currentprimaryvendorclaims only; no humanquality orrankingpass.",
+    "US_search_method": "19focusedtests/actionlint/offlineactualmainnegativefixture pass; twoinitialreviewtriggerfindingsaccepted/fixed, finalcodeautorreviewclean0.97. OneactualrunfailedatGoogle429/challengeafter1query, rawZIP/cipher/archive/22inventory/exactfileset/frozenbindings/pins/IPmatch/1440x1000images/normalbrowserclosechecked. NoCAPTCHAbypass, usableSERP, USrank ormobilepass."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
@@ -447,7 +458,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-20T20:01:40.626805+00:00",
+  "verified_utc": "2026-10-20T20:14:34.080474+00:00",
   "search_observation": {
     "date": "2026-10-20",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
@@ -524,10 +535,10 @@
     ]
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-20T19:33:20.797247+00:00",
-    "current_wait": "E17 pair terminal, both artifacts retrieved/audited; no active modelwait. Controlfailed/materializecompleted is investigativeonly. FreshGSCstillneeds actualownerGoogle reauthentication; no repeatedpasswordflow. LocalAuK12GiBguard stillunmet; humanlistening unverified.",
+    "rechecked_utc": "2026-10-20T20:14:34.080372+00:00",
+    "current_wait": "Noactiveexperimentwait: E17andE19terminal/retrieved. USCIsearchpathreturnedGoogle429/reCAPTCHA, unusableforrank; do not retry/bypass. FreshGSCrequires priorobservedownerreauth; E03humanlistening stillunverified. No fabricatedcurrentmetrics.",
     "owner_action_pending": true,
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-20-e03-weight-loading/TERMINAL-RUN.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-20-us-search-method/attempt-1/INDEPENDENT-AUDIT.json",
     "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
   },
   "search_observation_history": [
@@ -565,6 +576,20 @@
       "location": "Google footer Unknown/cannotdetermine; explicit resultsregion is not verified USphysicalmarket or primaryrank.",
       "limits": "AI remained generating; no completedanswer/citation inspection. Englishfilterpreference set but activeper-resultlanguagefilter notverified. No mobile. OwnIncognitowindowclosed; regularChrome preserved.",
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-serp-region-method/METHOD-RESULT.json"
+    },
+    {
+      "date": "2026-10-20",
+      "method": "E19freshstandardUbuntu/preinstalledChromeisolatedheadlessdesktop1440x1000, English; CloudflarehintUS andbrowserIPmatch",
+      "query": "Adobe podcast alternative",
+      "usable_results_obtained": false,
+      "Google_response_status": 429,
+      "status": "unusualtraffic/reCAPTCHA, no click or bypass; closed",
+      "market_eligible": null,
+      "rank": null,
+      "owned_result_on_first_observed_page": null,
+      "owned_ai_citation_observed": null,
+      "limits": "No resultpage/countryfooter; networkcountryhintaloneisnotUSrank. Onequery, no mobile/replace/retry.",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-us-search-method/attempt-1/INDEPENDENT-AUDIT.json"
     }
   ],
   "aeo_observation": {
