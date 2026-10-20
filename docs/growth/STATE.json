@@ -6,19 +6,19 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "fca5b5a9d79469f650640d6da722c4654832a7a5",
+  "shipped_commit": "9b3d9c505623b07379a510f1c4154986ef63a09a",
   "deployment": {
-    "id": "dpl_5AzpxnN3wjAcxADWf2KLsByveboj",
-    "url": "https://voicy-82n5lyz2f-skaluj.vercel.app",
+    "id": "dpl_CK9R3uwHHsoBQihHQZxWUYigSER2",
+    "url": "https://voicy-nreomrt00-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "fca5b5a9d79469f650640d6da722c4654832a7a5",
+    "source_commit": "9b3d9c505623b07379a510f1c4154986ef63a09a",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-20T14:50:10.788824+00:00",
-    "scope": "Last fully verified production before homepage audio loading-hint optimization. Final post-merge receipts retained privately; no deployment-SHA chase.",
+    "verified_utc": "2026-10-20T14:59:19.079860+00:00",
+    "scope": "Pre-fix E11 deployment: initialaudio0 in3coldruns, but rapidA/B duringpendingfirstplay failed production acceptance. Scopedfixforward uses playbackrequest ownership; final merge/production receipts retained privately.",
     "verification_scope": "Home/comparison/privacy200, one correct H1/canonical each, JSON-LD parses, sitemap3URLs, robots200; pause removed; GET/HEAD302 to exact public0.3.3 small installer, actual followed download146704bytes/SHA61b69b2a verified."
   },
   "gsc": {
@@ -259,7 +259,7 @@
     },
     {
       "id": "E11",
-      "status": "Homepage initial audio transfer measured in3 cold production mobile lab runs:2media requests/514939–576450bytes before interaction. Defer both audio preloads and initialize duration from either loadedtrack; localfirstplay/pre-metadata keyboardseek/A-B/naturalend/Voicy-first/mobile behavior verified. Three post-deployment cold runs to be retained privately; no fieldCWV/rank/causalclaim."
+      "status": "PR15 initial audio transfer0 inall3postdeploycoldruns versus514939–576450before; observedmedianlabLCP3.116s->1.957s, not field/causal/rankproof. ProductionUI exposedpendingfirstplay->A/B cancellationrace. Reproducedwith2500msactualWAVtransportdelay; fix tracksplayintent/currentrequest so cancelledpromise cannotsetstaleerror. Actualdelayedswitch/pause/mobile checks pass; finalreview/CI/prod receipts private."
     }
   ],
   "next_actions": [
@@ -308,14 +308,14 @@
     "local_services": "Two Voicy-only loopback user LaunchAgents; website HEAD302 to correct primary installer; fullimage HEAD200 and three live ranges match frozen bytes, unlisted/private routes404. Require logged-in Mac availability.",
     "aeo_installation_copy": "18 existing regression tests and Next16.3.8 build pass; actual local HTML/visible and JSONLD date agreement, one install anchor, llms availability, honest sitemap dates and current public release proof checked. CUA IAB desktop/mobile anchor/render QA; final production receipts kept outside Git.",
     "aeo_demo_text_alternative": "18existingtests and Next16.3.8 build pass; public WAV hashes/probe and one fixed local ASR decode per file verified. Actual native details/keyboard/audio/render QA and frozen review tracked outside publicGit; no E03 publication or quality-score pass.",
-    "homepage_audio_loading": "18 existing tests and Next16.3.8 build pass. ActualCUAIAB targetflow: initialreadyState0, pre-loadkeyboardseek2.61s, firstplaycontinues2.718965s, A/Bsync, naturalend/UIreset, Voicy-first/pause and390pxmobileplay/switch/pause/nooverflow; consoleclear. No new audio/assets/layout/title/URLs/tracking."
+    "homepage_audio_loading": "18 existing tests and Next16.3.8 build pass. ActualCUAIAB targetflow: initialreadyState0, pre-loadkeyboardseek2.61s, firstplaycontinues2.718965s, A/Bsync, naturalend/UIreset, Voicy-first/pause and390pxmobileplay/switch/pause/nooverflow; consoleclear. No new audio/assets/layout/title/URLs/tracking. ProductionpendingPlay->A/B failed afterinitialPR15; not acceptedascomplete. Follow-up fixescurrentrequestownership. WithactualWAVresponsesdelayed2500ms, rapid3switches keeponlyselectedpending/playing, finishnormallywithoutstaleerror; pausewhilependingremainsstoppedafterload;390pxpendingA/B verified.18tests/build rerun afterfix."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic.",
     "20Oct homepage Lighthouse/browser QA requests are agent traffic, not customer acquisitions. Retain all3before and3after runs; no score-based exclusion. Initialaudio transfer is a lab observation, not fieldCWV or ranking proof."
   ],
-  "verified_utc": "2026-10-20T14:49:00.574135+00:00",
+  "verified_utc": "2026-10-20T15:06:43.150268+00:00",
   "search_observation": {
     "date": "2026-10-20",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",

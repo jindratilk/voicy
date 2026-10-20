@@ -42,6 +42,7 @@ function Download({ small = false }: { small?: boolean }) {
 function Demo() {
   const a = useRef<HTMLAudioElement>(null);
   const b = useRef<HTMLAudioElement>(null);
+  const playRequest = useRef(0);
   const [enhanced, setEnhanced] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [time, setTime] = useState(0);
@@ -54,37 +55,41 @@ function Demo() {
       .then((x) => setPeaks(x))
       .catch(() => {});
     return () => {
+      playRequest.current += 1;
       a.current?.pause();
       b.current?.pause();
     };
   }, []);
+  const startPlaying = (audio: HTMLAudioElement) => {
+    // A switch or pause supersedes any earlier pending play promise.
+    const request = ++playRequest.current;
+    setPlaying(true);
+    setError("");
+    audio.play().catch(() => {
+      if (request !== playRequest.current) return;
+      setPlaying(false);
+      setError("Audio could not play. Please try again.");
+    });
+  };
   const switchTo = (v: boolean) => {
     const from = enhanced ? b.current : a.current,
       to = v ? b.current : a.current;
     if (!from || !to || v === enhanced) return;
     to.currentTime = from.currentTime;
+    playRequest.current += 1;
     from.pause();
     setEnhanced(v);
-    if (playing)
-      to.play().catch(() => {
-        setPlaying(false);
-        setError("Tap play to continue.");
-      });
+    if (playing) startPlaying(to);
   };
-  const toggle = async () => {
+  const toggle = () => {
     const audio = enhanced ? b.current : a.current;
     if (!audio) return;
     if (playing) {
+      playRequest.current += 1;
       audio.pause();
       setPlaying(false);
     } else {
-      try {
-        await audio.play();
-        setPlaying(true);
-        setError("");
-      } catch {
-        setError("Audio could not play. Please try again.");
-      }
+      startPlaying(audio);
     }
   };
   return (
