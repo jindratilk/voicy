@@ -1,25 +1,25 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "goal_status": "active",
   "deadline": "2026-12-31",
   "target_query": "Adobe podcast alternative",
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "3bc9b3f680189fa681e3173c59272f2c13d4236d",
+  "shipped_commit": "e5ea0c173e2a88421d6ebbb85a46929dc17648a9",
   "deployment": {
-    "id": "dpl_dM8sXxZQN7hTpfSNdwooLBjuFj4v",
-    "url": "https://voicy-i7wlv0x9w-skaluj.vercel.app",
+    "id": "dpl_5bCpxe55vJ9D9P628DEpv72AQuq1",
+    "url": "https://voicy-4dgi14ajk-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "0a4c2c37d23d837cdea227c685a6c7a4dabb7089",
+    "source_commit": "e5ea0c173e2a88421d6ebbb85a46929dc17648a9",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-20T21:41:31.100341+00:00",
-    "scope": "Production snapshot before E26 media closeout: E25 confirmed comparison200/exact deployment, sitemap3 and qualified033 downloadHEAD302. This commit adds a static video asset; final postmerge deployment/media receipts must be retained privately.",
-    "verification_scope": "E25 live comparison200/exactdeployment/no obsolete pause; public sitemap200/3URLs; downloadHEAD302 to exactqualified033; scoped VercelREADY source match. Earlier full route/schema proof remains private, not newly repeated."
+    "verified_utc": "2026-10-20T22:00:11.905817+00:00",
+    "scope": "Actual E26 production verification before E27 homepage closeout; finalE27 deployment and media/UI receipts retained privately after merge.",
+    "verification_scope": "Home/comparison/privacy200 exactdeployment/H1/canonical/JSONLD; robots200/sitemap3; activeCTA/no pause; GET/HEAD302 exactqualified033. Staticvideo public/local GET/HEAD200 andRange206, fullhashmatch."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -463,7 +463,7 @@
     },
     {
       "id": "E26",
-      "status": "Actual source-bound silent native controls capture complete and privacy/source reviewed. LocalChrome Play/seek/Pause passed; all176 decodedframes include175 exact source timestamps plus finalhold, no audio. First technical capture failure retained. Final production/media delivery receipts belong in the private closeout; no new model/quality/ranking result.",
+      "status": "Shipped PR29/e5ea0c1. All7finalhead and3mainCI passed; exactREADYproduction matched. Public/localMP4 GET/HEAD200, Range206 andexacthash; actualmain-gallerylink/Chromeplay/seek/pause pass. No model/audio/quality/ranking result.",
       "gallery": "docs/release/0.3.3-GALLERY.md#silent-controls-walkthrough",
       "media_url": "https://usevoicy.app/videos/voicy-0.3.3-controls.mp4",
       "bytes": 69030,
@@ -474,6 +474,17 @@
       "model_source_job_unchanged": true,
       "rank_effect": null,
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-interface-video/VIDEO-REVIEW.json"
+    },
+    {
+      "id": "E27",
+      "status": "Local nativeChrome disclosure/play/pause/realAXscrubberseek/close/reopen/text pass. EphemeralChrome1200/390/320 confirms0MP4/WAVrequests beforePlay, nativeplay/timeadvance andclosepause; nooverflow/pageerrors. Existing18tests/build and source autoreview clean0.91; poster separately source/privacy/CRC reviewed because helper rejects binary. FinalCI/publicdeploy acceptance tracked privately before closeout. Local/api/event403 sameexistingbaseline; not assertedasproductionanalytics pass.",
+      "primary_url": "https://usevoicy.app/#how-it-works",
+      "video_sha256": "cf73eda373cd69bbf1227bbcb56c194dd7e20b38c6f3f24b6aaf2d803520ea51",
+      "poster_sha256": "5abe5f8bb666cf067b3c0e42c287e595cc2427e71a9a7567371dadfbb232eec6",
+      "poster_bytes": 38384,
+      "hypothesis": "A visitor can inspect real app operation before installing, rather than leave the website to find repository media. Unmeasured usability/editorial benefit.",
+      "comparison_unchanged": true,
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-homepage-walkthrough/SCOPE.json"
     }
   ],
   "next_actions": [
@@ -490,7 +501,8 @@
     "E23 publicreleaseVALIDATION currentstatus nowmatchesqualified033 andretainsoldstartup/currentmodelnegative evidence. Sixshortformatdecodes are testedAPIexamplesonly, notallprofiles/OSes/GUI/modelquality. Do not repeatunchangedformatbatch or useit toclose E03human/modelgates. BoundedownerGmail/Drivequeries foundnonewreport; do not repeatthosequeries withoutnewinputs.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
     "MacOS14 hosted runner retirement is scheduled for2Nov2026; migrate compatibility CI deliberately while preserving real minimum-OS evidence, not by weakening gates.",
-    "E26 controls video complements the existing release gallery with equivalent text. Keep the actual comparison/title stable; no IndexNow for this static asset or documentation-only changes. No need to repeat the capture. Refresh any destination-specific video/gallery requirements only before an explicitly authorized submission; this silent UI clip is not model-quality or launch completion evidence."
+    "E26 controls video complements the existing release gallery with equivalent text. Keep the actual comparison/title stable; no IndexNow for this static asset or documentation-only changes. No need to repeat the capture. Refresh any destination-specific video/gallery requirements only before an explicitly authorized submission; this silent UI clip is not model-quality or launch completion evidence.",
+    "E27 makes E26 evidence discoverable from the actual homepage workflow; validate nativecontrols, no initialMP4request, pauseonclose and desktop/mobile before shipping. Keep comparison/title stable and collect new actual demand after E18 evaluationwindows when access returns. A genuine homecontent change merits one homepage-only discovery notification after deploy, not comparison/unchangedURLs."
   ],
   "validation": {
     "landing_tests": "18 passed, including legacy/mismatched artifact rejection and exact GitHub quoted/unquoted filename with qualified size",
@@ -539,7 +551,8 @@
     "native_gallery": "Full selectedDMGsize/SHA, mountedapp deepstrictsignature/Gatekeeper, nativeAbout033, translocated executable/plist equality and owned authenticatedengine401negative/health pass. Fresh original import unprocessed; restoredjob fullrecord equals18Octpublicqualification. ThreeactualPNGs manuallyinspected, two1000x650selected andunchangedSHA; no rawprivatechooser/history/About public. Native/enginePIDsgone, originalpreferencesSHArestored, normalimagedetach0.",
     "canonical_www": "All11actual defaultTLS checks:6GET308root/path/query/missing/download,2HEAD308,3followedsinglehop200/200/404; cleancomparisoncanonical/querypercentpreserved. NativeChromewww#install reachescanonicalinstallationsection withoutwarning andretainsfragment. Exact original2projectdomainAPIentries unchanged. Separate16requestaudit readsourceheaders; no realbot-IP/index/rankinference.",
     "current_source_and_formats": "ReleaseVALIDATION obsoletepaused-currentwarning corrected toqualified033availability withfailurehistory/currentmodeltests retained. OneisolatedexactpackagedAPIbatch6formats ready: lossless235440frames/deviation1.18918e-7<=2e-7; AAC235520,Vorbis235456 within0.10s. Allfinite/nonconstant48kmonofloat; actualjob/fixture/output/protocolhash andindependentffprobe audit. Corruptanalysiserror, empty400/nojob, missingauth401. No modelcall; ownservergone, prefsunchanged, normaldetach0.",
-    "native_controls_video": "69030bytes/SHA256cf73eda373cd69bbf1227bbcb56c194dd7e20b38c6f3f24b6aaf2d803520ea51; H264/yuv420p/1000x650/30.246s/noaudio; all175 source presentation times exact; full176frame decode, allsourceframe privacy review, exactqualifiedjob unchanged. LocalChrome Play/seek/Pause passed. Final public delivery verified outsideGit after merge."
+    "native_controls_video": "69030bytes/SHA256cf73eda373cd69bbf1227bbcb56c194dd7e20b38c6f3f24b6aaf2d803520ea51; H264/yuv420p/1000x650/30.246s/noaudio; all175 source presentation times exact; full176frame decode, allsourceframe privacy review, exactqualifiedjob unchanged. LocalChrome Play/seek/Pause passed. Final public delivery verified outsideGit after merge.",
+    "homepage_app_preview": "18existingtests/Next16.3.8build pass. NativeCUA positivecontrols and closed/reopenedpausedstate; Playwrightcore1.63/systemChrome ephemeral1200x900/390x844/320x740: identity/canonical/oneH1/nooverlay/nooverflow, noinitialMP4/WAV, play/timeadvance, closepause andtext pass. Baseline/candidate localmetrics403 retained/explained; productionconsole checked separately afterdeploy. Codeautoreview clean0.91; exactposter manuallyqualified in separatecommit because reviewhelperrejectsbinary."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
@@ -548,7 +561,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-20T21:52:04.092969+00:00",
+  "verified_utc": "2026-10-20T22:08:05.953528+00:00",
   "search_observation": {
     "date": "2026-10-20",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
@@ -634,10 +647,10 @@
     "native_gallery": "Two actual033 native PNGs plus one silent30second controls walkthrough with equivalent text/source limits. No new inference, audible quality evidence or complete launch package. Actual destination format/account/authorization checks remain open."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-20T21:52:04.092969+00:00",
-    "current_wait": "E25 yielded no new progress: intended Chrome Google account still Session expired; no in-progress/queued target CI run. E26 independently creates actual controls evidence; no live wait or ranking win. E20 exact-message approval, GSC reauthentication, genuine human listening and later E18 evaluation windows remain separate gates. E24 scoped capacity audit found cleanup insufficient; do not repeat unchanged model/credential/query attempts.",
+    "rechecked_utc": "2026-10-20T22:14:04.121990+00:00",
+    "current_wait": "E26 published actual productcontrols evidence; E27 makes it reachable inside thehomepage workflow. These are verified product/evidence improvements, not measured rankinglift. FreshGSC still unavailable under lastowner-session observation; E20 exactmessageauthorization and actualhumanlistening unresolved. No same-day credential/query/model churn.",
     "owner_action_pending": true,
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-20-interface-video/VIDEO-REVIEW.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-21-homepage-walkthrough/NATIVE-CHROME-QA.json",
     "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
   },
   "search_observation_history": [
@@ -744,5 +757,6 @@
     "verified_utc": "2026-10-20T21:01:55.473150+00:00",
     "report": "docs/growth/STRATEGY.md#canonical-www-access-repair--20-october-2026",
     "no_migration": true
-  }
+  },
+  "comparison_content_commit": "3bc9b3f680189fa681e3173c59272f2c13d4236d"
 }

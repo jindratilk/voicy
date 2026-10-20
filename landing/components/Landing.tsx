@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Mark from "./Mark";
 import DemoTranscript from "./DemoTranscript";
+import AppPreview from "./AppPreview";
 import { faqs, site } from "@/lib/site";
 const arrow = (
   <svg
@@ -395,6 +396,7 @@ export default function Landing() {
               </li>
             </ol>
           </div>
+          <AppPreview />
         </section>
         <section className="local-section shell">
           <div className="local-copy reveal">

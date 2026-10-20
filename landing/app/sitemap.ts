@@ -3,7 +3,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://usevoicy.app",
-      lastModified: "2026-10-18",
+      lastModified: "2026-10-20T22:05:56.992491+00:00",
       changeFrequency: "monthly",
       priority: 1,
     },
