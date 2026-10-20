@@ -109,6 +109,7 @@ landing/*.tsbuildinfo
 !/docs/growth/E03-WEIGHT-LOADING.md
 !/docs/growth/E03-WEIGHT-LOADING-RESULTS.md
 !/docs/growth/US-SEARCH-OBSERVATION.md
+!/docs/growth/US-SEARCH-OBSERVATION-RESULTS.md
 !/docs/growth/E03-033-RECIPIENT.pub
 !/docs/growth/E03-CANONICAL-INPUTS.md
 !/docs/growth/E03-CANONICAL-INPUTS.json
