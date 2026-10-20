@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "goal_status": "active",
   "deadline": "2026-12-31",
   "target_query": "Adobe podcast alternative",
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "e9fdfc0586aa99cb9a2012e9b343ce43b724a719",
+  "shipped_commit": "7946abb82f71bbfaa35e97739331ac3613dfd4ce",
   "deployment": {
-    "id": "dpl_97FxDMULPGr4HwRq9SdZf13HMSpA",
-    "url": "https://voicy-23ccrrt8o-skaluj.vercel.app",
+    "id": "dpl_FKPHAjj8FYjw9tG8gSCGg2goLA73",
+    "url": "https://voicy-pnplaagwa-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "e9fdfc0586aa99cb9a2012e9b343ce43b724a719",
+    "source_commit": "7946abb82f71bbfaa35e97739331ac3613dfd4ce",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-19T15:14:25.287691+00:00",
-    "scope": "Last fully verified production before this metric-coverage/privacy disclosure patch. Final post-merge receipts retained privately; no deployment-SHA chase.",
+    "verified_utc": "2026-10-20T07:18:19.131537+00:00",
+    "scope": "Current fully verified production before this documentation-only checkpoint. No public page, sitemap date, release or metric collection change.",
     "verification_scope": "Home/comparison/privacy200, one correct H1/canonical each, JSON-LD parses, sitemap3URLs, robots200; pause removed; GET/HEAD302 to exact public0.3.3 small installer, actual followed download146704bytes/SHA61b69b2a verified."
   },
   "gsc": {
@@ -64,7 +64,7 @@
       "previous_period": "No previous-period export/baseline established; no trend claim.",
       "private_evidence": "voicy-growth-evidence/gsc-2026-10-16-afternoon/SUMMARY.json"
     },
-    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-afternoon/GSC-SUMMARY.json",
+    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-morning/GSC-ACCESS.json",
     "preliminary_24_hours": {
       "observed_utc": "2026-10-17T15:36:01.790079+00:00",
       "period_display": "16–17 October 2026, local time",
@@ -126,8 +126,8 @@
       "feature_split": null,
       "scope": "Combined AIOverviews/AIMode linkimpressions, already inWebtotals; no query/position/click/feature-split attribution inobservedreport. Not exacttarget success, controlledorganicrank, universalAIcitation coverage or incremental14+1 impressions."
     },
-    "access_rechecked_utc": "2026-10-19T15:19:07.101798+00:00",
-    "auth_status": "19Octafternoon nativeChrome direct intendedaccount/propertyURL again redirects to public SearchConsole/about; no fresh7/28/query/page/country/device/indexing/sitemap. Last detailed18Octauthdiagnostic showedexpired intendedaccount. No credentials/permission/wrongaccount changes.",
+    "access_rechecked_utc": "2026-10-20T07:22:59.074582+00:00",
+    "auth_status": "20Oct native Chrome direct intendedaccount/property URL redirects to public SearchConsole/about. No fresh7/28/query/page/country/device/indexing/sitemap. Detailed18Octdiagnostic showedexpired intendedaccount; no credential/account/permission changes.",
     "latest_verified_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-morning/GSC-SUMMARY.json",
     "indexing_last_verified_utc": "2026-10-18T07:27:19.533906+00:00",
     "fresh_indexing_available": false,
@@ -139,12 +139,12 @@
     "kind": "heartbeat",
     "target_thread_id": "01a14067-62f7-7d60-9615-f6d3f709f97d",
     "status": "ACTIVE; native definition and current deliveredheartbeat verified",
-    "verified_next_nominal_run": "2026-10-19T09:15:00+02:00",
+    "verified_next_nominal_run": "2026-10-20T17:15:00+02:00",
     "verified_next_run": null,
     "weekly_report": "Thursday; other unchanged runs quiet",
     "execution_dependency": "Mac and Codex available; schedule is not proof of uninterrupted execution",
-    "verified_last_run_utc": "2026-10-18T15:14:50.008Z",
-    "next_run_note": "Afternoonheartbeat delivered; nativeACTIVEdefinition re-read. Nextnominalslot known; futurejitteredindex notverified."
+    "verified_last_run_utc": "2026-10-20T07:15:03.882Z",
+    "next_run_note": "Current delivered heartbeat and nativeACTIVEdefinition verified20Oct. Next nominal slot only; future jittered execution unverified."
   },
   "experiments": [
     {
@@ -252,6 +252,10 @@
       "change": "Privacy names actual GitHubinstaller distribution alongside Vercel and legacyCloudflare; admincards/chart/table and documentation disclose legacydownload/homepage-event coverage. Only privacy lastmod changes.",
       "scope": "Copy/disclosure only; no event, auth, stats schema, collection/storage or download behavior change.",
       "limits": "No completedinstall, uniquevisitor, whole-site traffic or organicconversion inference from these counters. LocaladminQA uses explicitly synthetic metrics through real auth/API, never productiondata."
+    },
+    {
+      "id": "E10",
+      "status": "Distribution draft refresh only: qualified release/version/direct installer, current AwesomeMac four-language proposed patch and MacUpdate field rules. No third-party submission, acquired link or SEO outcome."
     }
   ],
   "next_actions": [
@@ -260,7 +264,7 @@
     "Keep the working single comparison URL stable; E07 installation answers and E08 demo text/provenance improve existing content without new keyword pages. Use actual fresh search demand for next copy decision rather than snippet churn.",
     "Preserve E03 fixed inputs/outputs/objective checks. Subjective listening remains unverified; no invented panels, human judgments or audio superiority. Publish only evidence that meets its stated protocol.",
     "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Define a separate minimal measurement contract before any future collection change or conversionreport.",
-    "Continue prepared distribution research/pitches; no external submissions/messages without explicit named-destination authorization. No purchases, thin-page production or link manipulation.",
+    "Distribution drafts now bind qualified0.3.3 and20OctAwesomeMac/publicMacUpdatechecks. No third-party messages/submissions without named-destination authorization. Preserve secondary-channel eligibility/account/gallery checks; no purchases or manipulated links.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
     "MacOS14 hosted runner retirement is scheduled for2Nov2026; migrate compatibility CI deliberately while preserving real minimum-OS evidence, not by weakening gates."
   ],
@@ -305,30 +309,34 @@
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
     "Automated page fetches and audits are non-customer traffic."
   ],
-  "verified_utc": "2026-10-19T15:19:07.101798+00:00",
+  "verified_utc": "2026-10-20T07:22:59.074582+00:00",
   "search_observation": {
-    "date": "2026-10-16",
-    "engine": "Google Search, desktop Chrome Incognito, signed out, cookies rejected",
-    "location": "Unknown — Google says it cannot determine location; not a controlled US baseline",
+    "date": "2026-10-20",
+    "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
+    "query": "Adobe podcast alternative",
+    "requested_parameters": "hl=en, gl=us, pws=0; visible before cookie choice; post-choice address simplified to /search",
+    "location": "Unknown — Google footer says it cannot determine location; not a controlled US baseline",
     "owned_result_on_first_observed_page": false,
     "ai_answer_observed": true,
     "owned_ai_citation_observed": false,
-    "verified_citation_destination": "https://diffio.ai/adobe-podcast-alternative/",
-    "other_visible_source_labels": [
+    "verified_citation_destination": "https://try.wideframe.com/blog/adobe-podcast-alternatives-for-video-podcast-creators/",
+    "visible_web_result_labels": [
       "Reddit",
+      "Diffio AI",
+      "Adobe Podcast",
+      "Cleanvoice AI",
       "Trebble",
-      "YouTube",
-      "Facebook",
+      "Resound.fm",
       "G2"
     ],
-    "scope": "One first-page observation; AI Overview expanded, one citation destination followed; no mobile observation",
-    "limit": "One dynamic answer, not all-assistant coverage or controlled US rank. Competitor citations do not independently validate their claims or establish why Google included them."
+    "scope": "One first-page/expanded-AI desktop observation; followed actual Wideframe citation. No mobile or controlled US rank observation.",
+    "limit": "Generated answer/source inclusion does not independently validate competitor facts or establish ranking causes. The cited Wideframe article calls Adobe audio-only; current official Adobe page supports Premium video, so do not repeat that broad claim."
   },
   "bing": {
     "access": "Public Sign In page only; no project/citation metrics verified",
     "measurement": "Provider-specific sampled AI Performance citations/grounding queries; not universal AI-answer coverage",
     "permission": "No Google access grant or account creation performed; prefer narrow manual verification when authorized session is available",
-    "indexnow": "Initial changed-page notification accepted with 202; key verification pending. No Webmaster Tools access or AI citation metrics claimed."
+    "indexnow": "Prior own-site changed-page receipts reached200 for18Octhome/comparison and19Octprivacy. No unchanged notification repeated20Oct; not proof of crawl/index/citation."
   },
   "release_health": {
     "published_version": "0.3.3",
@@ -360,7 +368,7 @@
     "superseded_candidate": "The old e8c2511d image is failed minimum-OS evidence, never the current459f8699 image; history in docs/release/0.3.3-CANDIDATE.md and Git."
   },
   "distribution": {
-    "status": "Four destination-specific draft packets prepared; no external communications or submissions",
+    "status": "20Oct release gate cleared in existing drafts for qualified0.3.3. AwesomeMac pinned sources/duplicates/proposed patch and public MacUpdate fields refreshed; no external communications or submissions.",
     "packet": "docs/growth/DISTRIBUTION-PACK.md",
     "fields": "docs/growth/DISTRIBUTION-PACK.json",
     "priority": [
@@ -370,16 +378,16 @@
       "Product Hunt (secondary)"
     ],
     "identity_risk": "Existing Voicy listings on AlternativeTo and Product Hunt belong to usevoicy.com and voicybot.com respectively, not usevoicy.app",
-    "validation": "Six pinned source snapshots hash-verified; proposed-only four-language insertions preserve original bytes; icon/hash/dimensions and copy constraints verified",
+    "validation": "Six fresh pinned sources at c91298e, four proposed-only insertions preserve all original bytes; issue/PR Voicy searches0complete. Icon/copy limits verified. Secondary-channel policies/identity remain dated15Oct.",
     "gates": [
-      "Signed/notarized working public replacement and exact native-flow validation",
       "Explicit named-destination external communication authorization",
-      "Fresh rules/identity/duplicate/form checks; no spend or new terms accepted"
+      "Refresh rules/duplicates/account/form immediately before authorized submission; no new terms/spend",
+      "AlternativeTo eligibility/identity refresh; ProductHunt correctmaker and curated signed-release gallery still open"
     ]
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-19T15:19:07.101798+00:00",
-    "current_wait": "No release blocker or routine owner question. Fresh GSC queries/indexing/sitemap require Google reauthentication; last verified morning data retained. Independent SEO/evidence work can continue.",
+    "rechecked_utc": "2026-10-20T07:22:59.074582+00:00",
+    "current_wait": "No release blocker. Fresh GSC data needs existing Google reauthentication; routine password flow not repeated. External messages/submissions remain unauthorized; independent evidence/research continues.",
     "owner_action_pending": false,
     "private_checkpoint": "voicy-growth-evidence/local-runner-2026-10-16/CHECKPOINT.json",
     "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
@@ -392,15 +400,33 @@
       "owned_result_on_first_observed_page": false,
       "ai_answer_observed": false,
       "scope": "First page only, desktop only; no universal ranking or AI-citation conclusion"
+    },
+    {
+      "date": "2026-10-16",
+      "engine": "Google Search, desktop Chrome Incognito, signed out, cookies rejected",
+      "location": "Unknown — Google says it cannot determine location; not a controlled US baseline",
+      "owned_result_on_first_observed_page": false,
+      "ai_answer_observed": true,
+      "owned_ai_citation_observed": false,
+      "verified_citation_destination": "https://diffio.ai/adobe-podcast-alternative/",
+      "other_visible_source_labels": [
+        "Reddit",
+        "Trebble",
+        "YouTube",
+        "Facebook",
+        "G2"
+      ],
+      "scope": "One first-page observation; AI Overview expanded, one citation destination followed; no mobile observation",
+      "limit": "One dynamic answer, not all-assistant coverage or controlled US rank. Competitor citations do not independently validate their claims or establish why Google included them."
     }
   ],
   "aeo_observation": {
     "provider": "Google Search AI Overview",
-    "date": "2026-10-16",
+    "date": "2026-10-20",
     "query": "Adobe podcast alternative",
     "own_citation": false,
-    "competitor_citation_verified": "https://diffio.ai/adobe-podcast-alternative/",
-    "implication": "Original inspectable evidence and explicit task scope remain priorities; no causal/ranking/quality conclusion. Do not weaken E03 publication gates or invent a benchmark/listening panel."
+    "competitor_citation_verified": "https://try.wideframe.com/blog/adobe-podcast-alternatives-for-video-podcast-creators/",
+    "implication": "Task separation remains relevant, already covered by primary comparison. Preserve sourced Adobe video/Studio facts despite overbroad claims on a cited vendor article; no immediate title/content churn justified."
   },
   "clean_host_validation": {
     "status": "Actual final signed/notarized complete offline image passes on fresh macOS14 and15 arm64 hosts",
@@ -418,5 +444,10 @@
     "limits": "Virtual hosts below16GB recommendation; timings not consumer benchmark or audio quality. Actual developerMac public/native GUI checks separate.",
     "cost_scope": "Standard macOS14/15 runners in public Voicy repo; no paid larger runner or new subscription.",
     "old_failure": "Superseded e8 candidate bundled MLX wheels for macOS26; corrected same-version baseline14 artifacts are pinned and staging audited. Full corrected rebuilt bytes were newly signed/notarized and qualified."
+  },
+  "goal_runtime_status": {
+    "status": "blocked",
+    "checked_date": "2026-10-20",
+    "note": "Goal API flag remains blocked and cannot be resumed through update_goal. User-authorized campaign continues through delivered native heartbeats; no ranking completion claimed."
   }
 }

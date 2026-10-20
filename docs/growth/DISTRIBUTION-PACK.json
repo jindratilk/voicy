@@ -1,8 +1,8 @@
 {
-  "checked_utc": "2026-10-15T18:37:34.692588+00:00",
+  "checked_utc": "2026-10-20T07:21:53.405766+00:00",
   "status": "Prepared drafts only; no external submissions or messages sent",
   "goal_relation": "Relevant product discovery and editorial consideration; no guaranteed backlink, indexing, traffic or rank gain",
-  "release_gate": "Website downloads are paused; a signed/notarized replacement and exact public-download/native-flow verification are required first",
+  "release_gate": "Satisfied for the selected 0.3.3 bytes: public qualified signed/notarized assistant and complete image, clean macOS14/15 packaged-engine validation, developer-Mac public/native workflow. Keep qualification limits; this does not authorize external communication.",
   "communication_gate": "Explicit authorization for each third-party submission/message destination is still required; no account creation, paid review or purchase authorized",
   "identity": {
     "name": "Voicy",
@@ -12,7 +12,7 @@
     "platform": "Apple Silicon Mac, macOS 14+",
     "license": "MIT application source; models/dependencies retain separate licenses",
     "price": "Free application",
-    "public_replacement_version": null
+    "public_replacement_version": "0.3.3"
   },
   "assets": {
     "square_icon": {
@@ -33,7 +33,7 @@
       "width": 1200,
       "height": 630
     },
-    "native_gallery": "Fresh screenshots/video from the signed replacement are pending; existing development-candidate evidence must not be labeled as a published release"
+    "native_gallery": "Signed-release validation evidence exists; no curated, privacy-reviewed launch gallery/video is prepared. Product Hunt gallery gate remains open."
   },
   "channels": [
     {
@@ -41,14 +41,13 @@
       "priority": 1,
       "destination": "https://github.com/jaywcjlove/awesome-mac",
       "guidelines": "https://github.com/jaywcjlove/awesome-mac/blob/master/docs/CONTRIBUTING.md",
-      "reviewed_source_commit": "f64bae9c02a4f92b44f5dfa5716121443eb23fe1",
+      "reviewed_source_commit": "c91298e281feed6f61d7d8c757c3afe0e191375d",
       "fit": "Mac software audience and an existing audio recording/processing category",
-      "duplicate_check": "No Voicy/usevoicy.app entry in four README files; separate Voicy issue and PR searches returned zero. Refresh before submission.",
+      "duplicate_check": "No Voicy/usevoicy.app entry in the four pinned README files. Separate repo-scoped Voicy issue and PR searches each returned zero, incomplete_results=false. Bounded name/domain check; refresh before any authorized submission.",
       "requirements_summary": "One suggestion per PR, concise useful sentence, local ordering and existing icon style; synchronize four README languages.",
       "hold": [
-        "verified signed public replacement",
         "explicit authorization for external PR",
-        "fresh duplicate/rules check"
+        "refresh rules/duplicates immediately before authorized submission"
       ],
       "entry": {
         "name": "Voicy",
@@ -91,7 +90,9 @@
         ]
       },
       "draft_pr_title": "Add Voicy to audio tools in four README languages",
-      "draft_pr_body": "Adds Voicy to the corresponding audio section in the English, Chinese, Japanese and Korean lists. It is an MIT-source application for local recorded-speech enhancement on Apple Silicon, with bundled models under separate licenses. The proposed entry uses the official product site plus source/freeware markers and preserves neighboring entries. Before submitting, attach the verified replacement version, public download/native validation and refreshed duplicate-check evidence. No subjective quality or Adobe superiority claim is made."
+      "draft_pr_body": "Adds Voicy to the corresponding audio section in the English, Chinese, Japanese and Korean lists. It is an MIT-source application for local recorded-speech enhancement on Apple Silicon, with bundled models under separate licenses. The proposed entry uses the official product site plus source/freeware markers and preserves neighboring entries. Release 0.3.3 has a signed/notarized download assistant and approximately 6.5 GB app image; setup needs Internet, then processing is offline. Public qualification: https://github.com/jindratilk/voicy/releases/download/v0.3.3/QUALIFICATION.json . The developer-Mac native flow and fresh macOS14/15 packaged-engine checks passed within their published limits; no independent listening or Adobe superiority claim is made. Duplicate checks must be refreshed immediately before submission.",
+      "rules_checked_date": "2026-10-20",
+      "duplicate_checked_date": "2026-10-20"
     },
     {
       "id": "macupdate",
@@ -101,22 +102,23 @@
       "fit": "macOS software catalog with audio production/recording categories",
       "requirements_summary": "Plain app name without version/promo text; product and installer URLs; blank price for free software; factual descriptions, requirements and version changes. Authenticated form and any fee have not been verified.",
       "hold": [
-        "verified signed public replacement",
         "explicit submission authorization",
-        "authenticated form review, including any terms or charges"
+        "authenticated form review, including any terms or charges",
+        "fresh duplicate/identity check on MacUpdate before any authorized submission"
       ],
       "draft_fields": {
         "app_name": "Voicy",
         "product_url": "https://usevoicy.app/",
-        "download_url": null,
-        "download_url_note": "Fill only after the new official endpoint resolves to the verified installer rather than a 503/HTML status page",
+        "download_url": "https://github.com/jindratilk/voicy/releases/download/v0.3.3/Voicy-0.3.3-arm64.dmg",
+        "download_url_note": "Versioned signed 146704-byte native setup assistant; retrieves the approximately 6.5 GB complete app image from GitHub. Website redirect verified20Oct. Direct installer required by public field guidelines; authenticated form acceptance remains unverified.",
         "price": "",
         "short_description": "Local speech enhancement for Apple Silicon recordings.",
-        "description": "Enhance recorded speech locally with bundled AuK models, compare original and processed audio, and export mono 48 kHz, 24-bit WAV. Requires Apple Silicon and macOS 14 or later. Models require a large initial download and processing is not real time. Generative processing can alter speech, so compare the complete result with the preserved original. Application source is MIT licensed; bundled dependencies and models retain separate licenses.",
-        "version": null,
-        "version_changes": "Pending the actual signed replacement. State the startup-handshake fix only after the published artifact passes native validation; do not invent other release changes.",
-        "system_requirements": "Apple Silicon, macOS 14+; allow approximately 8 GB installed plus recordings. Re-check final download/installed size and memory recommendation from the replacement artifact."
-      }
+        "description": "Enhance recorded speech locally with bundled AuK models, compare original and processed audio, and export mono 48 kHz, 24-bit WAV. Requires Apple Silicon and macOS 14 or later. The small setup assistant downloads approximately 6.5 GB of app-image files before installation; Internet is needed for setup. Enhancement then works offline and is not real time. Generative processing can alter speech, so compare the complete result with the preserved original. Application source is MIT licensed; bundled dependencies and models retain separate licenses.",
+        "version": "0.3.3",
+        "version_changes": "Fixes the startup handshake; uses MLX wheels compatible with the macOS14 baseline; adds the signed native setup assistant. See public qualification for exact bytes and validation limits.",
+        "system_requirements": "Apple Silicon Mac, macOS14 or later; 16 GB memory recommended. Setup needs Internet and approximately 6.5 GB of downloads, plus storage for the app image, installed app, recordings and exports. Enhancement runs offline; processing is not real time."
+      },
+      "rules_checked_date": "2026-10-20"
     },
     {
       "id": "alternativeto",
@@ -126,7 +128,6 @@
       "fit": "Alternative-seeking audience, but partial fit to Adobe Enhance Speech rather than all Studio features",
       "requirements_summary": "Verified email and moderated submission; use dedicated URL/source fields, no links/contact details in description or UTM on official URL. Current policy rejects some thin AI wrappers and indistinguishable apps; eligibility is uncertain. Free queue has no promised review date; optional paid priority is not approval or ranking.",
       "hold": [
-        "verified signed public replacement",
         "explicit submission authorization",
         "moderation/AI-wrapper eligibility review",
         "fresh duplicate/identity check"
@@ -153,7 +154,9 @@
           "WAV export"
         ],
         "alternative_relation": "If editors accept the task match, propose as a local alternative to Adobe Podcast Enhance Speech; disclose lack of Studio recording/transcript editing."
-      }
+      },
+      "rules_checked_date": "2026-10-15",
+      "identity_checked_date": "2026-10-15"
     },
     {
       "id": "producthunt",
@@ -164,7 +167,6 @@
       "fit": "Broader maker/early-adopter discovery; secondary to the focused Mac/alternative channels",
       "requirements_summary": "Personal maker account; tagline up to 60 characters, description up to 260, visuals/demo and up to three topics. Product must work publicly; featuring is editorial. No direct or incentivized upvote asks.",
       "hold": [
-        "verified signed public replacement",
         "explicit launch/comment authorization",
         "correct personal maker account and verified maker attribution",
         "fresh signed-release screenshots/video",
@@ -192,7 +194,22 @@
           "tagline": 49,
           "description": 220
         }
-      }
+      },
+      "rules_checked_date": "2026-10-15",
+      "identity_checked_date": "2026-10-15"
     }
-  ]
+  ],
+  "check_scope": "20 October: current public release/redirect, pinned Awesome Mac rules/four README files/issue and PR searches, and public MacUpdate field guidelines. AlternativeTo/Product Hunt identity and policy observations remain dated 15 October; authenticated forms/account/terms unverified.",
+  "release_evidence": {
+    "release": "https://github.com/jindratilk/voicy/releases/tag/v0.3.3",
+    "qualification": "https://github.com/jindratilk/voicy/releases/download/v0.3.3/QUALIFICATION.json",
+    "direct_installer": "https://github.com/jindratilk/voicy/releases/download/v0.3.3/Voicy-0.3.3-arm64.dmg",
+    "website_download": "https://usevoicy.app/api/download",
+    "primary_installer_bytes": 146704,
+    "primary_installer_sha256": "61b69b2a812daa837240ab70057c74e0cf62ba02ba090757f38663e9489c4b45",
+    "complete_image_bytes": 6510981427,
+    "complete_image_sha256": "459f8699304ec2efa923001b0691a9fd3231067716a66b18f676f88f4c4f6e7b",
+    "setup_note": "Small native assistant retrieves approximately 6.5 GB of app-image files from GitHub; Internet is needed for setup, then enhancement runs offline.",
+    "validation_limits": "One licensed 4.905-second fixture; full GUI flow on developer Mac from a read-only image. Fresh macOS14/15 hosts tested the packaged engine API. No subjective quality, Applications-copy, or broad long-form reliability claim."
+  }
 }
