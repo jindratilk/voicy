@@ -1,8 +1,8 @@
-# Voicy distribution preparation — refreshed 20 October 2026
+# Voicy distribution preparation — refreshed 21 October 2026
 
 **Drafts only. No external submission, message, fork, listing, purchase or launch has been made.** The selected 0.3.3 public release now passes the signed/notarized download and native-workflow gate within its documented limits. These materials support relevant product discovery; they do not establish backlinks, editorial acceptance or a ranking gain.
 
-The machine-readable [field drafts](DISTRIBUTION-PACK.json) contain the proposed copy, identity checks, source URLs and holds. The packet now contains the qualified version, direct setup-assistant URL and exact release identities. Awesome Mac and public MacUpdate field rules were refreshed on 20 October; AlternativeTo/Product Hunt rules and identity observations remain dated 15 October. Refresh outstanding checks before use.
+The machine-readable [field drafts](DISTRIBUTION-PACK.json) contain the proposed copy, identity checks, source URLs and holds. The packet now contains the qualified version, direct setup-assistant URL and exact release identities. Awesome Mac and public MacUpdate field rules were refreshed on 20 October; Product Hunt preflight was refreshed on 21 October; AlternativeTo observations remain dated 15 October. Refresh outstanding checks before use.
 
 ## Destination decisions
 
@@ -17,7 +17,7 @@ The machine-readable [field drafts](DISTRIBUTION-PACK.json) contain the proposed
 
 This product is **Voicy at usevoicy.app**, with source at [jindratilk/voicy](https://github.com/jindratilk/voicy). It enhances recorded speech locally on Apple Silicon, requires macOS 14+, provides original/enhanced comparison and WAV export. The application source is MIT licensed; models and dependencies have separate licenses. Large bundled models, processing time and possible generative speech changes must remain visible in substantive product descriptions.
 
-The existing [AlternativeTo dictation listing](https://alternativeto.net/software/usevoicy--speech-to-text/about/) points to **usevoicy.com**. The existing [Product Hunt Voicy page](https://www.producthunt.com/products/voicy?launch=voicy) points to **voicybot.com**, a transcription bot. Neither belongs to this project; do not claim their reviews, listings or history. These two identity observations were made on 15 October, not reverified in this refresh. A fresh identity/duplicate check is required before submission.
+The existing [AlternativeTo dictation listing](https://alternativeto.net/software/usevoicy--speech-to-text/about/) points to **usevoicy.com**. The existing [Product Hunt Voicy page](https://www.producthunt.com/products/voicy?launch=voicy) points to **voicybot.com**, a transcription bot. Neither belongs to this project; do not claim their reviews, listings or history. The AlternativeTo observation remains dated 15 October. On 21 October, the Product Hunt page still linked to voicybot.com; one public Products search for usevoicy.app showed no match. This is not exhaustive duplicate proof. Check the intended account and actual form before submission.
 
 The Adobe comparison is specifically a local alternative for the **Enhance Speech task**, not a replacement for every Podcast Studio feature. No draft claims independent listening validation, superior sound, adoption numbers or achieved search position. The five fixed E03 cases remain unpublished pending the existing subjective-review gate.
 
@@ -41,7 +41,7 @@ Product Hunt description (220 characters):
 
 > Free, open-source speech enhancement for Apple Silicon Macs. Process recordings locally with AuK, compare original and enhanced audio, and export WAV. No account or audio upload. macOS 14+; large model download required.
 
-Long descriptions, requirements, proposed features, maker-comment draft and an Awesome Mac PR description are preserved in the JSON packet. Maker attribution and available topic names still need verification; no invented personal origin story is included.
+Long descriptions, requirements, proposed features, human-maker factual notes and an Awesome Mac PR description are preserved in the JSON packet. Maker attribution and available topic names still need verification; no invented personal origin story is included.
 
 ## Selected public release and assets
 
@@ -71,3 +71,12 @@ The draft asks for an independent evaluation. It includes the setup size, hardwa
 The publisher's literal-domain search returned HTTP200 and no article results in the captured body. This limited check is not an exhaustive archive search or proof of no prior mention. Contact was verified from the editor's own bio, and the connected Gmail sender identity was checked read-only. Both identities, the exact message, five hashed source snapshots, claim matrix and audit remain outside public Git under `voicy-growth-evidence/checkpoints/2026-10-20-editorial-six-colors/`. Message SHA256: `0baab36ac1ba1c041dc4c4a853ecd897724e7d802d1da33b21055f80f90c7230`.
 
 Manual claim/source/privacy review passed; all three proposed message links returned200. No Gmail draft, email, external submission, acquired link or acceptance exists. The exact named-recipient message still requires explicit owner authorization. Refresh sender/contact/rules/duplicates/release facts and links before any approved send; do not start a repeated follow-up sequence automatically.
+
+
+## Product Hunt preflight — 21 October 2026
+
+The [posting guide](https://help.producthunt.com/en/articles/479557-how-to-post-a-product) documents YouTube video links and at least two gallery images. Its 1270×760 gallery and 240×240 thumbnail sizes are recommendations. The JSON now maps our unchanged two 1000×650 native captures and square 512px icon as candidates, not tested uploads. The owned silent MP4 is reference material, not a supported video-field URL. No YouTube URL was invented; the authenticated form must establish optional-field acceptance.
+
+[Personal-account rules](https://help.producthunt.com/en/articles/771527-personal-account-vs-company-account) and [posting access](https://help.producthunt.com/en/articles/481909-how-can-i-get-access-to-post) require genuine maker identity/admission; the ordinary account wait is one week, with a documented newsletter option that was not used. Chrome showed Sign in, so account age, maker handle, onboarding, topics and form acceptance remain unknown. No new account or subscription.
+
+The [comment policy](https://help.producthunt.com/en/articles/10030102-commenting-guidelines) says “No LLMs or Chrome extensions please!” under AI-generated comments. We apply that general guidance to the maker comment and assume no exception: its generated paragraph is removed from ready fields, leaving factual notes for the actual human maker. No comment was posted. [Featuring remains editorial](https://help.producthunt.com/en/articles/9883485-product-hunt-featuring-guidelines). This preflight is preparation, not a launch, acquired link or search outcome.

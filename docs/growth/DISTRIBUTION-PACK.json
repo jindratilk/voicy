@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-20T07:21:53.405766+00:00",
+  "checked_utc": "2026-10-20T22:42:05.946428+00:00",
   "status": "Prepared drafts only; no external submissions or messages sent",
   "goal_relation": "Relevant product discovery and editorial consideration; no guaranteed backlink, indexing, traffic or rank gain",
   "release_gate": "Satisfied for the selected 0.3.3 bytes: public qualified signed/notarized assistant and complete image, clean macOS14/15 packaged-engine validation, developer-Mac public/native workflow. Keep qualification limits; this does not authorize external communication.",
@@ -195,12 +195,13 @@
       "guidelines": "https://help.producthunt.com/en/articles/17350772-launch-guide",
       "featuring_guidelines": "https://help.producthunt.com/en/articles/9883485-product-hunt-featuring-guidelines",
       "fit": "Broader maker/early-adopter discovery; secondary to the focused Mac/alternative channels",
-      "requirements_summary": "Personal maker account; tagline up to 60 characters, description up to 260, visuals/demo and up to three topics. Product must work publicly; featuring is editorial. No direct or incentivized upvote asks.",
+      "requirements_summary": "Personal maker profile and actual posting admission must be verified. Default wait is one week; no newsletter shortcut used. Copy limits remain 60/260 characters and three topics. Gallery and video constraints are mapped below; featuring remains editorial.",
       "hold": [
-        "explicit launch/comment authorization",
-        "correct personal maker account and verified maker attribution",
-        "launchvideo and actual destinationgallery format/dimension check; two signed033screenshots prepared",
-        "time to respond honestly to comments"
+        "explicit named submission authorization",
+        "authenticated personal maker identity and actual posting admission",
+        "human maker-written first comment under the general comment policy; no exception assumed",
+        "actual gallery upload, topics and optional-video field acceptance",
+        "human availability for genuine replies; no automated engagement"
       ],
       "identity_collision": {
         "different_listing": "https://www.producthunt.com/products/voicy?launch=voicy",
@@ -218,15 +219,73 @@
           "Open Source"
         ],
         "topics_note": "Choose available platform topics at submission, at most three; availability not verified in authenticated form.",
-        "maker_comment": "Voicy focuses on local speech cleanup for Apple Silicon. Models are included so recordings can be processed on the Mac without an upload or account. The workflow is import, enhance, compare, and export WAV. It is a focused alternative to Adobe Podcast Enhance Speech, not a replacement for every Studio feature. The tradeoffs are a large model download, hardware requirements and processing time. Generative enhancement can alter words or voice texture, so review the complete result before publishing. Application source is MIT licensed, while models and dependencies retain their own licenses. The official site links to the source, demo, requirements and comparison method. Feedback on import, comparison and export would help prioritize improvements.",
-        "maker_comment_note": "Project-description draft only; no invented personal origin story, user counts, listening panel, superiority score or claim of independent review.",
+        "maker_comment": null,
+        "maker_comment_note": "The general comment guide rejects model-generated comments. We assume no maker-comment exception: the generated paragraph is removed from ready fields. These facts support the human maker writing in their own words; they are not a postable comment or invented origin story.",
         "character_counts": {
           "tagline": 49,
           "description": 220
+        },
+        "maker_comment_factual_notes": [
+          "AuK processing runs on Apple Silicon with macOS 14+; 16 GB of memory is recommended.",
+          "Setup downloads an approximately 6.5 GB image; enhancement then works offline.",
+          "The app supports importing a file, comparing the original and saved result, and exporting mono 48 kHz PCM24 WAV.",
+          "The model operates at 24 kHz. Generative processing can alter words or voice texture.",
+          "Application code is MIT licensed; models and dependencies have separate licenses.",
+          "Current 0.3.3 release checks are narrow. Independent listening quality and broad long-form reliability are not established."
+        ],
+        "youtube_video_url": null,
+        "video_reference_only": "https://usevoicy.app/videos/voicy-0.3.3-controls.mp4",
+        "video_field_note": "The existing MP4 cannot fill the documented YouTube field. No upload, account or subscription was created. The real form must establish whether this field is optional; lack of a YouTube URL is not declared a whole-launch rejection.",
+        "maker_username": null,
+        "pricing_proposed": "free",
+        "gallery_candidates": [
+          {
+            "repo_file": "docs/release/assets/0.3.3/voicy-0.3.3-original-loaded.png",
+            "dimensions": [
+              1000,
+              650
+            ],
+            "sha256": "ab6182c0a81826bd2388e59a0a1ae421fd017f16a418d12ebc6c922e0ed9937e",
+            "status": "Source-reviewed candidate; not uploaded or accepted by the destination."
+          },
+          {
+            "repo_file": "docs/release/assets/0.3.3/voicy-0.3.3-restored-result.png",
+            "dimensions": [
+              1000,
+              650
+            ],
+            "sha256": "7c3015d56a0a96f00eacc37d5b61f03b9d338f92123a4481d8598e63526ee689",
+            "status": "Source-reviewed candidate; not uploaded or accepted by the destination."
+          }
+        ],
+        "gallery_recommended_dimensions": [
+          1270,
+          760
+        ],
+        "gallery_note": "Retain the two original 1000x650 captures. The larger recommended dimensions are not treated as a mandatory rejection threshold; no upscaling or new capture just for a recommendation.",
+        "thumbnail_candidate": {
+          "repo_file": "src-tauri/icons/icon.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "949af04dd12a42336ceb210e3046a9f5fc1565c51a6c22e48f9f3ac633b1b017",
+          "recommended_dimensions": [
+            240,
+            240
+          ],
+          "status": "Existing square original; no resize or upload."
         }
       },
-      "rules_checked_date": "2026-10-15",
-      "identity_checked_date": "2026-10-15"
+      "rules_checked_date": "2026-10-21",
+      "identity_checked_date": "2026-10-21",
+      "posting_guide": "https://help.producthunt.com/en/articles/479557-how-to-post-a-product",
+      "account_guide": "https://help.producthunt.com/en/articles/771527-personal-account-vs-company-account",
+      "access_guide": "https://help.producthunt.com/en/articles/481909-how-can-i-get-access-to-post",
+      "commenting_guidelines": "https://help.producthunt.com/en/articles/10030102-commenting-guidelines",
+      "rules_checked_utc": "2026-10-20T22:40:44.408079+00:00",
+      "identity_check_scope": "The known Voicy page still links to voicybot.com. One public Products search for usevoicy.app returned no match; this is not exhaustive duplicate proof.",
+      "account_check": "Chrome showed Sign in. The intended maker handle, onboarding, account age and posting admission remain unverified. No login, account creation or new OAuth grant."
     }
   ],
   "check_scope": "20 October: current public release/redirect, pinned Awesome Mac rules/four README files/issue and PR searches, and public MacUpdate field guidelines. AlternativeTo/Product Hunt identity and policy observations remain dated 15 October; authenticated forms/account/terms unverified.",
@@ -241,5 +300,6 @@
     "complete_image_sha256": "459f8699304ec2efa923001b0691a9fd3231067716a66b18f676f88f4c4f6e7b",
     "setup_note": "Small native assistant retrieves approximately 6.5 GB of app-image files from GitHub; Internet is needed for setup, then enhancement runs offline.",
     "validation_limits": "One licensed 4.905-second fixture; full GUI flow on developer Mac from a read-only image. Fresh macOS14/15 hosts tested the packaged engine API. No subjective quality, Applications-copy, or broad long-form reliability claim."
-  }
+  },
+  "latest_check_scope": "21 October: Product Hunt only, using current primary rules and the public native-browser identity/search observation. Other channels retain their individual dates."
 }
