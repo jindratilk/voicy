@@ -170,19 +170,23 @@ def runtime_environment(runtime, evidence):
     return env
 
 
-def run_cases(runtime, prepared, evidence, validation_ffmpeg):
+def run_cases(runtime, prepared, evidence, validation_ffmpeg, diagnostic_trace=None):
     manifest = json.loads((prepared / 'manifest.json').read_text())
     runner = runtime / 'experiments/enhance_auk_local.py'
     require(sha(runner) == RUNNER_HASH, 'Unreviewed packaged model runner')
     env = runtime_environment(runtime, evidence)
     records = []
     for case in manifest['cases']:
+        if diagnostic_trace is not None and case['case'] != 2:
+            continue  # Explicit single-case diagnosis; never reported as a five-case batch.
         guards(evidence)
         source = prepared / case['outputs']['input']['path']
         require(sha(source) == case['outputs']['input']['sha256'], 'Input changed before execution')
         dest = evidence / ('case%02d' % case['case'])
         argv = [runtime / 'python/bin/python3', '-u', runner, source, '--output', dest,
                 '--models', runtime / '.auk/models', '--nfe', '32', '--memory-mode', 'auto']
+        if diagnostic_trace is not None:
+            argv[2:2] = [diagnostic_trace, evidence / 'CASE2-TRACE.jsonl']
         rec = {'case': case['case'], 'input_sha256': sha(source), 'status': 'running', 'samples': []}
         records.append(rec)
         save(evidence / 'RUNS.json', records)
@@ -236,10 +240,12 @@ def seal(evidence, destination, certificate):
 
 def main():
     global WORK_DEADLINE
-    canonical_transport = os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-canonical-inputs'
+    diagnostic = os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-gpu-diagnosis'
+    canonical_transport = diagnostic or os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-canonical-inputs'
     require(os.environ.get('GITHUB_REPOSITORY') == 'jindratilk/voicy'
             and os.environ.get('GITHUB_REF') in ('refs/heads/codex/e03-current-release',
-                                               'refs/heads/codex/e03-canonical-inputs'),
+                                               'refs/heads/codex/e03-canonical-inputs',
+                                               'refs/heads/codex/e03-gpu-diagnosis'),
             'Only the exact owner research branch may execute')
     require(platform.system() == 'Darwin' and platform.machine() == 'arm64', 'Need native macOS arm64')
     # Include bounded source retrieval in the work budget; finalization is separate.
@@ -265,6 +271,11 @@ def main():
                   'scope': 'Direct packaged runner on hosted VM; no desktop UI, quality or consumer speed benchmark'}
         if canonical_transport:
             system['canonical_transport_protocol_sha256'] = sha(code / 'docs/growth/E03-CANONICAL-INPUTS.md')
+        if diagnostic:
+            system.update(diagnostic_protocol_sha256=sha(code / 'docs/growth/E03-GPU-DIAGNOSIS.md'),
+                          observer_sha256=sha(code / 'scripts/growth/trace_e03_case.py'),
+                          selected_cases=[2],
+                          scope='Single case2 CPU profile diagnosis; observer overhead; not five-case evidence, UI or quality')
         save(evidence / 'SYSTEM.json', system)
         system.update(physical_memory_bytes=int(command('sysctl', '-n', 'hw.memsize')),
                       chip=command('sysctl', '-n', 'machdep.cpu.brand_string').decode().strip(),
@@ -320,8 +331,10 @@ def main():
         save(evidence / 'SYSTEM.json', system)
         save(evidence / 'INPUT-BINDING.json', {'all_five_input_and_reference_hashes_match': True,
              'release': '0.3.3', 'image_sha256': IMAGE_HASH, 'signed_app_verified': True})
-        run_cases(runtime, prepared, evidence, preparation_ffmpeg)
-        status = 'five cases structurally checked; no listening or ASR judgment'
+        run_cases(runtime, prepared, evidence, preparation_ffmpeg,
+                  code / 'scripts/growth/trace_e03_case.py' if diagnostic else None)
+        status = ('single case2 diagnostic returned; not five-case evidence or quality' if diagnostic
+                  else 'five cases structurally checked; no listening or ASR judgment')
     except Exception as exc:
         save(evidence / 'ERROR.json', {'type': type(exc).__name__, 'message': str(exc)})
     finally:
@@ -336,7 +349,7 @@ def main():
         receipt.update(status=status, release='0.3.3', human_quality_review=False)
         save(sealed / 'RECEIPT.json', receipt)
         print(json.dumps(receipt), flush=True)
-    return 0 if status.startswith('five cases') else 1
+    return 0 if status.startswith(('five cases', 'single case2 diagnostic returned')) else 1
 
 
 if __name__ == '__main__':
