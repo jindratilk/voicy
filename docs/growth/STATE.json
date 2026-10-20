@@ -259,7 +259,7 @@
     },
     {
       "id": "E11",
-      "status": "Homepage initial audio transfer measured in3 cold production mobile lab runs:2media requests/514939–576450bytes before interaction. Defer both audio preloads; localfirstplay/pre-metadata keyboardseek/A-B/naturalend/Voicy-first/mobile behavior verified. Three post-deployment cold runs to be retained privately; no fieldCWV/rank/causalclaim."
+      "status": "Homepage initial audio transfer measured in3 cold production mobile lab runs:2media requests/514939–576450bytes before interaction. Defer both audio preloads and initialize duration from either loadedtrack; localfirstplay/pre-metadata keyboardseek/A-B/naturalend/Voicy-first/mobile behavior verified. Three post-deployment cold runs to be retained privately; no fieldCWV/rank/causalclaim."
     }
   ],
   "next_actions": [
