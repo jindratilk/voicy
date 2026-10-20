@@ -107,13 +107,36 @@ def build_preparation_tools(root, evidence):
              '--enable-ffprobe', '--enable-swresample', '--enable-protocol=file,pipe',
              '--enable-demuxer=flac,wav', '--enable-parser=flac',
              '--enable-decoder=flac,pcm_f32le,pcm_s16le', '--enable-encoder=pcm_f32le',
-             '--enable-muxer=f32le,wav', '--enable-filter=aresample,aformat,anull,abuffer,abuffersink',
+             '--enable-muxer=pcm_f32le,wav', '--enable-filter=aresample,aformat,anull,abuffer,abuffersink',
              '--disable-shared', '--enable-static']
     with (evidence / 'preparation-tools-build.log').open('wb') as log:
         for args in [['./configure', *flags], ['make', '-j3', 'ffmpeg', 'ffprobe']]:
             subprocess.run(args, cwd=source, stdout=log, stderr=subprocess.STDOUT,
                            check=True, timeout=work_timeout(900))
     return source / 'ffmpeg'
+
+
+def smoke_preparation_tools(ffmpeg, archive, frozen, evidence):
+    case = frozen['cases'][0]
+    with tarfile.open(archive) as tar:
+        source = tar.extractfile(case['archive_member']).read()
+    require(hashlib.sha256(source).hexdigest() == case['source_sha256'], 'Smoke source changed')
+    (evidence / 'preparation-smoke.flac').write_bytes(source)
+    try:
+        raw = command(ffmpeg, '-nostdin', '-v', 'error', '-i', 'pipe:0', '-map', '0:a:0',
+                      '-ac', '1', '-ar', '48000', '-f', 'f32le', 'pipe:1',
+                      input=source, stderr=subprocess.PIPE)
+    except subprocess.CalledProcessError as exc:
+        (evidence / 'preparation-smoke-error.log').write_bytes(exc.stderr or b'')
+        raise
+    samples = array.array('f', raw)
+    if sys.byteorder != 'little':
+        samples.byteswap()
+    require(len(samples) == case['outputs']['reference']['frames']
+            and all(math.isfinite(x) for x in samples), 'Preparation decoder smoke failed')
+    save(evidence / 'PREPARATION-SMOKE.json', {'utterance_id': case['utterance_id'],
+         'source_sha256': case['source_sha256'], 'decoded_float_frames': len(samples),
+         'rate': 48000, 'finite': True, 'quality_or_model_test': False})
 
 
 def inspect_output(path, ffmpeg, frames):
@@ -244,6 +267,23 @@ def main():
                       initial_observation=resources(root), initial_minimum_bytes=26 * GIB)
         save(evidence / 'SYSTEM.json', system)
         check_resources(system['initial_observation'], 26 * GIB)
+        preparation_ffmpeg = build_preparation_tools(root, evidence)
+        archive = root / 'test-clean.tar.gz'
+        download('https://openslr.trmal.net/resources/12/test-clean.tar.gz', archive, ARCHIVE_HASH)
+        frozen = json.loads((code / 'docs/growth/E03-MANIFEST.json').read_text())
+        smoke_preparation_tools(preparation_ffmpeg, archive, frozen, evidence)
+        venv = root / 'preparation-python'
+        command(sys.executable, '-m', 'venv', venv)
+        python = venv / 'bin/python'
+        command(python, '-m', 'pip', 'install', '--disable-pip-version-check', '--no-cache-dir',
+                'numpy==2.4.6', 'scipy==1.17.1')
+        prepared = evidence / 'prepared'
+        command(python, code / 'scripts/growth/prepare_audio_cases.py', '--archive', archive,
+                '--output', prepared, '--protocol', code / 'docs/growth/E03-PROTOCOL.md',
+                '--ffmpeg', preparation_ffmpeg, '--ffprobe', preparation_ffmpeg.with_name('ffprobe'))
+        verify_inputs(json.loads((prepared / 'manifest.json').read_text()),
+                      frozen)
+        print(json.dumps({'phase': 'all_five_input_reference_hashes_verified'}), flush=True)
         image = root / 'Voicy.dmg'
         with image.open('xb') as output:
             for n, (size, checksum) in enumerate(PARTS, 1):
@@ -269,20 +309,6 @@ def main():
         system['runtime_versions'] = json.loads(command(runtime / 'python/bin/python3', '-s',
                                   '-c', version_script, env=runtime_environment(runtime, evidence)))
         save(evidence / 'SYSTEM.json', system)
-        preparation_ffmpeg = build_preparation_tools(root, evidence)
-        archive = root / 'test-clean.tar.gz'
-        download('https://openslr.trmal.net/resources/12/test-clean.tar.gz', archive, ARCHIVE_HASH)
-        venv = root / 'preparation-python'
-        command(sys.executable, '-m', 'venv', venv)
-        python = venv / 'bin/python'
-        command(python, '-m', 'pip', 'install', '--disable-pip-version-check', '--no-cache-dir',
-                'numpy==2.4.6', 'scipy==1.17.1')
-        prepared = evidence / 'prepared'
-        command(python, code / 'scripts/growth/prepare_audio_cases.py', '--archive', archive,
-                '--output', prepared, '--protocol', code / 'docs/growth/E03-PROTOCOL.md',
-                '--ffmpeg', preparation_ffmpeg, '--ffprobe', preparation_ffmpeg.with_name('ffprobe'))
-        verify_inputs(json.loads((prepared / 'manifest.json').read_text()),
-                      json.loads((code / 'docs/growth/E03-MANIFEST.json').read_text()))
         save(evidence / 'INPUT-BINDING.json', {'all_five_input_and_reference_hashes_match': True,
              'release': '0.3.3', 'image_sha256': IMAGE_HASH, 'signed_app_verified': True})
         run_cases(runtime, prepared, evidence, preparation_ffmpeg)
