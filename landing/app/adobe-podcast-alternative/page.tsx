@@ -71,7 +71,7 @@ export default function ComparisonPage() {
     description,
     url: `${site.url}/adobe-podcast-alternative`,
     datePublished: "2026-10-15",
-    dateModified: "2026-10-18",
+    dateModified: "2026-10-20",
     about: { "@type": "SoftwareApplication", name: "Voicy", url: site.url },
     breadcrumb: {
       "@type": "BreadcrumbList",
@@ -150,7 +150,7 @@ export default function ComparisonPage() {
             Published by the Voicy project ·{" "}
             <time dateTime="2026-10-15">15 October 2026</time>
             {" · Updated "}
-            <time dateTime="2026-10-18">18 October 2026</time>
+            <time dateTime="2026-10-20">20 October 2026</time>
             <br />
             This is our product comparison, not an independent review. Adobe
             facts are linked to official documentation below.
@@ -367,6 +367,16 @@ export default function ComparisonPage() {
           </section>
           <section>
             <h2>What if Voicy is not the right fit?</h2>
+            <p>
+              For paid local speech cleanup on a Mac, consider{" "}
+              <a href="https://hush.audio/products/hush">Hush</a>. Its standalone
+              app reduces noise and reverb, with a 21-day trial and a one-time
+              licence. For a Pro Tools workflow,{" "}
+              <a href="https://hush.audio/products/hush-pro">Hush Pro</a> is a
+              separate AudioSuite plug-in. These vendor-described features were
+              checked on 20 October 2026; neither product has been benchmarked
+              against Voicy here.
+            </p>
             <p>
               For audio post-production with loudness targets and publishing
               workflows, consider <a href="https://auphonic.com/">Auphonic</a>.

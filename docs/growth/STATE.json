@@ -8,18 +8,18 @@
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
   "shipped_commit": "b7ee9137c6c1c34aafce6e18b9e101751c49bda3",
   "deployment": {
-    "id": "dpl_58stNepM2J9jLEzxzDMTwsvzwGFD",
-    "url": "https://voicy-1ch3wzl1l-skaluj.vercel.app",
+    "id": "dpl_AvrvVdUcTaivxYhDMagsfok14M4N",
+    "url": "https://voicy-ecmri3cao-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "5b757fb1e101d46d1498cd9acd8f884900cf77a0",
+    "source_commit": "f12c2710a24dac189e5937fe8db20b4f55ecc7dc",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-20T19:29:45.431023+00:00",
-    "scope": "Exact current production/source verified before E17 research-results closeout. Public website unchanged; postmerge proof retained privately.",
-    "verification_scope": "Home/comparison/privacy200, exact deployment/canonical/H1/JSONLD, sitemap3/robots200, activeCTA/pauseabsent andGET/HEAD302 exact qualified033."
+    "verified_utc": "2026-10-20T19:38:33.778550+00:00",
+    "scope": "Last exactproduction/source verified before E18 reader-facingcopychange. PostE18merge deployment receipt remainsoutsideGit.",
+    "verification_scope": "Fullhome/comparison/privacy200/exactdeployment/canonical/H1/JSONLD, sitemap3/robots200, activeCTA/no pause andGET/HEAD302 exactqualified033."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -344,13 +344,25 @@
         "output_sha256": "8d631b07055c55dd6e79b6224d9466a61d37efdb697013f6568e662ea44d81ec",
         "enhanced_ASR_cases": 1
       }
+    },
+    {
+      "id": "E18",
+      "status": "Implemented sourcedworkflowchoice on existingcomparison: paidlocalstandaloneHush vs separateProToolsAudioSuiteHushPro, officiallinks andexplicitunbenchmarkeddisclosure.18tests/build/localHTTP andnativeChrome desktop/mobile390x788/linknavigation/console checks pass. Finalreview/CI/productionreceipts are retained privately during shipping; no quality/speed/ranking claim.",
+      "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
+      "sources": [
+        "https://hush.audio/products/hush",
+        "https://hush.audio/products/hush-pro"
+      ],
+      "source_checked": "2026-10-20",
+      "hypothesis": "Reader choosing local speechcleanup can compare a paidstandalone option and ProTools workflow rather than infer Voicy is the only localchoice. Editorial usefulness, not a controlledrank/CTRtest.",
+      "evaluation": "Verify faithful productidentity/source links and practical scope now; review actualquery/page demand after7/14days when authenticatedGSCavailable, without attributing causality from sparsebeforeafter data."
     }
   ],
   "next_actions": [
     "Resume SEO/AEO demand and evidence improvements on the one primary comparison URL. The working public app is restored; do not repeat signing/release recovery without a demonstrated regression.",
     "When existing Chrome account access is available, collect fresh7/28-day exact-query/page/country/device data and current indexing/sitemap. Last morning Web14impressions/0clicks; exact target has0reported impressions and nullposition, not a ranking. Do not invent a trend or keep submitting unchanged URLs.",
     "Keep the working single comparison URL stable; E07 installation answers and E08 demo text/provenance improve existing content without new keyword pages. Use actual fresh search demand for next copy decision rather than snippet churn.",
-    "E17 closed as one control-failed/materialize-completed investigative pair, not shippingfix. Preserve adverse control/E15/E16 and public signedapp. No further same-day modelattempt; any replication/fullfivecase/nativequalification requires separatelyjustifiedscope. Nextgrowthcycle: evaluate compact sourced Hush localMac workflow option on existingcomparison, distinguishing standaloneHush from ProToolsHushPro; no untestedquality/price/speed claims or newURL.",
+    "E17 terminal/landedPR22; no further same-day modelattempt. E18 sourcedlocalMacchoice implemented andlocallyvalidated. Preserve onecanonical/title/otherpagedates. Follow actualcomparisonquery/page demand after7/14days whenGSCauthavailable; no repeatedsame-daycopy/title/query churn or causalrankclaim.",
     "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Use DOWNLOAD-MEASUREMENT.md for separate qualified GitHub asset series; new collection/organic attribution still needs its own concrete contract.",
     "Distribution drafts now bind qualified0.3.3 and20OctAwesomeMac/publicMacUpdatechecks. No third-party messages/submissions without named-destination authorization. Preserve secondary-channel eligibility/account/gallery checks; no purchases or manipulated links.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
@@ -396,7 +408,8 @@
     "private_listening_review": "3focusedPythonHTTP/bindingtests pass; actualnativeChromeQA verifiesplay/otherclipautopause, note/selectorstorageafterreload, actualJSONdownloadqa_fixture/attestedfalse, andcleanlive0/15namespace. Mobile390x788visibleformselectionworks; no frameworkoverlay. DevToolsautomaticwell-knownprobe blockedbyconnect-srcnone produced2tool-onlyerrors; no appJSexceptionobserved. Privateassignmenthash/sourcehash fixedbeforehumanresponses; actualmap/audio/QAexport stayoutsideGit.",
     "current_release_E15": "Exact10canonical hashes and original generated files verified after encrypted artifact retrieval. Independent raw24kfloat mono case1 audit and one fixed small.en decode pass. Case2 GPU timeout;3\u20135 notrun; secondary normaldetach failure retained. Whole modelbatch failed, no humanquality/publicaudio pass.",
     "current_release_E16": "Independentall10canonical/generated-file andprotocol/observeridentity audit afterZIP/cipher/archive/65entryinventory verification.12monotonictraceevents, noCevents/cap; originalRuntimeErrortraceback at mx.eval(text), returncode1, noWAV/newASR, no guardtrigger orrecordednormaldetacherror. Diagnosticfailed; no rootcause/humanquality/generalreliability pass.",
-    "current_release_E17": "27 focusedtests/actionlint pass; code review capacityfinding rejected using two actualstandardhostreceipts, not labelledclean. Both actualarms terminal, 65/67inventory exactfilesets andall10canonical hashes checked. Sameconfigs/metadata/objects/training verified; control0/treatment1extraeval. Controlfailed; materialize raw212640frames/24k/mono/float finite/0clipped verified plusonefixedASR. No humanquality/publicfix pass."
+    "current_release_E17": "27 focusedtests/actionlint pass; code review capacityfinding rejected using two actualstandardhostreceipts, not labelledclean. Both actualarms terminal, 65/67inventory exactfilesets andall10canonical hashes checked. Sameconfigs/metadata/objects/training verified; control0/treatment1extraeval. Controlfailed; materialize raw212640frames/24k/mono/float finite/0clipped verified plusonefixedASR. No humanquality/publicfix pass.",
+    "comparison_local_mac_choice": "18existingtests andNext16.3.8productionbuild pass. LocalHTTP singleH1/canonical/visible-JSONLDdate20Oct andcomparison-onlysitemapdate checked; otherdates18/19Oct. NativeChrome1200x916 and390x788 render/nooverlay, actualHush/HushPro navigation andreturn, reloadNoerrors/Nowarnings. Currentprimaryvendorclaims only; no humanquality orrankingpass."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
@@ -405,7 +418,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-20T19:33:20.797247+00:00",
+  "verified_utc": "2026-10-20T19:45:31.115475+00:00",
   "search_observation": {
     "date": "2026-10-20",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
