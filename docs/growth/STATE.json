@@ -267,6 +267,10 @@
       "protocol": "docs/growth/E03-LISTENING-REVIEW.md",
       "human_reviews_received": 0,
       "published_listening_assets": 0
+    },
+    {
+      "id": "E13",
+      "status": "Existing public release-counter measurement contract and qualified-identity baseline established. No new tracking, binary download, install/customer/ranking attribution or interval delta. Adobe official plan facts rechecked20Oct; current comparison unchanged."
     }
   ],
   "next_actions": [
@@ -274,7 +278,7 @@
     "When existing Chrome account access is available, collect fresh7/28-day exact-query/page/country/device data and current indexing/sitemap. Last morning Web14impressions/0clicks; exact target has0reported impressions and nullposition, not a ranking. Do not invent a trend or keep submitting unchanged URLs.",
     "Keep the working single comparison URL stable; E07 installation answers and E08 demo text/provenance improve existing content without new keyword pages. Use actual fresh search demand for next copy decision rather than snippet churn.",
     "UseprivateE03listeningworksheetforactualreviewwhenavailable, preservingoriginalversion/hashes andQAfixtureseparation. No humanjudgmentsreceived; no newpublicaudio. Current033inferenceextensionstillneedsdistinctpre-runaddendum and>=12GiBheadroom; preservehistorical03.2resultsandpublicationgate.",
-    "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Define a separate minimal measurement contract before any future collection change or conversionreport.",
+    "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Use DOWNLOAD-MEASUREMENT.md for separate qualified GitHub asset series; new collection/organic attribution still needs its own concrete contract.",
     "Distribution drafts now bind qualified0.3.3 and20OctAwesomeMac/publicMacUpdatechecks. No third-party messages/submissions without named-destination authorization. Preserve secondary-channel eligibility/account/gallery checks; no purchases or manipulated links.",
     "Check small installer availability and production redirect efficiently; avoid another unchanged6.5GB download on every heartbeat. Full hashes, public/native proof and restore receipts are retained.",
     "MacOS14 hosted runner retirement is scheduled for2Nov2026; migrate compatibility CI deliberately while preserving real minimum-OS evidence, not by weakening gates."
@@ -463,5 +467,18 @@
     "status": "active",
     "checked_utc": "2026-10-20T14:53:24.175370+00:00",
     "note": "Fresh user goal continuation resumed runtime after the earlier blocked flag. get_goal now reportsactive; native automation is separate. Ranking goal remains unachieved."
+  },
+  "product_measurement": {
+    "contract": "docs/growth/DOWNLOAD-MEASUREMENT.md",
+    "adopted": "2026-10-20",
+    "source": "Existing public GitHub release metadata; no new visitor tracking",
+    "release_id": 416695244,
+    "primary_asset_id": 654436308,
+    "baseline_counter": 42,
+    "counter_delta": null,
+    "unique_people": null,
+    "completed_installs": null,
+    "organic_conversion_rate": null,
+    "limits": "Cumulative GitHub-reported asset counter includes own QA; event/retry/cache/completion semantics and acquisition attribution unestablished. Nine asset series remain separate; no part-count funnel. Raw receipts outside public Git."
   }
 }
