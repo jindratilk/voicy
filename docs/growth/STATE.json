@@ -513,7 +513,7 @@
     },
     {
       "id": "E34",
-      "status": "Protocol frozen for one new controlled full-original-five-case pair after E17 single-case result. Preparation only; no job or model started yet. Original runtime/bootstrap/input/settings/guards retained; external execution boundary only.",
+      "status": "Protocol shipped PR33; exact one-time tag created after50focusedtests, clean review0.93,9head and3mainCI. Run39583894992 attempt1 has control job in progress and materialize queued at the dated private observation. No model-case result or outcome yet.",
       "protocol": "docs/growth/E34-FULL-BATCH.md",
       "execution_tag": "voicy-e34-full-batch-20261021",
       "arms": [
@@ -528,11 +528,31 @@
         5
       ],
       "planned_jobs": 2,
-      "jobs_started": 0,
+      "jobs_started": 1,
       "human_reviews": 0,
       "public_audio_published": 0,
       "ranking_effect": null,
-      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-full-batch/SCOPE.json"
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-full-batch/SCOPE.json",
+      "run_id": 39583894992,
+      "run_url": "https://github.com/jindratilk/voicy/actions/runs/39583894992",
+      "source_commit": "9209749845818a32a94e181b4a5b2fcf963e8139",
+      "pull_request": "https://github.com/jindratilk/voicy/pull/33",
+      "run_attempt": 1,
+      "jobs_created": 2,
+      "jobs": [
+        {
+          "id": 119167913911,
+          "name": "weight-arm (control)",
+          "status_at_observation": "in_progress"
+        },
+        {
+          "id": 119167914331,
+          "name": "weight-arm (materialize)",
+          "status_at_observation": "queued"
+        }
+      ],
+      "observed_utc": "2026-10-21T10:23:44.964Z",
+      "model_cases_completed": null
     }
   ],
   "next_actions": [
@@ -553,7 +573,7 @@
     "E27 makes E26 evidence discoverable from the actual homepage workflow; validate nativecontrols, no initialMP4request, pauseonclose and desktop/mobile before shipping. Keep comparison/title stable and collect new actual demand after E18 evaluationwindows when access returns. A genuine homecontent change merits one homepage-only discovery notification after deploy, not comparison/unchangedURLs.",
     "E28 closes the documented Product Hunt field mismatch in preparation. Do not submit the direct MP4 as a YouTube link or post the old generated maker comment. Human/account/form and named submission approval remain gates; do not recreate assets for recommendations alone or confuse this secondary packet with a launch/ranking outcome.",
     "E33 published and verified on production and named localhost. Preserve title/canonical; evaluate combined demand28Oct/4Nov when GSC is available. No repeated source edits, unchanged IndexNow or benchmark attempts just to create activity. E20 sending declined; no send or repeat request.",
-    "E34: complete focused guard/dispatch tests, actionlint, scoped structured review and final-head CI before creating the frozen execution tag once. Attempt both predefined full-batch arms with unchanged resources, stop each at first failure, preserve all evidence. No public-app fix or audio/ranking claim from preparation or a workflow badge."
+    "E34 is executing: poll run39583894992 and exact jobs119167913911/119167914331, attempt1, before treating either as live or terminal. Do not recreate/move/delete its tag or rerun jobs. After both terminal retrieve encrypted arm artifacts, verify source/protocol/input/inventory bindings and every completed raw WAV; only then fixed-policy ASR. A failed arm must retain all five rows. No app fix, public audio, human quality or rank claim from a badge."
   ],
   "validation": {
     "landing_tests": "18 passed, including legacy/mismatched artifact rejection and exact GitHub quoted/unquoted filename with qualified size",
@@ -604,7 +624,8 @@
     "current_source_and_formats": "ReleaseVALIDATION obsoletepaused-currentwarning corrected toqualified033availability withfailurehistory/currentmodeltests retained. OneisolatedexactpackagedAPIbatch6formats ready: lossless235440frames/deviation1.18918e-7<=2e-7; AAC235520,Vorbis235456 within0.10s. Allfinite/nonconstant48kmonofloat; actualjob/fixture/output/protocolhash andindependentffprobe audit. Corruptanalysiserror, empty400/nojob, missingauth401. No modelcall; ownservergone, prefsunchanged, normaldetach0.",
     "native_controls_video": "69030bytes/SHA256cf73eda373cd69bbf1227bbcb56c194dd7e20b38c6f3f24b6aaf2d803520ea51; H264/yuv420p/1000x650/30.246s/noaudio; all175 source presentation times exact; full176frame decode, allsourceframe privacy review, exactqualifiedjob unchanged. LocalChrome Play/seek/Pause passed. Final public delivery verified outsideGit after merge.",
     "homepage_app_preview": "18existingtests/Next16.3.8build pass. NativeCUA positivecontrols and closed/reopenedpausedstate; Playwrightcore1.63/systemChrome ephemeral1200x900/390x844/320x740: identity/canonical/oneH1/nooverlay/nooverflow, noinitialMP4/WAV, play/timeadvance, closepause andtext pass. Baseline/candidate localmetrics403 retained/explained; productionconsole checked separately afterdeploy. Codeautoreview clean0.91; exactposter manuallyqualified in separatecommit because reviewhelperrejectsbinary.",
-    "open_source_workflow_choices": "18existingtests/build, clean review0.97,7final-head/3mainCI. Native local/preview/production/named-local anchor and actual Audacity/Ardour links; system Chrome1200/390/320 nooverflow/errors and visible heading below nav. Initial probe sampled smooth scroll mid-transition; retained, v2 waited for observed target without app edit. Exact source/canonical/date/sitemap/qualified033redirect verified. No ranking result."
+    "open_source_workflow_choices": "18existingtests/build, clean review0.97,7final-head/3mainCI. Native local/preview/production/named-local anchor and actual Audacity/Ardour links; system Chrome1200/390/320 nooverflow/errors and visible heading below nav. Initial probe sampled smooth scroll mid-transition; retained, v2 waited for observed target without app edit. Exact source/canonical/date/sitemap/qualified033redirect verified. No ranking result.",
+    "E34_preflight": "50focusedtests/actionlint, clean complete review0.93 after2in-scope ledger fixes,9final-head and3mainCI. Exact merged tree equals reviewed head and published protocol200/hash matches. Existing recipient key matches locally; public repo and idle shared research concurrency checked. One frozen tag push; exact source/run/attempt and two live/queued job handles verified. No output validation yet."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
@@ -706,10 +727,10 @@
     "producthunt_preflight": "Current sourced rules and asset candidates mapped; ready maker-comment field is null under the general human-comment guidance. Known same-name page belongs to voicybot.com. The bounded domain query found no product, not exhaustive absence. Actual authenticated identity/form/topics remain unverified."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-21T09:55:01.345906+00:00",
-    "current_wait": "E34 now prepares justified original-evidence follow-up after E17 and completed E33. No live research job yet; preparation is not a verified wait. Fresh GSC and genuine listening remain separate. E20 sending declined, no send or repeat request.",
+    "rechecked_utc": "2026-10-21T10:23:44.964Z",
+    "current_wait": "Verified GitHub research wait: E34 control job119167913911 is in progress and materialize119167914331 queued under run39583894992 attempt1. Source retrieval completed; combined image/input/model/encryption step running. Re-poll actual handles, not this state alone. GSC/human listening remain separate; E20 sending declined.",
     "owner_action_pending": true,
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-21-full-batch/SCOPE.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-21-full-batch/EXECUTION.json",
     "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
   },
   "search_observation_history": [
