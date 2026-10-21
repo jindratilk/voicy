@@ -1,0 +1,50 @@
+name: E34 original five-case weight loading
+on:
+  push:
+    tags: [voicy-e34-full-batch-20261021]
+permissions:
+  contents: read
+concurrency:
+  group: voicy-e03-current-release
+  cancel-in-progress: false
+jobs:
+  weight-arm:
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        arm: [control, materialize]
+    if: >-
+      github.repository == 'jindratilk/voicy' &&
+      github.ref == 'refs/tags/voicy-e34-full-batch-20261021' &&
+      github.event.created && !github.event.forced && github.run_attempt == '1'
+    # E15/E16 actual standard macos15 hosts had >45.7GB initially free, despite
+    # the nominal14GB table. Keep the measured26GiB gate; reject smaller hosts.
+    runs-on: macos-15
+    timeout-minutes: 120
+    env:
+      VOICY_E34_ARM: ${{ matrix.arm }}
+      VOICY_E03_CODE: /tmp/voicy-e03-code-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - name: Retrieve only exact reviewed owner source and public research metadata
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          printf 'VOICY_E03_STARTED_EPOCH=%s\n' "$(date +%s)" >> "$GITHUB_ENV"
+          for path in scripts/growth/run_e03_weight_arm.py docs/growth/E03-WEIGHT-LOADING.md docs/growth/E34-FULL-BATCH.md scripts/growth/trace_e03_case.py docs/growth/E03-GPU-DIAGNOSIS.md scripts/growth/restore_canonical_inputs.py docs/growth/E03-CANONICAL-INPUTS.md docs/growth/E03-CANONICAL-INPUTS.json docs/growth/fixtures/e03-case2-canonical.xor.json scripts/growth/run_e03_current.py scripts/growth/prepare_audio_cases.py docs/growth/E03-PROTOCOL.md docs/growth/E03-MANIFEST.json docs/growth/E03-033-ADDENDUM.md docs/growth/E03-033-RECIPIENT.pub; do
+            mkdir -p "$VOICY_E03_CODE/$(dirname "$path")"
+            curl --fail --silent --show-error --location --retry 3 --max-time 60 --retry-max-time 180 \
+              "https://raw.githubusercontent.com/jindratilk/voicy/$SOURCE_SHA/$path" \
+              --output "$VOICY_E03_CODE/$path"
+          done
+      - name: Verify signed image and all inputs, run declared original five-case arm, encrypt evidence
+        run: python3 "$VOICY_E03_CODE/scripts/growth/run_e03_current.py"
+      - name: Retain only encrypted evidence and its non-audio receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: voicy-e34-${{ matrix.arm }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/voicy-e03-033-${{ github.run_id }}-${{ github.run_attempt }}/sealed/
+          if-no-files-found: error
+          retention-days: 7
