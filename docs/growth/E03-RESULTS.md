@@ -51,3 +51,7 @@ HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
 Repeat sequentially for every input listed in the manifest, including the clean control; this single command is an invocation example, not the whole experiment. Monitor pressure and storage as required by the protocol. The desktop application itself was not exercised by this runner test.
 
 LibriSpeech © 2014 Vassil Panayotov, [OpenSLR SLR12](https://www.openslr.org/12), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Full utterances were resampled/normalized, controlled degradations added, then enhanced and separately mastered. No reader endorsement is implied. Training overlap is unknown. No human listening panel, Adobe processing or comparative quality metric was performed.
+
+## Later current-runtime research — 21 October 2026
+
+The separate [E34 full-batch protocol and outcome](E34-FULL-BATCH.md#recorded-outcome--21-october-2026) records five completed cases in each of two external-bootstrap arms, identical paired decoded samples and ten fixed ASR inspections. Both arms completed; the experiment does not demonstrate a need for the extra parameter evaluation or resolve earlier E15/E17 timeouts. It is not unmodified 0.3.3 app qualification, human listening or published quality evidence. The historical 0.3.2 results above and all later negative ledgers remain distinct.

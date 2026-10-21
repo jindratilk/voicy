@@ -513,7 +513,7 @@
     },
     {
       "id": "E34",
-      "status": "Protocol shipped PR33; exact one-time tag created after50focusedtests, clean review0.93,9head and3mainCI. Run39583894992 attempt1 has control job in progress and materialize queued at the dated private observation. No model-case result or outcome yet.",
+      "status": "Completed original five-case pair at attempt1; both arms5/5, all10raw files/input/config/trace/inventory bindings independently verified. Ten one-pass fixed ASR decodes complete. Paired decoded samples identical; raw WAVs differ only PEAK timestamp. No demonstrated need for added evaluation; no app fix, human quality, public audio or ranking claim.",
       "protocol": "docs/growth/E34-FULL-BATCH.md",
       "execution_tag": "voicy-e34-full-batch-20261021",
       "arms": [
@@ -528,11 +528,11 @@
         5
       ],
       "planned_jobs": 2,
-      "jobs_started": 1,
+      "jobs_started": 2,
       "human_reviews": 0,
       "public_audio_published": 0,
       "ranking_effect": null,
-      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-full-batch/SCOPE.json",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-full-batch/INDEPENDENT-RAW-AUDIT.json",
       "run_id": 39583894992,
       "run_url": "https://github.com/jindratilk/voicy/actions/runs/39583894992",
       "source_commit": "9209749845818a32a94e181b4a5b2fcf963e8139",
@@ -543,16 +543,31 @@
         {
           "id": 119167913911,
           "name": "weight-arm (control)",
-          "status_at_observation": "in_progress"
+          "status_at_observation": "completed",
+          "conclusion": "success"
         },
         {
           "id": 119167914331,
           "name": "weight-arm (materialize)",
-          "status_at_observation": "queued"
+          "status_at_observation": "completed",
+          "conclusion": "success"
         }
       ],
-      "observed_utc": "2026-10-21T10:23:44.964Z",
-      "model_cases_completed": null
+      "observed_utc": "2026-10-21T11:18:35.957631+00:00",
+      "model_cases_completed": {
+        "control": 5,
+        "materialize": 5
+      },
+      "jobs_completed": 2,
+      "asr": {
+        "decoded_once": 10,
+        "failed": 0,
+        "model_sha256": "f953ad0fd29cacd07d5a9eda5624af0f6bcf2258be67c92b79389873d91e0872",
+        "human_listening": false
+      },
+      "decision": "Do not ship experimental boundary as fix. Both completed; prior E15/E17 failures remain unexplained. External bootstrap/control is not unmodified app proof.",
+      "paired_decoded_samples_identical": true,
+      "publication": "No new public audio; preserve human-listening/publication gates."
     }
   ],
   "next_actions": [
@@ -573,7 +588,7 @@
     "E27 makes E26 evidence discoverable from the actual homepage workflow; validate nativecontrols, no initialMP4request, pauseonclose and desktop/mobile before shipping. Keep comparison/title stable and collect new actual demand after E18 evaluationwindows when access returns. A genuine homecontent change merits one homepage-only discovery notification after deploy, not comparison/unchangedURLs.",
     "E28 closes the documented Product Hunt field mismatch in preparation. Do not submit the direct MP4 as a YouTube link or post the old generated maker comment. Human/account/form and named submission approval remain gates; do not recreate assets for recommendations alone or confuse this secondary packet with a launch/ranking outcome.",
     "E33 published and verified on production and named localhost. Preserve title/canonical; evaluate combined demand28Oct/4Nov when GSC is available. No repeated source edits, unchanged IndexNow or benchmark attempts just to create activity. E20 sending declined; no send or repeat request.",
-    "E34 is executing: poll run39583894992 and exact jobs119167913911/119167914331, attempt1, before treating either as live or terminal. Do not recreate/move/delete its tag or rerun jobs. After both terminal retrieve encrypted arm artifacts, verify source/protocol/input/inventory bindings and every completed raw WAV; only then fixed-policy ASR. A failed arm must retain all five rows. No app fix, public audio, human quality or rank claim from a badge."
+    "E34 completed both5/5 with all10raw/trace/config bindings and fixed ASR verified. No demonstrated need for added evaluation; preserve E15/E17 failures and do not rerun unchanged experiment or ship intervention as fix. Public E34 method/result is technical evidence only; new audio and human quality remain gated. Return to actual demand/evidence gaps, not more benchmark attempts just for activity."
   ],
   "validation": {
     "landing_tests": "18 passed, including legacy/mismatched artifact rejection and exact GitHub quoted/unquoted filename with qualified size",
@@ -658,10 +673,11 @@
     "limit": "Generated answer/source inclusion does not independently validate competitor facts or establish ranking causes. The cited Wideframe article calls Adobe audio-only; current official Adobe page supports Premium video, so do not repeat that broad claim."
   },
   "bing": {
-    "access": "20Oct nativeChrome: public Sign In, no authenticateddashboard. Microsoft personal/work-school flows both report intended owner username not found. ExistingGoogleprovider not retried after same-day expired-session diagnosis; no account/grant/import/site created.",
+    "access": "21Oct nativeChrome recheck: public Sign In; Microsoft route reaches blank email challenge with no authenticated console. No identifier/password, consent, account/site/import change. The earlier20Oct username-not-found observations are historical, not proof of account absence. Fresh search/AI reports remain unavailable; no unchanged Google-auth retry.",
     "measurement": "Provider-specific sampled AI Performance citations/grounding queries; not universal AI-answer coverage",
     "permission": "No Google access grant or account creation performed; prefer narrow manual verification when authorized session is available",
-    "indexnow": "Prior own-site changed-page receipts reached200 for18Octhome/comparison and19Octprivacy. No unchanged notification repeated20Oct; not proof of crawl/index/citation."
+    "indexnow": "Prior own-site changed-page receipts reached200 for18Octhome/comparison and19Octprivacy. No unchanged notification repeated20Oct; not proof of crawl/index/citation.",
+    "access_checked_utc": "2026-10-21T11:18:35.957745+00:00"
   },
   "release_health": {
     "published_version": "0.3.3",
