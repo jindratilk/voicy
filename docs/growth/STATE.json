@@ -651,15 +651,17 @@
   ],
   "verified_utc": "2026-10-21T09:37:43.767840+00:00",
   "search_observation": {
-    "date": "2026-10-20",
-    "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
+    "date": "2026-10-21",
+    "engine": "Google Search, native Chrome Incognito desktop, signed out, optional cookies rejected",
     "query": "Adobe podcast alternative",
-    "requested_parameters": "hl=en, gl=us, pws=0; visible before cookie choice; post-choice address simplified to /search",
+    "requested_parameters": "hl=en, gl=us, pws=0",
     "location": "Unknown \u2014 Google footer says it cannot determine location; not a controlled US baseline",
     "owned_result_on_first_observed_page": false,
+    "literal_rank": null,
+    "controlled_US_desktop_rank": null,
+    "controlled_US_mobile_rank": null,
     "ai_answer_observed": true,
     "owned_ai_citation_observed": false,
-    "verified_citation_destination": "https://try.wideframe.com/blog/adobe-podcast-alternatives-for-video-podcast-creators/",
     "visible_web_result_labels": [
       "Reddit",
       "Diffio AI",
@@ -669,8 +671,10 @@
       "Resound.fm",
       "G2"
     ],
-    "scope": "One first-page/expanded-AI desktop observation; followed actual Wideframe citation. No mobile or controlled US rank observation.",
-    "limit": "Generated answer/source inclusion does not independently validate competitor facts or establish ranking causes. The cited Wideframe article calls Adobe audio-only; current official Adobe page supports Premium video, so do not repeat that broad claim."
+    "scope": "One query, first results page plus expanded AI Overview and Show all related results on same query. No pagination, mobile, location grant, login, feedback, message or challenge bypass. Source labels observed; destinations and competitor claims not revalidated by this observation.",
+    "limits": "Absence on this one first observed page is not universal absence, an indexing diagnosis, controlled US rank, trend, causal E33 result or year-end completion. AI wording/prices/superlatives are not independently validated facts.",
+    "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-after-full-batch/SEARCH-OBSERVATION.private.json",
+    "next": "Do not repeat unchanged same-day query or infer a penalty/ranking effect. Preserve E33 demand windows28Oct/4Nov; existing owner GSC access and independent quality/distribution gates remain."
   },
   "bing": {
     "access": "21Oct nativeChrome recheck: public Sign In; Microsoft route reaches blank email challenge with no authenticated console. No identifier/password, consent, account/site/import change. The earlier20Oct username-not-found observations are historical, not proof of account absence. Fresh search/AI reports remain unavailable; no unchanged Google-auth retry.",
@@ -816,6 +820,28 @@
       "owned_ai_citation_observed": null,
       "limits": "No resultpage/countryfooter; networkcountryhintaloneisnotUSrank. Onequery, no mobile/replace/retry.",
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-us-search-method/attempt-1/INDEPENDENT-AUDIT.json"
+    },
+    {
+      "date": "2026-10-20",
+      "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
+      "query": "Adobe podcast alternative",
+      "requested_parameters": "hl=en, gl=us, pws=0; visible before cookie choice; post-choice address simplified to /search",
+      "location": "Unknown \u2014 Google footer says it cannot determine location; not a controlled US baseline",
+      "owned_result_on_first_observed_page": false,
+      "ai_answer_observed": true,
+      "owned_ai_citation_observed": false,
+      "verified_citation_destination": "https://try.wideframe.com/blog/adobe-podcast-alternatives-for-video-podcast-creators/",
+      "visible_web_result_labels": [
+        "Reddit",
+        "Diffio AI",
+        "Adobe Podcast",
+        "Cleanvoice AI",
+        "Trebble",
+        "Resound.fm",
+        "G2"
+      ],
+      "scope": "One first-page/expanded-AI desktop observation; followed actual Wideframe citation. No mobile or controlled US rank observation.",
+      "limit": "Generated answer/source inclusion does not independently validate competitor facts or establish ranking causes. The cited Wideframe article calls Adobe audio-only; current official Adobe page supports Premium video, so do not repeat that broad claim."
     }
   ],
   "aeo_observation": {
