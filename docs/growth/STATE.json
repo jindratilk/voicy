@@ -743,11 +743,29 @@
     "producthunt_preflight": "Current sourced rules and asset candidates mapped; ready maker-comment field is null under the general human-comment guidance. Known same-name page belongs to voicybot.com. The bounded domain query found no product, not exhaustive absence. Actual authenticated identity/form/topics remain unverified."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-21T10:23:44.964Z",
-    "current_wait": "Verified GitHub research wait: E34 control job119167913911 is in progress and materialize119167914331 queued under run39583894992 attempt1. Source retrieval completed; combined image/input/model/encryption step running. Re-poll actual handles, not this state alone. GSC/human listening remain separate; E20 sending declined.",
+    "rechecked_utc": "2026-10-21T11:26:26.966233+00:00",
+    "current_wait": null,
+    "last_terminal_research": {
+      "experiment": "E34",
+      "run_id": 39583894992,
+      "attempt": 1,
+      "source_commit": "9209749845818a32a94e181b4a5b2fcf963e8139",
+      "jobs": [
+        119167913911,
+        119167914331
+      ],
+      "status": "Both completed and independently verified; no replay or live wait",
+      "results_commit": "cf561b2bdf690ef6b09faf23ac73b4fd74792460"
+    },
     "owner_action_pending": true,
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-21-full-batch/EXECUTION.json",
-    "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
+    "dependencies": [
+      "Fresh GSC7/28-day query/page/country/device/indexing data: last observed existing-owner Google session expired; do not present cached exports as current or retry unchanged authentication.",
+      "Actual subjective listening remains unverified; no new audio-quality endorsement or publication from ASR alone.",
+      "E33 demand windows28Oct/4Nov have not elapsed; no immediate ranking conclusion or copy churn.",
+      "Third-party distribution requires named-destination authorization; exact E20 send was declined, do not re-ask."
+    ],
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-21-full-batch/CYCLE-COMPLETE.json",
+    "monitor": "Native voicy-seo-growth automation remains separately active subject to Mac/Codex availability; ranking goal remains unachieved."
   },
   "search_observation_history": [
     {
