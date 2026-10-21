@@ -1,6 +1,6 @@
 # Security and privacy
 
-Voicy processes recordings locally. The native application owns an authenticated loopback server on an ephemeral port. No analytics or hosted enhancement API is used. Audio stays in the user's Application Support library unless explicitly exported.
+Voicy processes recordings locally. The native application owns an authenticated loopback server on an ephemeral port. No analytics or hosted enhancement API is used. Persistent recordings stay in the user's Application Support library unless explicitly exported. AuK also uses local temporary processing files, which are normally removed when the worker finishes; an interrupted process or operating-system backup can leave recoverable copies.
 
 Do not post private recordings or credentials in public issues. Report security defects through [GitHub private vulnerability reporting](https://github.com/jindratilk/voicy/security/advisories/new). This is enabled for the repository.
 

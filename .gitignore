@@ -53,6 +53,13 @@ __pycache__/
 *.p12
 *.p8
 *.key
+*.pem
+*.pfx
+*.jks
+*.keystore
+.npmrc
+.netrc
+.pypirc
 *.wav
 *.m4a
 *.mp3
