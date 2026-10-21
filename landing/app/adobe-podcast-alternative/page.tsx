@@ -71,7 +71,7 @@ export default function ComparisonPage() {
     description,
     url: `${site.url}/adobe-podcast-alternative`,
     datePublished: "2026-10-15",
-    dateModified: "2026-10-20",
+    dateModified: "2026-10-21",
     about: { "@type": "SoftwareApplication", name: "Voicy", url: site.url },
     breadcrumb: {
       "@type": "BreadcrumbList",
@@ -138,6 +138,8 @@ export default function ComparisonPage() {
           </p>
           <p className="source-note">
             <a href="#install">How to install and run offline ↓</a>
+            {" · "}
+            <a href="#open-source-options">Compare open-source options ↓</a>
           </p>
           {site.downloadPaused && (
             <p className="download-notice">
@@ -150,7 +152,7 @@ export default function ComparisonPage() {
             Published by the Voicy project ·{" "}
             <time dateTime="2026-10-15">15 October 2026</time>
             {" · Updated "}
-            <time dateTime="2026-10-20">20 October 2026</time>
+            <time dateTime="2026-10-21">21 October 2026</time>
             <br />
             This is our product comparison, not an independent review. Adobe
             facts are linked to official documentation below.
@@ -222,6 +224,62 @@ export default function ComparisonPage() {
                 Adobe system requirements
               </a>
               . Features and plans can change; confirm them before choosing.
+            </p>
+          </section>
+          <section id="open-source-options">
+            <h2>Open-source options for speech cleanup.</h2>
+            <p>
+              An open-source Adobe Podcast alternative can be a focused speech
+              enhancer, an audio editor, or a complete recording workstation.
+              Choose the task you need, then check the platform and licence.
+            </p>
+            <ul className="comparison-list">
+              <li>
+                <strong>Voicy: local speech enhancement on Apple Silicon.</strong>{" "}
+                Import a recording, run AuK enhancement, compare the original
+                and result, and export a mono WAV. No account or recording
+                upload is needed. This release requires macOS 14+; allow the
+                6.5 GB setup download and processing time. Generative cleanup
+                can change words or voice texture, so review the whole result.
+              </li>
+              <li>
+                <strong>Audacity: audio editing and noise-profile cleanup.</strong>{" "}
+                <a href="https://www.audacityteam.org/">Audacity</a> is free and
+                open source on Windows, macOS and Linux. Its built-in{" "}
+                <a href="https://manual.audacityteam.org/man/noise_reduction.html">
+                  Noise Reduction
+                </a>{" "}
+                uses a noise-only selection to learn a profile, then applies
+                reduction to your audio. It suits steady sounds such as fan
+                hiss; the manual cautions against irregular noise such as
+                traffic. This describes that effect, not every optional plug-in.
+              </li>
+              <li>
+                <strong>Ardour: multitrack recording, editing and mixing.</strong>{" "}
+                <a href="https://ardour.org/">Ardour</a> is an open-source
+                workstation for Linux, macOS and Windows, with effects plug-in
+                support. Choose it when you need to arrange and mix a podcast
+                session. Its source code is available to build yourself; the{" "}
+                <a href="https://community.ardour.org/download">
+                  official prebuilt downloads have payment terms
+                </a>.
+              </li>
+            </ul>
+            <p>
+              Voicy’s{" "}
+              <a href={`${site.github}/blob/main/LICENSE`}>MIT licence</a>{" "}
+              covers its application code. AuK, Qwen and bundled dependencies
+              retain their own licences, listed in the{" "}
+              <a href={`${site.github}/blob/main/THIRD_PARTY_NOTICES.md`}>
+                third-party notices
+              </a>.
+              Open source does not mean every model, plug-in or ready-made
+              installer has the same terms.
+            </p>
+            <p className="source-note">
+              Official Audacity and Ardour sources checked 21 October 2026.
+              These are workflow choices, not an audio-quality ranking; we have
+              not benchmarked either against Voicy.
             </p>
           </section>
           <section>

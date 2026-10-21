@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://usevoicy.app/adobe-podcast-alternative",
-      lastModified: "2026-10-20",
+      lastModified: "2026-10-21",
       changeFrequency: "monthly",
       priority: 0.9,
     },

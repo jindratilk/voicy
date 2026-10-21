@@ -435,3 +435,10 @@ Five current primary help sources are captured with hashes outside Git. Native C
 ### Editorial send decision — 21 October 2026
 
 Sending the exact E20 Six Colors / Jason Snell message was declined. The prepared packet stays archived and unsent. Do not send it, create a cloud draft, follow up or repeat the approval request unless the owner explicitly changes this instruction. This closes the pending question without external distribution or a ranking result; other destinations retain their existing authorization gates. The current decision is recorded in STATE and the distribution packet; earlier preparation notes are historical.
+
+
+### Open-source workflow choice — 21 October 2026
+
+E33 responds to a new owner-provided screenshot for `adobe podcast alternative open source`. Voicy is absent from the visible excerpt; this is neither the complete result page nor a controlled primary-query rank observation. The existing comparison already described Voicy as open source but did not help choose between it, Audacity and Ardour. Add that missing workflow decision and direct source/licence links on the same canonical page, with an entry jump link. Audacity’s official noise-profile manual and cross-platform description, plus Ardour’s workstation and prebuilt-payment documentation, support the bounded facts. Do not rank quality or imply the tools have identical jobs or licence/download terms. Primary sources and the exact screenshot binding stay private.
+
+Preserve title/description, URL, existing audio and homepage/privacy dates. Advance only the genuinely changed comparison visible/JSON-LD and sitemap modification dates. Existing tests/build, clean structured review and native desktop/source-link acceptance and desktop/mobile console/layout checks are required before publication. E18’s27October/3November demand reviews now have this intervention as a confounder; E33’s7/14-day checkpoints are28October/4November. No before/after observation isolates either change or establishes a ranking effect. GSC still needs existing-owner authentication; E20 sending was declined and must not be re-asked.
