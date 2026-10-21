@@ -29,6 +29,7 @@ PARTS = [
     (1110981427, '13dbf4e9c1edc1e1fd4a87bbe17028821ae70fdfb99926350e371409cc59a2b3'),
 ]
 WORK_DEADLINE = math.inf
+FULL_WEIGHT_TAG = 'refs/tags/voicy-e34-full-batch-20261021'
 
 
 def sha(path):
@@ -170,59 +171,81 @@ def runtime_environment(runtime, evidence):
     return env
 
 
-def run_cases(runtime, prepared, evidence, validation_ffmpeg, diagnostic_trace=None, weight_arm=None):
+def run_cases(runtime, prepared, evidence, validation_ffmpeg, diagnostic_trace=None, weight_arm=None,
+              full_weight_batch=False):
     require(weight_arm in (None, 'control', 'materialize') and
             (weight_arm is None or diagnostic_trace is not None), 'Invalid weight arm/bootstrap')
     manifest = json.loads((prepared / 'manifest.json').read_text())
+    require(not full_weight_batch or
+            (diagnostic_trace is not None and weight_arm is not None and
+             [case['case'] for case in manifest['cases']] == [1, 2, 3, 4, 5]),
+            'Full weight batch requires both the declared arm and all five cases in order')
     runner = runtime / 'experiments/enhance_auk_local.py'
     require(sha(runner) == RUNNER_HASH, 'Unreviewed packaged model runner')
     env = runtime_environment(runtime, evidence)
-    records = []
-    for case in manifest['cases']:
-        if diagnostic_trace is not None and case['case'] != 2:
-            continue  # Explicit single-case diagnosis; never reported as a five-case batch.
-        guards(evidence)
-        source = prepared / case['outputs']['input']['path']
-        require(sha(source) == case['outputs']['input']['sha256'], 'Input changed before execution')
-        dest = evidence / ('case%02d' % case['case'])
-        argv = [runtime / 'python/bin/python3', '-u', runner, source, '--output', dest,
-                '--models', runtime / '.auk/models', '--nfe', '32', '--memory-mode', 'auto']
-        if diagnostic_trace is not None:
-            prefix = [diagnostic_trace, evidence / 'CASE2-TRACE.jsonl']
-            if weight_arm is not None:
-                prefix.insert(1, weight_arm)
-            argv[2:2] = prefix
-        rec = {'case': case['case'], 'input_sha256': sha(source), 'status': 'running', 'samples': []}
-        records.append(rec)
+    records = ([{'case': case['case'],
+                 'input_sha256': case['outputs']['input']['sha256'],
+                 'status': 'not run; an earlier case did not complete', 'samples': []}
+                for case in manifest['cases']] if full_weight_batch else [])
+    if full_weight_batch:
         save(evidence / 'RUNS.json', records)
-        started = time.monotonic()
-        with (evidence / ('case%02d.log' % case['case'])).open('wb') as log:
-            process = subprocess.Popen([str(x) for x in argv], env=env, stdout=log,
-                                       stderr=subprocess.STDOUT, start_new_session=True)
-            try:
-                while process.poll() is None:
-                    rec['samples'].append(guards(evidence))
-                    require(time.monotonic() - started <= 1200, 'Case timeout')
-                    time.sleep(2)
-                rec['returncode'] = process.wait()
-                require(rec['returncode'] == 0, 'Packaged runner failed')
-                rec['output'] = inspect_output(dest / 'output.wav', validation_ffmpeg,
-                                               case['outputs']['input']['frames'] // 2)
-                rec['status'] = 'completed'
-            except BaseException:
-                rec['status'] = 'failed; preserve output/logs and stop remaining cases'
-                if process.poll() is None:
-                    os.killpg(process.pid, signal.SIGTERM)
-                    try:
-                        process.wait(timeout=10)
-                    except subprocess.TimeoutExpired:
-                        os.killpg(process.pid, signal.SIGKILL)
-                        process.wait()
-                raise
-            finally:
-                rec['elapsed_seconds'] = time.monotonic() - started
+    for index, case in enumerate(manifest['cases']):
+        if diagnostic_trace is not None and not full_weight_batch and case['case'] != 2:
+            continue  # Explicit single-case diagnosis; never reported as a five-case batch.
+        rec = records[index] if full_weight_batch else None
+        try:
+            guards(evidence)
+            source = prepared / case['outputs']['input']['path']
+            require(sha(source) == case['outputs']['input']['sha256'], 'Input changed before execution')
+            dest = evidence / ('case%02d' % case['case'])
+            argv = [runtime / 'python/bin/python3', '-u', runner, source, '--output', dest,
+                    '--models', runtime / '.auk/models', '--nfe', '32', '--memory-mode', 'auto']
+            if diagnostic_trace is not None:
+                prefix = [diagnostic_trace, evidence / ('CASE%d-TRACE.jsonl' % case['case'])]
+                if weight_arm is not None:
+                    prefix.insert(1, weight_arm)
+                argv[2:2] = prefix
+            if full_weight_batch:
+                rec['status'] = 'running'
+            else:
+                rec = {'case': case['case'], 'input_sha256': sha(source), 'status': 'running', 'samples': []}
+                records.append(rec)
+            save(evidence / 'RUNS.json', records)
+            started = time.monotonic()
+            with (evidence / ('case%02d.log' % case['case'])).open('wb') as log:
+                process = subprocess.Popen([str(x) for x in argv], env=env, stdout=log,
+                                           stderr=subprocess.STDOUT, start_new_session=True)
+                try:
+                    while process.poll() is None:
+                        rec['samples'].append(guards(evidence))
+                        require(time.monotonic() - started <= 1200, 'Case timeout')
+                        time.sleep(2)
+                    rec['returncode'] = process.wait()
+                    require(rec['returncode'] == 0, 'Packaged runner failed')
+                    rec['output'] = inspect_output(dest / 'output.wav', validation_ffmpeg,
+                                                   case['outputs']['input']['frames'] // 2)
+                    rec['status'] = 'completed'
+                except BaseException:
+                    rec['status'] = 'failed; preserve output/logs and stop remaining cases'
+                    if process.poll() is None:
+                        os.killpg(process.pid, signal.SIGTERM)
+                        try:
+                            process.wait(timeout=10)
+                        except subprocess.TimeoutExpired:
+                            os.killpg(process.pid, signal.SIGKILL)
+                            process.wait()
+                    raise
+                finally:
+                    rec['elapsed_seconds'] = time.monotonic() - started
+                    save(evidence / 'RUNS.json', records)
+            print(json.dumps({'case': case['case'], 'status': rec['status']}), flush=True)
+
+        except BaseException as exc:
+            if full_weight_batch:
+                rec.update(status='failed; preserve output/logs and stop remaining cases',
+                           exception_type=type(exc).__name__)
                 save(evidence / 'RUNS.json', records)
-        print(json.dumps({'case': case['case'], 'status': rec['status']}), flush=True)
+            raise
 
 
 def seal(evidence, destination, certificate):
@@ -245,16 +268,20 @@ def seal(evidence, destination, certificate):
 
 def main():
     global WORK_DEADLINE
-    weight_loading = os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-weight-loading'
+    full_weight_batch = os.environ.get('GITHUB_REF') == FULL_WEIGHT_TAG
+    weight_loading = full_weight_batch or os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-weight-loading'
     diagnostic = weight_loading or os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-gpu-diagnosis'
     canonical_transport = diagnostic or os.environ.get('GITHUB_REF') == 'refs/heads/codex/e03-canonical-inputs'
     require(os.environ.get('GITHUB_REPOSITORY') == 'jindratilk/voicy'
             and os.environ.get('GITHUB_REF') in ('refs/heads/codex/e03-current-release',
                                                'refs/heads/codex/e03-canonical-inputs',
                                                'refs/heads/codex/e03-gpu-diagnosis',
-                                               'refs/heads/codex/e03-weight-loading'),
-            'Only the exact owner research branch may execute')
-    require(platform.system() == 'Darwin' and platform.machine() == 'arm64', 'Need native macOS arm64')
+                                               'refs/heads/codex/e03-weight-loading', FULL_WEIGHT_TAG),
+            'Only the exact owner research ref may execute')
+    if full_weight_batch:
+        require(os.environ.get('GITHUB_RUN_ATTEMPT') == '1' and
+                os.environ.get('VOICY_E34_ARM') in ('control', 'materialize'),
+                'Only the first declared full-batch arm may execute')
     # Include bounded source retrieval in the work budget; finalization is separate.
     elapsed = time.time() - float(os.environ['VOICY_E03_STARTED_EPOCH'])
     require(math.isfinite(elapsed) and elapsed >= -5, 'Invalid workflow start time')
@@ -280,18 +307,29 @@ def main():
             system['canonical_transport_protocol_sha256'] = sha(code / 'docs/growth/E03-CANONICAL-INPUTS.md')
         if diagnostic:
             system.update(observer_sha256=sha(code / 'scripts/growth/trace_e03_case.py'),
-                          selected_cases=[2],
+                          selected_cases=[1, 2, 3, 4, 5] if full_weight_batch else [2],
                           scope='Single case2 CPU profile diagnosis; observer overhead; not five-case evidence, UI or quality')
             if weight_loading:
                 system.update(weight_loading_protocol_sha256=sha(code / 'docs/growth/E03-WEIGHT-LOADING.md'),
                               weight_bootstrap_sha256=sha(code / 'scripts/growth/run_e03_weight_arm.py'),
-                              weight_arm=os.environ.get('VOICY_E17_ARM'),
+                              weight_arm=os.environ.get('VOICY_E34_ARM' if full_weight_batch else 'VOICY_E17_ARM'),
                               scope='Single case2 weight-loading arm; external override/observer; not public runtime or quality proof')
+                if full_weight_batch:
+                    system.update(full_batch_protocol_sha256=sha(code / 'docs/growth/E34-FULL-BATCH.md'),
+                                  scope='Original five-case weight arm; external override/observer; not unmodified public-runtime or quality proof')
             else:
                 system['diagnostic_protocol_sha256'] = sha(code / 'docs/growth/E03-GPU-DIAGNOSIS.md')
         save(evidence / 'SYSTEM.json', system)
         if weight_loading:
             require(system['weight_arm'] in ('control', 'materialize'), 'Unknown weight arm')
+        if full_weight_batch:
+            # A rejected host/preparation still has five explicit not-run outcomes.
+            declared = json.loads((code / 'docs/growth/E03-MANIFEST.json').read_text())
+            save(evidence / 'RUNS.json', [
+                {'case': case['case'], 'input_sha256': case['outputs']['input']['sha256'],
+                 'status': 'not run; preparation did not complete', 'samples': []}
+                for case in declared['cases']])
+        require(platform.system() == 'Darwin' and platform.machine() == 'arm64', 'Need native macOS arm64')
         system.update(physical_memory_bytes=int(command('sysctl', '-n', 'hw.memsize')),
                       chip=command('sysctl', '-n', 'machdep.cpu.brand_string').decode().strip(),
                       initial_observation=resources(root), initial_minimum_bytes=26 * GIB)
@@ -349,8 +387,10 @@ def main():
         bootstrap = code / 'scripts/growth/run_e03_weight_arm.py' if weight_loading else (
             code / 'scripts/growth/trace_e03_case.py' if diagnostic else None)
         run_cases(runtime, prepared, evidence, preparation_ffmpeg, bootstrap,
-                  system['weight_arm'] if weight_loading else None)
-        status = ('single case2 weight arm ' + system['weight_arm'] + ' returned; not public runtime proof'
+                  system['weight_arm'] if weight_loading else None,
+                  full_weight_batch=full_weight_batch)
+        status = ('five-case weight arm ' + system['weight_arm'] + ' returned; not public runtime proof'
+                  if full_weight_batch else 'single case2 weight arm ' + system['weight_arm'] + ' returned; not public runtime proof'
                   if weight_loading else 'single case2 diagnostic returned; not five-case evidence or quality'
                   if diagnostic else 'five cases structurally checked; no listening or ASR judgment')
     except Exception as exc:
@@ -368,7 +408,7 @@ def main():
         save(sealed / 'RECEIPT.json', receipt)
         print(json.dumps(receipt), flush=True)
     return 0 if status.startswith(('five cases', 'single case2 diagnostic returned',
-                                   'single case2 weight arm')) else 1
+                                   'single case2 weight arm', 'five-case weight arm')) else 1
 
 
 if __name__ == '__main__':

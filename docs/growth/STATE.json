@@ -510,6 +510,29 @@
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-open-source-intent/SCOPE.json",
       "source_commit": "6584623c2a3f9cdd987b10958f549eaaac33f54b",
       "pull_request": "https://github.com/jindratilk/voicy/pull/32"
+    },
+    {
+      "id": "E34",
+      "status": "Protocol frozen for one new controlled full-original-five-case pair after E17 single-case result. Preparation only; no job or model started yet. Original runtime/bootstrap/input/settings/guards retained; external execution boundary only.",
+      "protocol": "docs/growth/E34-FULL-BATCH.md",
+      "execution_tag": "voicy-e34-full-batch-20261021",
+      "arms": [
+        "control",
+        "materialize"
+      ],
+      "case_order": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "planned_jobs": 2,
+      "jobs_started": 0,
+      "human_reviews": 0,
+      "public_audio_published": 0,
+      "ranking_effect": null,
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-full-batch/SCOPE.json"
     }
   ],
   "next_actions": [
@@ -529,7 +552,8 @@
     "E26 controls video complements the existing release gallery with equivalent text. Keep the actual comparison/title stable; no IndexNow for this static asset or documentation-only changes. No need to repeat the capture. Refresh any destination-specific video/gallery requirements only before an explicitly authorized submission; this silent UI clip is not model-quality or launch completion evidence.",
     "E27 makes E26 evidence discoverable from the actual homepage workflow; validate nativecontrols, no initialMP4request, pauseonclose and desktop/mobile before shipping. Keep comparison/title stable and collect new actual demand after E18 evaluationwindows when access returns. A genuine homecontent change merits one homepage-only discovery notification after deploy, not comparison/unchangedURLs.",
     "E28 closes the documented Product Hunt field mismatch in preparation. Do not submit the direct MP4 as a YouTube link or post the old generated maker comment. Human/account/form and named submission approval remain gates; do not recreate assets for recommendations alone or confuse this secondary packet with a launch/ranking outcome.",
-    "E33 published and verified on production and named localhost. Preserve title/canonical; evaluate combined demand28Oct/4Nov when GSC is available. No repeated source edits, unchanged IndexNow or benchmark attempts just to create activity. E20 sending declined; no send or repeat request."
+    "E33 published and verified on production and named localhost. Preserve title/canonical; evaluate combined demand28Oct/4Nov when GSC is available. No repeated source edits, unchanged IndexNow or benchmark attempts just to create activity. E20 sending declined; no send or repeat request.",
+    "E34: complete focused guard/dispatch tests, actionlint, scoped structured review and final-head CI before creating the frozen execution tag once. Attempt both predefined full-batch arms with unchanged resources, stop each at first failure, preserve all evidence. No public-app fix or audio/ranking claim from preparation or a workflow badge."
   ],
   "validation": {
     "landing_tests": "18 passed, including legacy/mismatched artifact rejection and exact GitHub quoted/unquoted filename with qualified size",
@@ -682,10 +706,10 @@
     "producthunt_preflight": "Current sourced rules and asset candidates mapped; ready maker-comment field is null under the general human-comment guidance. Known same-name page belongs to voicybot.com. The bounded domain query found no product, not exhaustive absence. Actual authenticated identity/form/topics remain unverified."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-21T09:42:42.796716+00:00",
-    "current_wait": "E33 completed useful work from new owner screenshot. No live research job pending. Fresh GSC, genuine listening, suitable model execution headroom and later combined-demand evaluation remain separate dependencies. E20 sending declined; no send, follow-up or repeat approval request.",
+    "rechecked_utc": "2026-10-21T09:55:01.345906+00:00",
+    "current_wait": "E34 now prepares justified original-evidence follow-up after E17 and completed E33. No live research job yet; preparation is not a verified wait. Fresh GSC and genuine listening remain separate. E20 sending declined, no send or repeat request.",
     "owner_action_pending": true,
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-21-open-source-intent/SCOPE.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-21-full-batch/SCOPE.json",
     "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
   },
   "search_observation_history": [
@@ -766,8 +790,8 @@
   },
   "goal_runtime_status": {
     "status": "active",
-    "checked_utc": "2026-10-20T14:53:24.175370+00:00",
-    "note": "Fresh user goal continuation resumed runtime after the earlier blocked flag. get_goal now reportsactive; native automation is separate. Ranking goal remains unachieved."
+    "checked_utc": "2026-10-21T09:55:01.345911+00:00",
+    "note": "get_goal returned active at the start of this continuation after owner input and completed E33. Ranking goal remains unachieved; native automation is separate."
   },
   "product_measurement": {
     "contract": "docs/growth/DOWNLOAD-MEASUREMENT.md",
