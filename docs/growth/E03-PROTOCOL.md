@@ -50,5 +50,5 @@ Do not publish comparative MOS, PESQ, STOI or other quality claims without a sep
 
 ## Provenance and storage
 
-Working directory: `/Users/giuseppe/Documents/voicy-growth-evidence/e03-v1/`.
+Working directory: `voicy-growth-evidence/e03-v1/`, stored outside the public checkout. The absolute location is retained only in private operational records.
 Public repository: protocol, preparation script, sanitized manifest and summary only. Do not commit the large installer/archive, model weights, logs with private paths/credentials, or raw audio by accident. Public listening assets require an explicit Git allowlist and small, reviewed file set. Preserve source/protocol/script hashes and generated UTC timestamps. A completed preparation run is not a completed enhancement experiment.
