@@ -70,7 +70,7 @@ The draft asks for an independent evaluation. It includes the setup size, hardwa
 
 The publisher's literal-domain search returned HTTP200 and no article results in the captured body. This limited check is not an exhaustive archive search or proof of no prior mention. Contact was verified from the editor's own bio, and the connected Gmail sender identity was checked read-only. Both identities, the exact message, five hashed source snapshots, claim matrix and audit remain outside public Git under `voicy-growth-evidence/checkpoints/2026-10-20-editorial-six-colors/`. Message SHA256: `0baab36ac1ba1c041dc4c4a853ecd897724e7d802d1da33b21055f80f90c7230`.
 
-Manual claim/source/privacy review passed; all three proposed message links returned200. No Gmail draft, email, external submission, acquired link or acceptance exists. The exact named-recipient message still requires explicit owner authorization. Refresh sender/contact/rules/duplicates/release facts and links before any approved send; do not start a repeated follow-up sequence automatically.
+Manual claim/source/privacy review passed; all three proposed message links returned200. No Gmail draft, email, external submission, acquired link or acceptance exists. **Sending was declined on 21 October 2026.** Preserve this draft as unsent evidence; do not send it, create a cloud draft, follow up or repeat the approval request unless the owner explicitly changes the decision. Other destinations retain their existing authorization gates.
 
 
 ## Product Hunt preflight — 21 October 2026

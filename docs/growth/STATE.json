@@ -397,7 +397,7 @@
     },
     {
       "id": "E20",
-      "status": "One complete194-word editorial evaluation email prepared and manually audited; NOT SENT. Current publisher/bio and historical2022review support plausible workflow adjacency only. Five source hashes and three200links checked. Sender identity verified read-only; exact contact/body/evidence private. Named-message authorization still required. No cloud draft/submission/coverage/link/rank outcome.",
+      "status": "Prepared and audited194-word independent-evaluation email remains unsent. Sending declined on21October2026; no email/cloud draft/follow-up or repeat approval request is planned unless the owner explicitly changes the decision. Preparation is not a distribution or ranking result.",
       "packet": "docs/growth/DISTRIBUTION-PACK.md#one-editorial-evaluation-draft--20-october-2026",
       "candidate": "Six Colors / Jason Snell",
       "message_sha256": "0baab36ac1ba1c041dc4c4a853ecd897724e7d802d1da33b21055f80f90c7230",
@@ -406,7 +406,8 @@
       "editorial_acceptances": 0,
       "acquired_links": 0,
       "ranking_effect": null,
-      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-editorial-six-colors/PACKET.json"
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-editorial-six-colors/PACKET.json",
+      "authorization": "declined"
     },
     {
       "id": "E21",
@@ -506,8 +507,8 @@
     "E18 shipped andproduction/localverified. Keepcomparison/title stable; reviewactualquery/page demand on/after27Oct and3Nov whenGSCauthavailable. No same-daycopy/title/querychurn, repeatedunchangedIndexNow or causalrankclaim. E17 remainsinvestigativeonly; no further same-day modelattempt.",
     "E19closedwithUSnetworkhintbutGoogle429/reCAPTCHA; no usablerank/market/ownedpresence data. Keepfrozenresearchtagunchanged; nohostrotation/proxy/stealth/solver/repeatedqueryor new same-dayobservationattempt. Preservelastrealnativeunknownlocationobservations andyearendcriterion. FreshGSCstillneedsexistingownerreauth; averagepositionwouldonlysupportliteralrankobservations.",
     "Adminlabels/privacy/docs now disclose legacyWorkerdownload coverage and current homepage-only pageviewevents. PrimaryGitHubstarts, completedinstalls and organicconversion remainunmeasured. Use DOWNLOAD-MEASUREMENT.md for separate qualified GitHub asset series; new collection/organic attribution still needs its own concrete contract.",
-    "E20 exact SixColors/JasonSnell independent-evaluation message is fully prepared privately and held for explicit named-recipient authorization. No email/cloud draft/submission/follow-up sent. Refresh actualsender/contact/rules/duplicates/releaseknownlimits/links before any approvedsend; no backlink/positive-review request. Do not repeatedly ask the same approval or collect a bulk contactlist.",
-    "E21 actual033 nativegallery now public in repo/README; use only with factual original/restored-result captions and explicit destinationauthorization. Two1000x650images are not a complete ProductHuntlaunch/video/formcheck. E20 exactemailapproval remains pending; do not re-ask unchanged or send automatically.",
+    "E20 sending was declined on21October2026. Preserve the unsent evidence packet; do not email Six Colors / Jason Snell, create a cloud draft, follow up or repeat the approval request unless the owner explicitly changes this instruction. Other destinations retain their existing authorization gates.",
+    "E21 actual033 nativegallery is public in repo/README; use only with factual original/restored-result captions and explicit destinationauthorization. Two1000x650images are not a complete ProductHuntlaunch/video/formcheck. E20 sending is declined; do not send or re-ask.",
     "Distribution drafts now bind qualified0.3.3 and20OctAwesomeMac/publicMacUpdatechecks. No third-party messages/submissions without named-destination authorization. Preserve secondary-channel eligibility/account/gallery checks; no purchases or manipulated links.",
     "E22 wwwTLS/308repair now live in exactskaluj/voicy project; preserve canonicalnonwww URLs and samepath/query redirects. No new migration/keywordURL/robotschange or unchangedIndexNownotification justified. Recheck on demonstrateddomainregression or normal future healthcycle, not repeatedsame-dayauditloops.",
     "E23 publicreleaseVALIDATION currentstatus nowmatchesqualified033 andretainsoldstartup/currentmodelnegative evidence. Sixshortformatdecodes are testedAPIexamplesonly, notallprofiles/OSes/GUI/modelquality. Do not repeatunchangedformatbatch or useit toclose E03human/modelgates. BoundedownerGmail/Drivequeries foundnonewreport; do not repeatthosequeries withoutnewinputs.",
@@ -633,7 +634,7 @@
     "superseded_candidate": "The old e8c2511d image is failed minimum-OS evidence, never the current459f8699 image; history in docs/release/0.3.3-CANDIDATE.md and Git."
   },
   "distribution": {
-    "status": "Qualified0.3.3 directory drafts preserved; one concrete SixColors editorial evaluation message now prepared and fact/link/privacy reviewed. No external communication or submission.",
+    "status": "Qualified0.3.3 directory drafts preserved. E20 editorial sending was declined; no send or follow-up is planned and no external communication or submission occurred.",
     "packet": "docs/growth/DISTRIBUTION-PACK.md",
     "fields": "docs/growth/DISTRIBUTION-PACK.json",
     "priority": [
@@ -651,18 +652,24 @@
     ],
     "editorial": {
       "candidate": "Six Colors / Jason Snell",
-      "status": "draft prepared; exact-message authorization hold",
+      "status": "Sending declined on21October2026; archived unsent. Do not send, follow up or repeat the approval request unless the owner explicitly changes this decision.",
       "message_sha256": "0baab36ac1ba1c041dc4c4a853ecd897724e7d802d1da33b21055f80f90c7230",
       "fit_limit": "Current publisher/bio; historical2022Macpodcastrecordingreview is not proof of current cleanup need, product use or interest.",
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-20-editorial-six-colors/PACKET.json",
-      "messages_sent": 0
+      "messages_sent": 0,
+      "authorization": "declined",
+      "decision_recorded_utc": "2026-10-21T09:23:04.592380+00:00",
+      "send_allowed": false,
+      "follow_up_allowed": false,
+      "repeat_approval_request_allowed": false,
+      "decision_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-editorial-declined/OWNER-DECISION.json"
     },
     "native_gallery": "Two actual033 native PNGs plus one silent30second controls walkthrough with equivalent text/source limits. No new inference, audible quality evidence or complete launch package. Actual destination format/account/authorization checks remain open.",
     "producthunt_preflight": "Current sourced rules and asset candidates mapped; ready maker-comment field is null under the general human-comment guidance. Known same-name page belongs to voicybot.com. The bounded domain query found no product, not exhaustive absence. Actual authenticated identity/form/topics remain unverified."
   },
   "execution_dependency": {
     "rechecked_utc": "2026-10-20T22:42:05.947354+00:00",
-    "current_wait": "E28 found a concrete remaining preparation task and corrected it. No live research job is pending. Fresh GSC, the existing exact E20 message answer, genuine listening and later E18 evaluation windows remain separate dependencies; no unchanged password/search/model retries.",
+    "current_wait": "Fresh GSC, genuine listening and later E18 evaluation windows remain separate dependencies; no unchanged password/search/model retries. E20 sending was declined, so it is no longer an unanswered authorization request and must not be sent or re-asked.",
     "owner_action_pending": true,
     "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-21-producthunt-preflight/BROWSER-OBSERVATION.json",
     "monitor": "Native voicy-seo-growth automation remains active, dependent on Mac/Codex availability. Ranking goal remains unachieved."
