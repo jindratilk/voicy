@@ -1,6 +1,6 @@
 # Building Voicy
 
-Use an Apple Silicon Mac with Xcode Command Line Tools, Rust, Node.js 20+ and [uv](https://docs.astral.sh/uv/). Run commands from the repository root.
+Use an Apple Silicon Mac with Xcode Command Line Tools, Rust, Node.js 20+ and [uv](https://docs.astral.sh/uv/) 0.13.4 or newer. Run commands from the repository root.
 
 ## First build
 
@@ -15,6 +15,8 @@ python3 scripts/stage-python.py
 The bootstrap downloads pinned AuK/Qwen assets and converts them to MLX q8/group64. It needs substantial free disk space for original and converted checkpoints (allow 30 GB during preparation), internet access, and several GB of memory. Every retained model file is checked against the manifest from the approved runtime. It does not use private recordings or any adjacent research workspace.
 
 `stage-python.py` copies the relocatable python-build-standalone runtime, not a virtualenv with references to the developer's interpreter. The app bundles this Python, its dependencies, the audio-only FFmpeg, model source, licenses and weights. The output is `../Voicy.app`.
+
+Bootstrap and staging reject uv versions older than 0.13.4 before dependency downloads ([uv trust-store advisory](https://github.com/advisories/GHSA-hq85-5cpj-mr62)). Bootstrap replaces certifi immediately after syncing the historical freeze and verifies it before model downloads; the derived runtime lock records that override while the historical experiment file stays unchanged. Packaging refreshes the derived runtime lock even when reusing an older staging tree. Staging pins certifi 2026.10.19 to address [the compromised emSign CA trust advisory](https://github.com/advisories/GHSA-6q48-6c7w-9gw2). Before packaging, `runtime_trust.py` checks the staged interpreter's certifi metadata, approved version and CA bundle against its installed RECORD hash. Missing, stale or inconsistent data stops the build before resource copying. Run `python3 scripts/stage-python.py` to refresh an older staging runtime; this does not modify an already signed app or previously published installer. This narrow gate is not a complete dependency audit.
 
 Subsequent code builds use `./scripts/build-voicy.sh`. During development `./script/build_and_run.sh` builds and opens the app. Quit the old app before rebuilding a running bundle.
 

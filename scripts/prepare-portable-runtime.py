@@ -2,6 +2,7 @@
 """Create an app-owned relocatable runtime. Never copy recordings or research outputs."""
 import json,subprocess,sys,os,shutil
 from pathlib import Path
+from runtime_trust import CERTIFI_VERSION
 root=Path(__file__).resolve().parents[1]
 target=root/'build/runtime'
 def copy(source,dest):
@@ -10,6 +11,8 @@ def copy(source,dest):
 # Python is staged from python-build-standalone; no virtualenv absolute symlinks.
 if not (target/'python/bin/python3').exists():
     raise SystemExit('Stage the portable Python runtime first; see docs/release/BUILD.md.')
+# Reject stale existing staging before compilation or resource copying.
+subprocess.run([str(target/'python/bin/python3'), '-I', str(root/'scripts/runtime_trust.py')], check=True)
 for folder in ['server']:
     (target/folder).mkdir(parents=True,exist_ok=True)
     subprocess.run(['rsync','-a','--exclude=__pycache__',str(root/folder)+'/',str(target/folder)+'/'],check=True)
@@ -18,6 +21,12 @@ subprocess.run([str(target/'python/bin/python3'), '-s', str(root/'scripts/build-
 subprocess.run(['cp',str(root/'experiments/enhance_auk_local.py'),str(target/'experiments/enhance_auk_local.py')],check=True)
 for name in ['source','models','SOURCE-LICENSE','requirements.lock']:
     copy(root/'.auk'/name,target/'.auk'/name)
+# Refresh derived metadata even when reusing an older staging tree.
+lock=target/'.auk/requirements.lock'
+lines=lock.read_text().splitlines()
+if sum(line.startswith('certifi==') for line in lines)!=1:
+    raise SystemExit('Expected one certifi entry in the derived runtime lock.')
+lock.write_text('\n'.join(f'certifi=={CERTIFI_VERSION}' if line.startswith('certifi==') else line for line in lines)+'\n')
 # The app only processes local audio. Keep Qwen's librosa path without importing video codecs.
 infer=target/'.auk/source/auk_mlx/infer.py'
 code=infer.read_text()

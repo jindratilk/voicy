@@ -1,25 +1,25 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "goal_status": "active",
   "deadline": "2026-12-31",
   "target_query": "Adobe podcast alternative",
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "6584623c2a3f9cdd987b10958f549eaaac33f54b",
+  "shipped_commit": "380a51cb84b1842723347131b9af880b27414be7",
   "deployment": {
-    "id": "dpl_GH3cGjfAkAZvaEp8c62JhD57wT36",
-    "url": "https://voicy-jtt4s2e7m-skaluj.vercel.app",
+    "id": "dpl_9nkcr8jvr73MRK61vDAU7gNKQwTy",
+    "url": "https://voicy-7rxzdmuxz-skaluj.vercel.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "6584623c2a3f9cdd987b10958f549eaaac33f54b",
+    "source_commit": "380a51cb84b1842723347131b9af880b27414be7",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-21T09:37:43.767840+00:00",
-    "scope": "Verified E33 website publication before this documentation-only closeout. Final closeout deployment receipt stays private; landing tree unchanged.",
-    "verification_scope": "Home/comparison/privacy200 exactdeployment/H1/canonical/JSONLD; robots200/sitemap3; GET/HEAD302 exactqualified033. Actual native Chrome jump/source links and system Chrome1200/390/320 layout/console passed. Only comparison date advanced; no ranking result."
+    "verified_utc": "2026-10-22T07:21:01.387175+00:00",
+    "scope": "Verified22Oct morning before this runtime-staging/docs checkpoint. Website tree remains E33; PR35 changes tooling/privacy docs.",
+    "verification_scope": "Home/comparison/privacy/robots200; canonical/open-source section present; three-URL sitemap; downloadGET/HEAD302 exact qualified033. No new inference or full installer download."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -27,7 +27,7 @@
     "verification_method": "Domain name provider; automatic ownership verification observed in Chrome",
     "home_indexed": true,
     "sitemap_status": "Last verified18Octmorning: Successful3URLs,lastread15Oct. Afternoonaccountreport unavailable; public sitemap still200/3URLs. No resubmission.",
-    "performance": "Last verified18Oct morning:7/28-day Web14\u201316Oct,0clicks/14impressions/position11.8; comparison1impression9; exacttarget0reported/nullposition. Afternoonauthblocked: no fresh metric/trend/rank claim.",
+    "performance": "Last verified18Oct morning:7/28-day Web14–16Oct,0clicks/14impressions/position11.8; comparison1impression9; exacttarget0reported/nullposition. Afternoonauthblocked: no fresh metric/trend/rank claim.",
     "baseline_rank": null,
     "baseline_clicks": 0,
     "baseline_impressions": 5,
@@ -38,7 +38,7 @@
       "last_7_days": false,
       "last_28_days": false,
       "exact_query_page_country_device": false,
-      "reason": "Fresh7/28/exact-query/indexing/sitemap fetch blocked by reauthentication. Last verified morning exports retained separately; no afternoon data invented."
+      "reason": "Intended owner Chrome session expired; no fresh query/page/country/device/indexing/sitemap report."
     },
     "initial_performance": {
       "observed_data_dates": [
@@ -64,10 +64,10 @@
       "previous_period": "No previous-period export/baseline established; no trend claim.",
       "private_evidence": "voicy-growth-evidence/gsc-2026-10-16-afternoon/SUMMARY.json"
     },
-    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-afternoon/GSC-ACCESS.private.json",
+    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-morning/GSC-ACCESS.private.json",
     "preliminary_24_hours": {
       "observed_utc": "2026-10-17T15:36:01.790079+00:00",
-      "period_display": "16\u201317 October 2026, local time",
+      "period_display": "16–17 October 2026, local time",
       "clicks": 0,
       "impressions": 4,
       "aggregate_average_position": 26,
@@ -126,8 +126,8 @@
       "feature_split": null,
       "scope": "Combined AIOverviews/AIMode linkimpressions, already inWebtotals; no query/position/click/feature-split attribution inobservedreport. Not exacttarget success, controlledorganicrank, universalAIcitation coverage or incremental14+1 impressions."
     },
-    "access_rechecked_utc": "2026-10-21T15:23:18.573508+00:00",
-    "auth_status": "21Oct afternoon nativeChrome: the intended owner account explicitly shows Session expired. Standard resource entry/Startnow reaches a different default account Welcome, which does not establish Voicy ownership/access. No password/recovery/newproperty/permission change. Fresh7/28-day query/page/country/device/indexing/sitemap reports remain unavailable; last verified18Oct data are historical.",
+    "access_rechecked_utc": "2026-10-22T07:21:01.387175+00:00",
+    "auth_status": "22Oct morning nativeChrome: intended owner explicitly Session expired; resource entry reaches public about and Start now another default account Welcome. No password/recovery/newproperty/permission change. Fresh reports unavailable; historical18Oct exports are not current.",
     "latest_verified_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-morning/GSC-SUMMARY.json",
     "indexing_last_verified_utc": "2026-10-18T07:27:19.533906+00:00",
     "fresh_indexing_available": false,
@@ -138,15 +138,15 @@
     "id": "voicy-seo-growth",
     "kind": "heartbeat",
     "target_thread_id": "01a14067-62f7-7d60-9615-f6d3f709f97d",
-    "status": "ACTIVE definition/live index verified21Oct11:35UTC; current21Oct15:15heartbeat delivery observed. Host availability still required.",
-    "verified_next_nominal_run": "2026-10-22T09:15:00+02:00",
+    "status": "ACTIVE native automation;22Oct07:11UTC heartbeat delivered. Host availability still required.",
+    "verified_next_nominal_run": "2026-10-22T17:15:00+02:00",
     "verified_next_run": null,
     "weekly_report": "Thursday; other unchanged runs quiet",
     "execution_dependency": "Mac and Codex available; schedule is not proof of uninterrupted execution",
-    "verified_last_run_utc": "2026-10-21T15:15:14.459Z",
+    "verified_last_run_utc": "2026-10-22T07:11:50.081Z",
     "next_run_note": "Next nominal slot only; next jittered indexed time not re-read in this afternoon cycle. Current deliveredheartbeat is not uninterrupted-work proof.",
     "weekly_report_draft": "voicy-growth-evidence/checkpoints/2026-10-21-afternoon/OWNER-REPORT-20261022-DRAFT.cs.md",
-    "weekly_report_draft_note": "Private21Oct preparation forThursday22Oct; refresh actual sources/metrics before owner publication. Not sent or scheduled as an extra message."
+    "weekly_report_draft_note": "Thursday22Oct report refreshed after current production/GSC/security checks; report completion recorded at cycle closeout."
   },
   "experiments": [
     {
@@ -260,7 +260,7 @@
     },
     {
       "id": "E11",
-      "status": "PR15 initial audio transfer0 inall3postdeploycoldruns versus514939\u2013576450before; observedmedianlabLCP3.116s->1.957s, not field/causal/rankproof. ProductionUI exposedpendingfirstplay->A/B cancellationrace. Reproducedwith2500msactualWAVtransportdelay; fix tracksplayintent/currentrequest so cancelledpromise cannotsetstaleerror. Actualdelayedswitch/pause/mobile checks pass; finalreview/CI/prod receipts private."
+      "status": "PR15 initial audio transfer0 inall3postdeploycoldruns versus514939–576450before; observedmedianlabLCP3.116s->1.957s, not field/causal/rankproof. ProductionUI exposedpendingfirstplay->A/B cancellationrace. Reproducedwith2500msactualWAVtransportdelay; fix tracksplayintent/currentrequest so cancelledpromise cannotsetstaleerror. Actualdelayedswitch/pause/mobile checks pass; finalreview/CI/prod receipts private."
     },
     {
       "id": "E12",
@@ -284,7 +284,7 @@
     },
     {
       "id": "E15",
-      "status": "Canonical transport verified in actual CI: all ten original hashes match and generated variants preserved. Batch failed on case2 Metal GPU timeout (-6) after case1 completed; cases3\u20135 not run. Encrypted artifact fully retrieved/decrypted/inventory checked; one valid raw output independently audited and decoded once with unchanged small.en policy. Not a five-case success or human quality result.",
+      "status": "Canonical transport verified in actual CI: all ten original hashes match and generated variants preserved. Batch failed on case2 Metal GPU timeout (-6) after case1 completed; cases3–5 not run. Encrypted artifact fully retrieved/decrypted/inventory checked; one valid raw output independently audited and decoded once with unchanged small.en policy. Not a five-case success or human quality result.",
       "protocol": "docs/growth/E03-CANONICAL-INPUTS.md",
       "model_cases_completed": 1,
       "human_reviews_received": 0,
@@ -570,11 +570,22 @@
       "decision": "Do not ship experimental boundary as fix. Both completed; prior E15/E17 failures remain unexplained. External bootstrap/control is not unmodified app proof.",
       "paired_decoded_samples_identical": true,
       "publication": "No new public audio; preserve human-listening/publication gates."
+    },
+    {
+      "id": "E35",
+      "hypothesis": "A staging pin plus pre-copy offline certifi gate prevents reusing the known vulnerable CA bundle in a future build.",
+      "status": "Source preparation and actual package probe validated; full native release update/qualification pending.",
+      "date": "2026-10-22",
+      "intervention": "Require uv>=0.13.4 before bootstrap/staging dependency downloads; override certifi2026.10.19 before model downloads; verify approved version and cacert.pem against RECORD before packaging.",
+      "result": "Missing/old package and modified CA bundle rejected; patched and reinstalled official wheel accepted; old existing staging stopped before resource copy.",
+      "limits": "Dedicated Python3.13 probe, not full ML runtime/inference/signing or a patched public033. No ranking/traffic effect measured.",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-morning/TRUST-GATE-PROOF.json"
     }
   ],
   "next_actions": [
+    "Prioritize qualified native-runtime dependency remediation from the private22Oct assessment. This checkpoint requires patched uv before bootstrap/staging downloads, overrides patched certifi before model downloads and rejects stale/inconsistent staged CA bundles before packaging; existing signed033 bytes remain unchanged. Keep historical experiment freeze immutable. Actual new runtime build/inference/export/signing qualification still required; preserve disk guards and unrelated work.",
     "At the next normal heartbeat, check whether the existing owner Chrome session admits fresh GSC reports; if available export7/28-day exact-query/page/country/device/indexing/sitemap data privately. If still expired, retain dated unavailability; no repeatedpassword/recovery/newproperty/OAuthscope attempts. Never relabel18Oct exports as current or averageposition as literalrank.",
-    "Publish the concise Thursday22Oct owner report once after a fresh read. A private21Oct draft is linked under scheduler; update its dated facts before publication. Cover shipped changes, verified metrics or explicit missing data, ranking limits and priorities. Other unchanged/non-actionable runs stay quiet.",
+    "Thursday22Oct owner report is prepared from fresh production/access evidence and dated historical metrics; deliver once at this cycle closeout, then retain its private record. Next weekly report29Oct. Other unchanged/non-actionable runs stay quiet.",
     "Evaluate combined comparison demand after E33 windows28Oct/4Nov when fresh data are available. E18 windows27Oct/3Nov are confounded by E33. Preserve the singleprimaryURL/title/canonical; no same-dayquery/copy/date churn, thin keyword URLs or unchangedIndexNow. The21Oct nativeobservation is negative/unknownlocation, not controlledUSrank.",
     "Original evidence publication still requires genuine listening under the existing gate. E03/E34 technical outputs and fixedASR are already retained; E34both5/5 does not demonstrate a need for addedparameter evaluation or resolve E15/E17timeouts. Preserve negatives; no unchanged model/ASR/runtime experiment replay justforactivity.",
     "Distribution packets/gallery and channel preflights are preparation only. Execute a third-party message/submission only with named-destination authorization and refreshed facts/rules/identity. ExactE20SixColorssend was declined: no send, clouddraft, followup or repeatrequest. No purchases/subscriptions/manipulatedlinks.",
@@ -620,7 +631,7 @@
     "aeo_demo_text_alternative": "18existingtests and Next16.3.8 build pass; public WAV hashes/probe and one fixed local ASR decode per file verified. Actual native details/keyboard/audio/render QA and frozen review tracked outside publicGit; no E03 publication or quality-score pass.",
     "homepage_audio_loading": "18 existing tests and Next16.3.8 build pass. ActualCUAIAB targetflow: initialreadyState0, pre-loadkeyboardseek2.61s, firstplaycontinues2.718965s, A/Bsync, naturalend/UIreset, Voicy-first/pause and390pxmobileplay/switch/pause/nooverflow; consoleclear. No new audio/assets/layout/title/URLs/tracking. ProductionpendingPlay->A/B failed afterinitialPR15; not acceptedascomplete. Follow-up fixescurrentrequestownership. WithactualWAVresponsesdelayed2500ms, rapid3switches keeponlyselectedpending/playing, finishnormallywithoutstaleerror; pausewhilependingremainsstoppedafterload;390pxpendingA/B verified.18tests/build rerun afterfix.",
     "private_listening_review": "3focusedPythonHTTP/bindingtests pass; actualnativeChromeQA verifiesplay/otherclipautopause, note/selectorstorageafterreload, actualJSONdownloadqa_fixture/attestedfalse, andcleanlive0/15namespace. Mobile390x788visibleformselectionworks; no frameworkoverlay. DevToolsautomaticwell-knownprobe blockedbyconnect-srcnone produced2tool-onlyerrors; no appJSexceptionobserved. Privateassignmenthash/sourcehash fixedbeforehumanresponses; actualmap/audio/QAexport stayoutsideGit.",
-    "current_release_E15": "Exact10canonical hashes and original generated files verified after encrypted artifact retrieval. Independent raw24kfloat mono case1 audit and one fixed small.en decode pass. Case2 GPU timeout;3\u20135 notrun; secondary normaldetach failure retained. Whole modelbatch failed, no humanquality/publicaudio pass.",
+    "current_release_E15": "Exact10canonical hashes and original generated files verified after encrypted artifact retrieval. Independent raw24kfloat mono case1 audit and one fixed small.en decode pass. Case2 GPU timeout;3–5 notrun; secondary normaldetach failure retained. Whole modelbatch failed, no humanquality/publicaudio pass.",
     "current_release_E16": "Independentall10canonical/generated-file andprotocol/observeridentity audit afterZIP/cipher/archive/65entryinventory verification.12monotonictraceevents, noCevents/cap; originalRuntimeErrortraceback at mx.eval(text), returncode1, noWAV/newASR, no guardtrigger orrecordednormaldetacherror. Diagnosticfailed; no rootcause/humanquality/generalreliability pass.",
     "current_release_E17": "27 focusedtests/actionlint pass; code review capacityfinding rejected using two actualstandardhostreceipts, not labelledclean. Both actualarms terminal, 65/67inventory exactfilesets andall10canonical hashes checked. Sameconfigs/metadata/objects/training verified; control0/treatment1extraeval. Controlfailed; materialize raw212640frames/24k/mono/float finite/0clipped verified plusonefixedASR. No humanquality/publicfix pass.",
     "comparison_local_mac_choice": "18existingtests andNext16.3.8productionbuild pass. LocalHTTP singleH1/canonical/visible-JSONLDdate20Oct andcomparison-onlysitemapdate checked; otherdates18/19Oct. NativeChrome1200x916 and390x788 render/nooverlay, actualHush/HushPro navigation andreturn, reloadNoerrors/Nowarnings. Currentprimaryvendorclaims only; no humanquality orrankingpass.",
@@ -641,13 +652,13 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-21T09:37:43.767840+00:00",
+  "verified_utc": "2026-10-22T07:21:01.387175+00:00",
   "search_observation": {
     "date": "2026-10-21",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, optional cookies rejected",
     "query": "Adobe podcast alternative",
     "requested_parameters": "hl=en, gl=us, pws=0",
-    "location": "Unknown \u2014 Google footer says it cannot determine location; not a controlled US baseline",
+    "location": "Unknown — Google footer says it cannot determine location; not a controlled US baseline",
     "owned_result_on_first_observed_page": false,
     "literal_rank": null,
     "controlled_US_desktop_rank": null,
@@ -739,7 +750,7 @@
     "producthunt_preflight": "Current sourced rules and asset candidates mapped; ready maker-comment field is null under the general human-comment guidance. Known same-name page belongs to voicybot.com. The bounded domain query found no product, not exhaustive absence. Actual authenticated identity/form/topics remain unverified."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-21T15:23:18.573508+00:00",
+    "rechecked_utc": "2026-10-22T07:21:01.387175+00:00",
     "current_wait": null,
     "last_terminal_research": {
       "experiment": "E34",
@@ -755,12 +766,13 @@
     },
     "owner_action_pending": true,
     "dependencies": [
+      "Actual native runtime dependency rebuild and clean-host qualification remain open after private22Oct security assessment; staging gate is source preparation, not a patched public installer.",
       "Fresh GSC7/28-day query/page/country/device/indexing data: last observed existing-owner Google session expired; do not present cached exports as current or retry unchanged authentication.",
       "Actual subjective listening remains unverified; no new audio-quality endorsement or publication from ASR alone.",
       "E33 demand windows28Oct/4Nov have not elapsed; no immediate ranking conclusion or copy churn.",
       "Third-party distribution requires named-destination authorization; exact E20 send was declined, do not re-ask."
     ],
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-21-afternoon/CYCLE-COMPLETE.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-22-morning/CYCLE-COMPLETE.json",
     "monitor": "Native voicy-seo-growth automation remains separately active subject to Mac/Codex availability; ranking goal remains unachieved."
   },
   "search_observation_history": [
@@ -775,7 +787,7 @@
     {
       "date": "2026-10-16",
       "engine": "Google Search, desktop Chrome Incognito, signed out, cookies rejected",
-      "location": "Unknown \u2014 Google says it cannot determine location; not a controlled US baseline",
+      "location": "Unknown — Google says it cannot determine location; not a controlled US baseline",
       "owned_result_on_first_observed_page": false,
       "ai_answer_observed": true,
       "owned_ai_citation_observed": false,
@@ -818,7 +830,7 @@
       "engine": "Google Search, native Chrome Incognito desktop, signed out, cookies rejected",
       "query": "Adobe podcast alternative",
       "requested_parameters": "hl=en, gl=us, pws=0; visible before cookie choice; post-choice address simplified to /search",
-      "location": "Unknown \u2014 Google footer says it cannot determine location; not a controlled US baseline",
+      "location": "Unknown — Google footer says it cannot determine location; not a controlled US baseline",
       "owned_result_on_first_observed_page": false,
       "ai_answer_observed": true,
       "owned_ai_citation_observed": false,
@@ -863,7 +875,7 @@
   },
   "goal_runtime_status": {
     "status": "blocked",
-    "checked_utc": "2026-10-21T15:23:18.573508+00:00",
+    "checked_utc": "2026-10-22T07:21:01.387175+00:00",
     "note": "get_goal returned blocked during21Oct afternoon heartbeat. This is thread-runtime state, separate from the active year-end campaign/native automation. Maintenance and report preparation do not establish ranking achievement."
   },
   "product_measurement": {
@@ -873,11 +885,14 @@
     "release_id": 416695244,
     "primary_asset_id": 654436308,
     "baseline_counter": 42,
-    "counter_delta": null,
+    "counter_delta": 59,
     "unique_people": null,
     "completed_installs": null,
     "organic_conversion_rate": null,
-    "limits": "Cumulative GitHub-reported asset counter includes own QA; event/retry/cache/completion semantics and acquisition attribution unestablished. Nine asset series remain separate; no part-count funnel. Raw receipts outside public Git."
+    "limits": "Cumulative GitHub-reported asset counter includes own QA; event/retry/cache/completion semantics and acquisition attribution unestablished. Nine asset series remain separate; no part-count funnel. Raw receipts outside public Git.",
+    "latest_observed_utc": "2026-10-22T07:31:59.904795+00:00",
+    "latest_counter": 101,
+    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-morning/DOWNLOAD-METRIC.json"
   },
   "canonical_domain": {
     "primary": "https://usevoicy.app",
@@ -890,5 +905,17 @@
     "report": "docs/growth/STRATEGY.md#canonical-www-access-repair--20-october-2026",
     "no_migration": true
   },
-  "comparison_content_commit": "6584623c2a3f9cdd987b10958f549eaaac33f54b"
+  "comparison_content_commit": "6584623c2a3f9cdd987b10958f549eaaac33f54b",
+  "security_maintenance": {
+    "review_date": "2026-10-22",
+    "prior_fix_pr": "https://github.com/jindratilk/voicy/pull/35",
+    "source_and_artifact_screen": "No confirmed credential leak in reviewed source/local reachable history and screened qualified app image; not an exhaustive guarantee. Raw evidence private.",
+    "remaining_dependency_alerts_at_audit": 35,
+    "critical_dependency_alerts_at_audit": 4,
+    "certifi_staging": "Require patched uv>=0.13.4 before bootstrap/staging dependency downloads; install certifi2026.10.19 after frozen sync and before model fetches. Offline approved-version/CA-RECORD gate before resource copying. Existing signed033 unchanged.",
+    "gate_proof": "Actual old uv rejected and dedicated verified patched uv accepted; verified official old/new certifi wheel and CA tampering checks. Historical freeze unchanged; derived runtime lock records override.",
+    "release_status": "New full native runtime not built or qualified in this cycle; local free space about3.1GiB below existing12GiB inference guard. No guard reduction or unrelated deletion.",
+    "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-morning/TRUST-GATE-PROOF.json",
+    "remaining_work": "Qualified patched/minimal Python dependency set and new signed release; Pillow/Transformers advisory paths not established from supported audio input; Linux glib absent from Mac target. Do not mark alerts fixed by version-only source edits."
+  }
 }
