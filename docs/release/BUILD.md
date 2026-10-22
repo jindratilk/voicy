@@ -77,3 +77,5 @@ execution path. `VOICY_DISABLE_EXACT=1` is a diagnostic fallback for comparison.
 Sampling remains Base32, q8/group64, CFG 2 and seed 2026. Two independent chunks
 share model loading when memory allows; low headroom selects one chunk and
 releases the VAE between stages. There is no tensor batching or reduced step count.
+
+The macOS baseline CI also bootstraps uv 0.13.4 from its exact official arm64 wheel with a reviewed SHA-256, then invokes the same downloader gate before creating Python. The MLX helper installs its checksum-verified local wheels with networking disabled. CI still performs actual Metal computation on macOS 14 and 15; this small compatibility check does not qualify the full model runtime or replace the published installer. Historical research tags and their dependency freezes are unchanged.
