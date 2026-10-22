@@ -6,20 +6,20 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "380a51cb84b1842723347131b9af880b27414be7",
+  "shipped_commit": "b9cf5eadf339a32b8a7f1abe6242a9801c663720",
   "deployment": {
-    "id": "dpl_9nkcr8jvr73MRK61vDAU7gNKQwTy",
-    "url": "https://voicy-7rxzdmuxz-skaluj.vercel.app",
+    "id": "dpl_8yB5KR7hkwtNTHKUCYwsFbDzJQuX",
+    "url": "https://usevoicy.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "380a51cb84b1842723347131b9af880b27414be7",
+    "source_commit": "b9cf5eadf339a32b8a7f1abe6242a9801c663720",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-22T07:21:01.387175+00:00",
-    "scope": "Verified22Oct morning before this runtime-staging/docs checkpoint. Website tree remains E33; PR35 changes tooling/privacy docs.",
-    "verification_scope": "Home/comparison/privacy/robots200; canonical/open-source section present; three-URL sitemap; downloadGET/HEAD302 exact qualified033. No new inference or full installer download."
+    "verified_utc": "2026-10-22T15:25:03.357502+00:00",
+    "scope": "Verified22Oct afternoon after mergedPR37, before this documentation-only closeout. Landing tree remains identical to E33.",
+    "verification_scope": "All public pages/robots/sitemap200, canonical/H1/open-source anchor, three URLs, downloadGET/HEAD302 exact qualified033. No new inference/full download."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -585,9 +585,11 @@
       "id": "E36",
       "date": "2026-10-22",
       "intervention": "Patched hash-verified uv bootstrap in live macOS baseline CI and offline verified MLX wheel installation. No frozen research replay.",
-      "status": "Local exact CI installation/gate/actual Metal computation and2 existing platform tests pass; structured review and final macOS14/15 CI pending closeout.",
+      "status": "MergedPR37/b9cf5ea. Review clean0.94; local workflow install/GPU and2platform tests passed; actual macOS14.8.9/15.7.9 GPU compute passed. All9PR check-runs plus Vercel and3main checks passed. ExactREADYproduction/public/download checks pass. Full model/runtime/new installer remain pending.",
       "limits": "Small compatibility probe only; full ML runtime/new signed installer and ranking outcome remain unqualified.",
-      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-afternoon/LOCAL-BASELINE.log"
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-afternoon/CYCLE-COMPLETE.json",
+      "pull_request": "https://github.com/jindratilk/voicy/pull/37",
+      "source_commit": "b9cf5eadf339a32b8a7f1abe6242a9801c663720"
     }
   ],
   "next_actions": [
@@ -660,7 +662,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-22T15:19:39.714893+00:00",
+  "verified_utc": "2026-10-22T15:25:03.357502+00:00",
   "search_observation": {
     "date": "2026-10-21",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, optional cookies rejected",
@@ -925,7 +927,7 @@
     "release_status": "Existing signed033 unchanged. Full native runtime rebuild/inference/export/signing still pending. Afternoon free disk about11GiB, below unchanged12GiB inference guard and30GB preparation recommendation; no guard reduction or unrelated deletion.",
     "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-morning/TRUST-GATE-PROOF.json",
     "remaining_work": "Qualified patched/minimal Python dependency set and new signed release; Pillow/Transformers advisory paths not established from supported audio input; Linux glib absent from Mac target. Do not mark alerts fixed by version-only source edits.",
-    "baseline_ci": "Live macOS14/15 baseline CI replaces vulnerable uv0.10 bootstrap with exact official uv0.13.4 arm64 wheel plus reviewed SHA256/native TLS and shared downloader gate. MLX verified wheel installation is offline/no-index. Local exact step and actual GPU computation passed; final CI remains a closeout requirement. Historical research tags unchanged.",
+    "baseline_ci": "MergedPR37/b9cf5ea: hash-verified official uv0.13.4 bootstrap and shared downloader gate; MLX verified wheel install offline/no-index. Actual Metal compute passed macOS14.8.9 and15.7.9 arm64; all9PR check-runs plus Vercel status and3merged-main checks passed. Review clean0.94. No new signed/full-model runtime.",
     "baseline_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-afternoon/LOCAL-BASELINE.log"
   }
 }
