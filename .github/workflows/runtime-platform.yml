@@ -5,7 +5,7 @@ on:
   push:
     branches: [codex/macos-14-runtime]
   pull_request:
-    paths: [scripts/pin-runtime-mlx.py, scripts/stage-python.py, tests/test_runtime_platform.py, .github/workflows/runtime-platform.yml]
+    paths: [scripts/pin-runtime-mlx.py, scripts/stage-python.py, tests/test_runtime_platform.py, scripts/runtime_trust.py, .github/workflows/runtime-platform.yml]
 
 permissions:
   contents: read
@@ -20,22 +20,30 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     steps:
-      - name: Retrieve exact reviewed installer helper
+      - name: Retrieve exact reviewed installer and trust helpers
         env:
           SOURCE_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
-          curl --fail --silent --show-error --location \
-            "https://raw.githubusercontent.com/jindratilk/voicy/$SOURCE_SHA/scripts/pin-runtime-mlx.py" \
-            --output "$RUNNER_TEMP/pin-runtime-mlx.py"
+          for helper in pin-runtime-mlx.py runtime_trust.py; do
+            curl --fail --silent --show-error --location --proto '=https' \
+              "https://raw.githubusercontent.com/jindratilk/voicy/$SOURCE_SHA/scripts/$helper" \
+              --output "$RUNNER_TEMP/$helper"
+          done
       - name: Install pinned baseline wheels in a new isolated Python
         run: |
           set -euo pipefail
-          # Hosted images do not include uv. Bootstrap the same pinned tool
-          # tested locally, without changing the runner's system Python.
+          # Bootstrap using native TLS plus the reviewed official wheel hash.
+          # pip installs only this local file; old bundled CA stores never fetch it.
+          wheel="$RUNNER_TEMP/uv-0.13.4-py3-none-macosx_11_0_arm64.whl"
+          curl --fail --silent --show-error --location --proto '=https' \
+            'https://files.pythonhosted.org/packages/26/44/5a8733dd1b2e8d6f9cffd1ff6428a3e11dcc7e146a7657e32cfb8d9fb4a4/uv-0.13.4-py3-none-macosx_11_0_arm64.whl' \
+            --output "$wheel"
+          printf '%s  %s\n' '95f4eb2b991b53b50ec2b18ab612fca8ba1e7a75a47af0331fb8bcd21da3eb03' "$wheel" | shasum -a 256 --check
           python3 -m venv "$RUNNER_TEMP/uv-bootstrap"
-          "$RUNNER_TEMP/uv-bootstrap/bin/python" -m pip install 'uv==0.10.0'
+          "$RUNNER_TEMP/uv-bootstrap/bin/python" -m pip --disable-pip-version-check install --no-index --no-deps "$wheel"
           export PATH="$RUNNER_TEMP/uv-bootstrap/bin:$PATH"
+          python3 "$RUNNER_TEMP/runtime_trust.py" --check-downloader
           uv venv --python 3.13 "$RUNNER_TEMP/mlx-baseline"
           python3 "$RUNNER_TEMP/pin-runtime-mlx.py" "$RUNNER_TEMP/mlx-baseline/bin/python"
       - name: Import MLX and execute real Metal computation

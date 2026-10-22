@@ -68,7 +68,8 @@ def install(python):
                 raise RuntimeError('Official MLX wheel checksum mismatch')
             paths.append(str(path))
         subprocess.run(['uv', 'pip', 'install', '--python', str(python),
-                        '--break-system-packages', '--no-deps', '--reinstall', *paths],
+                        '--break-system-packages', '--offline', '--no-index',
+                        '--no-deps', '--reinstall', *paths],
                        check=True, timeout=180)
     audit(Path(info[3]))
     print('Verified MLX 0.32.2 macOS 14 wheels and installed wheel deployment tags')
