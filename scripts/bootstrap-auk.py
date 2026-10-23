@@ -2,7 +2,7 @@
 """Reproduce the pinned AuK runtime on Apple Silicon; no private workspace required."""
 import hashlib,json,os,platform,shutil,subprocess,sys
 from pathlib import Path
-from runtime_trust import CERTIFI_VERSION, PILLOW_VERSION, runtime_requirements, trusted_downloader
+from runtime_trust import runtime_packages, runtime_requirements, trusted_downloader
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE='6943a1e967409e8c73139a7a345f2a611cfb3dd6'
 MODEL='790742b71a4430120daf2b2099192abae449eb9f'
@@ -16,7 +16,7 @@ def main():
  python=install/'venv/bin/python'
  run(uv,'pip','sync','--python',python,ROOT/'experiments/auk-mlx-requirements.freeze.txt')
  # Override only the derived runtime; the historical experiment freeze stays immutable.
- run(uv,'pip','install','--python',python,'--no-deps',f'certifi=={CERTIFI_VERSION}',f'pillow=={PILLOW_VERSION}')
+ run(uv,'pip','install','--python',python,'--no-deps',*runtime_packages())
  run(python,'-I',ROOT/'scripts/runtime_trust.py')
  repo=ROOT/'build/auk-source'
  if not (repo/'.git').exists():
