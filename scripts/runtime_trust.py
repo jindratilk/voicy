@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline certifi staging gate; never mutates a signed app or fetches data."""
+"""Offline runtime dependency gate; never mutates a signed app or fetches data."""
 import argparse
 import base64
 import hashlib
@@ -12,6 +12,7 @@ import sys
 import sysconfig
 
 CERTIFI_VERSION = '2026.10.19'
+PILLOW_VERSION = '13.0.0'
 MINIMUM_UV = (0, 13, 4)
 
 
@@ -24,6 +25,17 @@ def trusted_downloader():
     if not match or tuple(map(int, match.groups())) < MINIMUM_UV:
         raise RuntimeError('uv 0.13.4 or newer is required before downloading dependencies')
     return uv
+
+
+def runtime_requirements(text):
+    """Override derived build metadata only; historical freezes stay immutable."""
+    lines = text.splitlines()
+    for name, version in (('certifi', CERTIFI_VERSION), ('pillow', PILLOW_VERSION)):
+        if sum(line.startswith(name + '==') for line in lines) != 1:
+            raise RuntimeError('Expected one ' + name + ' entry in the derived runtime lock')
+        lines = [name + '==' + version if line.startswith(name + '==') else line
+                 for line in lines]
+    return '\n'.join(lines) + '\n'
 
 
 def audit(site):
@@ -47,6 +59,10 @@ def audit(site):
     digest = base64.urlsafe_b64encode(hashlib.sha256(data).digest()).decode().rstrip('=')
     if b'-----BEGIN CERTIFICATE-----' not in data or digest != entry.hash.value:
         raise RuntimeError('Certifi CA bundle does not match installed RECORD')
+    pillows = [d for d in distributions(path=[str(site)])
+               if d.metadata.get('Name', '').lower() == 'pillow']
+    if len(pillows) != 1 or pillows[0].version != PILLOW_VERSION:
+        raise RuntimeError('Unapproved Pillow runtime; rerun scripts/stage-python.py')
     return version
 
 
@@ -63,4 +79,4 @@ if __name__ == '__main__':
     except (RuntimeError, OSError, ValueError, subprocess.SubprocessError) as error:
         print('Runtime trust check failed: ' + str(error), file=sys.stderr)
         raise SystemExit(1)
-    print('Verified staged certifi ' + version + ' and CA bundle RECORD hash')
+    print('Verified staged certifi ' + version + ' and CA bundle RECORD hash; Pillow ' + PILLOW_VERSION)
