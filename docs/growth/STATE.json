@@ -6,20 +6,20 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "0db85de174ba7f77e7765640433fbeedb750cf24",
+  "shipped_commit": "0f3cd5b9784a83b4b829f0b4c8a8247cf5161eb4",
   "deployment": {
-    "id": "dpl_x2aomgaPonAhEGmSf9Y7z1c44Bu9",
+    "id": "dpl_266PtYfcShaitAhpapeU3BnPNZAW",
     "url": "https://usevoicy.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "cb39f9d7b26dcfe681efa4369ed7eab2371dd5e3",
+    "source_commit": "0f3cd5b9784a83b4b829f0b4c8a8247cf5161eb4",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-23T15:28:38.075301+00:00",
-    "scope": "Verified23October afternoon before this future runtime change. Exact READYproduction cb39f9d; landing content unchanged.",
-    "verification_scope": "Pages/robots/sitemap200; expected canonical/H1/open-source anchor and three URLs; GET/HEAD download302 to unchanged qualified033. No new model enhancement or signed installer."
+    "verified_utc": "2026-10-23T15:47:57.290833+00:00",
+    "scope": "Verified23October after mergedPR40 before documentation-only closeout. Next16.4.1 dependency patch; app/content/config trees unchanged.",
+    "verification_scope": "Public pages/canonical/H1/JSON-LD/3URL sitemap/audio/video checks pass; GET/HEAD download302 exact033; adminnoindex and unauthenticatedstats denied. Persistent54832Next16.4.1 tested build and download302 pass; rollback copies retained."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -625,14 +625,16 @@
       "date": "2026-10-23",
       "trigger": "New repository alerts created23Oct14:11UTC for Next; advisories published22Oct, not first published today.",
       "intervention": "Upgrade landing Next16.3.8 to16.4.1 with matching env/SWC; sharp0.35.5 verified.",
-      "status": "Local18tests/build pass, npm audit0, native Chrome comparison/jump/audio/visible console and390viewport pass; structured review/final CI/production/local update still required.",
+      "status": "MergedPR40/0f3cd5b. Review clean0.97;18tests/build/npm audit0/nativeChrome/HTTP checks pass. Changed website/frontend and Vercel checks pass; unchanged-backend jobs pending at last observation, with same backend already tested atPR39. Exact READYproduction and public route/metadata/media/download/admin denial pass. Persistent54832Next16.4.1 healthy, rollback retained. Three account Next alerts not yet reconciled; no fabricated closure.",
       "limits": "Dependency patch, no content or ranking intervention and no compromise/exploit claim. Historical native runtime advisories remain.",
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/NEXT-LOCAL-HTTP.json",
-      "ranking_effect": null
+      "ranking_effect": null,
+      "pull_request": "https://github.com/jindratilk/voicy/pull/40",
+      "source_commit": "0f3cd5b9784a83b4b829f0b4c8a8247cf5161eb4"
     }
   ],
   "next_actions": [
-    "Qualify a full future native runtime using the prepared exact dependency overrides. Transformers/Hub candidate preprocessing/export now matches all5original inputs exactly and the default dependency closure is valid, but no full model enhancement/conversion/new signed app is qualified. Use legitimate capacity with existing disk/model guards; preserve historical freeze and public033 until actual inference/export/signing and clean-host acceptance pass. The previously delayed duplicate PR38 backend completed successfully; do not replay unchanged tests.",
+    "Qualify a full future native runtime from mergedPR39 exact overrides. All5original-input preprocessing/export paths match, but no complete model enhancement/conversion/new signed app is qualified. Use legitimate capacity and unchanged disk/model guards; keep historical freeze and public033 until actual native inference/export/signing/clean-host acceptance. The Next16.4.1 patch is deployed in production/local54832; recheck3still-open Next catalog alerts and background unchanged-backend jobs at the next normal cycle, without dismissal or replay merely to change status.",
     "At the next normal heartbeat, check whether the existing owner Chrome session admits fresh GSC reports; if available export7/28-day exact-query/page/country/device/indexing/sitemap data privately. If still expired, retain dated unavailability; no repeatedpassword/recovery/newproperty/OAuthscope attempts. Never relabel18Oct exports as current or averageposition as literalrank.",
     "Thursday22October owner report was delivered; next29October. Other runs notify only meaningful new completed work, material regression or required action.",
     "Evaluate combined comparison demand after E33 windows28Oct/4Nov when fresh data are available. E18 windows27Oct/3Nov are confounded by E33. Preserve the singleprimaryURL/title/canonical; no same-dayquery/copy/date churn, thin keyword URLs or unchangedIndexNow. The21Oct nativeobservation is negative/unknownlocation, not controlledUSrank.",
@@ -701,7 +703,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-23T15:38:34.442270+00:00",
+  "verified_utc": "2026-10-23T15:47:57.290833+00:00",
   "search_observation": {
     "date": "2026-10-21",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, optional cookies rejected",
@@ -824,10 +826,7 @@
     "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/CYCLE-COMPLETE.json",
     "monitor": "Native voicy-seo-growth automation remains separately active subject to Mac/Codex availability; ranking goal remains unachieved.",
     "background_ci": {
-      "run_id": 39918047873,
-      "job_id": 120296257556,
-      "observed_status": "completed, every step success at23October afternoon recheck",
-      "scope": "Original duplicate PR38 backend completed after delayed system packages. No replay/cancel."
+      "scope": "PR40/main backend jobs still running at last check; code/CI/backend trees exactly equal to testedPR39 merge, whose9checks passed. Website/frontend/Vercel checks for40 pass. No replay/cancel; recheck once at next normal cycle if needed."
     }
   },
   "search_observation_history": [
@@ -990,6 +989,7 @@
       "scope": "Before Next patch;3landingNext alerts (2critical/1high),46historical Python/Rust alerts. Private account snapshot retained; previous35/4critical was dated22Oct, not current.",
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/ALERTS.private.json"
     },
-    "next_patch": "Next16.3.8 to16.4.1; sharp0.35.5 verified. Existing18tests/build pass and npm audit0; native Chrome comparison/anchor/audio/console390viewport pass. Review/source CI/production acceptance remain closeout requirements. No exploit/compromise established; no page/content/auth/security-header change."
+    "next_patch": "MergedPR40/0f3cd5b and exact READYproduction: Next16.4.1/sharp0.35.5,18tests/build/npm audit0, nativeChrome comparison/anchor/audio/390viewport/visibleconsole passed. Public routes/metadata/media/download and admin/stats negative checks pass. Persistent54832 updated with rollback. Website/frontend source checks and Vercel passed; backend trees unchanged from all-checks-passed PR39, extra backend jobs pending at last check. No exploit/compromise or desktop-installer replacement claim.",
+    "next_alert_reconciliation": "At23October post-deploy account check, all3Next alerts still open despite exact fixed lock/READY deployment and npm audit0. Retained privately; no dismissal/closure fabricated. Recheck normally as dependency graph reconciles; account count49/7critical remains an observed catalog state, not proof patch failed or all remaining issues fixed."
   }
 }
