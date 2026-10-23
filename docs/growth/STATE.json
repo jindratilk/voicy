@@ -610,12 +610,24 @@
       "date": "2026-10-23",
       "hypothesis": "A compatible non-yanked Transformer migration can preserve original audio features/export while addressing the remaining dependency work.",
       "intervention": "Private original033 Python comparison of4.57.6/Hub0.36.2 versus5.10.4/Hub1.5.0 with exact verified dependency overlay; future staging overrides only.",
-      "status": "Both arms5/5; all35arrays exact, original input hashes match, candidate default27-package dependency closure valid.5.10.0 rejected during yanked metadata preflight. No new model/ASR/listening or public audio. Gates/review/CI remain closeout requirements.",
+      "status": "MergedPR39/d1c8c09 after all9exact-head checks passed. Review clean0.87;14package/consumer/lock checks passed; both5-input arms/35arrays exact and27-package candidate default closure valid. No full-model enhancement/new signed app/quality/rank result.",
       "candidate": "transformers5.10.4/huggingface-hub1.5.0; exact10overrides in runtime_trust.py",
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/COMPATIBILITY-RESULT.json",
       "new_model_inference_runs": 0,
       "new_signed_installers": 0,
       "public_audio": 0,
+      "ranking_effect": null,
+      "pull_request": "https://github.com/jindratilk/voicy/pull/39",
+      "source_commit": "d1c8c0912b2e8360ae0422c6ed69d29a71969552"
+    },
+    {
+      "id": "E39",
+      "date": "2026-10-23",
+      "trigger": "New repository alerts created23Oct14:11UTC for Next; advisories published22Oct, not first published today.",
+      "intervention": "Upgrade landing Next16.3.8 to16.4.1 with matching env/SWC; sharp0.35.5 verified.",
+      "status": "Local18tests/build pass, npm audit0, native Chrome comparison/jump/audio/visible console and390viewport pass; structured review/final CI/production/local update still required.",
+      "limits": "Dependency patch, no content or ranking intervention and no compromise/exploit claim. Historical native runtime advisories remain.",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/NEXT-LOCAL-HTTP.json",
       "ranking_effect": null
     }
   ],
@@ -689,7 +701,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-23T15:28:38.075301+00:00",
+  "verified_utc": "2026-10-23T15:38:34.442270+00:00",
   "search_observation": {
     "date": "2026-10-21",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, optional cookies rejected",
@@ -968,6 +980,16 @@
     "transformers_candidate": "Non-yanked Transformers5.10.4/Hub1.5.0 plus exact new CLI closure and existing Pillow/certifi fixes. Official wheel hashes verified; offline candidate on original033 Python completed5original noisy inputs with all35audio/frontend/export arrays exactly equal and valid27-package default dependency closure. Original NumPy/tokenizers preserved. No model enhancement or new signed app.",
     "transformers_staging": "Share exact10-package overrides across bootstrap/staging/CI/derived lock; require approved distribution versions before packaging. Four original freeze entries must exist exactly once; new CLI entries append only once. Historical freeze and public033 bytes stay unchanged. Gates/review/final CI are closeout requirements.",
     "transformers_source_limit": "5.10.0 was yanked upstream and rejected before execution;5.10.4 non-yanked official PyPI wheel used. Current OSV batch returns no records for the10candidate versions; this is not a universal safety guarantee or proof every advisory is resolved.",
-    "transformers_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/COMPATIBILITY-RESULT.json"
+    "transformers_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/COMPATIBILITY-RESULT.json",
+    "latest_alert_snapshot": {
+      "observed_utc": "2026-10-23T15:38:34.442270+00:00",
+      "open": 49,
+      "critical": 7,
+      "high": 28,
+      "medium": 14,
+      "scope": "Before Next patch;3landingNext alerts (2critical/1high),46historical Python/Rust alerts. Private account snapshot retained; previous35/4critical was dated22Oct, not current.",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/ALERTS.private.json"
+    },
+    "next_patch": "Next16.3.8 to16.4.1; sharp0.35.5 verified. Existing18tests/build pass and npm audit0; native Chrome comparison/anchor/audio/console390viewport pass. Review/source CI/production acceptance remain closeout requirements. No exploit/compromise established; no page/content/auth/security-header change."
   }
 }
