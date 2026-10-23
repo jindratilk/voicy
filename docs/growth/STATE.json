@@ -8,17 +8,17 @@
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
   "shipped_commit": "0db85de174ba7f77e7765640433fbeedb750cf24",
   "deployment": {
-    "id": "dpl_GUrD5wJhJ8wjHNfcwEwXr3LQzHAd",
+    "id": "dpl_x2aomgaPonAhEGmSf9Y7z1c44Bu9",
     "url": "https://usevoicy.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "0db85de174ba7f77e7765640433fbeedb750cf24",
+    "source_commit": "cb39f9d7b26dcfe681efa4369ed7eab2371dd5e3",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-23T07:38:28.013446+00:00",
-    "scope": "Verified23October after mergedPR38, before this documentation-only closeout. Website tree remains identical; no content intervention.",
+    "verified_utc": "2026-10-23T15:28:38.075301+00:00",
+    "scope": "Verified23October afternoon before this future runtime change. Exact READYproduction cb39f9d; landing content unchanged.",
     "verification_scope": "Pages/robots/sitemap200; expected canonical/H1/open-source anchor and three URLs; GET/HEAD download302 to unchanged qualified033. No new model enhancement or signed installer."
   },
   "gsc": {
@@ -64,7 +64,7 @@
       "previous_period": "No previous-period export/baseline established; no trend claim.",
       "private_evidence": "voicy-growth-evidence/gsc-2026-10-16-afternoon/SUMMARY.json"
     },
-    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-morning/GSC-ACCESS.private.json",
+    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/GSC-ACCESS.private.json",
     "preliminary_24_hours": {
       "observed_utc": "2026-10-17T15:36:01.790079+00:00",
       "period_display": "16–17 October 2026, local time",
@@ -126,8 +126,8 @@
       "feature_split": null,
       "scope": "Combined AIOverviews/AIMode linkimpressions, already inWebtotals; no query/position/click/feature-split attribution inobservedreport. Not exacttarget success, controlledorganicrank, universalAIcitation coverage or incremental14+1 impressions."
     },
-    "access_rechecked_utc": "2026-10-23T07:26:47.543105+00:00",
-    "auth_status": "23 October native Chrome: intended owner explicitly Session expired; property route reaches public about and Start now a different default-account Welcome. Fresh 7/28-day query/page/country/device/indexing/sitemap unavailable. No authentication/property/permissions changed. Historical18October exports remain dated historical data.",
+    "access_rechecked_utc": "2026-10-23T15:28:38.075301+00:00",
+    "auth_status": "23October afternoon native Chrome: intended owner explicitly Session expired; property route public about, Start now different default-account Welcome. Fresh7/28-day query/page/country/device/account-indexing/sitemap unavailable. Historical18October exports remain dated; no auth/property/permission changes.",
     "latest_verified_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-morning/GSC-SUMMARY.json",
     "indexing_last_verified_utc": "2026-10-18T07:27:19.533906+00:00",
     "fresh_indexing_available": false,
@@ -604,10 +604,23 @@
       "ranking_effect": null,
       "pull_request": "https://github.com/jindratilk/voicy/pull/38",
       "source_commit": "0db85de174ba7f77e7765640433fbeedb750cf24"
+    },
+    {
+      "id": "E38",
+      "date": "2026-10-23",
+      "hypothesis": "A compatible non-yanked Transformer migration can preserve original audio features/export while addressing the remaining dependency work.",
+      "intervention": "Private original033 Python comparison of4.57.6/Hub0.36.2 versus5.10.4/Hub1.5.0 with exact verified dependency overlay; future staging overrides only.",
+      "status": "Both arms5/5; all35arrays exact, original input hashes match, candidate default27-package dependency closure valid.5.10.0 rejected during yanked metadata preflight. No new model/ASR/listening or public audio. Gates/review/CI remain closeout requirements.",
+      "candidate": "transformers5.10.4/huggingface-hub1.5.0; exact10overrides in runtime_trust.py",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/COMPATIBILITY-RESULT.json",
+      "new_model_inference_runs": 0,
+      "new_signed_installers": 0,
+      "public_audio": 0,
+      "ranking_effect": null
     }
   ],
   "next_actions": [
-    "Continue qualified native-runtime dependency remediation. Certifi and Pillow source overrides plus pre-package gates are prepared; isolated original-runtime audio-path compatibility passed, but signed033 still contains old dependencies. Review remaining Transformers advisory/compatibility options and legitimate build capacity; actual new full-runtime inference/export/signing and clean-host qualification are required. Preserve historical freeze, resource guards and unrelated work. The duplicate PR38 backend package-preparation job may be checked at the next normal cycle; the same source and merged-main tests already passed, so do not replay them unchanged.",
+    "Qualify a full future native runtime using the prepared exact dependency overrides. Transformers/Hub candidate preprocessing/export now matches all5original inputs exactly and the default dependency closure is valid, but no full model enhancement/conversion/new signed app is qualified. Use legitimate capacity with existing disk/model guards; preserve historical freeze and public033 until actual inference/export/signing and clean-host acceptance pass. The previously delayed duplicate PR38 backend completed successfully; do not replay unchanged tests.",
     "At the next normal heartbeat, check whether the existing owner Chrome session admits fresh GSC reports; if available export7/28-day exact-query/page/country/device/indexing/sitemap data privately. If still expired, retain dated unavailability; no repeatedpassword/recovery/newproperty/OAuthscope attempts. Never relabel18Oct exports as current or averageposition as literalrank.",
     "Thursday22October owner report was delivered; next29October. Other runs notify only meaningful new completed work, material regression or required action.",
     "Evaluate combined comparison demand after E33 windows28Oct/4Nov when fresh data are available. E18 windows27Oct/3Nov are confounded by E33. Preserve the singleprimaryURL/title/canonical; no same-dayquery/copy/date churn, thin keyword URLs or unchangedIndexNow. The21Oct nativeobservation is negative/unknownlocation, not controlledUSrank.",
@@ -676,7 +689,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-23T07:38:28.013446+00:00",
+  "verified_utc": "2026-10-23T15:28:38.075301+00:00",
   "search_observation": {
     "date": "2026-10-21",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, optional cookies rejected",
@@ -774,7 +787,7 @@
     "producthunt_preflight": "Current sourced rules and asset candidates mapped; ready maker-comment field is null under the general human-comment guidance. Known same-name page belongs to voicybot.com. The bounded domain query found no product, not exhaustive absence. Actual authenticated identity/form/topics remain unverified."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-23T07:38:28.013446+00:00",
+    "rechecked_utc": "2026-10-23T15:28:38.075301+00:00",
     "current_wait": null,
     "last_terminal_research": {
       "experiment": "E34",
@@ -796,13 +809,13 @@
       "E33 demand windows28Oct/4Nov have not elapsed; no immediate ranking conclusion or copy churn.",
       "Third-party distribution requires named-destination authorization; exact E20 send was declined, do not re-ask."
     ],
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-23-morning/CYCLE-COMPLETE.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/CYCLE-COMPLETE.json",
     "monitor": "Native voicy-seo-growth automation remains separately active subject to Mac/Codex availability; ranking goal remains unachieved.",
     "background_ci": {
       "run_id": 39918047873,
       "job_id": 120296257556,
-      "observed_status": "in_progress during apt system package preparation",
-      "scope": "Duplicate PR backend only; same exact source push CI and merged-main CI already passed. Recheck at next normal cycle; no rerun/cancel or claim of success/failure."
+      "observed_status": "completed, every step success at23October afternoon recheck",
+      "scope": "Original duplicate PR38 backend completed after delayed system packages. No replay/cancel."
     }
   },
   "search_observation_history": [
@@ -944,13 +957,17 @@
     "critical_dependency_alerts_at_audit": 4,
     "certifi_staging": "Require patched uv>=0.13.4 before bootstrap/staging dependency downloads; install certifi2026.10.19 after frozen sync and before model fetches. Offline approved-version/CA-RECORD gate before resource copying. Existing signed033 unchanged.",
     "gate_proof": "Actual old uv rejected and dedicated verified patched uv accepted; verified official old/new certifi wheel and CA tampering checks. Historical freeze unchanged; derived runtime lock records override.",
-    "release_status": "23October: about5.4GiB free, below unchanged12GiB inference guard. No full model run/build, guard reduction or unrelated deletion. Read-only original033 plus dedicated dependency overlays used for audio-path compatibility, not a new signed app.",
+    "release_status": "23October afternoon: about4.6GiB free, below unchanged12GiB inference guard. No full model run/build/conversion, guard reduction or unrelated deletion. Read-only033 plus dedicated dependency overlays used for preprocessing/export compatibility; public signed033 remains original.",
     "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-morning/TRUST-GATE-PROOF.json",
     "remaining_work": "Qualified patched/minimal Python dependency set and new signed release; Pillow/Transformers advisory paths not established from supported audio input; Linux glib absent from Mac target. Do not mark alerts fixed by version-only source edits.",
     "baseline_ci": "MergedPR37/b9cf5ea: hash-verified official uv0.13.4 bootstrap and shared downloader gate; MLX verified wheel install offline/no-index. Actual Metal compute passed macOS14.8.9 and15.7.9 arm64; all9PR check-runs plus Vercel status and3merged-main checks passed. Review clean0.94. No new signed/full-model runtime.",
     "baseline_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-afternoon/LOCAL-BASELINE.log",
     "pillow_staging": "MergedPR38/0db85de: Pillow13.0.0 override in bootstrap/staging and shared derived certifi/Pillow lock; pre-package gate rejects missing, duplicate or unapproved Pillow metadata. Actual old-package/consumer gate and approved-pair checks pass. Original freeze/signed033 unchanged; full release qualification remains open.",
     "pillow_compatibility": "Original Python3.13.14 and unchanged Transformers4.57.6: base Pillow12.3.0/certifi2026.7.22 versus candidate13.0.0/2026.10.19. All7 audio/frontend/export arrays exactly equal; three unsupported-input rejections each and PNG roundtrip passed. No model inference or human listening.",
-    "pillow_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-morning/COMPATIBILITY-RESULT.json"
+    "pillow_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-morning/COMPATIBILITY-RESULT.json",
+    "transformers_candidate": "Non-yanked Transformers5.10.4/Hub1.5.0 plus exact new CLI closure and existing Pillow/certifi fixes. Official wheel hashes verified; offline candidate on original033 Python completed5original noisy inputs with all35audio/frontend/export arrays exactly equal and valid27-package default dependency closure. Original NumPy/tokenizers preserved. No model enhancement or new signed app.",
+    "transformers_staging": "Share exact10-package overrides across bootstrap/staging/CI/derived lock; require approved distribution versions before packaging. Four original freeze entries must exist exactly once; new CLI entries append only once. Historical freeze and public033 bytes stay unchanged. Gates/review/final CI are closeout requirements.",
+    "transformers_source_limit": "5.10.0 was yanked upstream and rejected before execution;5.10.4 non-yanked official PyPI wheel used. Current OSV batch returns no records for the10candidate versions; this is not a universal safety guarantee or proof every advisory is resolved.",
+    "transformers_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/COMPATIBILITY-RESULT.json"
   }
 }
