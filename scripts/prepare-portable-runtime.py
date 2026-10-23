@@ -2,7 +2,7 @@
 """Create an app-owned relocatable runtime. Never copy recordings or research outputs."""
 import json,subprocess,sys,os,shutil
 from pathlib import Path
-from runtime_trust import CERTIFI_VERSION
+from runtime_trust import runtime_requirements
 root=Path(__file__).resolve().parents[1]
 target=root/'build/runtime'
 def copy(source,dest):
@@ -23,10 +23,7 @@ for name in ['source','models','SOURCE-LICENSE','requirements.lock']:
     copy(root/'.auk'/name,target/'.auk'/name)
 # Refresh derived metadata even when reusing an older staging tree.
 lock=target/'.auk/requirements.lock'
-lines=lock.read_text().splitlines()
-if sum(line.startswith('certifi==') for line in lines)!=1:
-    raise SystemExit('Expected one certifi entry in the derived runtime lock.')
-lock.write_text('\n'.join(f'certifi=={CERTIFI_VERSION}' if line.startswith('certifi==') else line for line in lines)+'\n')
+lock.write_text(runtime_requirements(lock.read_text()))
 # The app only processes local audio. Keep Qwen's librosa path without importing video codecs.
 infer=target/'.auk/source/auk_mlx/infer.py'
 code=infer.read_text()

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "goal_status": "active",
   "deadline": "2026-12-31",
   "target_query": "Adobe podcast alternative",
@@ -8,17 +8,17 @@
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
   "shipped_commit": "b9cf5eadf339a32b8a7f1abe6242a9801c663720",
   "deployment": {
-    "id": "dpl_8yB5KR7hkwtNTHKUCYwsFbDzJQuX",
+    "id": "dpl_2jAoSLEp6sWHGUTRmWYqt8VP9Dwp",
     "url": "https://usevoicy.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "b9cf5eadf339a32b8a7f1abe6242a9801c663720",
+    "source_commit": "efa4c5caad70e9f82a00e37889060c03269f44d7",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-22T15:25:03.357502+00:00",
-    "scope": "Verified22Oct afternoon after mergedPR37, before this documentation-only closeout. Landing tree remains identical to E33.",
+    "verified_utc": "2026-10-23T07:26:47.543105+00:00",
+    "scope": "Verified23October before this Pillow staging change. Exact current production source efa4c5c; website tree remains unchanged.",
     "verification_scope": "All public pages/robots/sitemap200, canonical/H1/open-source anchor, three URLs, downloadGET/HEAD302 exact qualified033. No new inference/full download."
   },
   "gsc": {
@@ -64,7 +64,7 @@
       "previous_period": "No previous-period export/baseline established; no trend claim.",
       "private_evidence": "voicy-growth-evidence/gsc-2026-10-16-afternoon/SUMMARY.json"
     },
-    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-afternoon/GSC-ACCESS.private.json",
+    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-morning/GSC-ACCESS.private.json",
     "preliminary_24_hours": {
       "observed_utc": "2026-10-17T15:36:01.790079+00:00",
       "period_display": "16–17 October 2026, local time",
@@ -126,8 +126,8 @@
       "feature_split": null,
       "scope": "Combined AIOverviews/AIMode linkimpressions, already inWebtotals; no query/position/click/feature-split attribution inobservedreport. Not exacttarget success, controlledorganicrank, universalAIcitation coverage or incremental14+1 impressions."
     },
-    "access_rechecked_utc": "2026-10-22T15:19:39.714893+00:00",
-    "auth_status": "22Oct afternoon native Chrome: intended owner explicitly Session expired; property route reaches public about and Start now another default-account Welcome. Fresh7/28-day query/page/country/device/indexing/sitemap unavailable. No authentication/property/permissions changed;18Oct metrics remain historical.",
+    "access_rechecked_utc": "2026-10-23T07:26:47.543105+00:00",
+    "auth_status": "23 October native Chrome: intended owner explicitly Session expired; property route reaches public about and Start now a different default-account Welcome. Fresh 7/28-day query/page/country/device/indexing/sitemap unavailable. No authentication/property/permissions changed. Historical18October exports remain dated historical data.",
     "latest_verified_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-morning/GSC-SUMMARY.json",
     "indexing_last_verified_utc": "2026-10-18T07:27:19.533906+00:00",
     "fresh_indexing_available": false,
@@ -590,12 +590,24 @@
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-afternoon/CYCLE-COMPLETE.json",
       "pull_request": "https://github.com/jindratilk/voicy/pull/37",
       "source_commit": "b9cf5eadf339a32b8a7f1abe6242a9801c663720"
+    },
+    {
+      "id": "E37",
+      "date": "2026-10-23",
+      "hypothesis": "The patched Pillow/certifi pair retains supported local audio preprocessing/export behavior and can be enforced before future packaging.",
+      "status": "Isolated original033 Python dependency overlay comparison passed: all7 arrays equal,3 unsupported-input rejections per arm, PCM24 export and PNG roundtrip. Old Pillow staging/lock rejection and final review/CI are closeout requirements.",
+      "intervention": "Pin Pillow13.0.0 in bootstrap/staging, share derived certifi/Pillow lock overrides, reject unapproved staged Pillow before resource copy.",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-morning/COMPATIBILITY-RESULT.json",
+      "new_inference_runs": 0,
+      "new_signed_installers": 0,
+      "human_listening": false,
+      "ranking_effect": null
     }
   ],
   "next_actions": [
-    "Prioritize qualified native-runtime dependency remediation from the private22Oct assessment. This checkpoint requires patched uv before bootstrap/staging downloads, overrides patched certifi before model downloads and rejects stale/inconsistent staged CA bundles before packaging; existing signed033 bytes remain unchanged. Keep historical experiment freeze immutable. Actual new runtime build/inference/export/signing qualification still required; preserve disk guards and unrelated work.",
+    "Continue qualified native-runtime dependency remediation. Certifi and Pillow source overrides plus pre-package gates are prepared; isolated original-runtime audio-path compatibility passed, but signed033 still contains old dependencies. Review remaining Transformers advisory/compatibility options and legitimate build capacity; actual new full-runtime inference/export/signing and clean-host qualification are required. Preserve historical freeze, resource guards and unrelated work.",
     "At the next normal heartbeat, check whether the existing owner Chrome session admits fresh GSC reports; if available export7/28-day exact-query/page/country/device/indexing/sitemap data privately. If still expired, retain dated unavailability; no repeatedpassword/recovery/newproperty/OAuthscope attempts. Never relabel18Oct exports as current or averageposition as literalrank.",
-    "Thursday22Oct owner report was delivered this morning; do not repeat unchanged metrics. Next weekly report29Oct. Notify only meaningful new completed work, regression or required action.",
+    "Thursday22October owner report was delivered; next29October. Other runs notify only meaningful new completed work, material regression or required action.",
     "Evaluate combined comparison demand after E33 windows28Oct/4Nov when fresh data are available. E18 windows27Oct/3Nov are confounded by E33. Preserve the singleprimaryURL/title/canonical; no same-dayquery/copy/date churn, thin keyword URLs or unchangedIndexNow. The21Oct nativeobservation is negative/unknownlocation, not controlledUSrank.",
     "Original evidence publication still requires genuine listening under the existing gate. E03/E34 technical outputs and fixedASR are already retained; E34both5/5 does not demonstrate a need for addedparameter evaluation or resolve E15/E17timeouts. Preserve negatives; no unchanged model/ASR/runtime experiment replay justforactivity.",
     "Distribution packets/gallery and channel preflights are preparation only. Execute a third-party message/submission only with named-destination authorization and refreshed facts/rules/identity. ExactE20SixColorssend was declined: no send, clouddraft, followup or repeatrequest. No purchases/subscriptions/manipulatedlinks.",
@@ -662,7 +674,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-22T15:25:03.357502+00:00",
+  "verified_utc": "2026-10-23T07:26:47.543105+00:00",
   "search_observation": {
     "date": "2026-10-21",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, optional cookies rejected",
@@ -760,7 +772,7 @@
     "producthunt_preflight": "Current sourced rules and asset candidates mapped; ready maker-comment field is null under the general human-comment guidance. Known same-name page belongs to voicybot.com. The bounded domain query found no product, not exhaustive absence. Actual authenticated identity/form/topics remain unverified."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-22T15:19:39.714893+00:00",
+    "rechecked_utc": "2026-10-23T07:26:47.543105+00:00",
     "current_wait": null,
     "last_terminal_research": {
       "experiment": "E34",
@@ -782,7 +794,7 @@
       "E33 demand windows28Oct/4Nov have not elapsed; no immediate ranking conclusion or copy churn.",
       "Third-party distribution requires named-destination authorization; exact E20 send was declined, do not re-ask."
     ],
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-22-afternoon/CYCLE-COMPLETE.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-23-morning/CYCLE-COMPLETE.json",
     "monitor": "Native voicy-seo-growth automation remains separately active subject to Mac/Codex availability; ranking goal remains unachieved."
   },
   "search_observation_history": [
@@ -924,10 +936,13 @@
     "critical_dependency_alerts_at_audit": 4,
     "certifi_staging": "Require patched uv>=0.13.4 before bootstrap/staging dependency downloads; install certifi2026.10.19 after frozen sync and before model fetches. Offline approved-version/CA-RECORD gate before resource copying. Existing signed033 unchanged.",
     "gate_proof": "Actual old uv rejected and dedicated verified patched uv accepted; verified official old/new certifi wheel and CA tampering checks. Historical freeze unchanged; derived runtime lock records override.",
-    "release_status": "Existing signed033 unchanged. Full native runtime rebuild/inference/export/signing still pending. Afternoon free disk about11GiB, below unchanged12GiB inference guard and30GB preparation recommendation; no guard reduction or unrelated deletion.",
+    "release_status": "23October: about5.4GiB free, below unchanged12GiB inference guard. No full model run/build, guard reduction or unrelated deletion. Read-only original033 plus dedicated dependency overlays used for audio-path compatibility, not a new signed app.",
     "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-morning/TRUST-GATE-PROOF.json",
     "remaining_work": "Qualified patched/minimal Python dependency set and new signed release; Pillow/Transformers advisory paths not established from supported audio input; Linux glib absent from Mac target. Do not mark alerts fixed by version-only source edits.",
     "baseline_ci": "MergedPR37/b9cf5ea: hash-verified official uv0.13.4 bootstrap and shared downloader gate; MLX verified wheel install offline/no-index. Actual Metal compute passed macOS14.8.9 and15.7.9 arm64; all9PR check-runs plus Vercel status and3merged-main checks passed. Review clean0.94. No new signed/full-model runtime.",
-    "baseline_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-afternoon/LOCAL-BASELINE.log"
+    "baseline_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-afternoon/LOCAL-BASELINE.log",
+    "pillow_staging": "Pillow13.0.0 override added to future bootstrap/staging and derived lock; pre-package gate requires exactly one approved Pillow distribution. Original experimental freeze and signed033 remain unchanged. Full new runtime/inference/export/signing qualification remains required.",
+    "pillow_compatibility": "Original Python3.13.14 and unchanged Transformers4.57.6: base Pillow12.3.0/certifi2026.7.22 versus candidate13.0.0/2026.10.19. All7 audio/frontend/export arrays exactly equal; three unsupported-input rejections each and PNG roundtrip passed. No model inference or human listening.",
+    "pillow_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-morning/COMPATIBILITY-RESULT.json"
   }
 }
