@@ -129,3 +129,7 @@ landing/*.tsbuildinfo
 !/docs/growth/DOWNLOAD-MEASUREMENT.md
 !/docs/growth/DISTRIBUTION-PACK.md
 !/docs/growth/DISTRIBUTION-PACK.json
+
+# Public one-shot changed-dependency qualification; raw evidence stays private.
+!/scripts/growth/qualify_runtime.py
+!/docs/growth/E40-RUNTIME-QUALIFICATION.md
