@@ -133,3 +133,5 @@ landing/*.tsbuildinfo
 # Public one-shot changed-dependency qualification; raw evidence stays private.
 !/scripts/growth/qualify_runtime.py
 !/docs/growth/E40-RUNTIME-QUALIFICATION.md
+
+!/docs/growth/E41-RUNTIME-QUALIFICATION.md

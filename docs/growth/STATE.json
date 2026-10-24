@@ -650,10 +650,20 @@
       ],
       "model_attempts": 0,
       "export_attempts": 0
+    },
+    {
+      "id": "E41",
+      "status": "Declaredcorrected-sourcequalification,notexecuted. Distincttag/workflowledger;requirespreservedterminalE40failure. Sameoriginal033source/models/case1/settings/guards;all10officialwheelsverifiedbeforelargedataset/image.70focusedtests/current10PyPImetadata+retainedwheelhashpreflightpass;review/finalCI/firsttagcreationpending. No model/quality/rank/newsignedreleaseclaim.",
+      "protocol": "docs/growth/E41-RUNTIME-QUALIFICATION.md",
+      "predecessor_run": 40074848907,
+      "predecessor_source": "c714eef7cda745db39af6ff3f23b7cf659d70449",
+      "predecessor_outcome": "BothpreparationfailedbeforeMLX/model/export;artifactsindependentlyaudited",
+      "tag": "voicy-runtime-e41-20261024",
+      "workflow": "runtime-qualification-corrected.yml"
     }
   ],
   "next_actions": [
-    "Prepare a separately declared corrected-source nativequalification from mergedPR42/369e0d2, using a new protocol/tag/workflow-ledger identity with full E40failure provenance. AlloriginalE40artifacts/terminaloutcomes are audited:preparationfailedbeforemodelonbothOS; neverrerun/retag/replacethat experiment. Keep inputs/model/settings/guards/public033 unchanged until actual model/export/fullnative packaging/signing/notarization/cleanhost acceptance. Sourcefix is not a model/listening/quality/rank result.",
+    "Finish E41source review and exact-headCI, then first-create onlyvoicy-runtime-e41-20261024 at reviewedmergedsource. Itsownworkflowledgermustadmitonlycurrentfirstexecution andpreserveoriginalterminalE40failure;all10wheelmetadata/hashchecks precedelargedownloads. Inspectbothterminalencryptedartifacts withoutreplay/retag/replacement orguardwaiver. Keep033available;onecasecopyqualificationcannotestablishnativeGUI/signing/quality/rank. UndicidevpatchPR43merged;reconcilecatalognormally.",
     "At the next normal heartbeat, check whether the existing owner Chrome session admits fresh GSC reports; if available export7/28-day exact-query/page/country/device/indexing/sitemap data privately. If still expired, retain dated unavailability; no repeatedpassword/recovery/newproperty/OAuthscope attempts. Never relabel18Oct exports as current or averageposition as literalrank.",
     "Thursday22October owner report was delivered; next29October. Other runs notify only meaningful new completed work, material regression or required action.",
     "Evaluate combined comparison demand after E33 windows28Oct/4Nov when fresh data are available. E18 windows27Oct/3Nov are confounded by E33. Preserve the singleprimaryURL/title/canonical; no same-dayquery/copy/date churn, thin keyword URLs or unchangedIndexNow. The21Oct nativeobservation is negative/unknownlocation, not controlledUSrank.",
@@ -1014,7 +1024,7 @@
     "next_patch": "MergedPR40/0f3cd5b and exact READYproduction: Next16.4.1/sharp0.35.5,18tests/build/npm audit0, nativeChrome comparison/anchor/audio/390viewport/visibleconsole passed. Public routes/metadata/media/download and admin/stats negative checks pass. Persistent54832 updated with rollback. Website/frontend source checks and Vercel passed; backend trees unchanged from all-checks-passed PR39, extra backend jobs pending at last check. No exploit/compromise or desktop-installer replacement claim.",
     "next_alert_reconciliation": "Verified24October:Next alerts55/56/57 state fixed, fixed_at23October18:12UTC. No manual dismissal. PR40 all6PR and3merged-main check-runs now completed successfully; deployed9a9a460 documentation-closeout source remains Next16.4.1.",
     "runtime_qualification": "E40bothOSverifiedpreparationfailurebeforeMLX/model/export, not dependencyincompatibility. All122inventoryentries,20input/referencefilehashes,36modelrecords/runledger checked;normaldetach. PR42/369e0d2fixes nativePillow/dualPythonShellingham selection;57focusedtests/all10receiptchecks/cleanreview0.98,7PR+Vercel/3mainchecks pass, actualbackend135passed/1skipped. No new signedinstaller or currentdesktopremediationalertclosure.",
-    "undici_patch": "Onlyweb/package-lock.json undici7.29.1->7.30.1, jsdomdevdependency. OfficialGHSA-xjj6-f33q-929c fixesremotecontent-encodingcrash. No desktopJS/source/landing/runtimepins changes or establishedproductexploitclaim. Tests/build/review/finalCI required.",
+    "undici_patch": "MergedPR43/36589d8:onlyweb/package-lock.json undici7.29.1->7.30.1 jsdomdevdependency.7frontendtests/build/npm audit0 and cleanreview0.97;all7exact-headchecks/Vercelpass. READYproduction36589d8withunchangedlandingtree. Merged-mainfrontend/websitepass,backendpendinglastobservation. No publicinstaller/runtimepin/appsourcechange;catalogalertclosureunverified.",
     "new_filelock_scope": "OfficialGHSA-v4x8-3wr5-3wq8 targetsSQLiteReadWriteLock/AsyncReadWriteLock; exactcandidateHub1.5.0wheel importsordinaryFileLock/SoftFileLock viaWeakFileLock, noReadWriteLockstring. App/bootstrap/stagingsourceboundedsearch hasnoReadWriteLock/filelock references. Windows/setuptoolsrecordsnotMacpaths. No supportedrecordingexploitestablished;notcompleteabsence/remediation;historicalfilelock4.0.0freeze/candidateunchanged forcontrolledE41."
   }
 }

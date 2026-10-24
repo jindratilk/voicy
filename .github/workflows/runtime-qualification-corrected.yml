@@ -1,0 +1,45 @@
+name: E41 corrected runtime qualification
+on:
+  push:
+    tags: [voicy-runtime-e41-20261024]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: voicy-e03-current-release
+  cancel-in-progress: false
+jobs:
+  changed-runtime:
+    if: >-
+      github.repository == 'jindratilk/voicy' &&
+      github.ref == 'refs/tags/voicy-runtime-e41-20261024' &&
+      github.event.created && !github.event.forced && github.run_attempt == '1'
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        os: [macos-14, macos-15]
+    # E34 standard macos15 guests measured 46.2GB free despite the nominal14GB
+    # table. Actual26GiB entry guard selects/rejects hosts; capacity is not
+    # guaranteed. A rejected host is retained, never retried on a paid runner.
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Qualify exact changed dependencies with the original model and case1
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VOICY_E41_STARTED_EPOCH="$(date +%s)"
+          export VOICY_E41_STARTED_EPOCH
+          python3 scripts/growth/qualify_runtime.py E41
+      - name: Retain encrypted evidence and non-audio receipt only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: voicy-e41-${{ matrix.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/voicy-e41-${{ github.run_id }}-${{ github.run_attempt }}/sealed/
+          if-no-files-found: error
+          retention-days: 7
