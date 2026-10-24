@@ -6,20 +6,20 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "0f3cd5b9784a83b4b829f0b4c8a8247cf5161eb4",
+  "shipped_commit": "c714eef7cda745db39af6ff3f23b7cf659d70449",
   "deployment": {
-    "id": "dpl_4AnUEBUcdB9DAn19cjVCZBYY5T3Q",
+    "id": "dpl_3hd7ZzawPJ9cCh5yU92xPEkfBddR",
     "url": "https://usevoicy.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "9a9a4606c46c9f542869ebb057f37251b591c3ff",
+    "source_commit": "c714eef7cda745db39af6ff3f23b7cf659d70449",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-24T07:21:48.255866+00:00",
-    "scope": "24October check:READY production9a9a460 documentation-only closeout; same patched Next16.4.1 app/content/config as PR40.",
-    "verification_scope": "Public pages/canonical/H1/JSON-LD/3URL sitemap/audio/video checks pass; GET/HEAD download302 exact033; adminnoindex and unauthenticatedstats denied. Persistent54832Next16.4.1 tested build and download302 pass; rollback copies retained."
+    "verified_utc": "2026-10-24T07:45:01.699827+00:00",
+    "scope": "24October PR41 runtime qualification harness only; exact READYproduction, landing tree unchanged from Next16.4.1 patch.",
+    "verification_scope": "12postmerge HTTP checks pass:public pages/metadata/sitemap/media, qualified033GET/HEAD302, adminnoindex and unauthenticatedstats denied. Named local services retained; same landing tree."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -138,13 +138,13 @@
     "id": "voicy-seo-growth",
     "kind": "heartbeat",
     "target_thread_id": "01a14067-62f7-7d60-9615-f6d3f709f97d",
-    "status": "ACTIVE native automation;22Oct07:11UTC heartbeat delivered. Host availability still required.",
-    "verified_next_nominal_run": "2026-10-22T17:15:00+02:00",
+    "status": "ACTIVE native heartbeat delivered24October07:11UTC; hostavailability stillrequired.",
+    "verified_next_nominal_run": "2026-10-24T17:15:00+02:00",
     "verified_next_run": null,
     "weekly_report": "Thursday; other unchanged runs quiet",
     "execution_dependency": "Mac and Codex available; schedule is not proof of uninterrupted execution",
-    "verified_last_run_utc": "2026-10-22T07:11:50.081Z",
-    "next_run_note": "Next nominal slot only; next jittered indexed time not re-read in this afternoon cycle. Current deliveredheartbeat is not uninterrupted-work proof.",
+    "verified_last_run_utc": "2026-10-24T07:11:45.495Z",
+    "next_run_note": "Next nominal slot only, not refreshed jittered schedulerindex or uninterrupted work. E40runs independently inGitHub; inspect its existing exactrun rather than launching another.",
     "weekly_report_draft": "voicy-growth-evidence/checkpoints/2026-10-21-afternoon/OWNER-REPORT-20261022-DRAFT.cs.md",
     "weekly_report_draft_note": "Thursday22Oct report refreshed after current production/GSC/security checks; report completion recorded at cycle closeout."
   },
@@ -634,12 +634,18 @@
     },
     {
       "id": "E40",
-      "status": "Prepared; no execution yet. One first-attempt frozen tag, standard fresh macOS14/15, unchanged26/12GiB/pressure/RSS/time guards. Exact signed033 source, all18model identities, unsigned runtime copy with exact10approved overrides, original predetermined case1 full enhancement/PCM24 export. No E34/E19replay, replacementattempt, publicaudio, new signedrelease or quality/rank claim.",
-      "protocol": "docs/growth/E40-RUNTIME-QUALIFICATION.md"
+      "status": "PR41 merged/c714eef with9exact-headchecks and3merged-mainchecks successful. First frozen tag created once at c714eef; run40074848907 attempt1 active:macOS14job120815899058 inprogress, macOS15job120815899144queued at last observation. No model/export outcome yet; preserve run without retag/rerun/replacement. Full signedrelease remains unqualified.",
+      "protocol": "docs/growth/E40-RUNTIME-QUALIFICATION.md",
+      "run_id": 40074848907,
+      "source_commit": "c714eef7cda745db39af6ff3f23b7cf659d70449",
+      "attempt": 1,
+      "run_url": "https://github.com/jindratilk/voicy/actions/runs/40074848907",
+      "review": "49focusedtests/actionlint pass;2initialautoreviewissuesfixed. Secondreviewcapacityfinding rejected using actual preserved standardE34host measurements46.2GBfree despite nominal14GBtable; no clean-helper-exit claim. Newhost rejection remains possible and must be retained.",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-24-morning/E40-LAUNCH.json"
     }
   ],
   "next_actions": [
-    "Finish E40 source review and exact-head CI, then first-create only voicy-runtime-e40-20261024 at the reviewed merged source; inspect both terminal encrypted model/export qualification results. No rerun/retag/replacement or guard waiver. Keep public033 until actual complete native packaging/signing/notarization/clean-host acceptance; E38preprocessing and E40onecase are not fullrelease qualification. Next website alerts55/56/57 now fixed and allPR40backendchecks success.",
+    "Inspect existing E40run40074848907 attempt1 at frozen c714eef; jobs120815899058macOS14/120815899144macOS15. Retrieve only its encrypted artifacts after bothterminal, verify CMS/receipt/inventory/source/input/model/package/export proof privately with checkpoint verify_e40.py, retain every failure. No rerun/retag/replacement/guardwaiver or outcome claim before actual evidence. Public033 stays until fullnative packaging/signing/notarization/cleanhost acceptance; this onecase runtimecopy experiment cannot establish fullrelease/listening/quality/rank.",
     "At the next normal heartbeat, check whether the existing owner Chrome session admits fresh GSC reports; if available export7/28-day exact-query/page/country/device/indexing/sitemap data privately. If still expired, retain dated unavailability; no repeatedpassword/recovery/newproperty/OAuthscope attempts. Never relabel18Oct exports as current or averageposition as literalrank.",
     "Thursday22October owner report was delivered; next29October. Other runs notify only meaningful new completed work, material regression or required action.",
     "Evaluate combined comparison demand after E33 windows28Oct/4Nov when fresh data are available. E18 windows27Oct/3Nov are confounded by E33. Preserve the singleprimaryURL/title/canonical; no same-dayquery/copy/date churn, thin keyword URLs or unchangedIndexNow. The21Oct nativeobservation is negative/unknownlocation, not controlledUSrank.",
@@ -699,7 +705,8 @@
     "native_controls_video": "69030bytes/SHA256cf73eda373cd69bbf1227bbcb56c194dd7e20b38c6f3f24b6aaf2d803520ea51; H264/yuv420p/1000x650/30.246s/noaudio; all175 source presentation times exact; full176frame decode, allsourceframe privacy review, exactqualifiedjob unchanged. LocalChrome Play/seek/Pause passed. Final public delivery verified outsideGit after merge.",
     "homepage_app_preview": "18existingtests/Next16.3.8build pass. NativeCUA positivecontrols and closed/reopenedpausedstate; Playwrightcore1.63/systemChrome ephemeral1200x900/390x844/320x740: identity/canonical/oneH1/nooverlay/nooverflow, noinitialMP4/WAV, play/timeadvance, closepause andtext pass. Baseline/candidate localmetrics403 retained/explained; productionconsole checked separately afterdeploy. Codeautoreview clean0.91; exactposter manuallyqualified in separatecommit because reviewhelperrejectsbinary.",
     "open_source_workflow_choices": "18existingtests/build, clean review0.97,7final-head/3mainCI. Native local/preview/production/named-local anchor and actual Audacity/Ardour links; system Chrome1200/390/320 nooverflow/errors and visible heading below nav. Initial probe sampled smooth scroll mid-transition; retained, v2 waited for observed target without app edit. Exact source/canonical/date/sitemap/qualified033redirect verified. No ranking result.",
-    "E34_preflight": "50focusedtests/actionlint, clean complete review0.93 after2in-scope ledger fixes,9final-head and3mainCI. Exact merged tree equals reviewed head and published protocol200/hash matches. Existing recipient key matches locally; public repo and idle shared research concurrency checked. One frozen tag push; exact source/run/attempt and two live/queued job handles verified. No output validation yet."
+    "E34_preflight": "50focusedtests/actionlint, clean complete review0.93 after2in-scope ledger fixes,9final-head and3mainCI. Exact merged tree equals reviewed head and published protocol200/hash matches. Existing recipient key matches locally; public repo and idle shared research concurrency checked. One frozen tag push; exact source/run/attempt and two live/queued job handles verified. No output validation yet.",
+    "E40_preflight": "49focusedtests,actionlint,syntax/diff/privacy0candidates;9PR41checks+Vercelstatus and3merged-mainchecks success. Actualbackend127passed/1skipped/1warning. Mergedtree equals reviewedhead, exact publishedprotocol hash verified, existing recipient key matches locally, publicrepo/idleconcurrency/tagabsence checked beforefirstcreation. E19/E34andhistoricalfreeze unchanged. E40nativejobsactive, not a result."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
@@ -995,6 +1002,7 @@
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-24-morning/ALERTS.private.json"
     },
     "next_patch": "MergedPR40/0f3cd5b and exact READYproduction: Next16.4.1/sharp0.35.5,18tests/build/npm audit0, nativeChrome comparison/anchor/audio/390viewport/visibleconsole passed. Public routes/metadata/media/download and admin/stats negative checks pass. Persistent54832 updated with rollback. Website/frontend source checks and Vercel passed; backend trees unchanged from all-checks-passed PR39, extra backend jobs pending at last check. No exploit/compromise or desktop-installer replacement claim.",
-    "next_alert_reconciliation": "Verified24October:Next alerts55/56/57 state fixed, fixed_at23October18:12UTC. No manual dismissal. PR40 all6PR and3merged-main check-runs now completed successfully; deployed9a9a460 documentation-closeout source remains Next16.4.1."
+    "next_alert_reconciliation": "Verified24October:Next alerts55/56/57 state fixed, fixed_at23October18:12UTC. No manual dismissal. PR40 all6PR and3merged-main check-runs now completed successfully; deployed9a9a460 documentation-closeout source remains Next16.4.1.",
+    "runtime_qualification": "MergedPR41/c714eef; first E40run40074848907 attempt1 active on standardmacOS14/15. Unsigned complete033runtimecopy with exact10approved overrides, original case1 fullmodel/PCM24export and four realMLXtests; encrypted evidence only, all18modelhashes, unchangedguards. No result/new signedinstaller yet."
   }
 }
