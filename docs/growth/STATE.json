@@ -6,20 +6,20 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "369e0d22a072ae14bc456cd39b70c51d155220ee",
+  "shipped_commit": "ef73cf362437d52584a3f2519a34000e419ca1f9",
   "deployment": {
-    "id": "dpl_FuPhC6Z2jdDiipRPpNJcccz5QpCG",
+    "id": "dpl_AEESAvWYMwLScBu6b4s5PkFUkW9x",
     "url": "https://usevoicy.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "369e0d22a072ae14bc456cd39b70c51d155220ee",
+    "source_commit": "ef73cf362437d52584a3f2519a34000e419ca1f9",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-24T08:00:15.953705+00:00",
-    "scope": "24October PR42 correctedqualificationselector; exact READYproduction369e0d2. Landing/content/freeze/E19/E34 unchanged; no newinstaller.",
-    "verification_scope": "Public200pages/canonical/robots/sitemap, GET/HEAD302 to qualified033, named54832comparison200/download302,54831fullimageHEAD200,54835worksheet200. PR41postmerge12HTTP/media/admin/statnegative checks retained; identicallandingtree afterPR42."
+    "verified_utc": "2026-10-24T15:37:15.102246+00:00",
+    "scope": "PR44 corrected-source qualification merged; exact READY production at ef73cf3. Landing content/runtime freeze/public033 unchanged; no new installer.",
+    "verification_scope": "11 bounded public/local checks pass: pages, robots, three-URL sitemap, qualified033 GET/HEAD redirects; local54832 comparison/download,54831 full-image HEAD,54835 worksheet."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -138,13 +138,13 @@
     "id": "voicy-seo-growth",
     "kind": "heartbeat",
     "target_thread_id": "01a14067-62f7-7d60-9615-f6d3f709f97d",
-    "status": "ACTIVE native heartbeat delivered24October07:11UTC; hostavailability stillrequired.",
-    "verified_next_nominal_run": "2026-10-24T17:15:00+02:00",
+    "status": "ACTIVE native afternoon heartbeat delivered24October; hostavailability stillrequired.",
+    "verified_next_nominal_run": "2026-10-25T09:15:00+01:00",
     "verified_next_run": null,
     "weekly_report": "Thursday; other unchanged runs quiet",
     "execution_dependency": "Mac and Codex available; schedule is not proof of uninterrupted execution",
-    "verified_last_run_utc": "2026-10-24T07:11:45.495Z",
-    "next_run_note": "Next nominal slot only, not refreshed jittered schedulerindex or uninterrupted work. E40runs independently inGitHub; inspect its existing exactrun rather than launching another.",
+    "verified_last_run_utc": "2026-10-24T15:11:47.250Z",
+    "next_run_note": "Next nominal slot only; Europe/Prague daylight-saving transition applies. E41 continues independently in GitHub; inspect only existing first-attempt jobs, never replay/retag.",
     "weekly_report_draft": "voicy-growth-evidence/checkpoints/2026-10-21-afternoon/OWNER-REPORT-20261022-DRAFT.cs.md",
     "weekly_report_draft_note": "Thursday22Oct report refreshed after current production/GSC/security checks; report completion recorded at cycle closeout."
   },
@@ -653,17 +653,26 @@
     },
     {
       "id": "E41",
-      "status": "Declaredcorrected-sourcequalification,notexecuted. Distincttag/workflowledger;requirespreservedterminalE40failure. Sameoriginal033source/models/case1/settings/guards;all10officialwheelsverifiedbeforelargedataset/image.70focusedtests/current10PyPImetadata+retainedwheelhashpreflightpass;review/finalCI/firsttagcreationpending. No model/quality/rank/newsignedreleaseclaim.",
+      "status": "Launched sole declared first attempt after clean0.94review,70focusedtests/actionlint,all9PRchecks+Vercel and3merged-mainchecks; backend148passed/1skipped. Exact merged tree equals reviewed871b86f. Native Chrome confirms all10official wheels verified on macOS14 before large downloads; model/export and both terminal artifact audits pending. Not a successful qualification/new signed release/quality/ranking result.",
       "protocol": "docs/growth/E41-RUNTIME-QUALIFICATION.md",
       "predecessor_run": 40074848907,
       "predecessor_source": "c714eef7cda745db39af6ff3f23b7cf659d70449",
       "predecessor_outcome": "BothpreparationfailedbeforeMLX/model/export;artifactsindependentlyaudited",
       "tag": "voicy-runtime-e41-20261024",
-      "workflow": "runtime-qualification-corrected.yml"
+      "workflow": "runtime-qualification-corrected.yml",
+      "run_id": 40107471282,
+      "run_url": "https://github.com/jindratilk/voicy/actions/runs/40107471282",
+      "source_commit": "ef73cf362437d52584a3f2519a34000e419ca1f9",
+      "attempt": 1,
+      "jobs": [
+        120912037936,
+        120912038004
+      ],
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-24-afternoon/e41/LAUNCH.json"
     }
   ],
   "next_actions": [
-    "Finish E41source review and exact-headCI, then first-create onlyvoicy-runtime-e41-20261024 at reviewedmergedsource. Itsownworkflowledgermustadmitonlycurrentfirstexecution andpreserveoriginalterminalE40failure;all10wheelmetadata/hashchecks precedelargedownloads. Inspectbothterminalencryptedartifacts withoutreplay/retag/replacement orguardwaiver. Keep033available;onecasecopyqualificationcannotestablishnativeGUI/signing/quality/rank. UndicidevpatchPR43merged;reconcilecatalognormally.",
+    "Inspect E41 existing run40107471282 attempt1 at ef73cf3, macOS14job120912037936/macOS15job120912038004. Retrieve both terminal encrypted artifacts; verify GitHub ZIP/CMS/receipt/inventory/source, inputs/models/distributions/actualMLX/model/export independently. Preserve first failure without replay, retag, replacement or guard waiver. Model/export still pending at this checkpoint. PR43 undici dev patch is shipped; alert66 still open, no manual dismissal. Public033 remains available.",
     "At the next normal heartbeat, check whether the existing owner Chrome session admits fresh GSC reports; if available export7/28-day exact-query/page/country/device/indexing/sitemap data privately. If still expired, retain dated unavailability; no repeatedpassword/recovery/newproperty/OAuthscope attempts. Never relabel18Oct exports as current or averageposition as literalrank.",
     "Thursday22October owner report was delivered; next29October. Other runs notify only meaningful new completed work, material regression or required action.",
     "Evaluate combined comparison demand after E33 windows28Oct/4Nov when fresh data are available. E18 windows27Oct/3Nov are confounded by E33. Preserve the singleprimaryURL/title/canonical; no same-dayquery/copy/date churn, thin keyword URLs or unchangedIndexNow. The21Oct nativeobservation is negative/unknownlocation, not controlledUSrank.",
@@ -725,7 +734,9 @@
     "open_source_workflow_choices": "18existingtests/build, clean review0.97,7final-head/3mainCI. Native local/preview/production/named-local anchor and actual Audacity/Ardour links; system Chrome1200/390/320 nooverflow/errors and visible heading below nav. Initial probe sampled smooth scroll mid-transition; retained, v2 waited for observed target without app edit. Exact source/canonical/date/sitemap/qualified033redirect verified. No ranking result.",
     "E34_preflight": "50focusedtests/actionlint, clean complete review0.93 after2in-scope ledger fixes,9final-head and3mainCI. Exact merged tree equals reviewed head and published protocol200/hash matches. Existing recipient key matches locally; public repo and idle shared research concurrency checked. One frozen tag push; exact source/run/attempt and two live/queued job handles verified. No output validation yet.",
     "E40_preflight": "49focusedtests,actionlint,syntax/diff/privacy0candidates;9PR41checks+Vercelstatus and3merged-mainchecks success. Actualbackend127passed/1skipped/1warning. Mergedtree equals reviewedhead, exact publishedprotocol hash verified, existing recipient key matches locally, publicrepo/idleconcurrency/tagabsence checked beforefirstcreation. E19/E34andhistoricalfreeze unchanged. E40nativejobsactive, not a result.",
-    "native_wheel_selector": "57focusedtests pass; actualretainedPillowPyPImetadata and all10officialE38wheelreceipts accepted. SevennativeABI/architecture/minimumOS/yanked cases plusdualPythonShellingham regression. Structuredautoreviewclean0.94then0.98, no codechangeafterlastreview; factual terminaldocsmanuallymatched independentlyauditedartifacts. All7finalPR42checkruns+Vercelstatus and3mainchecks success; actualbackend135passed/1skipped/1warning. Publicpatchprivacy0candidates; finalGitHubsecretalerts0. Not exhaustive security or nativeinference proof."
+    "native_wheel_selector": "57focusedtests pass; actualretainedPillowPyPImetadata and all10officialE38wheelreceipts accepted. SevennativeABI/architecture/minimumOS/yanked cases plusdualPythonShellingham regression. Structuredautoreviewclean0.94then0.98, no codechangeafterlastreview; factual terminaldocsmanuallymatched independentlyauditedartifacts. All7finalPR42checkruns+Vercelstatus and3mainchecks success; actualbackend135passed/1skipped/1warning. Publicpatchprivacy0candidates; finalGitHubsecretalerts0. Not exhaustive security or nativeinference proof.",
+    "E41_preflight": "70focusedtests/actionlint and actual non-CI rejection pass. All10fresh official PyPI metadata/retained wheel hashes match; no new local wheel binaries. Structured reviewclean0.94, no findings; all9exact-headPRchecks+Vercel and3mainchecks pass, backend148passed/1skipped. Mergedtree equals reviewed871b86f; published protocol hash/recipient match, retained E40 failure, tagabsence and identity checked before first creation. No terminal E41 success claim.",
+    "undici_tooling": "Only web/package-lock.json undici7.29.1->7.30.1 jsdom dev dependency;7existingfrontendtests/build/npm audit0 and final autoreviewclean0.97, all7PR/Vercel and3mainchecks pass. Raw private review evidence retained. GitHubalert66 still open at final catalog check; not a publicinstaller/globalNode remediation."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
@@ -734,7 +745,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-24T08:00:15.953705+00:00",
+  "verified_utc": "2026-10-24T15:42:21.046123+00:00",
   "search_observation": {
     "date": "2026-10-21",
     "engine": "Google Search, native Chrome Incognito desktop, signed out, optional cookies rejected",
@@ -832,19 +843,29 @@
     "producthunt_preflight": "Current sourced rules and asset candidates mapped; ready maker-comment field is null under the general human-comment guidance. Known same-name page belongs to voicybot.com. The bounded domain query found no product, not exhaustive absence. Actual authenticated identity/form/topics remain unverified."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-23T15:28:38.075301+00:00",
-    "current_wait": null,
-    "last_terminal_research": {
-      "experiment": "E34",
-      "run_id": 39583894992,
+    "rechecked_utc": "2026-10-24T15:42:21.046123+00:00",
+    "current_wait": {
+      "experiment": "E41",
+      "run_id": 40107471282,
       "attempt": 1,
-      "source_commit": "9209749845818a32a94e181b4a5b2fcf963e8139",
+      "source_commit": "ef73cf362437d52584a3f2519a34000e419ca1f9",
       "jobs": [
-        119167913911,
-        119167914331
+        120912037936,
+        120912038004
       ],
-      "status": "Both completed and independently verified; no replay or live wait",
-      "results_commit": "cf561b2bdf690ef6b09faf23ac73b4fd74792460"
+      "status": "macOS14 inprogress, macOS15 queued; early10-wheel verification observed, terminal artifacts/model/export pending"
+    },
+    "last_terminal_research": {
+      "experiment": "E40",
+      "run_id": 40074848907,
+      "attempt": 1,
+      "source_commit": "c714eef7cda745db39af6ff3f23b7cf659d70449",
+      "jobs": [
+        120815899058,
+        120815899144
+      ],
+      "status": "Both terminal preparation failures independently audited; frozen history retained without replay",
+      "results_commit": "a6bb7a6b23a165b475d717a1a0e0dedfa5c6e2ef"
     },
     "owner_action_pending": true,
     "dependencies": [
@@ -854,10 +875,10 @@
       "E33 demand windows28Oct/4Nov have not elapsed; no immediate ranking conclusion or copy churn.",
       "Third-party distribution requires named-destination authorization; exact E20 send was declined, do not re-ask."
     ],
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/CYCLE-COMPLETE.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-24-afternoon/e41/LAUNCH.json",
     "monitor": "Native voicy-seo-growth automation remains separately active subject to Mac/Codex availability; ranking goal remains unachieved.",
     "background_ci": {
-      "scope": "PR40/main backend jobs still running at last check; code/CI/backend trees exactly equal to testedPR39 merge, whose9checks passed. Website/frontend/Vercel checks for40 pass. No replay/cancel; recheck once at next normal cycle if needed."
+      "scope": "All PR43/44 and merged-main checks completed successfully before E41 first tag creation; only declared E41 qualification jobs remain active."
     }
   },
   "search_observation_history": [
@@ -999,7 +1020,7 @@
     "critical_dependency_alerts_at_audit": 4,
     "certifi_staging": "Require patched uv>=0.13.4 before bootstrap/staging dependency downloads; install certifi2026.10.19 after frozen sync and before model fetches. Offline approved-version/CA-RECORD gate before resource copying. Existing signed033 unchanged.",
     "gate_proof": "Actual old uv rejected and dedicated verified patched uv accepted; verified official old/new certifi wheel and CA tampering checks. Historical freeze unchanged; derived runtime lock records override.",
-    "release_status": "24October E40standardmacOS14/15 hosts had41.53GB/46.23GB free and passed unchanged26GiB guard; both stopped beforemodel on wrongPillowwheel selector. This harness bug is fixed in mergedPR42; no E40replay. Localcapacity remainsbelow12GiB inferenceguard, no guardreduction/unrelateddeletion. New separatelydeclaredqualification/fullnativepackaging/signing remains open; public033original.",
+    "release_status": "Native qualification remains pending in sole E41run. Read-only signing availability preflight is retained privately; no credential values read or permission/policy changes. Fresh signed packaging/notarization and release qualification still required; public033 unchanged.",
     "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-morning/TRUST-GATE-PROOF.json",
     "remaining_work": "Qualified patched/minimal Python dependency set and new signed release; Pillow/Transformers advisory paths not established from supported audio input; Linux glib absent from Mac target. Do not mark alerts fixed by version-only source edits.",
     "baseline_ci": "MergedPR37/b9cf5ea: hash-verified official uv0.13.4 bootstrap and shared downloader gate; MLX verified wheel install offline/no-index. Actual Metal compute passed macOS14.8.9 and15.7.9 arm64; all9PR check-runs plus Vercel status and3merged-main checks passed. Review clean0.94. No new signed/full-model runtime.",
@@ -1012,19 +1033,19 @@
     "transformers_source_limit": "5.10.0 was yanked upstream and rejected before execution;5.10.4 non-yanked official PyPI wheel used. Current OSV batch returns no records for the10candidate versions; this is not a universal safety guarantee or proof every advisory is resolved.",
     "transformers_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/COMPATIBILITY-RESULT.json",
     "latest_alert_snapshot": {
-      "observed_utc": "2026-10-24T15:15:14.725869+00:00",
+      "observed_utc": "2026-10-24T15:37:04.160665+00:00",
       "open": 53,
       "critical": 6,
       "high": 29,
       "medium": 15,
       "low": 3,
-      "scope": "Afternoon24October snapshot;7newrecords vs morning46. NewPillowcoveredbyfuture13override;newfilelockReadWriteLock/Windows/setuptools pathsneedboundedtriage;undici7.29.1testdependencygetsminimalpatch. No complete-remediationclaim.",
-      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-24-afternoon/ALERTS.private.json"
+      "scope": "Post-PR43/44 snapshot still53open (6critical/29high/15medium/3low);undici66 remains open despite verified lockpatch. Open secret-scanning alerts0 is bounded catalog evidence, not exhaustive safety.",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-24-afternoon/ALERTS-FINAL.private.json"
     },
     "next_patch": "MergedPR40/0f3cd5b and exact READYproduction: Next16.4.1/sharp0.35.5,18tests/build/npm audit0, nativeChrome comparison/anchor/audio/390viewport/visibleconsole passed. Public routes/metadata/media/download and admin/stats negative checks pass. Persistent54832 updated with rollback. Website/frontend source checks and Vercel passed; backend trees unchanged from all-checks-passed PR39, extra backend jobs pending at last check. No exploit/compromise or desktop-installer replacement claim.",
     "next_alert_reconciliation": "Verified24October:Next alerts55/56/57 state fixed, fixed_at23October18:12UTC. No manual dismissal. PR40 all6PR and3merged-main check-runs now completed successfully; deployed9a9a460 documentation-closeout source remains Next16.4.1.",
-    "runtime_qualification": "E40bothOSverifiedpreparationfailurebeforeMLX/model/export, not dependencyincompatibility. All122inventoryentries,20input/referencefilehashes,36modelrecords/runledger checked;normaldetach. PR42/369e0d2fixes nativePillow/dualPythonShellingham selection;57focusedtests/all10receiptchecks/cleanreview0.98,7PR+Vercel/3mainchecks pass, actualbackend135passed/1skipped. No new signedinstaller or currentdesktopremediationalertclosure.",
-    "undici_patch": "MergedPR43/36589d8:onlyweb/package-lock.json undici7.29.1->7.30.1 jsdomdevdependency.7frontendtests/build/npm audit0 and cleanreview0.97;all7exact-headchecks/Vercelpass. READYproduction36589d8withunchangedlandingtree. Merged-mainfrontend/websitepass,backendpendinglastobservation. No publicinstaller/runtimepin/appsourcechange;catalogalertclosureunverified.",
+    "runtime_qualification": "E40 failures remain fully audited and immutable. PR44/ef73cf3 starts distinct E41run40107471282 attempt1 with unchanged10versions/model/case1/guards; all10wheel preflight observed successful before large download. Both native terminal model/export outcomes remain pending; no patched signedinstaller or desktop-alert closure.",
+    "undici_patch": "MergedPR43/36589d8: only jsdom dev undici lockentry patched7.30.1.7tests/build/npm audit0, final clean0.97review,all7PR/Vercel and3mainchecks success. Alert66 remains open at postpush catalog check; no dismissal. Landing/runtime/public033 unchanged.",
     "new_filelock_scope": "OfficialGHSA-v4x8-3wr5-3wq8 targetsSQLiteReadWriteLock/AsyncReadWriteLock; exactcandidateHub1.5.0wheel importsordinaryFileLock/SoftFileLock viaWeakFileLock, noReadWriteLockstring. App/bootstrap/stagingsourceboundedsearch hasnoReadWriteLock/filelock references. Windows/setuptoolsrecordsnotMacpaths. No supportedrecordingexploitestablished;notcompleteabsence/remediation;historicalfilelock4.0.0freeze/candidateunchanged forcontrolledE41."
   }
 }
