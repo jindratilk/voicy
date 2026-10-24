@@ -17,43 +17,67 @@ sys.path.insert(0, str(CODE / 'scripts'))
 from runtime_trust import RUNTIME_VERSIONS, runtime_requirements
 
 TAG = 'refs/tags/voicy-runtime-e40-20261024'
+QUALIFICATIONS = {
+    'E40': (TAG, 'runtime-qualification.yml'),
+    'E41': ('refs/tags/voicy-runtime-e41-20261024', 'runtime-qualification-corrected.yml'),
+}
 UV_URL = ('https://files.pythonhosted.org/packages/26/44/'
           '5a8733dd1b2e8d6f9cffd1ff6428a3e11dcc7e146a7657e32cfb8d9fb4a4/'
           'uv-0.13.4-py3-none-macosx_11_0_arm64.whl')
 UV_SHA = '95f4eb2b991b53b50ec2b18ab612fca8ba1e7a75a47af0331fb8bcd21da3eb03'
 
 
-def admitted():
+def identity(experiment):
+    shared.require(experiment in QUALIFICATIONS, 'Unknown qualification identity')
+    return QUALIFICATIONS[experiment]
+
+
+def admitted(experiment='E40'):
+    tag, _ = identity(experiment)
     shared.require(os.environ.get('GITHUB_REPOSITORY') == 'jindratilk/voicy'
-                   and os.environ.get('GITHUB_REF') == TAG
+                   and os.environ.get('GITHUB_REF') == tag
                    and os.environ.get('GITHUB_RUN_ATTEMPT') == '1',
                    'Only first attempt of the frozen owner qualification tag may run')
     shared.require(platform.system() == 'Darwin' and platform.machine() == 'arm64',
                    'Native macOS arm64 required')
 
 
-def first_retained_execution():
-    # The Actions run ledger persists across deleting/recreating a tag. Fail closed
-    # if another execution exists. Administrators can erase that ledger; we never do.
+def actions_json(resource):
     token = os.environ.get('GH_TOKEN', '')
     shared.require(token and not any(c.isspace() for c in token), 'Missing read-only Actions token')
     config = 'header = "Authorization: Bearer ' + token + '"\n'
     raw = shared.command('/usr/bin/curl', '--fail', '--silent', '--show-error',
                          '--proto', '=https', '--max-time', '60', '--config', '-',
-                         'https://api.github.com/repos/jindratilk/voicy/actions/workflows/'
-                         'runtime-qualification.yml/runs?per_page=100', input=config.encode())
-    history = json.loads(raw)
+                         'https://api.github.com/repos/jindratilk/voicy/actions/' + resource,
+                         input=config.encode())
+    return json.loads(raw)
+
+
+def first_retained_execution(experiment='E40'):
+    # The retained ledger survives tag recreation, but not administrator erasure.
+    # Each separately declared qualification owns a distinct workflow ledger.
+    tag, workflow = identity(experiment)
+    history = actions_json('workflows/' + workflow + '/runs?per_page=100')
     runs = history['workflow_runs']
     shared.require(history['total_count'] == 1 and len(runs) == 1,
                    'Another retained qualification execution exists; no replacement')
     run = runs[0]
     shared.require(str(run['id']) == os.environ['GITHUB_RUN_ID']
                    and run['head_sha'] == os.environ['GITHUB_SHA']
-                   and run['head_branch'] == TAG.removeprefix('refs/tags/')
+                   and run['head_branch'] == tag.removeprefix('refs/tags/')
                    and run['event'] == 'push' and run['run_attempt'] == 1,
                    'Actions execution ledger does not match frozen source/attempt')
     return {'run_id': run['id'], 'source_commit': run['head_sha'],
             'retained_workflow_executions': 1, 'attempt': run['run_attempt']}
+
+
+def predecessor_failure():
+    run = actions_json('runs/40074848907')
+    shared.require(run['id'] == 40074848907 and run['run_attempt'] == 1
+                   and run['head_sha'] == 'c714eef7cda745db39af6ff3f23b7cf659d70449'
+                   and run['status'] == 'completed' and run['conclusion'] == 'failure',
+                   'Preserve the original terminal E40 failure before corrected-source qualification')
+    return {key: run[key] for key in ('id', 'head_sha', 'run_attempt', 'status', 'conclusion')}
 
 
 def wheel_metadata(document, package, version):
@@ -86,8 +110,7 @@ def package_versions(runtime):
     return json.loads(shared.command(runtime / 'python/bin/python3', '-I', '-c', script))
 
 
-def patch_runtime(runtime, root, evidence):
-    before = package_versions(runtime)
+def stage_wheels(root, evidence):
     wheels = root / 'wheels'; wheels.mkdir()
     uv_wheel = root / Path(UV_URL).name
     shared.download(UV_URL, uv_wheel, UV_SHA)
@@ -110,6 +133,12 @@ def patch_runtime(runtime, root, evidence):
         receipts.append({'package': package, 'version': version, 'filename': item['filename'],
                          'sha256': shared.sha(target), 'bytes': target.stat().st_size})
     shared.save(evidence / 'WHEELS.json', receipts)
+    return uv, wheels
+
+
+def patch_runtime(runtime, root, evidence, staged=None):
+    before = package_versions(runtime)
+    uv, wheels = staged if staged is not None else stage_wheels(root, evidence)
     shared.command(uv, 'pip', 'install', '--offline', '--no-index', '--no-deps',
                    '--python', runtime / 'python/bin/python3', '--break-system-packages',
                    *sorted(wheels.glob('*.whl')))
@@ -143,12 +172,12 @@ if not(rate==48000 and len(y)==int(sys.argv[2]) and i.channels==1 and i.subtype=
                    env=shared.runtime_environment(runtime, evidence))
 
 
-def main():
-    admitted()
-    elapsed = time.time() - float(os.environ['VOICY_E40_STARTED_EPOCH'])
+def main(experiment='E40'):
+    admitted(experiment)
+    elapsed = time.time() - float(os.environ['VOICY_' + experiment + '_STARTED_EPOCH'])
     shared.require(-5 <= elapsed <= 90 * 60, 'Invalid workflow start')
     shared.WORK_DEADLINE = time.monotonic() + 90 * 60 - max(0, elapsed)
-    root = Path(os.environ['RUNNER_TEMP']) / ('voicy-e40-' + os.environ['GITHUB_RUN_ID']
+    root = Path(os.environ['RUNNER_TEMP']) / ('voicy-' + experiment.lower() + '-' + os.environ['GITHUB_RUN_ID']
                                             + '-' + os.environ['GITHUB_RUN_ATTEMPT'])
     root.mkdir(mode=0o700)
     evidence = root / 'evidence'; evidence.mkdir()
@@ -160,12 +189,18 @@ def main():
         system = {'utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
                   'platform': platform.platform(), 'architecture': platform.machine(),
                   'source_commit': os.environ['GITHUB_SHA'], 'attempt': os.environ['GITHUB_RUN_ATTEMPT'],
-                  'protocol_sha256': shared.sha(CODE / 'docs/growth/E40-RUNTIME-QUALIFICATION.md'),
+                  'protocol_sha256': shared.sha(CODE / ('docs/growth/' + experiment + '-RUNTIME-QUALIFICATION.md')),
                   'initial_observation': shared.resources(root), 'initial_minimum_bytes': 26 * shared.GIB,
-                  'selected_case': 1, 'scope': 'Unsigned runtime copy, changed dependencies; no GUI/signing/quality/speed claim'}
+                  'experiment': experiment, 'selected_case': 1, 'scope': 'Unsigned runtime copy, changed dependencies; no GUI/signing/quality/speed claim'}
         shared.save(evidence / 'SYSTEM.json', system)
         shared.check_resources(system['initial_observation'], 26 * shared.GIB)
-        shared.save(evidence / 'EXECUTION-LEDGER.json', first_retained_execution())
+        shared.save(evidence / 'EXECUTION-LEDGER.json', first_retained_execution(experiment))
+        staged = None
+        if experiment == 'E41':
+            shared.save(evidence / 'PREDECESSOR.json', predecessor_failure())
+            # Fail on wheel metadata/hash errors before the large dataset/image.
+            staged = stage_wheels(root, evidence)
+            print('E41: all ten official wheels verified before dataset/image download', flush=True)
         # Prepare all five original inputs before selecting declared case1. No substitutions.
         ffmpeg = shared.build_preparation_tools(root, evidence)
         archive = root / 'test-clean.tar.gz'
@@ -205,7 +240,7 @@ def main():
         runtime = root / 'runtime'
         shared.command('cp', '-R', original, runtime)
         shared.guards(root)
-        patch_runtime(runtime, root, evidence)
+        patch_runtime(runtime, root, evidence, staged=staged)
         shared.save(evidence / 'CANDIDATE-MODELS.json', model_manifest(runtime))
         env = shared.runtime_environment(runtime, evidence)
         with (evidence / 'mlx-regression.log').open('wb') as log:
@@ -242,11 +277,14 @@ def main():
                 shared.save(evidence / 'DETACH-ERROR.json', {'type': type(exc).__name__})
         shared.save(evidence / 'STATUS.json', {'passed': passed})
         receipt = shared.seal(evidence, sealed / 'evidence.cms', CODE / 'docs/growth/E03-033-RECIPIENT.pub')
-        receipt.update(passed=passed, experiment='E40', selected_cases=[1], human_quality_review=False)
+        receipt.update(passed=passed, experiment=experiment, selected_cases=[1], human_quality_review=False)
         shared.save(sealed / 'RECEIPT.json', receipt)
         print(json.dumps(receipt), flush=True)
     return 0 if passed else 1
 
 
 if __name__ == '__main__':
-    raise SystemExit(main())
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('experiment', choices=tuple(QUALIFICATIONS), nargs='?', default='E40')
+    raise SystemExit(main(parser.parse_args().experiment))

@@ -167,3 +167,100 @@ def test_shellingham_dual_python_universal_wheel():
     d['urls'][0]['yanked'] = True
     with pytest.raises(RuntimeError, match='approved wheel'):
         qualification.wheel_metadata(d, 'shellingham', '1.5.4')
+
+
+@pytest.mark.parametrize('experiment', ['E40', 'E41'])
+def test_declared_experiments_cannot_use_each_others_tag(monkeypatch, experiment):
+    context(monkeypatch)
+    tag, _ = qualification.identity(experiment)
+    monkeypatch.setenv('GITHUB_REF', tag)
+    qualification.admitted(experiment)
+    other = 'E41' if experiment == 'E40' else 'E40'
+    monkeypatch.setenv('GITHUB_REF', qualification.identity(other)[0])
+    with pytest.raises(RuntimeError, match='first attempt'):
+        qualification.admitted(experiment)
+
+
+def test_arbitrary_experiment_rejected_before_network():
+    with pytest.raises(RuntimeError, match='Unknown qualification'):
+        qualification.admitted('E999')
+
+
+@pytest.mark.parametrize('predecessor_state', ['valid', 'running', 'success', 'wrong_source', 'rerun'])
+def test_corrected_qualification_requires_preserved_original_failure(monkeypatch, predecessor_state):
+    run = {'id': 40074848907, 'run_attempt': 1, 'head_sha': 'c714eef7cda745db39af6ff3f23b7cf659d70449',
+           'status': 'completed', 'conclusion': 'failure'}
+    if predecessor_state == 'running': run['status'] = 'in_progress'
+    if predecessor_state == 'success': run['conclusion'] = 'success'
+    if predecessor_state == 'wrong_source': run['head_sha'] = 'substitution'
+    if predecessor_state == 'rerun': run['run_attempt'] = 2
+    def fetch(resource):
+        assert resource == 'runs/40074848907'
+        return run
+    monkeypatch.setattr(qualification, 'actions_json', fetch)
+    if predecessor_state == 'valid':
+        assert qualification.predecessor_failure()['conclusion'] == 'failure'
+    else:
+        with pytest.raises(RuntimeError, match='original terminal E40'):
+            qualification.predecessor_failure()
+
+
+@pytest.mark.parametrize('history_case', ['approved', 'old_ledger', 'previous'])
+def test_e41_has_distinct_first_execution_ledger(monkeypatch, history_case):
+    monkeypatch.setenv('GITHUB_RUN_ID', '456')
+    monkeypatch.setenv('GITHUB_SHA', 'corrected-source')
+    run = {'id': 456, 'head_sha': 'corrected-source', 'head_branch': qualification.identity('E41')[0].removeprefix('refs/tags/'),
+           'event': 'push', 'run_attempt': 1}
+    if history_case == 'old_ledger': run.update(id=40074848907, head_branch=qualification.TAG.removeprefix('refs/tags/'))
+    def history(resource):
+        assert resource == 'workflows/runtime-qualification-corrected.yml/runs?per_page=100'
+        return {'total_count': 2 if history_case == 'previous' else 1, 'workflow_runs': [run]}
+    monkeypatch.setattr(qualification, 'actions_json', history)
+    if history_case == 'approved':
+        assert qualification.first_retained_execution('E41')['run_id'] == 456
+    else:
+        with pytest.raises(RuntimeError):
+            qualification.first_retained_execution('E41')
+
+
+def test_e41_wheel_error_stops_before_large_downloads(monkeypatch, tmp_path):
+    context(monkeypatch)
+    monkeypatch.setenv('GITHUB_REF', qualification.identity('E41')[0])
+    monkeypatch.setenv('VOICY_E41_STARTED_EPOCH', str(qualification.time.time()))
+    monkeypatch.setenv('RUNNER_TEMP', str(tmp_path))
+    monkeypatch.setenv('GITHUB_RUN_ID', 'fixture')
+    monkeypatch.setenv('GITHUB_SHA', 'corrected-source')
+    monkeypatch.setattr(qualification.shared, 'resources', lambda _: {'free_bytes': 40 * qualification.shared.GIB, 'memory_pressure': 1})
+    monkeypatch.setattr(qualification, 'first_retained_execution', lambda experiment: {'run_id': 'fixture'})
+    monkeypatch.setattr(qualification, 'predecessor_failure', lambda: {'preserved': True})
+    def bad_wheel(root, evidence):
+        assert root.name == 'voicy-e41-fixture-1'
+        raise RuntimeError('Wheel preflight rejects fixture')
+    monkeypatch.setattr(qualification, 'stage_wheels', bad_wheel)
+    monkeypatch.setattr(qualification.shared, 'build_preparation_tools', lambda *_: pytest.fail('No dataset/image/tool build'))
+    monkeypatch.setattr(qualification.shared, 'download', lambda *_: pytest.fail('No large download'))
+    monkeypatch.setattr(qualification.shared, 'seal', lambda *_: {'test_seal': True})
+    assert qualification.main('E41') == 1
+    p = tmp_path / 'voicy-e41-fixture-1'
+    assert json.loads((p / 'evidence/ERROR.json').read_text())['message'] == 'Wheel preflight rejects fixture'
+    assert json.loads((p / 'sealed/RECEIPT.json').read_text())['experiment'] == 'E41'
+    assert not (p / 'evidence/RUNS.json').exists()
+
+
+def test_offline_install_reuses_preverified_wheels(monkeypatch, tmp_path):
+    runtime = tmp_path / 'runtime'; (runtime / '.auk').mkdir(parents=True)
+    (runtime / '.auk/requirements.lock').write_text((ROOT / 'experiments/auk-mlx-requirements.freeze.txt').read_text())
+    wheels = tmp_path / 'wheels'; wheels.mkdir(); (wheels / 'fixture.whl').write_bytes(b'fixture')
+    evidence = tmp_path / 'evidence'; evidence.mkdir()
+    monkeypatch.setattr(qualification, 'stage_wheels', lambda *_: pytest.fail('Must reuse preverified wheel set'))
+    monkeypatch.setattr(qualification, 'package_versions', lambda *_: dict(qualification.RUNTIME_VERSIONS))
+    seen = []
+    def command(*args, **kwargs):
+        if args[0] == 'verified-uv':
+            for flag in ['--offline', '--no-index', '--no-deps']: assert flag in args
+            assert args[-1] == wheels / 'fixture.whl'
+            seen.append(True)
+        return b''
+    monkeypatch.setattr(qualification.shared, 'command', command)
+    qualification.patch_runtime(runtime, tmp_path, evidence, staged=('verified-uv', wheels))
+    assert seen
