@@ -64,7 +64,7 @@
       "previous_period": "No previous-period export/baseline established; no trend claim.",
       "private_evidence": "voicy-growth-evidence/gsc-2026-10-16-afternoon/SUMMARY.json"
     },
-    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-24-morning/GSC-ACCESS.private.json",
+    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-24-afternoon/GSC-ACCESS.private.json",
     "preliminary_24_hours": {
       "observed_utc": "2026-10-17T15:36:01.790079+00:00",
       "period_display": "16\u201317 October 2026, local time",
@@ -126,8 +126,8 @@
       "feature_split": null,
       "scope": "Combined AIOverviews/AIMode linkimpressions, already inWebtotals; no query/position/click/feature-split attribution inobservedreport. Not exacttarget success, controlledorganicrank, universalAIcitation coverage or incremental14+1 impressions."
     },
-    "access_rechecked_utc": "2026-10-24T07:21:48.255745+00:00",
-    "auth_status": "24October morning native Chrome: intended owner explicitly Session expired; public about and different default-account Welcome only. Fresh7/28-day query/page/country/device/indexing/sitemap data unavailable; historical18October exports remain dated. No auth/property/permission change.",
+    "access_rechecked_utc": "2026-10-24T15:15:43.550818+00:00",
+    "auth_status": "24OctoberafternoonnativeChromeexplicitownerSessionexpired;propertyrouteabout,StartnowdifferentdefaultWelcome. Fresh7/28query/page/country/device/indexing/sitemapunavailable;noauthchanges.",
     "latest_verified_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-morning/GSC-SUMMARY.json",
     "indexing_last_verified_utc": "2026-10-18T07:27:19.533906+00:00",
     "fresh_indexing_available": false,
@@ -1002,16 +1002,19 @@
     "transformers_source_limit": "5.10.0 was yanked upstream and rejected before execution;5.10.4 non-yanked official PyPI wheel used. Current OSV batch returns no records for the10candidate versions; this is not a universal safety guarantee or proof every advisory is resolved.",
     "transformers_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-23-afternoon/COMPATIBILITY-RESULT.json",
     "latest_alert_snapshot": {
-      "observed_utc": "2026-10-24T07:21:48.255863+00:00",
-      "open": 46,
-      "critical": 5,
-      "high": 27,
-      "medium": 14,
-      "scope": "Current account snapshot:3Next alerts now fixed automatically;46remaining historical Python/Rust records. Not complete remediation.",
-      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-24-morning/ALERTS.private.json"
+      "observed_utc": "2026-10-24T15:15:14.725869+00:00",
+      "open": 53,
+      "critical": 6,
+      "high": 29,
+      "medium": 15,
+      "low": 3,
+      "scope": "Afternoon24October snapshot;7newrecords vs morning46. NewPillowcoveredbyfuture13override;newfilelockReadWriteLock/Windows/setuptools pathsneedboundedtriage;undici7.29.1testdependencygetsminimalpatch. No complete-remediationclaim.",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-24-afternoon/ALERTS.private.json"
     },
     "next_patch": "MergedPR40/0f3cd5b and exact READYproduction: Next16.4.1/sharp0.35.5,18tests/build/npm audit0, nativeChrome comparison/anchor/audio/390viewport/visibleconsole passed. Public routes/metadata/media/download and admin/stats negative checks pass. Persistent54832 updated with rollback. Website/frontend source checks and Vercel passed; backend trees unchanged from all-checks-passed PR39, extra backend jobs pending at last check. No exploit/compromise or desktop-installer replacement claim.",
     "next_alert_reconciliation": "Verified24October:Next alerts55/56/57 state fixed, fixed_at23October18:12UTC. No manual dismissal. PR40 all6PR and3merged-main check-runs now completed successfully; deployed9a9a460 documentation-closeout source remains Next16.4.1.",
-    "runtime_qualification": "E40bothOSverifiedpreparationfailurebeforeMLX/model/export, not dependencyincompatibility. All122inventoryentries,20input/referencefilehashes,36modelrecords/runledger checked;normaldetach. PR42/369e0d2fixes nativePillow/dualPythonShellingham selection;57focusedtests/all10receiptchecks/cleanreview0.98,7PR+Vercel/3mainchecks pass, actualbackend135passed/1skipped. No new signedinstaller or currentdesktopremediationalertclosure."
+    "runtime_qualification": "E40bothOSverifiedpreparationfailurebeforeMLX/model/export, not dependencyincompatibility. All122inventoryentries,20input/referencefilehashes,36modelrecords/runledger checked;normaldetach. PR42/369e0d2fixes nativePillow/dualPythonShellingham selection;57focusedtests/all10receiptchecks/cleanreview0.98,7PR+Vercel/3mainchecks pass, actualbackend135passed/1skipped. No new signedinstaller or currentdesktopremediationalertclosure.",
+    "undici_patch": "Onlyweb/package-lock.json undici7.29.1->7.30.1, jsdomdevdependency. OfficialGHSA-xjj6-f33q-929c fixesremotecontent-encodingcrash. No desktopJS/source/landing/runtimepins changes or establishedproductexploitclaim. Tests/build/review/finalCI required.",
+    "new_filelock_scope": "OfficialGHSA-v4x8-3wr5-3wq8 targetsSQLiteReadWriteLock/AsyncReadWriteLock; exactcandidateHub1.5.0wheel importsordinaryFileLock/SoftFileLock viaWeakFileLock, noReadWriteLockstring. App/bootstrap/stagingsourceboundedsearch hasnoReadWriteLock/filelock references. Windows/setuptoolsrecordsnotMacpaths. No supportedrecordingexploitestablished;notcompleteabsence/remediation;historicalfilelock4.0.0freeze/candidateunchanged forcontrolledE41."
   }
 }
