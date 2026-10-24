@@ -158,3 +158,12 @@ def test_yanked_native_pillow_still_rejected():
     d['urls'][0].update(filename='pillow-13.0.0-cp313-cp313-macosx_11_0_arm64.whl', yanked=True)
     with pytest.raises(RuntimeError, match='approved wheel'):
         qualification.wheel_metadata(d, 'pillow', '13.0.0')
+
+
+def test_shellingham_dual_python_universal_wheel():
+    d = wheel(); d['info']['version'] = '1.5.4'
+    d['urls'][0]['filename'] = 'shellingham-1.5.4-py2.py3-none-any.whl'
+    assert qualification.wheel_metadata(d, 'shellingham', '1.5.4')['filename'].endswith('py2.py3-none-any.whl')
+    d['urls'][0]['yanked'] = True
+    with pytest.raises(RuntimeError, match='approved wheel'):
+        qualification.wheel_metadata(d, 'shellingham', '1.5.4')

@@ -60,7 +60,8 @@ def wheel_metadata(document, package, version):
     shared.require(document['info']['version'] == version, 'Wrong PyPI version')
     # Qualified033 uses CPython3.13 on arm64 with macOS14 minimum. Pillow
     # is a native extension; its reviewed macOS11 wheel supports both target OSes.
-    tag = 'cp313-cp313-macosx_11_0_arm64' if package == 'pillow' else 'py3-none-any'
+    tag = {'pillow': 'cp313-cp313-macosx_11_0_arm64',
+           'shellingham': 'py2.py3-none-any'}.get(package, 'py3-none-any')
     files = [f for f in document['urls'] if f['filename'].endswith('-' + tag + '.whl')
              and not f['yanked'] and f['packagetype'] == 'bdist_wheel']
     shared.require(len(files) == 1, 'Expected one non-yanked approved wheel: ' + package)
