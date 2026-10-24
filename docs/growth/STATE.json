@@ -634,18 +634,20 @@
     },
     {
       "id": "E40",
-      "status": "PR41 merged/c714eef with9exact-headchecks and3merged-mainchecks successful. First frozen tag created once at c714eef; run40074848907 attempt1 active:macOS14job120815899058 inprogress, macOS15job120815899144queued at last observation. No model/export outcome yet; preserve run without retag/rerun/replacement. Full signedrelease remains unqualified.",
+      "status": "First macOS14job failed during preparation before model/MLX/export:qualifier wrongly required a universal Pillowwheel. Encrypted artifact12552708619 downloaded/decrypted; ZIP/CMS/receipt/all61inventoryentries/source verified. Actual14host41.53GBfree passed unchanged26GiB guard and all18modelassets verified. MacOS15declaredjob still inprogress at lastobservation; no jointresult or rerun/retag.",
       "protocol": "docs/growth/E40-RUNTIME-QUALIFICATION.md",
       "run_id": 40074848907,
       "source_commit": "c714eef7cda745db39af6ff3f23b7cf659d70449",
       "attempt": 1,
       "run_url": "https://github.com/jindratilk/voicy/actions/runs/40074848907",
       "review": "49focusedtests/actionlint pass;2initialautoreviewissuesfixed. Secondreviewcapacityfinding rejected using actual preserved standardE34host measurements46.2GBfree despite nominal14GBtable; no clean-helper-exit claim. Newhost rejection remains possible and must be retained.",
-      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-24-morning/E40-LAUNCH.json"
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-24-morning/E40-LAUNCH.json",
+      "preparation_failure": "RuntimeError:Expected one non-yanked universal wheel:pillow. Harness selection error, not a model incompatibility or capacity failure.",
+      "candidate_fix": "Future helper selects exactCPython313/macOS11arm64 Pillowtag compatiblewith14/15; ninepurePythonpackages retainuniversalwheels. ABI/architecture/minimumOS/yanked rejection tests and actualofficialmetadata check required. OriginalE40tag/source/protocol remain immutable; no newrun yet."
     }
   ],
   "next_actions": [
-    "Inspect existing E40run40074848907 attempt1 at frozen c714eef; jobs120815899058macOS14/120815899144macOS15. Retrieve only its encrypted artifacts after bothterminal, verify CMS/receipt/inventory/source/input/model/package/export proof privately with checkpoint verify_e40.py, retain every failure. No rerun/retag/replacement/guardwaiver or outcome claim before actual evidence. Public033 stays until fullnative packaging/signing/notarization/cleanhost acceptance; this onecase runtimecopy experiment cannot establish fullrelease/listening/quality/rank.",
+    "Finish existing E40run40074848907 attempt1:macOS14prepfailedwithverifiedencryptedartifact12552708619; macOS15job120815899144pendingterminalaudit. Preserve both and neverrerun/retag E40. Complete reviewed nativePillowwheel-selector fix, then plan a separately declared source-corrected qualification only after full originalfailure review; do not report E40 model/export success. Keep033publicunchanged and fullnative signing/packaging qualification open.",
     "At the next normal heartbeat, check whether the existing owner Chrome session admits fresh GSC reports; if available export7/28-day exact-query/page/country/device/indexing/sitemap data privately. If still expired, retain dated unavailability; no repeatedpassword/recovery/newproperty/OAuthscope attempts. Never relabel18Oct exports as current or averageposition as literalrank.",
     "Thursday22October owner report was delivered; next29October. Other runs notify only meaningful new completed work, material regression or required action.",
     "Evaluate combined comparison demand after E33 windows28Oct/4Nov when fresh data are available. E18 windows27Oct/3Nov are confounded by E33. Preserve the singleprimaryURL/title/canonical; no same-dayquery/copy/date churn, thin keyword URLs or unchangedIndexNow. The21Oct nativeobservation is negative/unknownlocation, not controlledUSrank.",
@@ -1003,6 +1005,6 @@
     },
     "next_patch": "MergedPR40/0f3cd5b and exact READYproduction: Next16.4.1/sharp0.35.5,18tests/build/npm audit0, nativeChrome comparison/anchor/audio/390viewport/visibleconsole passed. Public routes/metadata/media/download and admin/stats negative checks pass. Persistent54832 updated with rollback. Website/frontend source checks and Vercel passed; backend trees unchanged from all-checks-passed PR39, extra backend jobs pending at last check. No exploit/compromise or desktop-installer replacement claim.",
     "next_alert_reconciliation": "Verified24October:Next alerts55/56/57 state fixed, fixed_at23October18:12UTC. No manual dismissal. PR40 all6PR and3merged-main check-runs now completed successfully; deployed9a9a460 documentation-closeout source remains Next16.4.1.",
-    "runtime_qualification": "MergedPR41/c714eef; first E40run40074848907 attempt1 active on standardmacOS14/15. Unsigned complete033runtimecopy with exact10approved overrides, original case1 fullmodel/PCM24export and four realMLXtests; encrypted evidence only, all18modelhashes, unchangedguards. No result/new signedinstaller yet."
+    "runtime_qualification": "E40macOS14rejected beforemodel:wronguniversalPillowwheel assumption in qualificationharness. Encrypted61entryartifactverified, actualhost41.53GBfree and18modelhashes pass. DeclaredmacOS15jobstillactive. Fixingonlyfutureselector to reviewedCPython313/macOS11arm64wheel; no frozenrunrepeat, newinstaller or dependencyremediationclaim."
   }
 }

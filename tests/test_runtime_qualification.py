@@ -135,3 +135,26 @@ def test_export_uses_only_copied_runtime(monkeypatch, tmp_path):
     monkeypatch.setattr(qualification.shared, 'command', command)
     qualification.export_check(runtime, evidence, 48000)
     assert seen
+
+
+@pytest.mark.parametrize('tag,accepted', [('cp313-cp313-macosx_11_0_arm64', True),
+                                        ('py3-none-any', False),
+                                        ('cp312-cp312-macosx_11_0_arm64', False),
+                                        ('cp313-cp313t-macosx_11_0_arm64', False),
+                                        ('cp313-cp313-macosx_26_0_arm64', False),
+                                        ('cp313-cp313-macosx_10_13_x86_64', False)])
+def test_pillow_uses_qualified_native_abi_and_minimum_os(tag, accepted):
+    d = wheel(); d['info']['version'] = '13.0.0'
+    d['urls'][0]['filename'] = 'pillow-13.0.0-' + tag + '.whl'
+    if accepted:
+        assert qualification.wheel_metadata(d, 'pillow', '13.0.0')['filename'].endswith(tag + '.whl')
+    else:
+        with pytest.raises(RuntimeError, match='approved wheel'):
+            qualification.wheel_metadata(d, 'pillow', '13.0.0')
+
+
+def test_yanked_native_pillow_still_rejected():
+    d = wheel(); d['info']['version'] = '13.0.0'
+    d['urls'][0].update(filename='pillow-13.0.0-cp313-cp313-macosx_11_0_arm64.whl', yanked=True)
+    with pytest.raises(RuntimeError, match='approved wheel'):
+        qualification.wheel_metadata(d, 'pillow', '13.0.0')
