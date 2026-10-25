@@ -12,10 +12,23 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-14, macos-15]
+        os: [macos-14, macos-15, macos-26]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     steps:
+      - name: Verify the declared native host
+        env:
+          EXPECTED_MACOS: ${{ matrix.os }}
+        run: |
+          python3 - <<'PYHOST'
+          import json, os, platform
+          version = platform.mac_ver()[0]
+          expected = os.environ['EXPECTED_MACOS'].removeprefix('macos-')
+          if platform.machine() != 'arm64' or version.split('.')[0] != expected:
+              raise SystemExit('Native host does not match the declared OS and architecture')
+          print(json.dumps({'macos': version, 'architecture': platform.machine(),
+                            'declared_runner': os.environ['EXPECTED_MACOS']}))
+          PYHOST
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
