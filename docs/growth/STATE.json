@@ -6,20 +6,20 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "f067e97ad802c096de897a3f8917c37711f237d9",
+  "shipped_commit": "b886d35cbedf9afa45885049a99e479c1c9c307f",
   "deployment": {
-    "id": "dpl_DScTY3VrRuiZzJwTKhtrSJKHQ9dV",
+    "id": "dpl_E7j41B3qp7Rx1xwXK93xSkyLty1P",
     "url": "https://usevoicy.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "f067e97ad802c096de897a3f8917c37711f237d9",
+    "source_commit": "b886d35cbedf9afa45885049a99e479c1c9c307f",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-25T16:18:41.484731+00:00",
-    "scope": "25 October afternoon baseline READY production at f067e97; current change prepares ongoing native CI, not landing or public installer.",
-    "verification_scope": "Public home/comparison/privacy/robots/three-URL sitemap200; exact033 GET/HEAD302; local54832 comparison200/download302,54831 full-image HEAD200/exact length,54835 worksheet200."
+    "verified_utc": "2026-10-25T16:26:43.541098+00:00",
+    "scope": "E42 PR45 merged; exact READY production at b886d35. Only ongoing CI and release-evidence documentation changed; landing/public033 unchanged.",
+    "verification_scope": "10 postmerge public/local checks pass: home/comparison/robots/three-URL sitemap, exact033 GET/HEAD redirects, local54832 comparison/download,54831 exact full-image HEAD length and54835 worksheet."
   },
   "gsc": {
     "property": "https://usevoicy.app/",
@@ -697,22 +697,31 @@
     },
     {
       "id": "E42",
-      "status": "Source preparation: ongoing MLX baseline and download-assistant matrices add explicit macOS26 while retaining14/15. Each verifies actual arm64 host/major version before existing checks. Actionlint and4actual local host-guard admission/rejection probes pass. Structured review and exact-head actual14/15/26CI pending; no model/release/minimumOS/ranking result.",
+      "status": "Shipped PR45/b886d35 after clean0.91review, actionlint and4actual local host-guard probes. All13exact-headcheckruns/Vercel and3merged-mainchecks pass. Logs confirm actual arm64 macOS14.8.9/15.7.9/26.6.2, actual MLX/Metal arithmetic and8native download-core assertions perOS plus interface typecheck and invalid-payload rejection. Phase1 coverage only;14 retained and retirement replacement remains open. No full-model/new signed app/ranking result.",
       "scope": "First preparation step for announced2November macOS14 runner retirement, not completed migration or a replay of frozen research.",
       "official_source": "https://github.blog/changelog/2026-10-01-github-actions-macos-14-runner-image-retirement/",
       "release_gate": "docs/release/RELEASE.md#native-ci-coverage-and-the-macos-14-runner-retirement",
-      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-25-afternoon/LOCAL-HOST-GUARD.json"
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-25-afternoon/MERGE-PROOF.json",
+      "pr": "https://github.com/jindratilk/voicy/pull/45",
+      "reviewed_head": "1359b0868b80b12341c49277ea5af667a150b8a7",
+      "merge_commit": "b886d35cbedf9afa45885049a99e479c1c9c307f",
+      "actual_os_versions": [
+        "14.8.9",
+        "15.7.9",
+        "26.6.2"
+      ],
+      "phase1_only": true
     }
   ],
   "next_actions": [
     "E41 is fully audited and terminal: macOS14 original case1/export passes; macOS15 model stops on critical system memory pressure, no output/export. Preserve sole run40107471282/tag/source and all negatives; no replay, replacement or reduced guards. Next product gate is separately reviewed actual app/release qualification on independently available adequate capacity. Current local disk is below the unchanged guard; no adequate alternate volume found. Do not claim dependency incompatibility or signed release readiness from this outcome. Keep public033 available.",
     "At the next normal heartbeat, check whether the existing owner Chrome session admits fresh GSC reports; if available export7/28-day exact-query/page/country/device/indexing/sitemap data privately. If still expired, retain dated unavailability; no repeatedpassword/recovery/newproperty/OAuthscope attempts. Never relabel18Oct exports as current or averageposition as literalrank.",
     "Thursday22October owner report was delivered; next29October. Other runs notify only meaningful new completed work, material regression or required action.",
-    "Evaluate combined comparison demand after E33 windows28Oct/4Nov when fresh data are available. E18 windows27Oct/3Nov are confounded by E33. Preserve the singleprimaryURL/title/canonical; no same-dayquery/copy/date churn, thin keyword URLs or unchangedIndexNow. The21Oct nativeobservation is negative/unknownlocation, not controlledUSrank.",
+    "Evaluate combined comparison demand after E33 windows28Oct/4Nov when fresh data are available. E18 windows27Oct/3Nov are confounded by E33. Preserve the singleprimaryURL/title/canonical; no same-dayquery/copy/date churn, thin keyword URLs or unchangedIndexNow. The25Oct native observation is negative/unknownlocation, not controlledUSrank.",
     "Original evidence publication still requires genuine listening under the existing gate. E03/E34 technical outputs and fixedASR are already retained; E34both5/5 does not demonstrate a need for addedparameter evaluation or resolve E15/E17timeouts. Preserve negatives; no unchanged model/ASR/runtime experiment replay justforactivity.",
     "Distribution packets/gallery and channel preflights are preparation only. Execute a third-party message/submission only with named-destination authorization and refreshed facts/rules/identity. ExactE20SixColorssend was declined: no send, clouddraft, followup or repeatrequest. No purchases/subscriptions/manipulatedlinks.",
     "When an existing authorized Bing session is available, collect actualsite search/AIreports and use currentprovider-specific limits. No newaccount, broadGoogleimportpermissions or inventedcitations/demand; currentunauthenticatedBing observations are not zero metrics.",
-    "Complete E42 exact-head CI on retained macOS14/15 plus new26 and review before shipping. This is phase1 coverage only. Official remaining14 brownouts26/29/30October14:00UTC to following00:00UTC; retirement2November. Before removing14, establish an adequate legitimate14 host/reviewed replacement preserving actual minimumOS release evidence. Compilation targeting14 on15/26 is not14 execution; no paid/new runner, guard relaxation, raised minimum or frozen research replay.",
+    "E42 phase1 shipped PR45/b886d35: real ongoing14/15/26 GPU/installer checks pass;14 retained. Before2November retirement, establish adequate legitimate14 host/reviewed replacement preserving actual minimumOS release evidence. Remaining brownouts26/29/30October14UTC to following00UTC. Compilation targeting14 on15/26 is not14 execution; no paid/new runner, guard relaxation, raised minimum or frozen research replay. Full migration remains open.",
     "Keep production/download/localhealth checks bounded at normalheartbeat or demonstratedregression. Qualified033 and existing media/UI evidence are shipped; avoid another unchanged6.5GBdownload or capture. Existing downloadcounters are mixedtraffic, not installs/organicconversion. No newtracking without its concretecontract."
   ],
   "validation": {
@@ -770,7 +779,8 @@
     "native_wheel_selector": "57focusedtests pass; actualretainedPillowPyPImetadata and all10officialE38wheelreceipts accepted. SevennativeABI/architecture/minimumOS/yanked cases plusdualPythonShellingham regression. Structuredautoreviewclean0.94then0.98, no codechangeafterlastreview; factual terminaldocsmanuallymatched independentlyauditedartifacts. All7finalPR42checkruns+Vercelstatus and3mainchecks success; actualbackend135passed/1skipped/1warning. Publicpatchprivacy0candidates; finalGitHubsecretalerts0. Not exhaustive security or nativeinference proof.",
     "E41_preflight": "70focusedtests/actionlint and actual non-CI rejection pass. All10fresh official PyPI metadata/retained wheel hashes match; no new local wheel binaries. Structured reviewclean0.94, no findings; all9exact-headPRchecks+Vercel and3mainchecks pass, backend148passed/1skipped. Mergedtree equals reviewed871b86f; published protocol hash/recipient match, retained E40 failure, tagabsence and identity checked before first creation. No terminal E41 success claim.",
     "undici_tooling": "PR43 only jsdom dev undici lockentry7.30.1, previously7tests/build/npm audit0/final clean0.97review/all PR/main CI passed.25October catalog confirms alert66 automatically fixed24October19:13:42UTC. No manual dismissal or public desktop-installer patch.",
-    "E41_result": "Both GitHub artifact ZIP digests, CMS/receipt/archive/exact inventories85+79/source/protocol/ledger/predecessor pass independent audit;20input/reference file hashes and72model records checked across hosts. Exactly10approved changes/unrelated distributions unchanged;8actual MLX tests pass without skips. Independent FFprobe/FFmpeg confirms macOS14 mono24k float117720frames and48k PCM24 export235440frames, finite/nonzero/no clipping. macOS15 critical pressure4 guard stops started model; no completed output/export. No recorded detach error, no ASR/model replay or human listening."
+    "E41_result": "Both GitHub artifact ZIP digests, CMS/receipt/archive/exact inventories85+79/source/protocol/ledger/predecessor pass independent audit;20input/reference file hashes and72model records checked across hosts. Exactly10approved changes/unrelated distributions unchanged;8actual MLX tests pass without skips. Independent FFprobe/FFmpeg confirms macOS14 mono24k float117720frames and48k PCM24 export235440frames, finite/nonzero/no clipping. macOS15 critical pressure4 guard stops started model; no completed output/export. No recorded detach error, no ASR/model replay or human listening.",
+    "platform_ci_26": "Actionlint both workflows and4actual local guard admission/rejection probes pass; final structured reviewclean0.91/no findings. All13exact-headcheckruns+Vercel and3mainchecks pass, backend148passed/1skipped. Real native logs14.8.9/15.7.9/26.6.2 arm64; actual Metal arithmetic and8downloadcore assertions each, interface typecheck and invalid payload rejection pass. Merged tree exactly equals reviewed head; runtime/landing/frozen workflows unchanged. No new full-model/installer qualification."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
@@ -779,13 +789,14 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-25T16:19:47.071858+00:00",
+  "verified_utc": "2026-10-25T16:28:10.299266+00:00",
   "search_observation": {
-    "date": "2026-10-21",
-    "engine": "Google Search, native Chrome Incognito desktop, signed out, optional cookies rejected",
+    "date": "2026-10-25",
+    "observed_utc": "2026-10-25T16:21:49.442696+00:00",
+    "engine": "Google Search, native Chrome desktop Incognito, signed out, optional cookies rejected",
     "query": "Adobe podcast alternative",
     "requested_parameters": "hl=en, gl=us, pws=0",
-    "location": "Unknown \u2014 Google footer says it cannot determine location; not a controlled US baseline",
+    "location": "Unknown - Google cannot determine location; not a controlled US rank",
     "owned_result_on_first_observed_page": false,
     "literal_rank": null,
     "controlled_US_desktop_rank": null,
@@ -796,15 +807,15 @@
       "Reddit",
       "Diffio AI",
       "Adobe Podcast",
-      "Cleanvoice AI",
       "Trebble",
-      "Resound.fm",
-      "G2"
+      "Cleanvoice AI",
+      "G2",
+      "Resound"
     ],
-    "scope": "One query, first results page plus expanded AI Overview and Show all related results on same query. No pagination, mobile, location grant, login, feedback, message or challenge bypass. Source labels observed; destinations and competitor claims not revalidated by this observation.",
-    "limits": "Absence on this one first observed page is not universal absence, an indexing diagnosis, controlled US rank, trend, causal E33 result or year-end completion. AI wording/prices/superlatives are not independently validated facts.",
-    "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-after-full-batch/SEARCH-OBSERVATION.private.json",
-    "next": "Do not repeat unchanged same-day query or infer a penalty/ranking effect. Preserve E33 demand windows28Oct/4Nov; existing owner GSC access and independent quality/distribution gates remain."
+    "scope": "One query, first page and expanded AI Overview. No pagination/mobile/owned click/location grant/login/feedback/challenge. Existing E19 untouched.",
+    "limits": "One dynamic unknown-location observation, not universal absence/indexing diagnosis/trend/causal E33 result or year-end success. AI product/price/quality claims not independently validated.",
+    "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-25-afternoon/NATIVE-SEARCH.private.json",
+    "next": "No unchanged same-day repeat or query/copy/date churn; preserve E33 windows28Oct/4Nov and genuine listening/distribution gates."
   },
   "bing": {
     "access": "21Oct nativeChrome recheck: public Sign In; Microsoft route reaches blank email challenge with no authenticated console. No identifier/password, consent, account/site/import change. The earlier20Oct username-not-found observations are historical, not proof of account absence. Fresh search/AI reports remain unavailable; no unchanged Google-auth retry.",
@@ -877,7 +888,7 @@
     "producthunt_preflight": "Current sourced rules and asset candidates mapped; ready maker-comment field is null under the general human-comment guidance. Known same-name page belongs to voicybot.com. The bounded domain query found no product, not exhaustive absence. Actual authenticated identity/form/topics remain unverified."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-25T16:19:47.071858+00:00",
+    "rechecked_utc": "2026-10-25T16:28:10.299266+00:00",
     "current_wait": null,
     "last_terminal_research": {
       "experiment": "E41",
@@ -899,10 +910,10 @@
       "E33 demand windows28Oct/4Nov have not elapsed; no immediate ranking conclusion or copy churn.",
       "Third-party distribution requires named-destination authorization; exact E20 send was declined, do not re-ask."
     ],
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-25-afternoon/LOCAL-HOST-GUARD.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-25-afternoon/MERGE-PROOF.json",
     "monitor": "Native voicy-seo-growth automation remains separately active subject to Mac/Codex availability; ranking goal remains unachieved.",
     "background_ci": {
-      "scope": "All declared E41 jobs terminal; no active research, replay, retag or cancellation."
+      "scope": "All13PR45checkruns/Vercel and3merged-mainchecks completed successfully. No active model/ASR experiment or frozen research replay."
     }
   },
   "search_observation_history": [
@@ -976,15 +987,44 @@
       ],
       "scope": "One first-page/expanded-AI desktop observation; followed actual Wideframe citation. No mobile or controlled US rank observation.",
       "limit": "Generated answer/source inclusion does not independently validate competitor facts or establish ranking causes. The cited Wideframe article calls Adobe audio-only; current official Adobe page supports Premium video, so do not repeat that broad claim."
+    },
+    {
+      "date": "2026-10-21",
+      "engine": "Google Search, native Chrome Incognito desktop, signed out, optional cookies rejected",
+      "query": "Adobe podcast alternative",
+      "requested_parameters": "hl=en, gl=us, pws=0",
+      "location": "Unknown \u2014 Google footer says it cannot determine location; not a controlled US baseline",
+      "owned_result_on_first_observed_page": false,
+      "literal_rank": null,
+      "controlled_US_desktop_rank": null,
+      "controlled_US_mobile_rank": null,
+      "ai_answer_observed": true,
+      "owned_ai_citation_observed": false,
+      "visible_web_result_labels": [
+        "Reddit",
+        "Diffio AI",
+        "Adobe Podcast",
+        "Cleanvoice AI",
+        "Trebble",
+        "Resound.fm",
+        "G2"
+      ],
+      "scope": "One query, first results page plus expanded AI Overview and Show all related results on same query. No pagination, mobile, location grant, login, feedback, message or challenge bypass. Source labels observed; destinations and competitor claims not revalidated by this observation.",
+      "limits": "Absence on this one first observed page is not universal absence, an indexing diagnosis, controlled US rank, trend, causal E33 result or year-end completion. AI wording/prices/superlatives are not independently validated facts.",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-21-after-full-batch/SEARCH-OBSERVATION.private.json",
+      "next": "Do not repeat unchanged same-day query or infer a penalty/ranking effect. Preserve E33 demand windows28Oct/4Nov; existing owner GSC access and independent quality/distribution gates remain."
     }
   ],
   "aeo_observation": {
     "provider": "Google Search AI Overview",
-    "date": "2026-10-20",
+    "date": "2026-10-25",
     "query": "Adobe podcast alternative",
     "own_citation": false,
-    "competitor_citation_verified": "https://try.wideframe.com/blog/adobe-podcast-alternatives-for-video-podcast-creators/",
-    "implication": "Task separation remains relevant, already covered by primary comparison. Preserve sourced Adobe video/Studio facts despite overbroad claims on a cited vendor article; no immediate title/content churn justified."
+    "source_label_observed": "Diffio AI, among other vendor/forum/video sources",
+    "primary_vendor_page_read": "https://diffio.ai/adobe-podcast-alternative/",
+    "citation_destination_followed_in_native_observation": false,
+    "implication": "Vendor page clearly discloses its own test, free-plan completion limits and matched examples. This does not independently validate its metrics or establish citation/ranking causes. Voicy original audio publication still requires genuine listening; keep E33 windows and no immediate title/content churn.",
+    "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-25-afternoon/SOURCES-AND-CONTENT-RESEARCH.json"
   },
   "clean_host_validation": {
     "status": "Actual final signed/notarized complete offline image passes on fresh macOS14 and15 arm64 hosts",
@@ -1078,6 +1118,6 @@
     "runtime_qualification": "E41 sole first attempt terminal overall failure, both artifacts independently audited. macOS14 original case1/model/PCM24 export passes; macOS15 starts model then critical system memory pressure stops worker with no completed output/export.8actual MLX tests,20input/reference hashes,72original/candidate model records, exactly10approved changes and unchanged unrelated distributions verified. E40 preserved; no new signed installer or supported-input exploit/regression attribution.",
     "undici_patch": "PR43 undici dev lockentry7.30.1 and prior tests/build/audit/review/CI passed.25October account catalog confirms alert66 automatically fixed at24October19:13:42UTC. No manual dismissal, installer/runtime pins or global Node change.",
     "new_filelock_scope": "OfficialGHSA-v4x8-3wr5-3wq8 targetsSQLiteReadWriteLock/AsyncReadWriteLock; exactcandidateHub1.5.0wheel importsordinaryFileLock/SoftFileLock viaWeakFileLock, noReadWriteLockstring. App/bootstrap/stagingsourceboundedsearch hasnoReadWriteLock/filelock references. Windows/setuptoolsrecordsnotMacpaths. No supportedrecordingexploitestablished;notcompleteabsence/remediation;historicalfilelock4.0.0freeze/candidateunchanged forcontrolledE41.",
-    "platform_ci_migration": "E42 prepares macOS26 ongoing baseline/installer coverage while preserving14/15 and enforcing actual host identity. Reviewed replacement for minimumOS14 evidence still required before retiring that leg; no full migration/new signed app. Actionlint and4actual local guard probes pass, exact-head CI/review pending."
+    "platform_ci_migration": "E42 PR45/b886d35 adds actual26.6.2 arm64 baseline/installer checks while retaining14.8.9/15.7.9 and verifying host identities. Actionlint/4localguard probes/clean0.91review, all13PR+Vercel and3mainchecks pass. Reviewed replacement for actual14 minimumOS release evidence remains required before retiring14; no completed migration/new signedapp claim."
   }
 }
