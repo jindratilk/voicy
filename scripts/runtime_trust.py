@@ -18,9 +18,10 @@ RUNTIME_VERSIONS = {
     'transformers': '5.10.4', 'huggingface-hub': '1.5.0',
     'typer': '0.20.1', 'shellingham': '1.5.4', 'rich': '15.0.0',
     'markdown-it-py': '4.2.0', 'mdurl': '0.1.2', 'pygments': '2.21.0',
+    'filelock': '4.2.4',
 }
 # These entries must already exist in the immutable historical freeze.
-ORIGINAL_OVERRIDES = {'certifi', 'pillow', 'transformers', 'huggingface-hub'}
+ORIGINAL_OVERRIDES = {'certifi', 'pillow', 'transformers', 'huggingface-hub', 'filelock'}
 
 
 def runtime_packages():
