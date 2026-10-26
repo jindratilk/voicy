@@ -64,7 +64,7 @@
       "previous_period": "No previous-period export/baseline established; no trend claim.",
       "private_evidence": "voicy-growth-evidence/gsc-2026-10-16-afternoon/SUMMARY.json"
     },
-    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-26-morning/GSC-ACCESS.private.json",
+    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-26-afternoon/GSC-ACCESS.private.json",
     "preliminary_24_hours": {
       "observed_utc": "2026-10-17T15:36:01.790079+00:00",
       "period_display": "16\u201317 October 2026, local time",
@@ -126,8 +126,8 @@
       "feature_split": null,
       "scope": "Combined AIOverviews/AIMode linkimpressions, already inWebtotals; no query/position/click/feature-split attribution inobservedreport. Not exacttarget success, controlledorganicrank, universalAIcitation coverage or incremental14+1 impressions."
     },
-    "access_rechecked_utc": "2026-10-26T08:37:57.588551+00:00",
-    "auth_status": "26October native Chrome: one normal intended-owner reauthentication probe reached empty secure password challenge; no saved login offered. No credential submission/recovery/scope change. Fresh7/28query/page/country/device/indexing/sitemap remain unavailable. Do not repeat unchanged password probe.",
+    "access_rechecked_utc": "2026-10-26T16:20:47.006206+00:00",
+    "auth_status": "26October afternoon native Chrome still explicitly intended owner Session expired. No repeated password flow or auth/permission change; fresh7/28query/page/country/device/indexing/sitemap remain unavailable, notzero.",
     "latest_verified_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-18-morning/GSC-SUMMARY.json",
     "indexing_last_verified_utc": "2026-10-18T07:27:19.533906+00:00",
     "fresh_indexing_available": false,
@@ -721,6 +721,12 @@
       "pr": "https://github.com/jindratilk/voicy/pull/46",
       "reviewed_head": "ff9e3deb51185e6c4979061a3658cf40f251e71b",
       "merge_commit": "06a1754657b8f31cf0cc28c4ad1e68effa5a041c"
+    },
+    {
+      "id": "E44",
+      "status": "Offline qualified release-counter validator prepared: stable release/exact assistant identity, raw receipt checksum, nine separate asset series, monotonic time, null changed/decreasing/missing deltas,0600new-only output outside checkout.16focused tests and actual20Oct baseline/raw checksum plus fresh connector receipt comparison pass. Compact incomplete morning summary is rejected without output. Review/finalCI/merge pending.",
+      "scope": "Metadata-only measurement integrity for existing download contract; no telemetry, binary download, installs/users/conversion or ranking attribution.",
+      "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-26-afternoon/ACTUAL-CLI-PROOF.json"
     }
   ],
   "next_actions": [
@@ -732,7 +738,7 @@
     "Distribution packets/gallery and channel preflights are preparation only. Execute a third-party message/submission only with named-destination authorization and refreshed facts/rules/identity. ExactE20SixColorssend was declined: no send, clouddraft, followup or repeatrequest. No purchases/subscriptions/manipulatedlinks.",
     "When an existing authorized Bing session is available, collect actualsite search/AIreports and use currentprovider-specific limits. No newaccount, broadGoogleimportpermissions or inventedcitations/demand; currentunauthenticatedBing observations are not zero metrics.",
     "E42 phase1 shipped PR45/b886d35: real ongoing14/15/26 GPU/installer checks pass;14 retained. Before2November retirement, establish adequate legitimate14 host/reviewed replacement preserving actual minimumOS release evidence. Remaining brownouts26/29/30October14UTC to following00UTC. Compilation targeting14 on15/26 is not14 execution; no paid/new runner, guard relaxation, raised minimum or frozen research replay. Full migration remains open.",
-    "Keep production/download/localhealth checks bounded at normalheartbeat or demonstratedregression. Qualified033 and existing media/UI evidence are shipped; avoid another unchanged6.5GBdownload or capture. Existing downloadcounters are mixedtraffic, not installs/organicconversion. No newtracking without its concretecontract."
+    "Keep production/download/localhealth checks bounded at normalheartbeat or demonstratedregression. Qualified033 and existing media/UI evidence are shipped; avoid another unchanged6.5GBdownload or capture. Existing downloadcounters are mixedtraffic, not installs/organicconversion. No newtracking without its concretecontract. Use the offline receipt validator with complete private raw metadata for future counter comparisons; do not treat compact summaries as full receipts or relabel counters as acquisitions."
   ],
   "validation": {
     "landing_tests": "18 passed, including legacy/mismatched artifact rejection and exact GitHub quoted/unquoted filename with qualified size",
@@ -791,7 +797,8 @@
     "undici_tooling": "PR43 only jsdom dev undici lockentry7.30.1, previously7tests/build/npm audit0/final clean0.97review/all PR/main CI passed.25October catalog confirms alert66 automatically fixed24October19:13:42UTC. No manual dismissal or public desktop-installer patch.",
     "E41_result": "Both GitHub artifact ZIP digests, CMS/receipt/archive/exact inventories85+79/source/protocol/ledger/predecessor pass independent audit;20input/reference file hashes and72model records checked across hosts. Exactly10approved changes/unrelated distributions unchanged;8actual MLX tests pass without skips. Independent FFprobe/FFmpeg confirms macOS14 mono24k float117720frames and48k PCM24 export235440frames, finite/nonzero/no clipping. macOS15 critical pressure4 guard stops started model; no completed output/export. No recorded detach error, no ASR/model replay or human listening.",
     "platform_ci_26": "Actionlint both workflows and4actual local guard admission/rejection probes pass; final structured reviewclean0.91/no findings. All13exact-headcheckruns+Vercel and3mainchecks pass, backend148passed/1skipped. Real native logs14.8.9/15.7.9/26.6.2 arm64; actual Metal arithmetic and8downloadcore assertions each, interface typecheck and invalid payload rejection pass. Merged tree exactly equals reviewed head; runtime/landing/frozen workflows unchanged. No new full-model/installer qualification.",
-    "filelock_candidate": "PR46/06a1754,70focused tests, actual original033Python lock/closure/gate/derived-lock probes pass. Clean0.93review;10PRcheckruns/Vercel and3mainchecks pass, backend148passed/1skipped. Actual arm64Metal checks14.8.9/15.7.9/26.6.2; not full filelock/model/app qualification on those hosts. READYproduction and12public/local health checks pass."
+    "filelock_candidate": "PR46/06a1754,70focused tests, actual original033Python lock/closure/gate/derived-lock probes pass. Clean0.93review;10PRcheckruns/Vercel and3mainchecks pass, backend148passed/1skipped. Actual arm64Metal checks14.8.9/15.7.9/26.6.2; not full filelock/model/app qualification on those hosts. READYproduction and12public/local health checks pass.",
+    "download_counter_receipts": "16focused tests plus actual historical baseline/raw checksum and current full connector receipt pass;9separate comparable series. Incomplete morning summary fails without output; no rewritten history. Review/finalCI pending."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
@@ -800,7 +807,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-26T08:43:41.520869+00:00",
+  "verified_utc": "2026-10-26T16:20:47.006206+00:00",
   "search_observation": {
     "date": "2026-10-25",
     "observed_utc": "2026-10-25T16:21:49.442696+00:00",
@@ -899,7 +906,7 @@
     "producthunt_preflight": "Current sourced rules and asset candidates mapped; ready maker-comment field is null under the general human-comment guidance. Known same-name page belongs to voicybot.com. The bounded domain query found no product, not exhaustive absence. Actual authenticated identity/form/topics remain unverified."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-26T08:43:41.520869+00:00",
+    "rechecked_utc": "2026-10-26T16:20:47.006206+00:00",
     "current_wait": null,
     "last_terminal_research": {
       "experiment": "E41",
@@ -921,7 +928,7 @@
       "E33 demand windows28Oct/4Nov have not elapsed; no immediate ranking conclusion or copy churn.",
       "Third-party distribution requires named-destination authorization; exact E20 send was declined, do not re-ask."
     ],
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-26-morning/MERGE-PROOF.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-26-afternoon/ACTUAL-CLI-PROOF.json",
     "monitor": "Native voicy-seo-growth automation remains separately active subject to Mac/Codex availability; ranking goal remains unachieved.",
     "background_ci": {
       "scope": "PR46 all10exact-headcheckruns/Vercel and3merged-mainchecks passed. No active model/ASR experiment or frozen research replay."
@@ -1066,21 +1073,23 @@
     "release_id": 416695244,
     "primary_asset_id": 654436308,
     "baseline_counter": 42,
-    "counter_delta": 131,
+    "counter_delta": 139,
     "unique_people": null,
     "completed_installs": null,
     "organic_conversion_rate": null,
     "limits": "Cumulative GitHub-reported asset counter includes own QA; event/retry/cache/completion semantics and acquisition attribution unestablished. Nine asset series remain separate; no part-count funnel. Raw receipts outside public Git.",
-    "latest_observed_utc": "2026-10-26T08:39:50.147Z",
-    "latest_counter": 173,
-    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-26-morning/DOWNLOAD-METRIC.json",
+    "latest_observed_utc": "2026-10-26T16:19:02.370280+00:00",
+    "latest_counter": 181,
+    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-26-afternoon/COUNTER-COMPARISON.json",
     "vercel_web_analytics": {
       "checked_utc": "2026-10-25T16:19:47.071858+00:00",
       "available": false,
       "production_pageviews_7_days": null,
       "response": "Correct target project/team count endpoint404 Web Analytics not found; source has no Vercel Analytics integration. This is unavailable data, not zero traffic. No instrumentation or subscription enabled.",
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-25-afternoon/VERCEL-WEB-ANALYTICS.private.json"
-    }
+    },
+    "validation_helper": "scripts/growth/download_counters.py",
+    "validation_scope": "Actual original20Oct raw checksum matches baseline; all9asset identities match current complete connector receipt, primary42\u2192181(+139mixedcounter). Not uniquepeople/install/organicconversion; no current or causal search outcome."
   },
   "canonical_domain": {
     "primary": "https://usevoicy.app",
