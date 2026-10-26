@@ -6,19 +6,19 @@
   "primary_market_assumption": "US English, desktop and mobile reported separately",
   "primary_url": "https://usevoicy.app/adobe-podcast-alternative",
   "initial_production_commit": "f2fb1b60adac1a63d3ffa550e8aa13c4380a7308",
-  "shipped_commit": "b886d35cbedf9afa45885049a99e479c1c9c307f",
+  "shipped_commit": "06a1754657b8f31cf0cc28c4ad1e68effa5a041c",
   "deployment": {
-    "id": "dpl_E7j41B3qp7Rx1xwXK93xSkyLty1P",
+    "id": "dpl_54q8PYcA7PzcDmQsBGyGDA9aHhTt",
     "url": "https://usevoicy.app",
     "state": "READY",
     "target": "production",
     "environment": "production",
     "team": "skaluj",
     "project": "skaluj/voicy",
-    "source_commit": "b886d35cbedf9afa45885049a99e479c1c9c307f",
+    "source_commit": "06a1754657b8f31cf0cc28c4ad1e68effa5a041c",
     "custom_domain_verified": "https://usevoicy.app",
-    "verified_utc": "2026-10-25T16:26:43.541098+00:00",
-    "scope": "E42 PR45 merged; exact READY production at b886d35. Only ongoing CI and release-evidence documentation changed; landing/public033 unchanged.",
+    "verified_utc": "2026-10-26T08:43:41.520869+00:00",
+    "scope": "Exact target production at PR46 merge; unchanged landing tree. Future runtime source preparation only, not public033 replacement.",
     "verification_scope": "10 postmerge public/local checks pass: home/comparison/robots/three-URL sitemap, exact033 GET/HEAD redirects, local54832 comparison/download,54831 exact full-image HEAD length and54835 worksheet."
   },
   "gsc": {
@@ -714,10 +714,13 @@
     },
     {
       "id": "E43",
-      "status": "Future filelock4.2.4 shared runtime preparation. Original033 Python3.13.14 isolated overlays differ only4.0.0 to4.2.4; nested/process-timeout/exception-release/three-process mutual exclusion pass in both, valid27-package default closure. Actual old-metadata gate rejects, candidate accepts, lock replacement/missing/duplicate/idempotence probes pass;70focusedtests pass. Review/finalCI/merge pending.",
+      "status": "Shipped PR46/06a1754, tree-identical reviewedff9e3de. Clean0.93review;70focused tests and actual original033Python paired lock/gate/derived-lock probes pass. All10exact-head check-runs/Vercel and3merged-main checks pass; backend148passed/1skipped, actual14.8.9/15.7.9/26.6.2 arm64 Metal checks pass. Exact READYproduction and12public/local health checks pass. Future staging only; public033 unchanged, full native release still open.",
       "scope": "11future overrides; five original freeze entries required exactly once. Historical E41 qualified10overrides remains unchanged. No full model/app/signing or public033 remediation claim.",
       "private_evidence": "voicy-growth-evidence/checkpoints/2026-10-26-morning/FILELOCK-COMPATIBILITY.json",
-      "official_source": "https://py-filelock.readthedocs.io/en/latest/changelog.html"
+      "official_source": "https://py-filelock.readthedocs.io/en/latest/changelog.html",
+      "pr": "https://github.com/jindratilk/voicy/pull/46",
+      "reviewed_head": "ff9e3deb51185e6c4979061a3658cf40f251e71b",
+      "merge_commit": "06a1754657b8f31cf0cc28c4ad1e68effa5a041c"
     }
   ],
   "next_actions": [
@@ -788,7 +791,7 @@
     "undici_tooling": "PR43 only jsdom dev undici lockentry7.30.1, previously7tests/build/npm audit0/final clean0.97review/all PR/main CI passed.25October catalog confirms alert66 automatically fixed24October19:13:42UTC. No manual dismissal or public desktop-installer patch.",
     "E41_result": "Both GitHub artifact ZIP digests, CMS/receipt/archive/exact inventories85+79/source/protocol/ledger/predecessor pass independent audit;20input/reference file hashes and72model records checked across hosts. Exactly10approved changes/unrelated distributions unchanged;8actual MLX tests pass without skips. Independent FFprobe/FFmpeg confirms macOS14 mono24k float117720frames and48k PCM24 export235440frames, finite/nonzero/no clipping. macOS15 critical pressure4 guard stops started model; no completed output/export. No recorded detach error, no ASR/model replay or human listening.",
     "platform_ci_26": "Actionlint both workflows and4actual local guard admission/rejection probes pass; final structured reviewclean0.91/no findings. All13exact-headcheckruns+Vercel and3mainchecks pass, backend148passed/1skipped. Real native logs14.8.9/15.7.9/26.6.2 arm64; actual Metal arithmetic and8downloadcore assertions each, interface typecheck and invalid payload rejection pass. Merged tree exactly equals reviewed head; runtime/landing/frozen workflows unchanged. No new full-model/installer qualification.",
-    "filelock_candidate": "Original033 Python3.13.14, exact official wheel hash, only filelock metadata delta; both locking arms and27-package closure pass. Actual old gate rejects/new accepts; lock missing/duplicate/idempotence pass;70focusedtests pass. Source review/finalCI pending."
+    "filelock_candidate": "PR46/06a1754,70focused tests, actual original033Python lock/closure/gate/derived-lock probes pass. Clean0.93review;10PRcheckruns/Vercel and3mainchecks pass, backend148passed/1skipped. Actual arm64Metal checks14.8.9/15.7.9/26.6.2; not full filelock/model/app qualification on those hosts. READYproduction and12public/local health checks pass."
   },
   "metric_caveats": [
     "One agent-initiated full installer download GET on 2026-10-15 may increment daily download starts. Do not report it as a customer acquisition or install.",
@@ -797,7 +800,7 @@
     "E15 direct-runtime CI retrieved four full-image payload parts as own QA, not primary assistant starts or customer acquisitions. Case2 aborted; no inference retry or new public audio.",
     "E16 downloaded four full-image parts for own diagnosticQA; not primary assistant starts or acquisitions. One failed instrumentedcase, no successfulbatch ornewpublicaudio."
   ],
-  "verified_utc": "2026-10-26T08:37:57.588551+00:00",
+  "verified_utc": "2026-10-26T08:43:41.520869+00:00",
   "search_observation": {
     "date": "2026-10-25",
     "observed_utc": "2026-10-25T16:21:49.442696+00:00",
@@ -896,7 +899,7 @@
     "producthunt_preflight": "Current sourced rules and asset candidates mapped; ready maker-comment field is null under the general human-comment guidance. Known same-name page belongs to voicybot.com. The bounded domain query found no product, not exhaustive absence. Actual authenticated identity/form/topics remain unverified."
   },
   "execution_dependency": {
-    "rechecked_utc": "2026-10-26T08:37:57.588551+00:00",
+    "rechecked_utc": "2026-10-26T08:43:41.520869+00:00",
     "current_wait": null,
     "last_terminal_research": {
       "experiment": "E41",
@@ -918,10 +921,10 @@
       "E33 demand windows28Oct/4Nov have not elapsed; no immediate ranking conclusion or copy churn.",
       "Third-party distribution requires named-destination authorization; exact E20 send was declined, do not re-ask."
     ],
-    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-26-morning/FILELOCK-COMPATIBILITY.json",
+    "private_checkpoint": "voicy-growth-evidence/checkpoints/2026-10-26-morning/MERGE-PROOF.json",
     "monitor": "Native voicy-seo-growth automation remains separately active subject to Mac/Codex availability; ranking goal remains unachieved.",
     "background_ci": {
-      "scope": "All13PR45checkruns/Vercel and3merged-mainchecks completed successfully. No active model/ASR experiment or frozen research replay."
+      "scope": "PR46 all10exact-headcheckruns/Vercel and3merged-mainchecks passed. No active model/ASR experiment or frozen research replay."
     }
   },
   "search_observation_history": [
@@ -1063,14 +1066,14 @@
     "release_id": 416695244,
     "primary_asset_id": 654436308,
     "baseline_counter": 42,
-    "counter_delta": 59,
+    "counter_delta": 131,
     "unique_people": null,
     "completed_installs": null,
     "organic_conversion_rate": null,
     "limits": "Cumulative GitHub-reported asset counter includes own QA; event/retry/cache/completion semantics and acquisition attribution unestablished. Nine asset series remain separate; no part-count funnel. Raw receipts outside public Git.",
-    "latest_observed_utc": "2026-10-22T07:31:59.904795+00:00",
-    "latest_counter": 101,
-    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-22-morning/DOWNLOAD-METRIC.json",
+    "latest_observed_utc": "2026-10-26T08:39:50.147Z",
+    "latest_counter": 173,
+    "latest_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-26-morning/DOWNLOAD-METRIC.json",
     "vercel_web_analytics": {
       "checked_utc": "2026-10-25T16:19:47.071858+00:00",
       "available": false,
@@ -1127,7 +1130,7 @@
     "undici_patch": "PR43 undici dev lockentry7.30.1 and prior tests/build/audit/review/CI passed.25October account catalog confirms alert66 automatically fixed at24October19:13:42UTC. No manual dismissal, installer/runtime pins or global Node change.",
     "new_filelock_scope": "OfficialGHSA-v4x8-3wr5-3wq8 targetsSQLiteReadWriteLock/AsyncReadWriteLock; exactcandidateHub1.5.0wheel importsordinaryFileLock/SoftFileLock viaWeakFileLock, noReadWriteLockstring. App/bootstrap/stagingsourceboundedsearch hasnoReadWriteLock/filelock references. Windows/setuptoolsrecordsnotMacpaths. No supportedrecordingexploitestablished;notcompleteabsence/remediation;historicalfilelock4.0.0freeze/candidateunchanged forcontrolledE41.",
     "platform_ci_migration": "E42 PR45/b886d35 adds actual26.6.2 arm64 baseline/installer checks while retaining14.8.9/15.7.9 and verifying host identities. Actionlint/4localguard probes/clean0.91review, all13PR+Vercel and3mainchecks pass. Reviewed replacement for actual14 minimumOS release evidence remains required before retiring14; no completed migration/new signedapp claim.",
-    "filelock_staging": "E43: require official non-yanked filelock4.2.4 in shared future bootstrap/staging/CI/derived lock, now11overrides/five original entries. Actual compatibility/gate probes pass; review/finalCI/merge pending. E41 original10-package evidence and public033 unchanged; full native release qualification remains open.",
+    "filelock_staging": "E43 merged PR46/06a1754: require official non-yanked filelock4.2.4 in shared future bootstrap/staging/CI/derived lock, now11overrides/five original entries. Actual paired compatibility,27-package closure, old/new staging gate and lock probes pass; clean0.93review, all10PRchecks/Vercel and3mainchecks pass. E41 original10-package evidence and public033 unchanged; full native release qualification remains open.",
     "filelock_private_evidence": "voicy-growth-evidence/checkpoints/2026-10-26-morning/GATE-PROOF.json"
   }
 }
