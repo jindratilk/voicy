@@ -33,7 +33,7 @@ jobs:
               'soundfile', 'librosa', 'pytest', 'httpx', *runtime_packages()], check=True)
           PY
       - run: python scripts/runtime_trust.py
-      - run: python -m pytest tests/test_api.py tests/test_audio.py tests/test_auk.py tests/test_chunking.py tests/test_startup.py tests/test_processor_audio.py tests/test_memory_policy.py tests/test_auk_exact.py tests/test_runtime_platform.py tests/test_listening_review.py tests/test_e03_current.py tests/test_canonical_inputs.py tests/test_e03_trace.py tests/test_weight_loading.py tests/test_us_search_observation.py tests/test_runtime_qualification.py -q
+      - run: python -m pytest tests/test_api.py tests/test_audio.py tests/test_auk.py tests/test_chunking.py tests/test_startup.py tests/test_processor_audio.py tests/test_memory_policy.py tests/test_auk_exact.py tests/test_runtime_platform.py tests/test_listening_review.py tests/test_e03_current.py tests/test_canonical_inputs.py tests/test_e03_trace.py tests/test_weight_loading.py tests/test_us_search_observation.py tests/test_runtime_qualification.py tests/test_download_counters.py -q
   website:
     runs-on: ubuntu-latest
     steps:

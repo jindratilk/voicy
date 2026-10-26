@@ -36,3 +36,37 @@ The first snapshot under this contract is retained privately in the 20 October d
 Use missing assets, an incorrect identity or failed public redirects to investigate delivery health. Use later counter changes only as a coarse distribution signal alongside independently collected search data. A zero change does not prove no demand, and a positive change does not prove an SEO improvement.
 
 Organic conversion measurement remains unimplemented. Before collecting anything new, define the exact event, aggregate attribution categories, retention, access controls, bot/QA handling, consent/privacy implications and acceptance checks. Prefer the smallest useful aggregate; no fingerprint, persistent visitor identifier, full referrer URL, search-query logging or customer-audio collection is authorized by this measurement contract. Do not add telemetry merely to fill an unavailable KPI.
+
+## Offline receipt validation
+
+`scripts/growth/download_counters.py` validates saved JSON without networking,
+browser access, tokens or binary downloads. Save the complete connector release
+response outside Git, record the actual UTC receipt time, then run:
+
+```sh
+python3 scripts/growth/download_counters.py snapshot \
+  --release-json "$VOICY_EVIDENCE/RELEASE-RAW.json" \
+  --observed-utc "$VOICY_RECEIPT_UTC" \
+  --output "$VOICY_EVIDENCE/SNAPSHOT.json"
+python3 scripts/growth/download_counters.py compare \
+  --previous "$VOICY_PREVIOUS/SNAPSHOT.json" \
+  --current "$VOICY_EVIDENCE/SNAPSHOT.json" \
+  --output "$VOICY_EVIDENCE/COUNTER-COMPARISON.json"
+```
+
+Set these directory variables to existing private locations outside the public
+checkout. Each output must be new; the helper refuses overwrite and checkout
+destinations, including symlinks into the checkout, and creates files with mode
+0600. A replacement release needs a separately reviewed identity and baseline.
+
+The helper binds the stable release and exact qualified assistant ID, name, size
+and digest, hashes the saved response bytes, retains each asset separately, and
+requires timezone-aware increasing receipt times. Missing or malformed metadata
+rejects the snapshot. Changed/missing secondary assets and decreasing counters
+have null deltas with an explicit reason; they are never clamped to zero. The
+original 20 October baseline format is supported. A compact historical summary
+without the required identity fields is insufficient input; do not invent its
+missing fields or overwrite it. A receipt hash protects provenance only when the
+original raw file is retained and independently matched; it does not authenticate
+arbitrary input or prove provider freshness. Reports preserve acquisition metrics
+as null and have no summed acquisition total.

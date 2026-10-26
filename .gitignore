@@ -103,6 +103,7 @@ landing/*.tsbuildinfo
 !/scripts/growth/trace_e03_case.py
 !/scripts/growth/run_e03_weight_arm.py
 !/scripts/growth/observe_us_search.py
+!/scripts/growth/download_counters.py
 !/scripts/growth/restore_canonical_inputs.py
 !/docs/growth/E03-PROTOCOL.md
 !/docs/growth/E03-MANIFEST.json
